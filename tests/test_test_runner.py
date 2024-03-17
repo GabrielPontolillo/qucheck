@@ -6,6 +6,12 @@ from case_studies.stats.single_qubit_distributions.single_qubit_statistical_anal
 
 
 class TestTestRunner(unittest.TestCase):
+    def tearDown(self):
+        SingleQubitStatisticalAnalysis.assertions = []
+        SingleQubitStatisticalAnalysis.unique_circuits = []
+        SingleQubitStatisticalAnalysis.union_of_qubits = []
+        SingleQubitStatisticalAnalysis.outcomes = []
+
     # test the run_tests method
     def test_run_tests(self):
         # create an instance of the test runner

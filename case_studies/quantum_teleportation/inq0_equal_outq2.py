@@ -1,14 +1,14 @@
 # class that inherits from property based test
 from qiskit import QuantumCircuit
 from property import Property
-from input_generators.qiskit_uniform_statevector import QiskitUniformStatevector
+from input_generators.random_state import RandomState
 from case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
 
 
 class Inq0EqualOutq2(Property):
     # specify the inputs that are to be generated
     def generate_input(self):
-        state = QiskitUniformStatevector(1).generate()
+        state = RandomState(1)
         return [state]
 
     # specify the preconditions for the test

@@ -3,7 +3,7 @@ from qiskit.quantum_info import random_statevector
 from input_generators.input_generator import InputGenerator
 
 
-class QiskitUniformStatevector(InputGenerator):
+class RandomState(InputGenerator):
     def __init__(self, number_of_qubits):
         self.number_of_qubits = number_of_qubits
 

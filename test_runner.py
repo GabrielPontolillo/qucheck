@@ -14,9 +14,10 @@ from case_studies.stats.assertion_def import AssertionDef
 class TestRunner:
     property_objects = []
 
-    def __init__(self, property_classes, num_inputs):
+    def __init__(self, property_classes, num_inputs, shrinking=False):
         self.property_classes = property_classes
         self.num_inputs = num_inputs
+        self.do_shrinking = shrinking
 
     # list all of the failing properties, by looking at the statistical analysis object's assertions's outcomes
     def list_failing_properties(self):
@@ -73,13 +74,21 @@ class TestRunner:
 
             # generate inputs
             for i in range(self.num_inputs):
-                inputs = property_obj.generate_input()
+                # get the input generators
+                input_generators = property_obj.generate_input()
+
+                # call generate using all of the generators provided
+                inputs = [x for x in range(len(input_generators))]
+                for i, generator in enumerate(input_generators):
+                    inputs[i] = generator.generate()
+
                 print("Inputs", inputs)
 
                 # add the generated inputs to the statistical analysis object of the property
                 # what if each property has its own statistical analysis object?
                 # and the assertions were only stored in the statistical analysis object for the specific property
-                property_obj.statistical_analysis.inputs.append(inputs)
+                # property_obj.statistical_analysis.inputs.append(inputs)
+                stat.inputs.append(inputs)
 
                 try:
                     # run the operations method
@@ -91,6 +100,25 @@ class TestRunner:
                     property_obj.classical_assertion_outcome = False
 
         property_obj.statistical_analysis.perform_analysis()
+
+        if self.do_shrinking:
+            self.shrinking()
+
+
+    def shrinking(self):
+        # now we need to implement shrinking
+        # if any properties failed, we need to shrink the inputs that were failing
+        # we will only try to shrink one failing input, if multiple inputs are failing for a property
+
+        # get the failing properties
+        failing_properties = self.list_failing_properties()
+
+        # what if we have a hierarchy of input generators, we test one example from each generator to see if it still passes or fails, then try to minimise within that
+        # if we pass the property operation to the shrink function?
+        # here is the thing, we need to also have an efficient description of the minimised state, so we can use it in the future (a bit string)
+        # not just the literal statevector
+
+
 
 
 

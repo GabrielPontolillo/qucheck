@@ -2,6 +2,8 @@
 # generation, preconditions, operations, and post conditions
 from abc import ABC, abstractmethod
 
+from input_generators.input_generator import InputGenerator
+
 
 class Property(ABC):
     # constructor to initialise the class with the statistical analysis object
@@ -12,7 +14,8 @@ class Property(ABC):
     # generate inputs for the test
     # outputs a list of the generated inputs
     @abstractmethod
-    def generate_input(self):
+    def generate_input(self) -> list[InputGenerator]:
+        # specify return type as list of input generators
         pass
 
     # specify the preconditions for the test

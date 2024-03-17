@@ -13,6 +13,7 @@ from case_studies.stats.single_qubit_distributions.assert_equal import AssertEqu
 
 
 class SingleQubitStatisticalAnalysis:
+    # probably move these static variables to assertion def, as well as the perform_analysis function
     assertions = []
     unique_circuits = []
     union_of_qubits = []

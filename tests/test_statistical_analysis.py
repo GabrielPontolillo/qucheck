@@ -12,6 +12,13 @@ def input_function():
 
 
 class TestStatisticalAnalysis(unittest.TestCase):
+    # make sure to reset statistical analysis class variables
+    def tearDown(self):
+        SingleQubitStatisticalAnalysis.assertions = []
+        SingleQubitStatisticalAnalysis.unique_circuits = []
+        SingleQubitStatisticalAnalysis.union_of_qubits = []
+        SingleQubitStatisticalAnalysis.outcomes = []
+
     def test_assert_equal(self):
         qc = QuantumCircuit(1)
         qc2 = QuantumCircuit(1)
