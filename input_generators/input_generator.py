@@ -4,5 +4,5 @@ from abc import ABC, abstractmethod
 
 class InputGenerator(ABC):
     @abstractmethod
-    def generate(self):
+    def generate(self, seed):
         pass

@@ -8,10 +8,11 @@ class RandomPauliBasisState(InputGenerator):
     def __init__(self, number_of_qubits):
         self.number_of_qubits = number_of_qubits
 
-    def generate(self):
+    def generate(self, seed):
         # generate a random statevector from the tensor product of the |+>,|->,|0>,|1>,|i>,|-i>,
         # loop through the number of qubits, choose one of the 6 statevectors
         state_string = ""
+        random.seed(seed)
         for i in range(self.number_of_qubits):
             state = random.randint(0, 5)
             if state == 0:
@@ -29,4 +30,3 @@ class RandomPauliBasisState(InputGenerator):
 
         # convert the string to a statevector
         return Statevector.from_label(state_string).data
-

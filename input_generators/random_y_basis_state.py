@@ -8,10 +8,11 @@ class RandomYBasisState(InputGenerator):
     def __init__(self, number_of_qubits):
         self.number_of_qubits = number_of_qubits
 
-    def generate(self):
+    def generate(self, seed):
         # generate a random statevector from the tensor product of the |r>,|l>
         # loop through the number of qubits, choose one of the 2 statevectors
         state_string = ""
+        random.seed(seed)
         for i in range(self.number_of_qubits):
             state = random.randint(0, 1)
             if state == 0:

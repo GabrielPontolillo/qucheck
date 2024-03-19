@@ -9,15 +9,20 @@
 #later on we need to allow for the choice of which statistical analysis object to use
 from case_studies.stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
 from case_studies.stats.assertion_def import AssertionDef
+import random
 
+MAX_ATTEMPTS = 100
 
 class TestRunner:
     property_objects = []
+    generated_seeds = []
 
-    def __init__(self, property_classes, num_inputs, shrinking=False):
+    def __init__(self, property_classes, num_inputs, random_seed, shrinking=False):
         self.property_classes = property_classes
         self.num_inputs = num_inputs
         self.do_shrinking = shrinking
+        random.seed(random_seed)
+
 
     # list all of the failing properties, by looking at the statistical analysis object's assertions's outcomes
     def list_failing_properties(self):
@@ -79,8 +84,25 @@ class TestRunner:
 
                 # call generate using all of the generators provided
                 inputs = [x for x in range(len(input_generators))]
-                for i, generator in enumerate(input_generators):
-                    inputs[i] = generator.generate()
+
+                for attempt_idx in range(MAX_ATTEMPTS):
+                    print("Attempt: ", attempt_idx)
+                    for i, generator in enumerate(input_generators):
+                        # 2,147,483,647 is the maximum value for the seed, 2^31 - 1, the maximum value for a 32 bit signed integer
+                        local_seed = random.randint(0, 2147483647)
+                        print(local_seed)
+                        self.generated_seeds.append(local_seed)
+                        inputs[i] = generator.generate(local_seed)
+
+                    # check the preconditions
+                    if property_obj.preconditions(*inputs):
+                        break
+
+                    if attempt_idx == MAX_ATTEMPTS - 1:
+                        print("Precondition could not be respected for property: ", property, " after ", MAX_ATTEMPTS, " attempts")
+                        print("Skipping statistical analysis for this property")
+                        property_obj.classical_assertion_outcome = False
+
 
                 print("Inputs", inputs)
 

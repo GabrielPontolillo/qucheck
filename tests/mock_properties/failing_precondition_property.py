@@ -5,7 +5,7 @@ from input_generators.random_state import RandomState
 from case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
 
 
-class Inq0EqualOutq2(Property):
+class FailingPrecondition(Property):
     # specify the inputs that are to be generated
     def generate_input(self):
         state = RandomState(1)
@@ -13,7 +13,7 @@ class Inq0EqualOutq2(Property):
 
     # specify the preconditions for the test
     def preconditions(self, q0):
-        return True
+        return False
 
     # specify the operations to be performed on the input
     def operations(self, q0):

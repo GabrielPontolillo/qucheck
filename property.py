@@ -20,7 +20,7 @@ class Property(ABC):
 
     # specify the preconditions for the test
     @abstractmethod
-    def preconditions(self):
+    def preconditions(self, *inputs):
         pass
 
     # the coordinator will pass all inputs in list order to the operations method

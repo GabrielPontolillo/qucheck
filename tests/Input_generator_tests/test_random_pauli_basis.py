@@ -12,20 +12,25 @@ class TestRandomPauliBasisState(unittest.TestCase):
         self.generator = RandomPauliBasisState(2)
 
     def test_generate_size(self):
-        statevector = self.generator.generate()
+        statevector = self.generator.generate(1)
         self.assertEqual(len(statevector), 2 ** self.generator.number_of_qubits)
 
     def test_generate_different(self):
-        statevector1 = self.generator.generate()
-        statevector2 = self.generator.generate()
+        statevector1 = self.generator.generate(1)
+        statevector2 = self.generator.generate(2)
         self.assertFalse(np.array_equal(statevector1, statevector2))
 
+    def test_generate_same_seed(self):
+        statevector1 = self.generator.generate(337)
+        statevector2 = self.generator.generate(337)
+        self.assertTrue(np.array_equal(statevector1, statevector2))
+
     def test_generate_normalized(self):
-        statevector = self.generator.generate()
+        statevector = self.generator.generate(1)
         self.assertTrue(Statevector(statevector).is_valid())
 
     def test_generate_tensor_product(self):
-        statevector = self.generator.generate()
+        statevector = self.generator.generate(1)
         # Check if the statevector can be represented as a tensor product of the |+>,|->,|0>,|1>,|i>,|-i> states
         # This test will depend on your implementation of the tensor product representation check
         self.assertTrue(check_tensor_product_representation(statevector))
