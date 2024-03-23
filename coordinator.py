@@ -22,11 +22,13 @@ class Coordinator:
             self.random_seed = random_seed
 
     def get_classes(self, folder_path):
+        # TODO: I kind of hate this but also maybe not?
         sys.path.insert(0, folder_path)
         for file in os.listdir(folder_path):
             if file.endswith('.py'):
                 module = importlib.import_module(file[:-3])
                 for name, obj in inspect.getmembers(module):
+                    # TODO: I'm not convinced this works (if someone creates a base property class from which more concrete property classes inherit, it will pull in the abstract class and possibly blow up)
                     if inspect.isclass(obj) and issubclass(obj, Property) and obj is not Property:
                         self.property_classes.add(obj)
         sys.path.pop(0)

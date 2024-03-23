@@ -7,8 +7,8 @@
 # also needs to receive some options for the number of inputs to generate
 
 #later on we need to allow for the choice of which statistical analysis object to use
-from case_studies.stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
-from case_studies.stats.assertion_def import AssertionDef
+from stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
+from stats.assertion_def import AssertionDef
 import random
 
 MAX_ATTEMPTS = 100

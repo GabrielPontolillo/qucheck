@@ -1,7 +1,7 @@
 # class that tests the statistical analysis class
 import unittest
 
-from case_studies.stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
+from stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
 from qiskit import QuantumCircuit
 from case_studies.quantum_teleportation.inq0_equal_outq2 import Inq0EqualOutq2
 

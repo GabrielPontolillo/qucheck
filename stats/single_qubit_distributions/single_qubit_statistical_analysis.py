@@ -8,8 +8,8 @@
 # perform_measurements function will perform the identified measurements and store the results in the dictionary
 from qiskit import QuantumCircuit, ClassicalRegister, transpile
 from qiskit.providers.basic_provider import BasicSimulator
-from case_studies.stats.assertion_def import AssertionDef
-from case_studies.stats.single_qubit_distributions.assert_equal import AssertEqual
+from stats.assertion_def import AssertionDef
+from stats.single_qubit_distributions.assert_equal import AssertEqual
 
 
 class SingleQubitStatisticalAnalysis:

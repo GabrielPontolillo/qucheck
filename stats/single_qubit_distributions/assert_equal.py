@@ -1,4 +1,4 @@
-from case_studies.stats.assertion_def import AssertionDef
+from stats.assertion_def import AssertionDef
 from qiskit import QuantumCircuit
 from scipy import stats as sci
 
