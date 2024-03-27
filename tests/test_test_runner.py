@@ -3,6 +3,7 @@ import unittest
 import copy
 from test_runner import TestRunner
 from case_studies.quantum_teleportation.inq0_equal_outq2 import Inq0EqualOutq2
+from case_studies.quantum_fourier_transform.identity_property import IdentityProperty
 from tests.mock_properties.failing_precondition_property import FailingPrecondition
 from case_studies.stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
 
@@ -83,3 +84,13 @@ class TestTestRunner(unittest.TestCase):
         print("passing properties:")
         # we actually get a list of passing properties objects
         print(test_runner.list_passing_properties())
+
+    def test_two_different_properties(self):
+        # create an instance of the test runner
+        test_runner = TestRunner([Inq0EqualOutq2, IdentityProperty], 3, 1917)
+        # run the tests
+        test_runner.run_tests()
+        # list the failing properties
+        assert test_runner.list_failing_properties() == []
+        assert test_runner.list_passing_properties() == [Inq0EqualOutq2, IdentityProperty]
+

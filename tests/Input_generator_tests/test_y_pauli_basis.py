@@ -9,9 +9,9 @@ from input_generators.random_pauli_basis_state import RandomPauliBasisState
 from qiskit.quantum_info import Statevector
 
 
-class TestRandomPauliBasisState(unittest.TestCase):
+class TestRandomYPauliBasisState(unittest.TestCase):
     def setUp(self):
-        self.generator = RandomPauliBasisState(2)
+        self.generator = RandomPauliBasisState(2, ["y"])
 
     def test_generate_size(self):
         statevector = self.generator.generate(1)
@@ -20,7 +20,7 @@ class TestRandomPauliBasisState(unittest.TestCase):
 
     def test_generate_different(self):
         statevector1 = self.generator.generate(1)
-        statevector2 = self.generator.generate(2)
+        statevector2 = self.generator.generate(4)
         self.assertFalse(np.array_equal(statevector1, statevector2))
         self.assertTrue(check_tensor_product_representation(statevector1))
         self.assertTrue(check_tensor_product_representation(statevector2))
@@ -28,13 +28,6 @@ class TestRandomPauliBasisState(unittest.TestCase):
     def test_generate_same_seed(self):
         statevector1 = self.generator.generate(337)
         statevector2 = self.generator.generate(337)
-        self.assertTrue(np.array_equal(statevector1, statevector2))
-        self.assertTrue(check_tensor_product_representation(statevector1))
-        self.assertTrue(check_tensor_product_representation(statevector2))
-
-    def test_generate_different_method_same_seed(self):
-        statevector1 = self.generator.generate(337)
-        statevector2 = RandomPauliBasisState(2, ["z", "x", "y"]).generate(337)
         self.assertTrue(np.array_equal(statevector1, statevector2))
         self.assertTrue(check_tensor_product_representation(statevector1))
         self.assertTrue(check_tensor_product_representation(statevector2))
@@ -53,21 +46,20 @@ class TestRandomPauliBasisState(unittest.TestCase):
 
 def check_tensor_product_representation(statevector):
     # Define the six basis states
-    basis_states = [Statevector.from_label('+').data,
-                    Statevector.from_label('-').data,
-                    Statevector.from_label('0').data,
-                    Statevector.from_label('1').data,
-                    Statevector.from_label('r').data,
+    basis_states = [Statevector.from_label('r').data,
                     Statevector.from_label('l').data]
 
     # Calculate the number of qubits from the length of the statevector
     number_of_qubits = int(np.log2(len(statevector)))
+
+    print(statevector)
 
     # Loop over all possible combinations of these states
     for combination in itertools.product(basis_states, repeat=number_of_qubits):
         # Calculate the tensor product of the combination
         tensor_product = reduce(np.kron, combination)
         # Compare it to the input statevector
+        print(tensor_product)
         if np.allclose(tensor_product, statevector):
             return True
 
