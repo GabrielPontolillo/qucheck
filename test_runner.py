@@ -8,6 +8,7 @@
 
 #later on we need to allow for the choice of which statistical analysis object to use
 from stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
+from qiskit.providers.basic_provider import BasicSimulator
 from stats.assertion_def import AssertionDef
 import random
 
@@ -67,7 +68,7 @@ class TestRunner:
 
         return passing_properties
 
-    def run_tests(self):
+    def run_tests(self, backend=BasicSimulator()):
         # for each property class, we need to create a statistical analysis object
         # and then create a property object using the statistical analysis object
         for property in self.property_classes:
@@ -121,7 +122,8 @@ class TestRunner:
                     print("Skipping statistical analysis for this property")
                     property_obj.classical_assertion_outcome = False
 
-        property_obj.statistical_analysis.perform_analysis()
+        # TODO: does this even work if there is more then one property class/stats? 
+        property_obj.statistical_analysis.perform_analysis(backend)
 
         if self.do_shrinking:
             self.shrinking()

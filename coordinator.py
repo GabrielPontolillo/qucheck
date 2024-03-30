@@ -4,15 +4,18 @@ import inspect
 import random
 import sys
 
+from qiskit.providers.basic_provider import BasicSimulator
+
 from property import Property
 from test_runner import TestRunner
 
 
 class Coordinator:
-    def __init__(self, num_inputs, random_seed=None):
+    def __init__(self, num_inputs, random_seed=None, backend=BasicSimulator()):
         self.num_inputs = num_inputs
         self.property_classes = set()
         self.test_runner = None
+        self.backend = backend
 
         # this random seed is used to generate other random seeds for the test runner, such that we can replay
         # an entire test run
@@ -36,7 +39,7 @@ class Coordinator:
     def test(self, path):
         self.get_classes(path)
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed)
-        self.test_runner.run_tests()
+        self.test_runner.run_tests(self.backend)
 
     def print_outcomes(self):
         if self.test_runner is None:

@@ -28,8 +28,8 @@ class SingleQubitStatisticalAnalysis:
         self.inputs = []
 
     # perform the analysis on the measurements that have been made and stored in the dictionary
-    def perform_analysis(self):
-        self.perform_measurements()
+    def perform_analysis(self, backend=BasicSimulator()):
+        self.perform_measurements(backend)
 
         for assertion in self.assertions:
             # need to pass in the two respective measurement dictionaries to the assertion
@@ -43,7 +43,7 @@ class SingleQubitStatisticalAnalysis:
             assertion.calculate_outcome()
 
     # needs to identify qubit index overlap in assertions with the same input function hash, and them perform the least number of measurements
-    def perform_measurements(self):
+    def perform_measurements(self, backend=BasicSimulator()):
         # we need to get a list containing of unique circuits,
         # and a list with union of the qubits to measure for all identical circuits in the list
         # we can then perform the least number of measurements on these qubits
@@ -63,7 +63,7 @@ class SingleQubitStatisticalAnalysis:
         # measure the x, y, and z basis components of the qubits in each unique circuit
         for index, circuit in enumerate(self.unique_circuits):
             self.outcomes.append(
-                measure_qubits(circuit.copy(), self.union_of_qubits[index], self.number_of_measurements))
+                measure_qubits(circuit.copy(), self.union_of_qubits[index], self.number_of_measurements, backend=backend))
 
     # wrapper for assert equal that calls add assertion to store it for future use
     # can pass in a string, or a circuit with qubits to assert equality of.
@@ -107,11 +107,9 @@ def measure_x(circuit, qubit_indexes):
     return circuit
 
 
-def measure_qubits(circuit_1, register, measurements=1000, basis=None):
+def measure_qubits(circuit_1, register, measurements=1000, basis=None, backend=BasicSimulator()):
     # receives a circuit to measure, and a list of qubit registers to measure
     # returns a list of measurements for respective qubits
-    backend = BasicSimulator()
-
     if basis is None:
         basis = ['x', 'y', 'z']
 
