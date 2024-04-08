@@ -90,7 +90,8 @@ class TestRunner:
                     for i, generator in enumerate(input_generators):
                         # 2,147,483,647 is the maximum value for the seed, 2^31 - 1, the maximum value for a 32 bit signed integer
                         local_seed = random.randint(0, 2147483647)
-                        print(local_seed)
+
+                        # print(local_seed)
                         self.generated_seeds.append(local_seed)
                         inputs[i] = generator.generate(local_seed)
 
@@ -103,8 +104,7 @@ class TestRunner:
                         print("Skipping statistical analysis for this property")
                         property_obj.classical_assertion_outcome = False
 
-
-                print("Inputs", inputs)
+                # print("Inputs", inputs)
 
                 # add the generated inputs to the statistical analysis object of the property
                 # what if each property has its own statistical analysis object?
@@ -125,7 +125,6 @@ class TestRunner:
 
         if self.do_shrinking:
             self.shrinking()
-
 
     def shrinking(self):
         # now we need to implement shrinking

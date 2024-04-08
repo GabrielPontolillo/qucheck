@@ -5,8 +5,9 @@ import random
 
 
 class RandomPauliBasisState(InputGenerator):
-    def __init__(self, number_of_qubits, basis=['x', 'y', 'z']):
-        self.number_of_qubits = number_of_qubits
+    def __init__(self, number_of_qubits_low, number_of_qubits_high, basis=['x', 'y', 'z']):
+        self.number_of_qubits_low = number_of_qubits_low
+        self.number_of_qubits_high = number_of_qubits_high
         self.basis = basis
 
     def generate(self, seed):
@@ -23,9 +24,9 @@ class RandomPauliBasisState(InputGenerator):
             state_list.extend(["0", "1"])
 
         random.seed(seed)
-        for i in range(self.number_of_qubits):
+        for i in range(random.randint(self.number_of_qubits_low, self.number_of_qubits_high)):
             chosen_char = random.choice(state_list)
             state_string += chosen_char
 
         # convert the string to a statevector
-        return Statevector.from_label(state_string).data
+        return Statevector.from_label(state_string)

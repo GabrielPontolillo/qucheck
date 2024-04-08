@@ -11,11 +11,12 @@ from qiskit.quantum_info import Statevector
 
 class TestRandomPauliBasisState(unittest.TestCase):
     def setUp(self):
-        self.generator = RandomPauliBasisState(2)
+        self.generator = RandomPauliBasisState(2,  5)
 
     def test_generate_size(self):
         statevector = self.generator.generate(1)
-        self.assertEqual(len(statevector), 2 ** self.generator.number_of_qubits)
+        self.assertTrue(
+            2 ** self.generator.number_of_qubits_low <= len(statevector) <= 2 ** self.generator.number_of_qubits_high)
         self.assertTrue(check_tensor_product_representation(statevector))
 
     def test_generate_different(self):
@@ -34,7 +35,7 @@ class TestRandomPauliBasisState(unittest.TestCase):
 
     def test_generate_different_method_same_seed(self):
         statevector1 = self.generator.generate(337)
-        statevector2 = RandomPauliBasisState(2, ["z", "x", "y"]).generate(337)
+        statevector2 = RandomPauliBasisState(2, 5).generate(337)
         self.assertTrue(np.array_equal(statevector1, statevector2))
         self.assertTrue(check_tensor_product_representation(statevector1))
         self.assertTrue(check_tensor_product_representation(statevector2))

@@ -36,7 +36,7 @@ class TestCoordinator(unittest.TestCase):
         TestRunner.generated_seeds = []
         TestRunner.property_objects = []
         coordinator2 = Coordinator(2, 1)
-        coordinator.test(os.path.join(os.getcwd(), "../case_studies/quantum_teleportation"))
+        coordinator2.test(os.path.join(os.getcwd(), "../case_studies/quantum_teleportation"))
         save_seeds2 = coordinator2.test_runner.generated_seeds
         passing2 = coordinator2.test_runner.list_passing_properties()
         failing2 = coordinator2.test_runner.list_failing_properties()
