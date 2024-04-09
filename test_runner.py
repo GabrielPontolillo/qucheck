@@ -7,21 +7,21 @@
 # also needs to receive some options for the number of inputs to generate
 
 #later on we need to allow for the choice of which statistical analysis object to use
-from stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
+from typing import Sequence
+from property import Property
+from stats.assertion import Assertion
+from stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator
 from qiskit.providers.basic_provider import BasicSimulator
-from stats.assertion_def import AssertionDef
 import random
 
-MAX_ATTEMPTS = 100
-
 class TestRunner:
-    property_objects = []
-    generated_seeds = []
+    property_objects: list[Property] = []
 
-    def __init__(self, property_classes, num_inputs, random_seed, shrinking=False):
+    def __init__(self, property_classes: Sequence[Property.__class__], num_inputs: int, random_seed: int, shrinking=False, max_attempts=100):
         self.property_classes = property_classes
         self.num_inputs = num_inputs
         self.do_shrinking = shrinking
+        self.max_attempts = max_attempts
         random.seed(random_seed)
 
 
@@ -29,31 +29,24 @@ class TestRunner:
     def list_failing_properties(self):
         failing_properties = []
 
-        # assertions are a static variable, so we only need to get one assertion object
-        property = self.property_objects[0]
-
-        # get the failing properties by checking the assertions from the statistical analysis object
-        for assertion in property.statistical_analysis.assertions:
-            if not assertion.outcome:
-                failing_properties.append(assertion.property_class)
-
-        # get the failing properties by checking the classical assertion outcome
-        for prop in self.property_objects:
-            if not prop.classical_assertion_outcome:
-                failing_properties.append(prop)
-
-        return list(set(failing_properties))
+        for property in self.property_objects:
+            for outcome in property.statistical_analysis.results:
+                if not outcome:
+                    failing_properties.append(property.__class__)
+                    break
+    
+        return failing_properties
 
     # list all of the failing inputs for a specific property
-    def list_failing_inputs(self, property):
+    def list_failing_inputs(self, property: Property) -> list[list[any]]:
         # iterate through all assertions within the property's statistical analysis object
         # if they failed, get the index of the input that failed in the inputs list of the statistical analysis object
         # and add it to the failing inputs list
-        failing_inputs = []
+        failing_inputs = [[] for _ in property.statistical_analysis.assertions]
 
-        for assertion in property.statistical_analysis.assertions:
-            if not assertion.outcome:
-                failing_inputs.append(property.statistical_analysis.inputs[assertion.input_index])
+        for i in range(len(property.statistical_analysis.assertions)):
+            if not property.statistical_analysis.results[i]:
+                failing_inputs[i] = property.statistical_analysis.assertions[i].failing_inputs
 
         return failing_inputs
 
@@ -61,69 +54,58 @@ class TestRunner:
     def list_passing_properties(self):
         # calculate the failing properties and then return the set difference of the property classes
         # and the failing properties
-        failing_properties = self.list_failing_properties()
+        return [prop for prop in self.property_classes if prop not in self.list_failing_properties()]
 
-        # calculate the set defference
-        passing_properties = [prop for prop in self.property_classes if prop not in failing_properties]
-
-        return passing_properties
-
-    def run_tests(self, backend=BasicSimulator()):
+    def run_tests(self, backend=BasicSimulator(), measurements=2000, family_wise_p_value=0.05):
         # for each property class, we need to create a statistical analysis object
         # and then create a property object using the statistical analysis object
         for property in self.property_classes:
-            print("===========\nEvaluating property: ", property, "\n===========")
+            #print("===========")
+            #print("Evaluating property: ", property)
+            #print("===========")
             # instantiate the property with statistical analysis object
-            stat = SingleQubitStatisticalAnalysis(property, property.generate_input)
-            property_obj = property(stat)
+            property_obj = property()
+            stat = StatisticalAnalysisCoordinator(property_obj, measurements, family_wise_p_value)
+            property_obj.statistical_analysis = stat
             self.property_objects.append(property_obj)
 
+            seeds = set()
             # generate inputs
-            for i in range(self.num_inputs):
+            for _ in range(self.num_inputs):
                 # get the input generators
-                input_generators = property_obj.generate_input()
+                input_generators = property_obj.get_input_generators()
 
-                # call generate using all of the generators provided
-                inputs = [x for x in range(len(input_generators))]
-
-                for attempt_idx in range(MAX_ATTEMPTS):
-                    print("Attempt: ", attempt_idx)
-                    for i, generator in enumerate(input_generators):
-                        # 2,147,483,647 is the maximum value for the seed, 2^31 - 1, the maximum value for a 32 bit signed integer
-                        local_seed = random.randint(0, 2147483647)
-                        print(local_seed)
-                        self.generated_seeds.append(local_seed)
-                        inputs[i] = generator.generate(local_seed)
-
+                for attempt_idx in range(self.max_attempts):
+                    #print("Attempt: ", attempt_idx)
+                    seed = random.randint(0, 2**31-1)
+                    #print(local_seed)
+                    inputs = [generator.generate(seed) for generator in input_generators]
                     # check the preconditions
-                    if property_obj.preconditions(*inputs):
-                        break
+                    if property_obj.preconditions(*inputs) and seed not in seeds:
+                        seeds.add(seed)
+                        break 
 
-                    if attempt_idx == MAX_ATTEMPTS - 1:
-                        print("Precondition could not be respected for property: ", property, " after ", MAX_ATTEMPTS, " attempts")
+                    if attempt_idx == self.max_attempts - 1:
+                        print("Precondition could not be respected for property: ", property, " after ", self.max_attempts, " attempts")
                         print("Skipping statistical analysis for this property")
                         property_obj.classical_assertion_outcome = False
 
-
-                print("Inputs", inputs)
 
                 # add the generated inputs to the statistical analysis object of the property
                 # what if each property has its own statistical analysis object?
                 # and the assertions were only stored in the statistical analysis object for the specific property
                 # property_obj.statistical_analysis.inputs.append(inputs)
-                stat.inputs.append(inputs)
 
                 try:
                     # run the operations method
-                    circuit = property_obj.operations(*inputs)
+                    property_obj.operations(*inputs)
                 except AssertionError as e:
                     print("Classical assertion failed within property: ", property)
                     print("AssertionError: ", e)
                     print("Skipping statistical analysis for this property")
                     property_obj.classical_assertion_outcome = False
 
-        # TODO: does this even work if there is more then one property class/stats? 
-        property_obj.statistical_analysis.perform_analysis(backend)
+            property_obj.statistical_analysis.perform_analysis(seeds, backend)
 
         if self.do_shrinking:
             self.shrinking()
