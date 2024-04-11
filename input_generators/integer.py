@@ -7,7 +7,7 @@ class Integer(InputGenerator):
         self.low = low
         self.high = high
 
-    def generate(self, seed):
+    def generate(self, seed) -> int:
         random.seed = seed
         return random.randint(self.low, self.high)
 

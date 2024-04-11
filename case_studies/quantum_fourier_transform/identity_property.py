@@ -1,9 +1,8 @@
 # class that inherits from property based test
 from qiskit import QuantumCircuit
 from property import Property
-from input_generators.random_unitary import RandomUnitary
-from input_generators.integer import Integer
-from case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
+from input_generators import RandomUnitary
+from .quantum_fourier_transform import qft_general
 
 
 class IdentityProperty(Property):

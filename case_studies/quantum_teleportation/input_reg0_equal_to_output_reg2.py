@@ -1,8 +1,8 @@
 # class that inherits from property based test
 from qiskit import QuantumCircuit
 from property import Property
-from input_generators.random_state import RandomState
-from case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
+from input_generators import RandomState
+from .quantum_teleportation import quantum_teleportation
 
 
 class Inq0EqualOutq2(Property):

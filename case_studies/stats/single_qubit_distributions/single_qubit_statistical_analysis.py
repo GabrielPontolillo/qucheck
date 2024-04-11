@@ -107,7 +107,7 @@ def measure_x(circuit, qubit_indexes):
     return circuit
 
 
-def measure_qubits(circuit_1, register, measurements=1000, basis=None):
+def measure_qubits(circuit_1, register, measurements=100, basis=None):
     # receives a circuit to measure, and a list of qubit registers to measure
     # returns a list of measurements for respective qubits
     backend = BasicSimulator()

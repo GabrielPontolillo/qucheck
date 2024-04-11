@@ -2,9 +2,8 @@
 import numpy as np
 from qiskit import QuantumCircuit
 from property import Property
-from input_generators.random_pauli_basis_state import RandomPauliBasisState
-from case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
-from qiskit.quantum_info import Statevector
+from input_generators import RandomPauliBasisState
+from .quantum_fourier_transform import qft_general
 
 
 class LinearShiftToPhaseShift(Property):

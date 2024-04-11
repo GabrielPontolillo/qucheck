@@ -2,7 +2,7 @@
 import unittest
 import copy
 from test_runner import TestRunner
-from case_studies.quantum_teleportation.inq0_equal_outq2 import Inq0EqualOutq2
+from case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2 import Inq0EqualOutq2
 from case_studies.quantum_fourier_transform.identity_property import IdentityProperty
 from tests.mock_properties.failing_precondition_property import FailingPrecondition
 from case_studies.stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis

@@ -3,7 +3,7 @@ import random
 from cmath import exp
 import numpy as np
 
-from qiskit.quantum_info import random_statevector, Statevector
+from qiskit.quantum_info import Statevector
 from input_generators.input_generator import InputGenerator
 
 
@@ -12,7 +12,7 @@ class RandomFourierTransformState(InputGenerator):
         self.number_of_qubits_low = number_of_qubits_low
         self.number_of_qubits_high = number_of_qubits_high
 
-    def generate(self, seed):
+    def generate(self, seed) -> Statevector:
         random.seed(seed)
 
         # need to return a statevector that would be returned by performing QFT on a computational basis state
