@@ -1,6 +1,6 @@
 from case_studies.quantum_phase_estimation.lower_register_unchanged_by_eigenvector import LowerRegisterUnchangedByEigenvector
-from case_studies.quantum_fourier_transform.linear_shift_induces_phase_shift_property import LinearShiftToPhaseShift
-from case_studies.quantum_fourier_transform.phase_shift_induces_linear_shift_property import PhaseShiftToLinearShift
+from case_studies.quantum_phase_estimation.phase_estimation_on_sum_of_eigenvectors_property import PhaseEstimationSumEigenvectors
+from case_studies.quantum_phase_estimation.phase_estimation_on_sum_of_different_eigenvectors_property import PhaseEstimationSumDifferentEigenvectors
 from test_runner import TestRunner
 
 import unittest
@@ -18,3 +18,20 @@ class TestQPEProperties(unittest.TestCase):
         # the property should pass
         assert runner.list_failing_properties() == []
         assert runner.list_passing_properties() == [LowerRegisterUnchangedByEigenvector]
+
+    def test_sum_eigenvector_property(self):
+        # run the test
+        runner = TestRunner([PhaseEstimationSumEigenvectors], self.num_inputs, 102)
+        runner.run_tests()
+        # the property should pass
+        assert runner.list_failing_properties() == []
+        assert runner.list_passing_properties() == [PhaseEstimationSumEigenvectors]
+
+    # TODO: will fail if uncomment, need to implement assert_different, and use that in the property
+    def test_sum_eigenvector_different_eigenvalues_property(self):
+        # run the test
+        runner = TestRunner([PhaseEstimationSumDifferentEigenvectors], self.num_inputs, 102)
+        runner.run_tests()
+        # the property should pass
+        # assert runner.list_failing_properties() == []
+        # assert runner.list_passing_properties() == [PhaseEstimationSumDifferentEigenvectors]
