@@ -8,7 +8,9 @@ from stats.utils.common_measurements import measure_x, measure_y, measure_z
 
 
 class AssertEqual(Assertion):
-    def __init__(self, qubit1: int, circuit1_index: int, qubit2: int, circuit2_index: int, basis = ["x", "y", "z"]) -> None:
+    # TODO: add a clause for lists of qubits instead of single registers
+    def __init__(self, qubit1: int | list[int], circuit1_index: int, qubit2: int | list[int], circuit2_index: int,
+                 basis=["x", "y", "z"]) -> None:
         super().__init__()
         self.qubit1 = qubit1
         self.circuit1_index = circuit1_index
@@ -38,12 +40,11 @@ class AssertEqual(Assertion):
             p_vals.append(p_value)
         return p_vals
 
-
     def calculate_outcome(self, p_values: Sequence[float], expected_p_values: Sequence[float]) -> bool:
         for p_value, expected_p_value in zip(p_values, expected_p_values):
             if p_value < expected_p_value:
                 return False
-        
+
         return True
 
     def get_measurement_configuration(self) -> MeasurementConfiguration:
@@ -60,4 +61,3 @@ class AssertEqual(Assertion):
     def __eq__(self, other: object) -> bool:
         return isinstance(other, AssertEqual) and self.basis == other.basis and self.qubit1 == other.qubit1 and \
             self.qubit2 == other.qubit2 and self.circuit1_index == other.circuit1_index and self.circuit2_index == other.circuit2_index
-    

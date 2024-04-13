@@ -42,14 +42,14 @@ class StatisticalAnalysisCoordinator:
         for assertion, p_values, expected_p_vals in zip(self.assertions, p_values_per_assertion, expected_p_values_per_assertion):
             self.results.append(assertion.calculate_outcome(p_values, expected_p_vals))
     
-    def _perform_measurements(self, seeds: set[int], backend: Backend) -> Measurements:
+    def _perform_measurements(self, seeds_set: set[tuple[int]], backend: Backend) -> Measurements:
         unique_circuits: list[QuantumCircuit] = []
         circuits_to_measurement_specifiers: dict[str, dict[tuple[int, int], str]] = {}
         circuit_names_to_circuits: dict[str, QuantumCircuit] = {}
-        generators = self.property.get_input_generators()
+        input_generators = self.property.get_input_generators()
         for assertion in self.assertions:
-            for seed in seeds:
-                inputs = [generator.generate(seed) for generator in generators]
+            for seeds in seeds_set:
+                inputs = [generator.generate(seeds[i]) for i, generator in enumerate(input_generators)]
                 circuits = self.property.operations(*inputs)
                 measured_circuit_spec = self._get_measured_circuits(assertion.get_measurement_configuration(), circuits)
                 new_circuits = self._extract_circuits(measured_circuit_spec) # only add if they arent already there
