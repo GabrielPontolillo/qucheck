@@ -1,4 +1,4 @@
-from input_generators.input_generator import InputGenerator
+from QiskitPBT.input_generators.input_generator import InputGenerator
 import random
 
 

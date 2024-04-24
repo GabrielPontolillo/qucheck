@@ -1,7 +1,7 @@
 import random
 from qiskit.quantum_info import random_unitary
 
-from input_generators.input_generator import InputGenerator
+from QiskitPBT.input_generators.input_generator import InputGenerator
 
 
 class RandomUnitary(InputGenerator):

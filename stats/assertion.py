@@ -1,14 +1,20 @@
 from typing import Sequence
 
 from abc import ABC, abstractmethod
+from uuid import uuid4
 
-from stats.measurement_configuration import MeasurementConfiguration
-from stats.measurements import Measurements
+from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
+from QiskitPBT.stats.measurements import Measurements
 
 
 class Assertion(ABC):
-    """super class of each assertion
+    """super class of each assertion,
+    hashable by reference (same object gives same hash but two equal objects will not - unless __hash__ overridden)
     """
+    def __init__(self) -> None:
+        super().__init__()
+        self.id = hash(uuid4())
+
     failing_inputs = []
     @abstractmethod
     def calculate_p_values(self, measurements: Measurements) -> list[float]:
@@ -43,6 +49,5 @@ class Assertion(ABC):
         """
         pass
     
-    @abstractmethod
-    def __eq__(self, value: object) -> bool:
-        pass
+    def __hash__(self) -> int:
+        return self.id

@@ -8,8 +8,8 @@
 
 #later on we need to allow for the choice of which statistical analysis object to use
 from typing import Sequence
-from property import Property
-from stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator
+from QiskitPBT.property import Property
+from QiskitPBT.stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator
 from qiskit.providers.basic_provider import BasicSimulator
 import random
 
@@ -105,7 +105,7 @@ class TestRunner:
                     print("Skipping statistical analysis for this property")
                     property_obj.classical_assertion_outcome = False
 
-            property_obj.statistical_analysis.perform_analysis(seeds, backend)
+            property_obj.statistical_analysis.perform_analysis(backend)
 
         if self.do_shrinking:
             self.shrinking()

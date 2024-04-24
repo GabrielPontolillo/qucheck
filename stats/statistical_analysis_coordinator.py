@@ -1,13 +1,33 @@
+from typing import Sequence
 from qiskit import QuantumCircuit, transpile
 from qiskit.providers.basic_provider import BasicSimulator
 from qiskit.providers import Backend
+from qiskit.circuit import Operation
+from QiskitPBT.utils import HashableQuantumCircuit
+from QiskitPBT.stats.assertion import Assertion
+from QiskitPBT.stats.measurements import Measurements
+from QiskitPBT.stats.single_qubit_distributions.assert_equal import AssertEqual
+from QiskitPBT.stats.utils.corrections import holm_bonferroni_correction
 
-from stats.assertion import Assertion
-from stats.measurement_configuration import MeasurementConfiguration
-from stats.measurements import Measurements
-from stats.single_qubit_distributions.assert_equal import AssertEqual
-from stats.utils.corrections import holm_bonferroni_correction
 
+
+"""
+test_runner runs operations -> that adds stuff here and then each assertion has those circs and qubits which to measure
+
+measured_circs = {}
+for assertion in assertions:
+    meas_config <- assertion.measurement_config()[circuit]
+    
+
+measurements = {}
+for circuit in unique_circuits:
+    measurement <- circuit
+    og_circs <- original_circuits[circuit]
+    assertions <- assertions_from_circ[circuit]
+    for qc in org_circs:
+        measurements[assertions][qc] <- measurement
+return measurements
+"""
 
 class StatisticalAnalysisCoordinator:
     def __init__(self, property, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
@@ -18,21 +38,29 @@ class StatisticalAnalysisCoordinator:
         self.family_wise_p_value = family_wise_p_value
     
     #Assertions
-    def assert_equal(self, qubit1: int, circuit1_index: int, qubit2: int, circuit2_index: int, basis = ["x", "y", "z"]):
-        assertion = AssertEqual(qubit1, circuit1_index, qubit2, circuit2_index, basis)
-        if assertion not in self.assertions:
-            self.assertions.append(assertion)
+    def assert_equal(self, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
+        # parse qubits so that assert equals always gets sequences of qubits
+        if not isinstance(qubits1, Sequence):
+            qubits1 = (qubits1, )
+        if not isinstance(qubits2, Sequence):
+            qubits2 = (qubits2, )
+        # hack to make circuits in assert equals be usable as dictionary keys (by ref)
+        circ1 = circuit1.copy()
+        circ1.__class__ = HashableQuantumCircuit
+        circ2 = circuit2.copy()
+        circ2.__class__ = HashableQuantumCircuit
+
+        self.assertions.append(AssertEqual(qubits1, circ1, qubits2, circ2, basis))
     
     #Analysis
-    def perform_analysis(self, seeds: set[int], backend: Backend=BasicSimulator()) -> None:
+    def perform_analysis(self, backend: Backend=BasicSimulator()) -> None:
         # classical assertion failed dont run quantum
         if not self.property.classical_assertion_outcome:
-            for _ in self.assertions:
-                self.results.append(False)
+            self.results.append(False)
             return
-
-        measurements = self._perform_measurements(seeds, backend)
-        p_values_per_assertion = [assertion.calculate_p_values(measurements) for assertion in self.assertions]
+        
+        measurements = self._perform_measurements(backend)
+        p_values_per_assertion = [assertion.calculate_p_values(measurements[assertion]) for assertion in self.assertions]
 
         # perform family wise error rate correction
         # Ideally, we need to sort all of the p-values from all assertions, then pass back the corrected alpha values to compare them to in a list
@@ -42,61 +70,48 @@ class StatisticalAnalysisCoordinator:
         for assertion, p_values, expected_p_vals in zip(self.assertions, p_values_per_assertion, expected_p_values_per_assertion):
             self.results.append(assertion.calculate_outcome(p_values, expected_p_vals))
     
-    def _perform_measurements(self, seeds: set[int], backend: Backend) -> Measurements:
-        unique_circuits: list[QuantumCircuit] = []
-        circuits_to_measurement_specifiers: dict[str, dict[tuple[int, int], str]] = {}
-        circuit_names_to_circuits: dict[str, QuantumCircuit] = {}
-        generators = self.property.get_input_generators()
+    def _perform_measurements(self, backend: Backend) -> dict[Assertion, Measurements]:
+        unique_circuits: list[HashableQuantumCircuit] = []
+        measured_circuit_to_original_circuit_info: dict[HashableQuantumCircuit, tuple[Assertion, str, HashableQuantumCircuit]] = {}
+
         for assertion in self.assertions:
-            for seed in seeds:
-                inputs = [generator.generate(seed) for generator in generators]
-                circuits = self.property.operations(*inputs)
-                measured_circuit_spec = self._get_measured_circuits(assertion.get_measurement_configuration(), circuits)
-                new_circuits = self._extract_circuits(measured_circuit_spec) # only add if they arent already there
-                unique_circuits.extend(new_circuits)
-                for circuit in new_circuits:
-                    circuit_names_to_circuits[circuit.name] = circuit
-                circuits_to_measurement_specifiers = self._update_circuits_to_measurement_specifiers(circuits_to_measurement_specifiers, measured_circuit_spec)
+            measured_circuits = self._get_measured_circuits(assertion)
+            for measured_circ in measured_circuits:
+                if measured_circ not in unique_circuits:
+                    unique_circuits.append(measured_circ)
+            measured_circuit_to_original_circuit_info.update(measured_circuits)
+            
         
-        measurements = Measurements()
+        measurements_dict: dict[Assertion, Measurements] = {}
         for circuit in unique_circuits:
             #TODO: get counts actually returns (or used to) unparsed bit strings, so if there are 2 quantum registers there is a space in there - this may need some attention
-            measurement_spec = circuits_to_measurement_specifiers[circuit.name]
+            # this is necessary for measure to work
+            circuit.__class__ = QuantumCircuit
             counts = backend.run(transpile(circuit, backend), shots=self.number_of_measurements).result().get_counts()
-            for qubit_circuit_index, measurement_id in measurement_spec.items():
-                qubit, circuit_index = qubit_circuit_index
-                measurements.add_measurement(qubit, circuit_index, measurement_id, counts)
+            # cast back so we can use it as a key
+            circuit.__class__ = HashableQuantumCircuit
+            assertion, measurement_name, original_circuit = measured_circuit_to_original_circuit_info[circuit]
+            if assertion not in measurements_dict:
+                measurements_dict[assertion] = Measurements()
+            measurements_dict[assertion].add_measurement(original_circuit, measurement_name, counts)
         
-        return measurements
+        return measurements_dict
+    
         
-    def _get_measured_circuits(self, measurement_config: MeasurementConfiguration, circuits: tuple[QuantumCircuit]) -> dict[tuple[int, int], dict[str, QuantumCircuit]]:
+    def _get_measured_circuits(self, assertion: Assertion) -> dict[HashableQuantumCircuit, tuple[Assertion, str, HashableQuantumCircuit]]:
         measured_circuits = {}
-        for qubit, circuit_index in measurement_config.get_measured_qubits():
-            key = (qubit, circuit_index)
-            measured_circuits[key] = {}
-            for measurement_id, operation in measurement_config.get_measurements_for_qubit(qubit, circuit_index).items():
-                measured_circ = circuits[circuit_index].copy()
-                if qubit > len(measured_circ.qubits):
-                    raise ValueError(f"tried measuring qubit {qubit} which does not exist in the circuit")
-                if qubit > len(measured_circ.clbits):
-                    raise ValueError(f"to measure qubit {qubit}, the circuit must also contain a classical bit {qubit}")
-                measured_circ.append(operation.to_instruction(), (qubit,), (qubit,))
-                measured_circ.name += measurement_id
-                measured_circuits[key][measurement_id] = measured_circ
+        measurement_config = assertion.get_measurement_configuration()
+        for circ in measurement_config.get_measured_circuits():
+            for measurement_id, qubits, operations in measurement_config.get_measurements_for_circuit(circ):
+                # TODO: we should do actual optimialization here
+                measured_circ = circ.copy()
+                # this is necessary for append to work
+                for qubit, operation in zip(qubits, operations):
+                    measured_circ.append(operation.to_instruction(), (qubit,), (qubit,))
+                measured_circuits[measured_circ] = (assertion, measurement_id, circ)      
+
         return measured_circuits
-    
-    def _update_circuits_to_measurement_specifiers(
-            self, circuits_to_measurement_specifiers: dict[str, dict[tuple[int, int], str]], 
-            measured_circuits: dict[tuple[int, int], dict[str, QuantumCircuit]]) -> dict[str, dict[tuple[int, int], str]]:
-        # TODO: indexing circuits by name isnt ideal as that does not have to be unique - have to uuid it
-        for qubit_and_index, circuits_with_id in measured_circuits.items():
-            for id, qc in circuits_with_id.items():
-                if qc.name in circuits_to_measurement_specifiers:
-                    circuits_to_measurement_specifiers[qc.name][qubit_and_index] = id
-                else:
-                    circuits_to_measurement_specifiers[qc.name] = {qubit_and_index: id}
-        return circuits_to_measurement_specifiers
-    
+        
     def _extract_circuits(self, circuit_measurement_spec: dict[tuple[int, int], dict[str, QuantumCircuit]]) -> list[QuantumCircuit]:
         circuits = []
         for _, circuits_with_id in circuit_measurement_spec.items():

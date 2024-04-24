@@ -1,8 +1,8 @@
 # class that inherits from property based test
 from qiskit import QuantumCircuit
-from property import Property
-from input_generators.random_state import RandomState
-from case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
+from QiskitPBT.property import Property
+from QiskitPBT.input_generators.random_state import RandomState
+from QiskitPBT.case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
 
 
 class Inq0EqualOutq2(Property):
@@ -26,5 +26,4 @@ class Inq0EqualOutq2(Property):
         # initialise qubit to compare to:
         qc2 = QuantumCircuit(1, 1)
         qc2.initialize(q0, [0])
-        self.statistical_analysis.assert_equal(2, 0, 0, 1)
-        return qc, qc2
+        self.statistical_analysis.assert_equal(2, qc, 0, qc2)

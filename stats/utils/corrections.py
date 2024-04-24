@@ -1,4 +1,4 @@
-from stats.assertion import Assertion
+from QiskitPBT.stats.assertion import Assertion
 
 
 def holm_bonferroni_correction(assertion_list: list[Assertion], p_values_per_assertion: list[list[float]], family_wise_alpha=0.05) -> list[list[float]]:

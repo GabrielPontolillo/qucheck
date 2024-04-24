@@ -1,10 +1,8 @@
 # a test script for the test runner
-import copy
-
-from test_runner import TestRunner
-from case_studies.quantum_teleportation.inq0_equal_outq2 import Inq0EqualOutq2
-from case_studies.quantum_fourier_transform.identity_property import IdentityProperty
-from tests.mock_properties.failing_precondition_property import FailingPrecondition
+from QiskitPBT.test_runner import TestRunner
+from QiskitPBT.case_studies.quantum_teleportation.inq0_equal_outq2 import Inq0EqualOutq2
+from QiskitPBT.case_studies.quantum_fourier_transform.identity_property import IdentityProperty
+from QiskitPBT.tests.mock_properties.failing_precondition_property import FailingPrecondition
 
 
 from unittest import TestCase

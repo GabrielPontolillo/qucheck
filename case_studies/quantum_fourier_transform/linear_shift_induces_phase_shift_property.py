@@ -1,15 +1,14 @@
 # class that inherits from property based test
 import numpy as np
 from qiskit import QuantumCircuit
-from property import Property
-from input_generators.random_pauli_basis_state import RandomPauliBasisState
-from case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
-from qiskit.quantum_info import Statevector
+from QiskitPBT.property import Property
+from QiskitPBT.input_generators.random_pauli_basis_state import RandomPauliBasisState
+from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
 
 
 class LinearShiftToPhaseShift(Property):
     # specify the inputs that are to be generated
-    def generate_input(self):
+    def get_input_generators(self):
         state = RandomPauliBasisState(1, 5, ["z"])
         return [state]
 
@@ -21,7 +20,7 @@ class LinearShiftToPhaseShift(Property):
     def operations(self, state):
         n = state.num_qubits
 
-        qft_1 = QuantumCircuit(n)
+        qft_1 = QuantumCircuit(n, n)
         qft_1.initialize(state, reversed(range(n)))
         qft_1 = qft_1.compose(qft_general(n, swap=False))
         qft_1 = phase_shift(qft_1)
@@ -30,11 +29,11 @@ class LinearShiftToPhaseShift(Property):
         # make the first element the last element, and vice versa
         shifted_vector = np.roll(init_state, -1)
 
-        qft_2 = QuantumCircuit(n)
+        qft_2 = QuantumCircuit(n, n)
         qft_2.initialize(shifted_vector, reversed(range(n)))
         qft_2 = qft_2.compose(qft_general(n, swap=False))
 
-        self.statistical_analysis.assert_equal(qft_1, list(range(n)), qft_2, list(range(n)))
+        self.statistical_analysis.assert_equal(list(range(n)), qft_1, list(range(n)), qft_2)
 
 
 def phase_shift(qc):

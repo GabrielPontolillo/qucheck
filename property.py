@@ -4,8 +4,8 @@ from abc import ABC, abstractmethod
 
 from qiskit import QuantumCircuit
 
-from stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator
-from input_generators.input_generator import InputGenerator
+from QiskitPBT.stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator
+from QiskitPBT.input_generators.input_generator import InputGenerator
 
 
 class Property(ABC):

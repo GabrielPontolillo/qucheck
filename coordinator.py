@@ -6,8 +6,8 @@ import sys
 
 from qiskit.providers.basic_provider import BasicSimulator
 
-from property import Property
-from test_runner import TestRunner
+from QiskitPBT.property import Property
+from QiskitPBT.test_runner import TestRunner
 
 
 class Coordinator:

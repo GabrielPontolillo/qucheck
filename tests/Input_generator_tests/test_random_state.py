@@ -3,7 +3,7 @@ import numpy as np
 import unittest
 
 from functools import reduce
-from input_generators.random_state import RandomState
+from QiskitPBT.input_generators.random_state import RandomState
 from qiskit.quantum_info import Statevector
 
 

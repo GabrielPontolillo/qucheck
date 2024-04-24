@@ -5,7 +5,7 @@ from qiskit import QuantumCircuit
 # returns the quantum fourier transform circuit
 def qft_general(qubits, swap=True):
     # build circuit
-    qft = QuantumCircuit(qubits)
+    qft = QuantumCircuit(qubits, qubits)
 
     # modify phase
     for qubit in range(qubits):
