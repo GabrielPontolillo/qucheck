@@ -1,7 +1,7 @@
 # class that inherits from property based test
 from qiskit import QuantumCircuit
 from QiskitPBT.property import Property
-from QiskitPBT.input_generators.random_state import RandomState
+from QiskitPBT.input_generators import RandomState
 from QiskitPBT.case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
 
 

@@ -10,7 +10,7 @@ class RandomPauliBasisState(InputGenerator):
         self.number_of_qubits_high = number_of_qubits_high
         self.basis = basis
 
-    def generate(self, seed):
+    def generate(self, seed) -> Statevector:
         # generate a random statevector from the tensor product of the |+>,|->,|0>,|1>,|i>,|-i>,
         # loop through the number of qubits, choose one of the 6 statevectors
         state_string = ""
