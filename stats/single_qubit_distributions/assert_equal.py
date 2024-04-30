@@ -10,6 +10,7 @@ from QiskitPBT.stats.utils.common_measurements import measure_x, measure_y, meas
 
 class AssertEqual(Assertion):
     def __init__(self, qubits1: Sequence[int], circuit1: HashableQuantumCircuit, qubits2: Sequence[int], circuit2: HashableQuantumCircuit, basis = ["x", "y", "z"]) -> None:
+    # TODO: add a clause for lists of qubits instead of single registers
         super().__init__()
         self.qubits1 = qubits1
         self.circuit1 = circuit1
@@ -41,12 +42,11 @@ class AssertEqual(Assertion):
                 p_vals.append(p_value)
         return p_vals
 
-
     def calculate_outcome(self, p_values: Sequence[float], expected_p_values: Sequence[float]) -> bool:
         for p_value, expected_p_value in zip(p_values, expected_p_values):
             if p_value < expected_p_value:
                 return False
-        
+
         return True
 
     def get_measurement_configuration(self) -> MeasurementConfiguration:
@@ -59,4 +59,3 @@ class AssertEqual(Assertion):
             if "z" in self.basis:
                 measurement_config.add_measurement(qubits, circ, "z", [measure_z() for _ in qubits])
         return measurement_config
-    

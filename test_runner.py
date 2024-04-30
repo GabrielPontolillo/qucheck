@@ -68,7 +68,7 @@ class TestRunner:
             property_obj.statistical_analysis = stat
             self.property_objects.append(property_obj)
 
-            seeds = set()
+            seeds_set = set()
             # generate inputs
             for _ in range(self.num_inputs):
                 # get the input generators
@@ -76,12 +76,27 @@ class TestRunner:
 
                 for attempt_idx in range(self.max_attempts):
                     #print("Attempt: ", attempt_idx)
-                    seed = random.randint(0, 2**31-1)
+
+                    #seed = random.randint(0, 2**31-1)
+
                     #print(local_seed)
-                    inputs = [generator.generate(seed) for generator in input_generators]
+
+                    # we need as many seeds as input generators,
+                    seeds = tuple(random.randint(0, 2**31-1) for _ in input_generators)
+
+                    # TODO: I believe this is incorrect, we need to generate a new seed from the local seed and send it to the input generators
+                    # otherwise if the same generator is passed twice, we will generate the same input because we are using the same seed
+
+                    # use the seeds to genereate the inputs
+
+                    # I am not sure i agree with generating the inputs twice, here and in statistsical analysis
+                    # coordinator
+
+                    inputs = [generator.generate(seeds[i]) for i, generator in enumerate(input_generators)]
+
                     # check the preconditions
-                    if property_obj.preconditions(*inputs) and seed not in seeds:
-                        seeds.add(seed)
+                    if property_obj.preconditions(*inputs) and seeds not in seeds_set:
+                        seeds_set.add(seeds)
                         break 
 
                     if attempt_idx == self.max_attempts - 1:

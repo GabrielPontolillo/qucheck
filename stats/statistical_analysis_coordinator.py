@@ -10,25 +10,6 @@ from QiskitPBT.stats.single_qubit_distributions.assert_equal import AssertEqual
 from QiskitPBT.stats.utils.corrections import holm_bonferroni_correction
 
 
-
-"""
-test_runner runs operations -> that adds stuff here and then each assertion has those circs and qubits which to measure
-
-measured_circs = {}
-for assertion in assertions:
-    meas_config <- assertion.measurement_config()[circuit]
-    
-
-measurements = {}
-for circuit in unique_circuits:
-    measurement <- circuit
-    og_circs <- original_circuits[circuit]
-    assertions <- assertions_from_circ[circuit]
-    for qc in org_circs:
-        measurements[assertions][qc] <- measurement
-return measurements
-"""
-
 class StatisticalAnalysisCoordinator:
     def __init__(self, property, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
         self.assertions: list[Assertion] = []
