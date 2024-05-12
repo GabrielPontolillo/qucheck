@@ -19,7 +19,6 @@ class AssertEqual(Assertion):
         self.basis = basis
 
     def calculate_p_values(self, measurements: Measurements) -> list[float]:
-        # TODO: this breaks if basis has anything other than x,y,z
         p_vals = []
         for qubit1, qubit2 in zip(self.qubits1, self.qubits2):
             for basis in self.basis:

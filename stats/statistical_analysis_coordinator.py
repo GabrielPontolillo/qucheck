@@ -3,6 +3,7 @@ from qiskit import QuantumCircuit, transpile
 from qiskit.providers.basic_provider import BasicSimulator
 from qiskit.providers import Backend
 from qiskit.circuit import Operation
+from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
 from QiskitPBT.utils import HashableQuantumCircuit
 from QiskitPBT.stats.assertion import Assertion
 from QiskitPBT.stats.measurements import Measurements
@@ -71,28 +72,54 @@ class StatisticalAnalysisCoordinator:
             counts = backend.run(transpile(circuit, backend), shots=self.number_of_measurements).result().get_counts()
             # cast back so we can use it as a key
             circuit.__class__ = HashableQuantumCircuit
-            assertion, measurement_name, original_circuit = measured_circuit_to_original_circuit_info[circuit]
+            assertion, measurement_names, original_circuit = measured_circuit_to_original_circuit_info[circuit]
             if assertion not in measurements_dict:
                 measurements_dict[assertion] = Measurements()
-            measurements_dict[assertion].add_measurement(original_circuit, measurement_name, counts)
+            for measurement_name in measurement_names:
+                measurements_dict[assertion].add_measurement(original_circuit, measurement_name, counts)
         
         return measurements_dict
     
         
-    def _get_measured_circuits(self, assertion: Assertion) -> dict[HashableQuantumCircuit, tuple[Assertion, str, HashableQuantumCircuit]]:
+    def _get_measured_circuits(self, assertion: Assertion) -> dict[HashableQuantumCircuit, tuple[Assertion, list[str], HashableQuantumCircuit]]:
         measured_circuits = {}
         measurement_config = assertion.get_measurement_configuration()
         for circ in measurement_config.get_measured_circuits():
-            for measurement_id, qubits, operations in measurement_config.get_measurements_for_circuit(circ):
-                # TODO: we should do actual optimialization here
+            for measurement_ids, qubits, operations in self._get_optimized_measurements_for_circ(circ, measurement_config):
                 measured_circ = circ.copy()
                 # this is necessary for append to work
                 for qubit, operation in zip(qubits, operations):
                     measured_circ.append(operation.to_instruction(), (qubit,), (qubit,))
-                measured_circuits[measured_circ] = (assertion, measurement_id, circ)      
+                measured_circuits[measured_circ] = (assertion, measurement_ids, circ)      
 
         return measured_circuits
-        
+    
+    def _get_optimized_measurements_for_circ(self, circuit: QuantumCircuit, measurement_config: MeasurementConfiguration) -> list[tuple[Sequence[str], Sequence[int], Sequence[QuantumCircuit]]]:
+        measurements = measurement_config.get_measurements_for_circuit(circuit)
+        optimized_measurements = []
+        for i in range(len(measurements)):
+            optimized_measurement_ids = [measurements[i][0]]
+            optimized_qubits = list(measurements[i][1])
+            optimized_operations = list(measurements[i][2])
+            for j in range(i, len(measurements)):
+                qubits = measurements[j][1]
+                
+                overlapping = False
+                for qubit in optimized_qubits:
+                    if qubit in qubits:
+                        overlapping = True
+                        break
+
+                if overlapping:
+                    continue
+
+                optimized_measurement_ids.append(measurements[j][0])
+                optimized_qubits.extend(measurements[j][1])
+                optimized_operations.extend(measurements[j][2])
+            optimized_measurements.append((optimized_measurement_ids, optimized_qubits, optimized_operations))
+
+        return optimized_measurements
+
     def _extract_circuits(self, circuit_measurement_spec: dict[tuple[int, int], dict[str, QuantumCircuit]]) -> list[QuantumCircuit]:
         circuits = []
         for _, circuits_with_id in circuit_measurement_spec.items():
