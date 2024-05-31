@@ -5,7 +5,7 @@ from qiskit.circuit.library import UnitaryGate
 from qiskit.quantum_info import Operator, Statevector
 from property import Property
 from input_generators import RandomEigenvectorUnitaryPair, RandomUnitary, Integer
-from .quantum_phase_estimation import qpe_general
+from case_studies.quantum_phase_estimation.quantum_phase_estimation import qpe_general
 
 
 class PhaseEstimationSumDifferentEigenvectors(Property):
@@ -41,6 +41,9 @@ class PhaseEstimationSumDifferentEigenvectors(Property):
         print(qpe)
         print(qpe2)
 
+        assert False, "Need to implement assert_different"
+
         # TODO: need to assert different
         self.statistical_analysis.assert_equal(qpe, list(range(estimation_qubits)), qpe2,
                                                list(range(estimation_qubits)))
+

@@ -8,7 +8,9 @@ def quantum_teleportation():
     qc.cx(1, 2)
     qc.cx(0, 1)
     qc.h(0)
-    qc.cz(0, 2)
+
+    # BUG track: cx cy ordering wrong for a prev implementation
     qc.cx(1, 2)
+    qc.cz(0, 2)
     return qc
 

@@ -2,7 +2,7 @@
 from qiskit import QuantumCircuit
 from property import Property
 from input_generators import RandomUnitary
-from .quantum_fourier_transform import qft_general
+from case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
 
 
 class IdentityProperty(Property):

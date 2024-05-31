@@ -5,7 +5,7 @@ from qiskit.circuit.library import UnitaryGate
 from qiskit.quantum_info import Operator, Statevector
 from property import Property
 from input_generators import RandomEigenvectorUnitaryPair, RandomUnitary, Integer
-from .quantum_phase_estimation import qpe_general
+from case_studies.quantum_phase_estimation.quantum_phase_estimation import qpe_general
 
 
 class LowerRegisterUnchangedByEigenvector(Property):

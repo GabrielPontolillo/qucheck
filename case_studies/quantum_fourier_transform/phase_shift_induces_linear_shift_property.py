@@ -3,7 +3,7 @@ import numpy as np
 from qiskit import QuantumCircuit
 from property import Property
 from input_generators import RandomFourierTransformState
-from .quantum_fourier_transform import qft_general
+from case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
 from qiskit.quantum_info import Statevector
 
 

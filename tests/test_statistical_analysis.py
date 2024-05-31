@@ -3,7 +3,7 @@ import unittest
 
 from case_studies.stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
 from qiskit import QuantumCircuit
-from case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2 import Inq0EqualOutq2
+from case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2_property import Inq0EqualOutq2
 
 
 # used for hashing the input function

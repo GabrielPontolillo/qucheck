@@ -8,8 +8,6 @@ from case_studies.stats.single_qubit_distributions.single_qubit_statistical_anal
 from coordinator import Coordinator
 from test_runner import TestRunner
 
-from unittest import TestCase
-
 
 class TestCoordinator(unittest.TestCase):
     def tearDown(self):
@@ -21,10 +19,10 @@ class TestCoordinator(unittest.TestCase):
         TestRunner.generated_seeds = []
 
     def test_coordinator(self):
-
         coordinator = Coordinator(5)
         coordinator.test(os.path.join(os.getcwd(), "../case_studies/quantum_teleportation"))
         coordinator.print_outcomes()
+        # not checking anything here
 
     # test coordinator to check if it will generate the same local seeds with the same random seed
     def test_coordinator_same_seeds(self):

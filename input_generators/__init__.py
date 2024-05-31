@@ -9,6 +9,7 @@ from input_generators.random_fourier_transform_state import RandomFourierTransfo
 # import oracle circuit / gate generators
 from input_generators.random_unitary import RandomUnitary
 from input_generators.random_tensor_product_unitary import RandomTensorProductOfUnitary
+from input_generators.random_unitary_with_limited_decimals_eigenvalue import RandomUnitaryLimitedDecimals
 
 # import misc generators
 from input_generators.integer import Integer

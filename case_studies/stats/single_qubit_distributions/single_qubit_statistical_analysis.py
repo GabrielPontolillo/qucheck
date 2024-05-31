@@ -36,7 +36,7 @@ class SingleQubitStatisticalAnalysis:
             assertion.calculate_p_values(self.outcomes, self.unique_circuits, self.union_of_qubits)
 
         # perform family wise error rate correction
-        holm_bonferroni_correction(self.assertions, 0.05)
+        holm_bonferroni_correction(self.assertions, 0.01)
 
         # calculate the outcome of each assertion
         for assertion in self.assertions:
