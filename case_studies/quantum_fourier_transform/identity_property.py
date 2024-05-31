@@ -1,14 +1,15 @@
 # class that inherits from property based test
 from qiskit import QuantumCircuit
-from property import Property
-from input_generators import RandomUnitary
-from case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
+from QiskitPBT.property import Property
+from QiskitPBT.input_generators.random_unitary import RandomUnitary
+from QiskitPBT.input_generators.integer import Integer
+from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
 
 
 class IdentityProperty(Property):
     # specify the inputs that are to be generated
-    def generate_input(self):
-        unitary = RandomUnitary(1,10)
+    def get_input_generators(self):
+        unitary = RandomUnitary(1, 10)
         return [unitary]
 
     # specify the preconditions for the test
@@ -31,7 +32,6 @@ class IdentityProperty(Property):
         qft.append(unitary, range(n))
 
         # perform Uxn (0xn)
-        qc = QuantumCircuit(n)
+        qc = QuantumCircuit(n, n)
         qc.append(unitary, range(n))
-
-        self.statistical_analysis.assert_equal(qft, list(range(n)), qc, list(range(n)))
+        self.statistical_analysis.assert_equal(list(range(n)), qft, list(range(n)), qc)

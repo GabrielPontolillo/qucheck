@@ -1,7 +1,6 @@
 # class for generating random statevectors using Qiskit, the generator method receives the dimensions of the statevector
 from qiskit.quantum_info import random_statevector, Statevector
-
-from input_generators.input_generator import InputGenerator
+from QiskitPBT.input_generators.input_generator import InputGenerator
 
 
 class RandomState(InputGenerator):

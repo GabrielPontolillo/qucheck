@@ -2,7 +2,7 @@ import random
 import numpy as np
 from qiskit.quantum_info import Operator, Statevector
 
-from input_generators.input_generator import InputGenerator
+from QiskitPBT.input_generators.input_generator import InputGenerator
 
 from typing import Tuple, Any
 from numbers import Complex

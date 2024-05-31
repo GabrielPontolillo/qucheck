@@ -1,13 +1,13 @@
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 import math
 
-from case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
+from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
 
 
 def qpe_general(estimation_qubits, unitary_gate, eigenstate_of_unitary):
     print(estimation_qubits)
 
-    qpe = QuantumCircuit(estimation_qubits+unitary_gate.num_qubits)
+    qpe = QuantumCircuit(estimation_qubits+unitary_gate.num_qubits, estimation_qubits+unitary_gate.num_qubits)
 
     # initialise the unitary register to the specified eigenvector of U
     qpe.initialize(eigenstate_of_unitary, list(range(estimation_qubits, estimation_qubits+unitary_gate.num_qubits)))

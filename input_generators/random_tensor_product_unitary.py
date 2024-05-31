@@ -2,7 +2,7 @@ import random
 from qiskit.circuit.library.generalized_gates import PauliGate, UnitaryGate
 from qiskit.quantum_info import Operator, Pauli
 
-from input_generators.input_generator import InputGenerator
+from QiskitPBT.input_generators.input_generator import InputGenerator
 
 
 class RandomTensorProductOfUnitary(InputGenerator):

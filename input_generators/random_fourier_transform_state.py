@@ -3,8 +3,8 @@ import random
 from cmath import exp
 import numpy as np
 
-from qiskit.quantum_info import Statevector
-from input_generators.input_generator import InputGenerator
+from qiskit.quantum_info import random_statevector, Statevector
+from QiskitPBT.input_generators.input_generator import InputGenerator
 
 
 class RandomFourierTransformState(InputGenerator):

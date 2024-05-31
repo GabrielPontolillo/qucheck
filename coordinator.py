@@ -4,15 +4,18 @@ import inspect
 import random
 import sys
 
-from property import Property
-from test_runner import TestRunner
+from qiskit.providers.basic_provider import BasicSimulator
+
+from QiskitPBT.property import Property
+from QiskitPBT.test_runner import TestRunner
 
 
 class Coordinator:
-    def __init__(self, num_inputs, random_seed=None):
+    def __init__(self, num_inputs, random_seed=None, backend=BasicSimulator()):
         self.num_inputs = num_inputs
         self.property_classes = set()
         self.test_runner = None
+        self.backend = backend
 
         # this random seed is used to generate other random seeds for the test runner, such that we can replay
         # an entire test run
@@ -22,11 +25,13 @@ class Coordinator:
             self.random_seed = random_seed
 
     def get_classes(self, folder_path):
+        # TODO: I kind of hate this but also maybe not?
         sys.path.insert(0, folder_path)
         for file in os.listdir(folder_path):
             if file.endswith('.py'):
                 module = importlib.import_module(file[:-3])
                 for name, obj in inspect.getmembers(module):
+                    # TODO: I'm not convinced this works (if someone creates a base property class from which more concrete property classes inherit, it will pull in the abstract class and possibly blow up)
                     if inspect.isclass(obj) and issubclass(obj, Property) and obj is not Property:
                         self.property_classes.add(obj)
         sys.path.pop(0)
@@ -34,7 +39,7 @@ class Coordinator:
     def test(self, path):
         self.get_classes(path)
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed)
-        self.test_runner.run_tests()
+        self.test_runner.run_tests(self.backend)
 
     def print_outcomes(self):
         if self.test_runner is None:

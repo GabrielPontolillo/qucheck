@@ -1,19 +1,14 @@
 # a test script for the test runner
-import unittest
-import copy
-from test_runner import TestRunner
-from case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2_property import Inq0EqualOutq2
-from case_studies.quantum_fourier_transform.identity_property import IdentityProperty
-from tests.mock_properties.failing_precondition_property import FailingPrecondition
-from case_studies.stats.single_qubit_distributions.single_qubit_statistical_analysis import SingleQubitStatisticalAnalysis
+from QiskitPBT.test_runner import TestRunner
+from QiskitPBT.case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2 import Inq0EqualOutq2
+from QiskitPBT.case_studies.quantum_fourier_transform.identity_property import IdentityProperty
+from QiskitPBT.tests.mock_properties.failing_precondition_property import FailingPrecondition
 
 
-class TestTestRunner(unittest.TestCase):
+from unittest import TestCase
+
+class TestTestRunner(TestCase):
     def tearDown(self):
-        SingleQubitStatisticalAnalysis.assertions = []
-        SingleQubitStatisticalAnalysis.unique_circuits = []
-        SingleQubitStatisticalAnalysis.union_of_qubits = []
-        SingleQubitStatisticalAnalysis.outcomes = []
         TestRunner.property_objects = []
         TestRunner.generated_seeds = []
 
