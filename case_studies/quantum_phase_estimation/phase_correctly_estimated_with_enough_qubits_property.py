@@ -6,14 +6,14 @@ import cmath
 from fractions import Fraction
 from qiskit.circuit.library import UnitaryGate
 from qiskit.quantum_info import Operator, Statevector
-from property import Property
-from input_generators import RandomEigenvectorUnitaryPair, RandomUnitaryLimitedDecimals, Integer, InputGenerator
-from case_studies.quantum_phase_estimation.quantum_phase_estimation import qpe_general
+from QiskitPBT.property import Property
+from QiskitPBT.input_generators import RandomEigenvectorUnitaryPair, RandomUnitaryLimitedDecimals, InputGenerator
+from QiskitPBT.case_studies.quantum_phase_estimation.quantum_phase_estimation import qpe_general
 
 
 class PhaseCorrectlyEstimatedEnoughQubits(Property):
     # specify the inputs that are to be generated
-    def generate_input(self):
+    def get_input_generators(self):
         # here we need to generate inputs i.e. an eigenvector with eigenvalues that are specific fractions of 2pi
         # so if we have enough qubits, we can estimate the phase correctly
         generator_set = FixedEigenvectorUnitaryWithLimitedQubits(1, 2, 2, 2)
@@ -61,14 +61,14 @@ class PhaseCorrectlyEstimatedEnoughQubits(Property):
             # we need to pad the end with 0's to make the binary string the correct length
             binary_fraction = binary_fraction + "0" * (estimation_qubits - len(binary_fraction))
 
-        qpe2 = QuantumCircuit(estimation_qubits)
+        qpe2 = QuantumCircuit(estimation_qubits, estimation_qubits)
         qpe2.initialize(Statevector.from_label(binary_fraction), list(range(estimation_qubits)))
 
         print(qpe)
         print(qpe2)
 
         # need to reverse qubit order to get it to work, probably due to endianness
-        self.statistical_analysis.assert_equal(qpe, list(range(estimation_qubits)), qpe2, list(reversed(range(estimation_qubits))))
+        self.statistical_analysis.assert_equal(list(range(estimation_qubits)), qpe, list(reversed(range(estimation_qubits))), qpe2)
 
 
 # add input generator for this specific scenario

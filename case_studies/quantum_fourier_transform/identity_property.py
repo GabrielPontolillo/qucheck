@@ -2,7 +2,6 @@
 from qiskit import QuantumCircuit
 from QiskitPBT.property import Property
 from QiskitPBT.input_generators.random_unitary import RandomUnitary
-from QiskitPBT.input_generators.integer import Integer
 from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
 
 

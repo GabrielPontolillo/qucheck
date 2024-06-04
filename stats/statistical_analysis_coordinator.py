@@ -8,6 +8,7 @@ from QiskitPBT.utils import HashableQuantumCircuit
 from QiskitPBT.stats.assertion import Assertion
 from QiskitPBT.stats.measurements import Measurements
 from QiskitPBT.stats.single_qubit_distributions.assert_equal import AssertEqual
+from QiskitPBT.stats.single_qubit_distributions.assert_different import AssertDifferent
 from QiskitPBT.stats.utils.corrections import holm_bonferroni_correction
 
 
@@ -33,6 +34,20 @@ class StatisticalAnalysisCoordinator:
         circ2.__class__ = HashableQuantumCircuit
 
         self.assertions.append(AssertEqual(qubits1, circ1, qubits2, circ2, basis))
+
+    def assert_different(self, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
+        # parse qubits so that assert equals always gets sequences of qubits
+        if not isinstance(qubits1, Sequence):
+            qubits1 = (qubits1, )
+        if not isinstance(qubits2, Sequence):
+            qubits2 = (qubits2, )
+        # hack to make circuits in assert equals be usable as dictionary keys (by ref)
+        circ1 = circuit1.copy()
+        circ1.__class__ = HashableQuantumCircuit
+        circ2 = circuit2.copy()
+        circ2.__class__ = HashableQuantumCircuit
+
+        self.assertions.append(AssertDifferent(qubits1, circ1, qubits2, circ2, basis))
     
     #Analysis
     def perform_analysis(self, backend: Backend=BasicSimulator()) -> None:

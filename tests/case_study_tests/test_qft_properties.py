@@ -3,6 +3,7 @@ from QiskitPBT.case_studies.quantum_fourier_transform.linear_shift_induces_phase
 from QiskitPBT.case_studies.quantum_fourier_transform.phase_shift_induces_linear_shift_property import PhaseShiftToLinearShift
 from QiskitPBT.test_runner import TestRunner
 
+
 import unittest
 
 

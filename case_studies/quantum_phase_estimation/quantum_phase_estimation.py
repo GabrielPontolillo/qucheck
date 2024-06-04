@@ -1,6 +1,4 @@
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-import math
-
 from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
 
 

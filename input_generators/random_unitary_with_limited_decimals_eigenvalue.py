@@ -3,7 +3,7 @@ import numpy as np
 
 from qiskit.quantum_info import random_unitary, Operator
 
-from input_generators.input_generator import InputGenerator
+from QiskitPBT.input_generators.input_generator import InputGenerator
 
 
 # add input generator for this specific scenario

@@ -1,8 +1,6 @@
 # class that inherits from property based test
-from qiskit import QuantumCircuit
 import numpy as np
 from qiskit.circuit.library import UnitaryGate
-from qiskit.quantum_info import Operator, Statevector
 from QiskitPBT.property import Property
 from QiskitPBT.input_generators import RandomEigenvectorUnitaryPair, RandomUnitary, Integer
 from QiskitPBT.case_studies.quantum_phase_estimation.quantum_phase_estimation import qpe_general
@@ -42,5 +40,5 @@ class PhaseEstimationSumDifferentEigenvectors(Property):
         print(qpe2)
 
         # TODO: need to assert different
-        self.statistical_analysis.assert_equal(list(range(estimation_qubits)), qpe,
-                                               list(range(estimation_qubits)), qpe2)
+        self.statistical_analysis.assert_different(list(range(estimation_qubits)), qpe,
+                                                   list(range(estimation_qubits)), qpe2)
