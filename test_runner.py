@@ -15,6 +15,8 @@ import random
 
 class TestRunner:
     property_objects: list[Property] = []
+    # keep track of seeds for testing purposes
+    seeds = []
 
     def __init__(self, property_classes: Sequence[Property.__class__], num_inputs: int, random_seed: int, shrinking=False, max_attempts=100):
         self.property_classes = property_classes
@@ -23,8 +25,7 @@ class TestRunner:
         self.max_attempts = max_attempts
         random.seed(random_seed)
 
-
-    # list all of the failing properties, by looking at the statistical analysis object's assertions's outcomes
+    # list the failing properties, by looking at the statistical analysis object's assertion outcomes
     def list_failing_properties(self):
         failing_properties = []
 
@@ -89,7 +90,7 @@ class TestRunner:
 
                     # use the seeds to genereate the inputs
 
-                    # I am not sure i agree with generating the inputs twice, here and in statistsical analysis
+                    # TODO: I am not sure i agree with generating the inputs twice, here and in statistsical analysis
                     # coordinator
 
                     inputs = [generator.generate(seeds[i]) for i, generator in enumerate(input_generators)]
@@ -97,6 +98,7 @@ class TestRunner:
                     # check the preconditions
                     if property_obj.preconditions(*inputs) and seeds not in seeds_set:
                         seeds_set.add(seeds)
+                        self.seeds.append(seeds_set)
                         break 
 
                     if attempt_idx == self.max_attempts - 1:
