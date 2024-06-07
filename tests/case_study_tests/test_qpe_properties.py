@@ -14,7 +14,7 @@ class TestQPEProperties(unittest.TestCase):
 
     def test_eigenvector_property(self):
         # run the test
-        runner = TestRunner([LowerRegisterUnchangedByEigenvector], self.num_inputs, 101)
+        runner = TestRunner([LowerRegisterUnchangedByEigenvector], self.num_inputs, 101, 1000)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -22,7 +22,7 @@ class TestQPEProperties(unittest.TestCase):
 
     def test_sum_eigenvector_property(self):
         # run the test
-        runner = TestRunner([PhaseEstimationSumEigenvectors], self.num_inputs, 102)
+        runner = TestRunner([PhaseEstimationSumEigenvectors], self.num_inputs, 102, 1000)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -30,7 +30,7 @@ class TestQPEProperties(unittest.TestCase):
 
     def test_sum_eigenvector_different_eigenvalues_property(self):
         # run the test
-        runner = TestRunner([PhaseEstimationSumDifferentEigenvectors], self.num_inputs, 102)
+        runner = TestRunner([PhaseEstimationSumDifferentEigenvectors], self.num_inputs, 102, 1000)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -38,7 +38,7 @@ class TestQPEProperties(unittest.TestCase):
 
     def test_phase_correctly_estimated_with_enough_qubits(self):
         # run the test
-        runner = TestRunner([PhaseCorrectlyEstimatedEnoughQubits], self.num_inputs, 106)
+        runner = TestRunner([PhaseCorrectlyEstimatedEnoughQubits], self.num_inputs, 106, 1000)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []

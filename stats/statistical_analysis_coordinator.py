@@ -13,6 +13,15 @@ from QiskitPBT.stats.utils.corrections import holm_bonferroni_correction
 
 
 class StatisticalAnalysisCoordinator:
+#TODO: this should be a single instance fed to all properties?
+# esentially the problem is that we are only considering the circuits from this single property when
+# adding up the unique circuits in _perfrom_measurements
+# there may be multiple properties that run the same circuit
+# (now we are passing the same input to all properties that use the same generators)
+# to check if its working we should see the execution time be roughly the same for the tests:
+# test_run_tests and test_run_costs in test_testRunner
+# aside from that, as a general sanity check, you can use all the case study tests to see if they pass, and all tests in test_coordinator
+
     def __init__(self, property, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
         self.assertions: list[Assertion] = []
         self.results: list[bool] = []
@@ -71,6 +80,9 @@ class StatisticalAnalysisCoordinator:
         unique_circuits: list[HashableQuantumCircuit] = []
         measured_circuit_to_original_circuit_info: dict[HashableQuantumCircuit, tuple[Assertion, str, HashableQuantumCircuit]] = {}
 
+        # so we are checking for each unique circuits in the assertions from this statistical analysis coordinator
+        # my question is, if we have multiple coordinators (and we will if we have multiple properties),
+        # how do we make sure that we are not measuring the same circuit multiple times?
         for assertion in self.assertions:
             measured_circuits = self._get_measured_circuits(assertion)
             for measured_circ in measured_circuits:

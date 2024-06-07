@@ -6,23 +6,25 @@
 # the test runner
 # also needs to receive some options for the number of inputs to generate
 
-#later on we need to allow for the choice of which statistical analysis object to use
+# later on we need to allow for the choice of which statistical analysis object to use
 from typing import Sequence
 from QiskitPBT.property import Property
 from QiskitPBT.stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator
 from qiskit.providers.basic_provider import BasicSimulator
 import random
 
+
 class TestRunner:
     property_objects: list[Property] = []
     # keep track of seeds for testing purposes
-    seeds = []
+    seeds_list_dict = {}
 
-    def __init__(self, property_classes: Sequence[Property.__class__], num_inputs: int, random_seed: int, shrinking=False, max_attempts=100):
+    def __init__(self, property_classes: Sequence[Property.__class__], num_inputs: int, random_seed: int, num_measurements: int, shrinking=False, max_attempts=100):
         self.property_classes = property_classes
         self.num_inputs = num_inputs
         self.do_shrinking = shrinking
         self.max_attempts = max_attempts
+        self.num_measurements = num_measurements
         random.seed(random_seed)
 
     # list the failing properties, by looking at the statistical analysis object's assertion outcomes
@@ -56,44 +58,63 @@ class TestRunner:
         # and the failing properties
         return [prop for prop in self.property_classes if prop not in self.list_failing_properties()]
 
-    def run_tests(self, backend=BasicSimulator(), measurements=2000, family_wise_p_value=0.05):
+    def run_tests(self, backend=BasicSimulator(), family_wise_p_value=0.01):
         # for each property class, we need to create a statistical analysis object
         # and then create a property object using the statistical analysis object
         for property in self.property_classes:
-            #print("===========")
-            #print("Evaluating property: ", property)
-            #print("===========")
             # instantiate the property with statistical analysis object
             property_obj = property()
-            stat = StatisticalAnalysisCoordinator(property_obj, measurements, family_wise_p_value)
-            property_obj.statistical_analysis = stat
+            property_obj.statistical_analysis = StatisticalAnalysisCoordinator(property_obj, self.num_measurements, family_wise_p_value)
             self.property_objects.append(property_obj)
 
             seeds_set = set()
-            # generate inputs
+
+            # get the input generators (moved out of loop because we only need to retrieve them once)
+            input_generators = property_obj.get_input_generators()
+
+            # index to keep track of which seeds have been attempted to be reused
+            reuse_index = 0
+
+            # begin generation
             for _ in range(self.num_inputs):
-                # get the input generators
-                input_generators = property_obj.get_input_generators()
-
                 for attempt_idx in range(self.max_attempts):
-                    # we need as many seeds as input generators,
-                    seeds = tuple(random.randint(0, 2**31-1) for _ in input_generators)
+                    # keep track of whether we have reused a set of seeds
+                    reused = False
 
-                    # use the seeds to genereate the inputs
+                    # have we previously seen the same combination of input generators and preconditions?
+                    if self.seeds_list_dict.get(tuple(input_generators), None) is not None:
+                        # retrieve all previously used sets of seeds for the same input generators
+                        seeds_list = self.seeds_list_dict[tuple(input_generators)]
+
+                        # attempt to reuse seed
+                        if reuse_index < len(seeds_list):
+                            seeds = seeds_list[reuse_index]
+                            reuse_index += 1
+                            reused = True
+                        else:
+                            # we have used all previously generated seeds, we need to generate new seeds
+                            seeds = tuple(random.randint(0, 2**31-1) for _ in input_generators)
+                    else:
+                        # if we have not previously seen this exact set of input generators
+                        # generate new seeds
+                        seeds = tuple(random.randint(0, 2**31-1) for _ in input_generators)
+
                     inputs = [generator.generate(seeds[i]) for i, generator in enumerate(input_generators)]
 
                     # check the preconditions
                     if property_obj.preconditions(*inputs) and seeds not in seeds_set:
                         seeds_set.add(seeds)
-                        self.seeds.append(seeds_set)
-                        break 
+                        if tuple(input_generators) not in self.seeds_list_dict:
+                            self.seeds_list_dict[tuple(input_generators)] = [seeds]
+                        elif not reused:
+                            # only add this seed if it was not reused
+                            self.seeds_list_dict[tuple(input_generators)].append(seeds)
+                        break
 
                     if attempt_idx == self.max_attempts - 1:
                         print("Precondition could not be respected for property: ", property, " after ", self.max_attempts, " attempts")
                         print("Skipping statistical analysis for this property")
                         property_obj.classical_assertion_outcome = False
-
-                # print("Inputs", inputs)
 
                 # add the generated inputs to the statistical analysis object of the property
                 # what if each property has its own statistical analysis object?

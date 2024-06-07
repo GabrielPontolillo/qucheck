@@ -5,7 +5,7 @@ import random
 
 
 class RandomPauliBasisState(InputGenerator):
-    def __init__(self, number_of_qubits_low, number_of_qubits_high, basis=['x', 'y', 'z']):
+    def __init__(self, number_of_qubits_low, number_of_qubits_high, basis=('x', 'y', 'z')):
         self.number_of_qubits_low = number_of_qubits_low
         self.number_of_qubits_high = number_of_qubits_high
         self.basis = basis

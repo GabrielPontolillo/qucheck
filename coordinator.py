@@ -36,9 +36,9 @@ class Coordinator:
                         self.property_classes.add(obj)
         sys.path.pop(0)
 
-    def test(self, path):
+    def test(self, path, measurements: int):
         self.get_classes(path)
-        self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed)
+        self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
         self.test_runner.run_tests(self.backend)
 
     def print_outcomes(self):

@@ -7,7 +7,7 @@ from QiskitPBT.input_generators.input_generator import InputGenerator
 
 class RandomTensorProductOfUnitary(InputGenerator):
     # TODO: Make this more general to receive a list of UnitaryGates and choose from those instead
-    def __init__(self, number_of_qubits_low, number_of_qubits_high, unitaries=['X', 'Y', 'Z']):
+    def __init__(self, number_of_qubits_low, number_of_qubits_high, unitaries=('X', 'Y', 'Z')):
         self.number_of_qubits_low = number_of_qubits_low
         self.number_of_qubits_high = number_of_qubits_high
         self.unitaries = unitaries

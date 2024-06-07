@@ -10,3 +10,5 @@ class RandomState(InputGenerator):
     def generate(self, seed) -> Statevector:
         # generate a random statevector
         return random_statevector(2 ** self.number_of_qubits, seed).data
+
+
