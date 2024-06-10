@@ -1,7 +1,7 @@
 import random
 from qiskit import QuantumCircuit
 from QiskitPBT.case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa_circ
-from QiskitPBT.input_generators.input_generator import InputGenerator
+from QiskitPBT.case_studies.deutsch_jozsa.dj_helpers import ConstantOracleInputGenerator
 from QiskitPBT.property import Property
 
 class DeutschJozsaWorksForConstantFunction(Property):
@@ -20,15 +20,5 @@ class DeutschJozsaWorksForConstantFunction(Property):
         # if oracle is constant this should be all 0
         baseline = QuantumCircuit(oracle.num_qubits - 1, oracle.num_qubits - 1)
 
-        self.statistical_analysis.assert_equal(list(range(oracle.num_qubits - 1)), circ, list(range(oracle.num_qubits - 1)), baseline)
+        self.statistical_analysis.assert_equal(list(range(oracle.num_qubits - 1)), circ, list(range(oracle.num_qubits - 1)), baseline, basis=["z"])
 
-
-class ConstantOracleInputGenerator(InputGenerator):
-    def __init__(self, low, high):
-        self.low = low
-        self.high = high
-
-    def generate(self, seed):
-        random.seed(seed)
-        num_qubits = random.randint(self.low, self.high)
-        return QuantumCircuit(num_qubits)
