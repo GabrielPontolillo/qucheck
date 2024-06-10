@@ -56,6 +56,22 @@ class ConstantOracleInputGenerator(InputGenerator):
         return qc
 
 
+class RandomOracleInputGenerator(InputGenerator):
+    def __init__(self, low, high):
+        self.low = low
+        self.high = high
+
+    def generate(self, seed):
+        random.seed(seed)
+        # randomly choose between constant 0 and constant 1
+        oracle_choice = random.randint(0, 1)
+
+        if oracle_choice == 1:
+            return ConstantOracleInputGenerator(self.low, self.high).generate(seed)
+        else:
+            return BalancedOracleInputGenerator(self.low, self.high).generate(seed)
+
+
 # defines a function that vertically merges two circuits, so that the first circuit is on top of the second, with the
 # last qubit of the first circuit being connected to the last qubit of the second circuit
 def vmerge(circuit1, circuit2):
