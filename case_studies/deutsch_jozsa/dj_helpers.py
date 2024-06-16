@@ -17,9 +17,11 @@ class BalancedOracleInputGenerator(InputGenerator):
         xs = [random.randint(0, 1) for _ in range(num_qubits - 1)]
 
         # random array of 0s and 1s, but we must guarantee at least one 1
-        cxs = [random.randint(0, 1) for _ in range(num_qubits - 1)]
-        while sum(cxs) == 0:
-            cxs = [random.randint(0, 1) for _ in range(num_qubits - 1)]
+        if num_qubits > 1:
+            rand_bits = [int(i) for i in bin(random.randint(1, 2**(num_qubits - 1) - 1))[2:]]
+            cxs = [0]*((num_qubits - 1) - len(rand_bits)) + rand_bits
+        else:
+            cxs = []
 
         for idx, i in enumerate(xs):
             if i == 1:

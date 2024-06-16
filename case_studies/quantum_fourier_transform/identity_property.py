@@ -33,4 +33,4 @@ class IdentityProperty(Property):
         # perform Uxn (0xn)
         qc = QuantumCircuit(n, n)
         qc.append(unitary, range(n))
-        self.statistical_analysis.assert_equal(list(range(n)), qft, list(range(n)), qc)
+        self.statistical_analysis.assert_equal(self, list(range(n)), qft, list(range(n)), qc)

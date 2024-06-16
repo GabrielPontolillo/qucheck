@@ -31,4 +31,4 @@ class LowerRegisterUnchangedByEigenvector(Property):
         qpe2 = QuantumCircuit(n, n)
         qpe2.initialize(eigenvectors[0][0], list(range(n)))
 
-        self.statistical_analysis.assert_equal(list(range(estimation_qubits, estimation_qubits+unitary.num_qubits)), qpe, list(range(n)), qpe2)
+        self.statistical_analysis.assert_equal(self, list(range(estimation_qubits, estimation_qubits+unitary.num_qubits)), qpe, list(range(n)), qpe2)

@@ -9,7 +9,7 @@ from QiskitPBT.property import Property
 class DeutschJozsaVMergeTwoConstantOracles(Property):
     # specify the inputs that are to be generated
     def get_input_generators(self):
-        return [ConstantOracleInputGenerator(2, 10), ConstantOracleInputGenerator(2, 5)]
+        return [ConstantOracleInputGenerator(2, 5), ConstantOracleInputGenerator(2, 5)]
 
     # specify the preconditions for the test
     def preconditions(self, oracle1, oracle2):
@@ -22,4 +22,4 @@ class DeutschJozsaVMergeTwoConstantOracles(Property):
         # if oracle is constant this should be all 0
         baseline = QuantumCircuit(circ.num_qubits - 1, circ.num_qubits - 1)
 
-        self.statistical_analysis.assert_equal(list(range(circ.num_qubits - 1)), circ, list(range(oracle1.num_qubits - 1)), baseline, basis=["z"])
+        self.statistical_analysis.assert_equal(self, list(range(circ.num_qubits - 1)), circ, list(range(oracle1.num_qubits - 1)), baseline, basis=["z"])

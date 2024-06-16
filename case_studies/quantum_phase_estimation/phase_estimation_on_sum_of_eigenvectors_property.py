@@ -43,5 +43,5 @@ class PhaseEstimationSumEigenvectors(Property):
         print(qpe)
         print(qpe2)
 
-        self.statistical_analysis.assert_equal(list(range(estimation_qubits)), qpe,
+        self.statistical_analysis.assert_equal(self, list(range(estimation_qubits)), qpe,
                                                list(range(estimation_qubits)), qpe2)

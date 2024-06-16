@@ -20,5 +20,5 @@ class DeutschJozsaWorksForConstantFunction(Property):
         # if oracle is constant this should be all 0
         baseline = QuantumCircuit(oracle.num_qubits - 1, oracle.num_qubits - 1)
 
-        self.statistical_analysis.assert_equal(list(range(oracle.num_qubits - 1)), circ, list(range(oracle.num_qubits - 1)), baseline, basis=["z"])
+        self.statistical_analysis.assert_equal(self, list(range(oracle.num_qubits - 1)), circ, list(range(oracle.num_qubits - 1)), baseline, basis=["z"])
 

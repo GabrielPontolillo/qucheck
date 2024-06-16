@@ -33,7 +33,7 @@ class LinearShiftToPhaseShift(Property):
         qft_2.initialize(shifted_vector, reversed(range(n)))
         qft_2 = qft_2.compose(qft_general(n, swap=False))
 
-        self.statistical_analysis.assert_equal(list(range(n)), qft_1, list(range(n)), qft_2)
+        self.statistical_analysis.assert_equal(self, list(range(n)), qft_1, list(range(n)), qft_2)
 
 
 def phase_shift(qc):

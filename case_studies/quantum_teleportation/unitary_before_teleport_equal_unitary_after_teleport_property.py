@@ -34,4 +34,4 @@ class UnitaryBeforeAndAfterTeleport(Property):
         qc2 = qc2.compose(qt2)
         qc2.append(unitary, [2])
 
-        self.statistical_analysis.assert_equal([0, 1, 2], qc, [0, 1, 2], qc2)
+        self.statistical_analysis.assert_equal(self, [0, 1, 2], qc, [0, 1, 2], qc2)

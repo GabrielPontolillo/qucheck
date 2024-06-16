@@ -23,22 +23,22 @@ class TestRunner:
         self.num_inputs = num_inputs
         self.do_shrinking = shrinking
         self.max_attempts = max_attempts
+        self.circuits_executed = 0
         random.seed(random_seed)
 
     # list the failing properties, by looking at the statistical analysis object's assertion outcomes
     def list_failing_properties(self):
-        failing_properties = []
+        failing_properties = set()
 
         for property in self.property_objects:
-            for outcome in property.statistical_analysis.results:
-                if not outcome:
-                    failing_properties.append(property.__class__)
-                    break
+            if not property.statistical_analysis.results[property]:
+                failing_properties.add(property.__class__)
     
-        return failing_properties
+        return list(failing_properties)
 
     # list all of the failing inputs for a specific property
     def list_failing_inputs(self, property: Property) -> list[list[any]]:
+        #TODO: this does not work
         # iterate through all assertions within the property's statistical analysis object
         # if they failed, get the index of the input that failed in the inputs list of the statistical analysis object
         # and add it to the failing inputs list
@@ -59,14 +59,16 @@ class TestRunner:
     def run_tests(self, backend=BasicSimulator(), measurements=2000, family_wise_p_value=0.05):
         # for each property class, we need to create a statistical analysis object
         # and then create a property object using the statistical analysis object
+        stat_analysis_coordinator = StatisticalAnalysisCoordinator(measurements, family_wise_p_value)
+        properties = []
         for property in self.property_classes:
             #print("===========")
             #print("Evaluating property: ", property)
             #print("===========")
             # instantiate the property with statistical analysis object
             property_obj = property()
-            stat = StatisticalAnalysisCoordinator(property_obj, measurements, family_wise_p_value)
-            property_obj.statistical_analysis = stat
+            properties.append(property_obj)
+            property_obj.statistical_analysis = stat_analysis_coordinator
             self.property_objects.append(property_obj)
 
             seeds_set = set()
@@ -109,10 +111,12 @@ class TestRunner:
                     print("Skipping statistical analysis for this property")
                     property_obj.classical_assertion_outcome = False
 
-            property_obj.statistical_analysis.perform_analysis(backend)
+        stat_analysis_coordinator.perform_analysis(properties, backend)
 
         if self.do_shrinking:
             self.shrinking()
+        
+        self.circuits_executed += stat_analysis_coordinator.circuits_executed
 
     def shrinking(self):
         # now we need to implement shrinking

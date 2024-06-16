@@ -20,4 +20,4 @@ class DeutschJozsaWorksForBalancedFunction(Property):
         # if oracle is constant this should be all 0
         baseline = QuantumCircuit(oracle.num_qubits - 1, oracle.num_qubits - 1)
 
-        self.statistical_analysis.assert_different(list(range(oracle.num_qubits - 1)), circ, list(range(oracle.num_qubits - 1)), baseline, ["z"])
+        self.statistical_analysis.assert_different(self, list(range(oracle.num_qubits - 1)), circ, list(range(oracle.num_qubits - 1)), baseline, ["z"])

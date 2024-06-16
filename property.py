@@ -4,14 +4,13 @@ from abc import ABC, abstractmethod
 
 from qiskit import QuantumCircuit
 
-from QiskitPBT.stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator
 from QiskitPBT.input_generators.input_generator import InputGenerator
 
 
 class Property(ABC):
     # constructor to initialise the class with the statistical analysis object
     def __init__(self):
-        self.statistical_analysis: StatisticalAnalysisCoordinator = None
+        self.statistical_analysis = None
         self.classical_assertion_outcome = True
 
     # generate inputs for the test

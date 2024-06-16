@@ -3,6 +3,7 @@ from qiskit import QuantumCircuit, transpile
 from qiskit.providers.basic_provider import BasicSimulator
 from qiskit.providers import Backend
 from qiskit.circuit import Operation
+from QiskitPBT.property import Property
 from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
 from QiskitPBT.utils import HashableQuantumCircuit
 from QiskitPBT.stats.assertion import Assertion
@@ -13,15 +14,33 @@ from QiskitPBT.stats.utils.corrections import holm_bonferroni_correction
 
 
 class StatisticalAnalysisCoordinator:
-    def __init__(self, property, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
-        self.assertions: list[Assertion] = []
-        self.results: list[bool] = []
-        self.property = property
+    def __init__(self, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
+        self.assertions_for_property: dict[Property, list[Assertion]] = {}
+        self.results: dict[Property, bool] = {}
         self.number_of_measurements = number_of_measurements
         self.family_wise_p_value = family_wise_p_value
-    
+        self.circuits_executed = 0 # for statistics
+        self.unique_circuits: list[HashableQuantumCircuit] = []
+        self.measured_circuit_to_original_circuit_info: dict[HashableQuantumCircuit, tuple[Assertion, str, HashableQuantumCircuit]] = {}
+
     #Assertions
-    def assert_equal(self, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
+    def assert_equal(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
+        # parse qubits so that assert equals always gets sequences of qubits
+        if not isinstance(qubits1, Sequence):
+            qubits1 = (qubits1, )
+        if not isinstance(qubits2, Sequence):
+            qubits2 = (qubits2, )
+        # hack to make circuits in assert equals be usable as dictionary keys (by ref)
+        circ1 = circuit1.copy()
+        circ1.__class__ = HashableQuantumCircuit
+        circ2 = circuit2.copy()
+        circ2.__class__ = HashableQuantumCircuit
+        if property in self.assertions_for_property:
+            self.assertions_for_property[property].append(AssertEqual(qubits1, circ1, qubits2, circ2, basis))
+        else:
+            self.assertions_for_property[property] = [AssertEqual(qubits1, circ1, qubits2, circ2, basis)]
+
+    def assert_different(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
         # parse qubits so that assert equals always gets sequences of qubits
         if not isinstance(qubits1, Sequence):
             qubits1 = (qubits1, )
@@ -33,61 +52,56 @@ class StatisticalAnalysisCoordinator:
         circ2 = circuit2.copy()
         circ2.__class__ = HashableQuantumCircuit
 
-        self.assertions.append(AssertEqual(qubits1, circ1, qubits2, circ2, basis))
-
-    def assert_different(self, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
-        # parse qubits so that assert equals always gets sequences of qubits
-        if not isinstance(qubits1, Sequence):
-            qubits1 = (qubits1, )
-        if not isinstance(qubits2, Sequence):
-            qubits2 = (qubits2, )
-        # hack to make circuits in assert equals be usable as dictionary keys (by ref)
-        circ1 = circuit1.copy()
-        circ1.__class__ = HashableQuantumCircuit
-        circ2 = circuit2.copy()
-        circ2.__class__ = HashableQuantumCircuit
-
-        self.assertions.append(AssertDifferent(qubits1, circ1, qubits2, circ2, basis))
+        if property in self.assertions_for_property:
+            self.assertions_for_property[property].append(AssertDifferent(qubits1, circ1, qubits2, circ2, basis))
+        else:
+            self.assertions_for_property[property] = [AssertDifferent(qubits1, circ1, qubits2, circ2, basis)]
     
     #Analysis
-    def perform_analysis(self, backend: Backend=BasicSimulator()) -> None:
+    def perform_analysis(self, properties: list[Property], backend: Backend=BasicSimulator()) -> None:
         # classical assertion failed dont run quantum
-        if not self.property.classical_assertion_outcome:
-            self.results.append(False)
-            return
-        
+        for property in properties:
+            if not property.classical_assertion_outcome:
+                self.results[property] = False
+            
+            self._generate_circuits(property)
+
         measurements = self._perform_measurements(backend)
-        p_values_per_assertion = [assertion.calculate_p_values(measurements[assertion]) for assertion in self.assertions]
+
+        p_values = {}
+        for property in properties:
+            p_values[property] = {assertion: assertion.calculate_p_values(measurements[assertion]) for assertion in self.assertions_for_property[property]}
 
         # perform family wise error rate correction
         # Ideally, we need to sort all of the p-values from all assertions, then pass back the corrected alpha values to compare them to in a list
-        expected_p_values_per_assertion = holm_bonferroni_correction(self.assertions, p_values_per_assertion, self.family_wise_p_value)
+        expected_p_values = holm_bonferroni_correction(self.assertions_for_property, p_values, self.family_wise_p_value)
 
         # calculate the outcome of each assertion
-        for assertion, p_values, expected_p_vals in zip(self.assertions, p_values_per_assertion, expected_p_values_per_assertion):
-            self.results.append(assertion.calculate_outcome(p_values, expected_p_vals))
+        for property in properties:
+            if property not in self.results:
+                self.results[property] = True
+            for assertion in self.assertions_for_property[property]:
+                self.results[property] = (self.results[property] and assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion]))
     
-    def _perform_measurements(self, backend: Backend) -> dict[Assertion, Measurements]:
-        unique_circuits: list[HashableQuantumCircuit] = []
-        measured_circuit_to_original_circuit_info: dict[HashableQuantumCircuit, tuple[Assertion, str, HashableQuantumCircuit]] = {}
-
-        for assertion in self.assertions:
+    def _generate_circuits(self, property):
+        for assertion in self.assertions_for_property[property]:
             measured_circuits = self._get_measured_circuits(assertion)
             for measured_circ in measured_circuits:
-                if measured_circ not in unique_circuits:
-                    unique_circuits.append(measured_circ)
-            measured_circuit_to_original_circuit_info.update(measured_circuits)
-            
-        
+                if measured_circ not in self.unique_circuits:
+                    self.unique_circuits.append(measured_circ)
+            self.measured_circuit_to_original_circuit_info.update(measured_circuits)
+    
+    def _perform_measurements(self, backend: Backend) -> dict[Assertion, Measurements]:
         measurements_dict: dict[Assertion, Measurements] = {}
-        for circuit in unique_circuits:
+        for circuit in self.unique_circuits:
             #TODO: get counts actually returns (or used to) unparsed bit strings, so if there are 2 quantum registers there is a space in there - this may need some attention
             # this is necessary for measure to work
             circuit.__class__ = QuantumCircuit
             counts = backend.run(transpile(circuit, backend), shots=self.number_of_measurements).result().get_counts()
+            self.circuits_executed += 1
             # cast back so we can use it as a key
             circuit.__class__ = HashableQuantumCircuit
-            assertion, measurement_names, original_circuit = measured_circuit_to_original_circuit_info[circuit]
+            assertion, measurement_names, original_circuit = self.measured_circuit_to_original_circuit_info[circuit]
             if assertion not in measurements_dict:
                 measurements_dict[assertion] = Measurements()
             for measurement_name in measurement_names:

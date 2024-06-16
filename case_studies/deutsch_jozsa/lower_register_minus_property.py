@@ -23,5 +23,5 @@ class DeutschJozsaLowerRegisterMinus(Property):
         baseline.x(0)
         baseline.h(0)
 
-        self.statistical_analysis.assert_equal([circ.num_qubits - 1], circ, [0], baseline)
+        self.statistical_analysis.assert_equal(self, [circ.num_qubits - 1], circ, [0], baseline)
 
