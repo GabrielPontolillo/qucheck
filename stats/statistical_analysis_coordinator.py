@@ -4,6 +4,7 @@ from qiskit.providers.basic_provider import BasicSimulator
 from qiskit.providers import Backend
 from qiskit.circuit import Operation
 from QiskitPBT.property import Property
+from QiskitPBT.stats.assert_entangled import AssertEntangled
 from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
 from QiskitPBT.utils import HashableQuantumCircuit
 from QiskitPBT.stats.assertion import Assertion
@@ -57,12 +58,26 @@ class StatisticalAnalysisCoordinator:
         else:
             self.assertions_for_property[property] = [AssertDifferent(qubits1, circ1, qubits2, circ2, basis)]
     
+    def assert_entangled(self, property: Property, qubits_pairs: tuple[int, int] | Sequence[tuple[int, int]], circuit: QuantumCircuit, basis = ["x", "y", "z"]):
+        # parse qubits so that assert equals always gets sequences of qubits
+        if not isinstance(qubits_pairs[0], Sequence):
+            qubits_pairs = (qubits_pairs, )
+        # hack to make circuits in assert equals be usable as dictionary keys (by ref)
+        circ = circuit.copy()
+        circ.__class__ = HashableQuantumCircuit
+
+        if property in self.assertions_for_property:
+            self.assertions_for_property[property].append(AssertEntangled(qubits_pairs, circ,basis))
+        else:
+            self.assertions_for_property[property] = [AssertEntangled(qubits_pairs, circ,basis)]
+    
     #Analysis
     def perform_analysis(self, properties: list[Property], backend: Backend=BasicSimulator()) -> None:
         # classical assertion failed dont run quantum
         for property in properties:
             if not property.classical_assertion_outcome:
                 self.results[property] = False
+                continue
             
             self._generate_circuits(property)
 

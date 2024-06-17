@@ -85,7 +85,7 @@ class TestRunner:
                     inputs = [generator.generate(seeds[i]) for i, generator in enumerate(input_generators)]
 
                     # check the preconditions
-                    if property_obj.preconditions(*inputs) and seeds not in seeds_set:
+                    if property_obj.preconditions(*inputs) and (seeds not in seeds_set or len(input_generators) == 0):
                         seeds_set.add(seeds)
                         self.seeds.append(seeds_set)
                         break 
