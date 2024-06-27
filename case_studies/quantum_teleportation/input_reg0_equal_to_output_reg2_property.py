@@ -26,4 +26,4 @@ class Inq0EqualOutq2(Property):
         # initialise qubit to compare to:
         qc2 = QuantumCircuit(1, 1)
         qc2.initialize(q0, [0])
-        self.statistical_analysis.assert_equal(2, qc, 0, qc2)
+        self.statistical_analysis.assert_equal(self, 2, qc, 0, qc2)

@@ -68,7 +68,7 @@ class PhaseCorrectlyEstimatedEnoughQubits(Property):
         print(qpe2)
 
         # need to reverse qubit order to get it to work, probably due to endianness
-        self.statistical_analysis.assert_equal(list(range(estimation_qubits)), qpe, list(reversed(range(estimation_qubits))), qpe2)
+        self.statistical_analysis.assert_equal(self, list(range(estimation_qubits)), qpe, list(reversed(range(estimation_qubits))), qpe2)
 
 
 # add input generator for this specific scenario

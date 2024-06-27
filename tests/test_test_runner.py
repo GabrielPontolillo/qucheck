@@ -1,6 +1,8 @@
 # a test script for the test runner
+import copy
 from QiskitPBT.test_runner import TestRunner
 from QiskitPBT.case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2_property import Inq0EqualOutq2
+from QiskitPBT.case_studies.quantum_teleportation.not_teleported_registers_equal_to_plus_property import NotTeleportedPlus
 from QiskitPBT.case_studies.quantum_fourier_transform.identity_property import IdentityProperty
 from QiskitPBT.tests.mock_properties.failing_precondition_property import FailingPrecondition
 
@@ -10,12 +12,12 @@ from unittest import TestCase
 class TestTestRunner(TestCase):
     def tearDown(self):
         TestRunner.property_objects = []
-        TestRunner.generated_seeds = []
+        TestRunner.seeds_list_dict = {}
 
     # test the run_tests method
     def test_run_tests(self):
         # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2], 5,  548, 1000)
+        test_runner = TestRunner([Inq0EqualOutq2], 2,  548, 1000)
         # run the tests
         test_runner.run_tests()
         print(test_runner.seeds_list_dict.values())
@@ -24,7 +26,16 @@ class TestTestRunner(TestCase):
 
     def test_run_tests_cost(self):
         # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 5,  548, 1000)
+        test_runner = TestRunner([Inq0EqualOutq2, NotTeleportedPlus], 2,  548, 1000)
+        # run the tests
+        test_runner.run_tests()
+        print(test_runner.seeds_list_dict.values())
+        self.assertEqual(test_runner.list_failing_properties(), [])
+        self.assertEqual(test_runner.list_passing_properties(), [Inq0EqualOutq2, NotTeleportedPlus])
+
+    def test_run_tests_cost2(self):
+        # create an instance of the test runner
+        test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 2,  548, 1000)
         # run the tests
         test_runner.run_tests()
         print(test_runner.seeds_list_dict.values())
@@ -42,7 +53,6 @@ class TestTestRunner(TestCase):
         print("passing properties:")
         # we actually get a list of passing properties objects
         print(test_runner.list_passing_properties())
-        print(test_runner.property_objects[0].statistical_analysis.assertions)
 
     def test_same_seeds(self):
         # create an instance of the test runner

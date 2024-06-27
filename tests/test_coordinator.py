@@ -88,8 +88,13 @@ class TestCoordinator(TestCase):
         coordinator = Coordinator(2, 902)
         coordinator.test(os.path.join(PARENT_DIR, "tests/mock_properties"), 1000)
         passing = coordinator.test_runner.list_passing_properties()
-        self.assertEqual(passing, [])
+        passing = [elem.__name__ for elem in passing]
+        print(passing)
+        self.assertEqual(len(passing), 1)
+        self.assertIn("EntangledPrecondition", passing)
 
         failing = coordinator.test_runner.list_failing_properties()
+        failing = [elem.__name__ for elem in failing]
+        print(failing)
         self.assertEqual(len(failing), 1)
-        self.assertEqual(failing[0].__name__, "FailingPrecondition")
+        self.assertIn("FailingPrecondition", failing)

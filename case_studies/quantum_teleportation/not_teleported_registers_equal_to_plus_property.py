@@ -33,4 +33,4 @@ class NotTeleportedPlus(Property):
         qc2.h(1)
 
         print(qc2)
-        self.statistical_analysis.assert_equal([0, 1], qc, [0, 1], qc2)
+        self.statistical_analysis.assert_equal(self, [0, 1], qc, [0, 1], qc2)

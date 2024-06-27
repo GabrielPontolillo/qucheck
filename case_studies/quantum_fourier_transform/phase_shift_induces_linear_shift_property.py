@@ -34,7 +34,7 @@ class PhaseShiftToLinearShift(Property):
         #print(np.around(Statevector(qft_2).data, 2))
         #print("--------------------")
 
-        self.statistical_analysis.assert_equal(list(range(n)), qft_1, list(range(n)), qft_2)
+        self.statistical_analysis.assert_equal(self, list(range(n)), qft_1, list(range(n)), qft_2)
 
 def phase_shift(qc):
     # we instead apply a positive phase shift to the qubits as the linear shift adds 1 (down shift instead of up)

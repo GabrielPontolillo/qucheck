@@ -38,6 +38,7 @@ class Coordinator:
 
     def test(self, path, measurements: int):
         self.get_classes(path)
+        print(self.property_classes)
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
         self.test_runner.run_tests(self.backend)
 

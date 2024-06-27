@@ -50,6 +50,7 @@ class AssertEqual(Assertion):
 
         return True
 
+    # receives a quantum circuit, specifies which qubits should be measured and in which basis
     def get_measurement_configuration(self) -> MeasurementConfiguration:
         measurement_config = MeasurementConfiguration()
         for qubits, circ in [(self.qubits1, self.circuit1), (self.qubits2, self.circuit2)]:
