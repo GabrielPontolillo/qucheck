@@ -92,6 +92,9 @@ class StatisticalAnalysisCoordinator:
 
         measurements = self._perform_measurements(backend)
 
+
+        # ok so here is the thing we get a dictionary of measurement objects, that have the assertion,F
+
         # the dictionary comprehension was confusing me so I expanded it
         p_values = {}
         for property in properties:
@@ -99,7 +102,7 @@ class StatisticalAnalysisCoordinator:
 
             p_values[property] = {}
             for assertion in self.assertions_for_property[property]:
-                p_value = assertion.calculate_p_values(measurements[assertion])
+                p_value = assertion.calculate_p_values(measurements)
                 p_values[property][assertion] = p_value
 
         # perform family wise error rate correction
@@ -113,8 +116,10 @@ class StatisticalAnalysisCoordinator:
             for assertion in self.assertions_for_property[property]:
                 self.results[property] = (self.results[property] and assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion]))
 
+    # creates a dictionary of measurements for each assertion,
     def _perform_measurements(self, backend: Backend) -> dict[Assertion, Measurements]:
-        measurements_dict: dict[Assertion, Measurements] = {}
+        measurements = Measurements()
+
         for circuit in self.unique_circuits:
             # TODO: get counts actually returns (or used to) unparsed bit strings, so if there are 2 quantum registers there is a space in there - this may need some attention
             # this is necessary for measure to work
@@ -123,13 +128,12 @@ class StatisticalAnalysisCoordinator:
             self.circuits_executed += 1
             # cast back so we can use it as a key
             circuit.__class__ = HashableQuantumCircuit
+            # get the original circuit, as well as basis measurements, and what assertions it is linked to
             assertion, measurement_names, original_circuit = self.measured_circuit_to_original_circuit_info[circuit]
-            if assertion not in measurements_dict:
-                measurements_dict[assertion] = Measurements()
             for measurement_name in measurement_names:
-                measurements_dict[assertion].add_measurement(original_circuit, measurement_name, counts)
-        
-        return measurements_dict
+                measurements.add_measurement(original_circuit, measurement_name, counts)
+
+        return measurements
 
     # iterates through the assertions within a property, appends measurements to the circuit
     def _generate_circuits(self, property):
@@ -147,9 +151,9 @@ class StatisticalAnalysisCoordinator:
             for measurement_ids, qubits, operations in self._get_optimized_measurements_for_circ(circ, measurement_config):
                 measured_circ = circ.copy()
                 for qubit, operation in zip(qubits, operations):
-                    # TODO: uncommnet line before to make it work
-                    # measured_circ.compose(operation, (qubit,), (qubit,), inplace=True)
-                    measured_circ.append(operation.to_instruction(), (qubit,), (qubit,))
+                    # TODO: uncomment line before to make it work
+                    measured_circ.compose(operation, (qubit,), (qubit,), inplace=True)
+                    # measured_circ.append(operation.to_instruction(), (qubit,), (qubit,))
                 measured_circuits[measured_circ] = (assertion, measurement_ids, circ)
 
         return measured_circuits

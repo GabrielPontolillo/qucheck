@@ -17,7 +17,7 @@ class TestTestRunner(TestCase):
     # test the run_tests method
     def test_run_tests(self):
         # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2], 2,  548, 1000)
+        test_runner = TestRunner([Inq0EqualOutq2], 10,  548, 1000)
         # run the tests
         test_runner.run_tests()
         print(test_runner.seeds_list_dict.values())
@@ -35,7 +35,7 @@ class TestTestRunner(TestCase):
 
     def test_run_tests_cost2(self):
         # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 2,  548, 1000)
+        test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 10,  548, 1000)
         # run the tests
         test_runner.run_tests()
         print(test_runner.seeds_list_dict.values())
