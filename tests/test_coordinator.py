@@ -9,10 +9,6 @@ PARENT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.par
 
 
 class TestCoordinator(TestCase):
-    def tearDown(self):
-        TestRunner.property_objects = []
-        TestRunner.seeds_list_dict = {}
-
     # basic test just to see if the coordinator runs without throwing an exception
     def test_coordinator(self):
         coordinator = Coordinator(5)
@@ -39,10 +35,6 @@ class TestCoordinator(TestCase):
         coordinator = Coordinator(num_inputs, 1)
         coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), 1000)
         save_seeds = coordinator.test_runner.seeds_list_dict
-
-        # reset the seeds and property objects to ensure next run works
-        TestRunner.seeds_list_dict = {}
-        TestRunner.property_objects = []
 
         coordinator2 = Coordinator(num_inputs, 1)
         coordinator2.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), 1000)

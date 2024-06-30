@@ -15,9 +15,6 @@ import random
 
 
 class TestRunner:
-    property_objects: list[Property] = []
-    # keep track of seeds for testing purposes
-    seeds_list_dict = {}
 
     def __init__(self, property_classes: Sequence[Property.__class__], num_inputs: int, random_seed: int, num_measurements: int, shrinking=False, max_attempts=100):
         self.property_classes = property_classes
@@ -26,6 +23,9 @@ class TestRunner:
         self.max_attempts = max_attempts
         self.num_measurements = num_measurements
         self.circuits_executed = 0
+        self.property_objects: list[Property] = []
+        # keep track of seeds for testing purposes
+        self.seeds_list_dict = {}
         random.seed(random_seed)
 
     # list the failing properties, by looking at the statistical analysis object's assertion outcomes
@@ -39,18 +39,11 @@ class TestRunner:
         return list(failing_properties)
 
     # list all of the failing inputs for a specific property
-    def list_failing_inputs(self, property: Property) -> list[list[any]]:
-        # TODO: this does not work
-        # iterate through all assertions within the property's statistical analysis object
-        # if they failed, get the index of the input that failed in the inputs list of the statistical analysis object
-        # and add it to the failing inputs list
-        failing_inputs = [[] for _ in property.statistical_analysis.assertions]
-
-        for i in range(len(property.statistical_analysis.assertions)):
-            if not property.statistical_analysis.results[i]:
-                failing_inputs[i] = property.statistical_analysis.assertions[i].failing_inputs
-
-        return failing_inputs
+    def list_failing_inputs(self, property: Property) -> list[any]:
+        if not property.statistical_analysis.results[property]:
+            return self.seeds_list_dict[tuple(property.get_input_generators())]
+        else:
+            return []
 
     # list all of the passing properties
     def list_passing_properties(self):
