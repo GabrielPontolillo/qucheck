@@ -98,16 +98,20 @@ class StatisticalAnalysisCoordinator:
         # the dictionary comprehension was confusing me so I expanded it
         p_values = {}
         for property in properties:
-            # p_values[property] = {assertion: assertion.calculate_p_values(measurements[assertion]) for assertion in self.assertions_for_property[property]}
+            if property.classical_assertion_outcome:
+                # p_values[property] = {assertion: assertion.calculate_p_values(measurements[assertion]) for assertion in self.assertions_for_property[property]}
 
-            p_values[property] = {}
-            for assertion in self.assertions_for_property[property]:
-                p_value = assertion.calculate_p_values(measurements)
-                p_values[property][assertion] = p_value
+                p_values[property] = {}
+                for assertion in self.assertions_for_property[property]:
+                    p_value = assertion.calculate_p_values(measurements)
+                    p_values[property][assertion] = p_value
 
         # perform family wise error rate correction
         # Ideally, we need to sort all of the p-values from all assertions, then pass back the corrected alpha values to compare them to in a list
-        expected_p_values = holm_bonferroni_correction(self.assertions_for_property, p_values, self.family_wise_p_value)
+
+        # Only do Holm Bonferroni Correction if there are p_values to correct (preconditions pass)
+        if p_values:
+            expected_p_values = holm_bonferroni_correction(self.assertions_for_property, p_values, self.family_wise_p_value)
 
         # calculate the outcome of each assertion
         for property in properties:
@@ -151,9 +155,7 @@ class StatisticalAnalysisCoordinator:
             for measurement_ids, qubits, operations in self._get_optimized_measurements_for_circ(circ, measurement_config):
                 measured_circ = circ.copy()
                 for qubit, operation in zip(qubits, operations):
-                    # TODO: uncomment line before to make it work
                     measured_circ.compose(operation, (qubit,), (qubit,), inplace=True)
-                    # measured_circ.append(operation.to_instruction(), (qubit,), (qubit,))
                 measured_circuits[measured_circ] = (assertion, measurement_ids, circ)
 
         return measured_circuits

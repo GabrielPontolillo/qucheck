@@ -32,7 +32,7 @@ class AssertEntangled(Assertion):
                             contingency_table[1][0] += frequency
                         else:
                             contingency_table[1][1] += frequency
-                _, p_value, _, _ = sci.chi2_contingency(contingency_table)
+                _, p_value = sci.fisher_exact(contingency_table)
                 # TODO: this is kind of weird in the sense that we dont seperate p values of different qubits and just dump everything together
                 p_vals.append(p_value)
         return p_vals

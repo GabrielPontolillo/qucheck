@@ -5,9 +5,10 @@ from QiskitPBT.stats.assertion import Assertion
 def holm_bonferroni_correction(assertions_per_property: dict[Property, list[Assertion]], p_values_per_property: dict[Property, dict[Assertion, list[float]]], family_wise_alpha=0.05) -> dict[Property, dict[Assertion, list[float]]]:
     p_vals = []
     for property, assertions in assertions_per_property.items():
-        for assertion in assertions:
-            for p_value in p_values_per_property[property][assertion]:
-                p_vals.append([p_value, property, assertion])
+        if property.classical_assertion_outcome:
+            for assertion in assertions:
+                for p_value in p_values_per_property[property][assertion]:
+                    p_vals.append([p_value, property, assertion])
             
     # sort by p_val ascending order
     p_vals.sort(key=lambda x: x[0])
