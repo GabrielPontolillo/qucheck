@@ -93,6 +93,9 @@ class StatisticalAnalysisCoordinator:
 
         p_values = {}
         for property in properties:
+            #at this point if property is in results that means it has failed classical assertion outcome so we skip it
+            if property in self.results:
+                continue
             p_values[property] = {}
             for assertion in self.assertions_for_property[property]:
                 p_value = assertion.calculate_p_values(measurements)
