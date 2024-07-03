@@ -55,9 +55,9 @@ class AssertEqual(Assertion):
         measurement_config = MeasurementConfiguration()
         for qubits, circ in [(self.qubits1, self.circuit1), (self.qubits2, self.circuit2)]:
             if "x" in self.basis:
-                measurement_config.add_measurement(qubits, circ, "x", [measure_x() for _ in qubits])
+                measurement_config.add_measurement("x", circ, {i: measure_x() for i in qubits})
             if "y" in self.basis:
-                measurement_config.add_measurement(qubits, circ, "y", [measure_y() for _ in qubits])
+                measurement_config.add_measurement("y", circ, {i: measure_y() for i in qubits})
             if "z" in self.basis:
-                measurement_config.add_measurement(qubits, circ, "z", [measure_z() for _ in qubits])
+                measurement_config.add_measurement("z", circ, {i: measure_z() for i in qubits})
         return measurement_config

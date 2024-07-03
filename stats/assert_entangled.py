@@ -47,9 +47,9 @@ class AssertEntangled(Assertion):
         measurement_config = MeasurementConfiguration()
         for qubit_pair in self.qubits_pairs:
             if "x" in self.basis:
-                measurement_config.add_measurement(qubit_pair, self.circuit, "x", [measure_x() for _ in qubit_pair])
+                measurement_config.add_measurement("x", self.circuit, {i: measure_x() for i in qubit_pair})
             if "y" in self.basis:
-                measurement_config.add_measurement(qubit_pair, self.circuit, "y", [measure_y() for _ in qubit_pair])
+                measurement_config.add_measurement("y", self.circuit, {i: measure_y() for i in qubit_pair})
             if "z" in self.basis:
-                measurement_config.add_measurement(qubit_pair, self.circuit, "z", [measure_z() for _ in qubit_pair])
+                measurement_config.add_measurement("z", self.circuit, {i: measure_z() for i in qubit_pair})
         return measurement_config

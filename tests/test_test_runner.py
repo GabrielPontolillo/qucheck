@@ -101,3 +101,13 @@ class TestTestRunner(TestCase):
         assert test_runner.list_failing_properties() == []
         assert test_runner.list_passing_properties() == [Inq0EqualOutq2, IdentityProperty]
 
+    def test_repeated_property_does_not_run_more_circuits(self):
+        # create an instance of the test runner
+        test_runner = TestRunner([Inq0EqualOutq2], 3, 1, 1000)
+        # run the tests
+        test_runner.run_tests()
+        circuits_run = test_runner.circuits_executed
+        # create an instance of the test runner
+        test_runner2 = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1, 1000)
+        # run the tests
+        self.assertNotEqual(circuits_run, test_runner2.circuits_executed)
