@@ -13,6 +13,7 @@ class TestCoordinator(TestCase):
     def test_coordinator(self):
         coordinator = Coordinator(5)
         coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), 1000)
+        # TODO: print outcomes is broken
         coordinator.print_outcomes()
 
     # test coordinator to check if it will generate the correct number of inputs

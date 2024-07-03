@@ -24,7 +24,7 @@ class TestTestRunner(TestCase):
         self.assertEqual(test_runner.list_failing_properties(), [])
         self.assertEqual(test_runner.list_passing_properties(), [Inq0EqualOutq2])
 
-    def test_run_tests_cost(self):
+    def test_run_tests_cost(self): # fails, should be automatically fixed when optimisation is fixed
         # create an instance of the test runner
         test_runner = TestRunner([Inq0EqualOutq2, NotTeleportedPlus], 2,  548, 1000)
         # run the tests
@@ -67,9 +67,9 @@ class TestTestRunner(TestCase):
         save_seeds2 = test_runner2.seeds_list_dict
         self.assertEqual(save_seeds, save_seeds2)
 
-    def test_different_seeds(self):
+    def test_different_seeds(self): # TODO: there is a problem here different seeds generating same local seeds?
         # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1, 1000)
+        test_runner = TestRunner([Inq0EqualOutq2, IdentityProperty], 3, 1, 1000)
         # run the tests
         test_runner.run_tests()
         save_seeds = copy.deepcopy(test_runner.seeds_list_dict)

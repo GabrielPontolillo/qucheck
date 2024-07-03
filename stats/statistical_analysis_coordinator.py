@@ -100,7 +100,10 @@ class StatisticalAnalysisCoordinator:
 
         # perform family wise error rate correction
         # Ideally, we need to sort all of the p-values from all assertions, then pass back the corrected alpha values to compare them to in a list
-        expected_p_values = holm_bonferroni_correction(self.assertions_for_property, p_values, self.family_wise_p_value)
+
+        # Only do Holm Bonferroni Correction if there are p_values to correct (preconditions pass)
+        if p_values:
+            expected_p_values = holm_bonferroni_correction(self.assertions_for_property, p_values, self.family_wise_p_value)
 
         # calculate the outcome of each assertion
         for property in properties:
