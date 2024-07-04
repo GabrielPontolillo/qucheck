@@ -2,7 +2,7 @@ from typing import Sequence
 from scipy import stats as sci
 
 from QiskitPBT.utils import HashableQuantumCircuit
-from QiskitPBT.stats.assertion import Assertion, StandardAssertion
+from QiskitPBT.stats.assertion import StatisticalAssertion, StandardAssertion
 from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
 from QiskitPBT.stats.measurements import Measurements
 from QiskitPBT.stats.utils.common_measurements import measure_x, measure_y, measure_z
@@ -15,7 +15,7 @@ class AssertEntangled(StandardAssertion):
         self.circuit = circuit
         self.basis = basis
 
-    def standard_calculate_outcome(self, measurements: Measurements) -> bool:
+    def calculate_outcome(self, measurements: Measurements) -> bool:
         print(measurements)
         for qubit1, qubit2 in self.qubits_pairs:
             for basis in self.basis:

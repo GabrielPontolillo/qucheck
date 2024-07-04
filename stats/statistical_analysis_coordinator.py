@@ -7,7 +7,7 @@ from QiskitPBT.property import Property
 from QiskitPBT.stats.assert_entangled import AssertEntangled
 from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
 from QiskitPBT.utils import HashableQuantumCircuit
-from QiskitPBT.stats.assertion import Assertion, StandardAssertion
+from QiskitPBT.stats.assertion import StatisticalAssertion, StandardAssertion, Assertion
 from QiskitPBT.stats.measurements import Measurements
 from QiskitPBT.stats.single_qubit_distributions.assert_equal import AssertEqual
 from QiskitPBT.stats.single_qubit_distributions.assert_different import AssertDifferent
@@ -25,13 +25,13 @@ class StatisticalAnalysisCoordinator:
     # aside from that, as a general sanity check, you can use all the case study tests to see if they pass, and all tests in test_coordinator
 
     def __init__(self, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
-        self.assertions_for_property: dict[Property, list[Assertion]] = {}
+        self.assertions_for_property: dict[Property, list[StatisticalAssertion]] = {}
         self.results: dict[Property, bool] = {}
         self.number_of_measurements = number_of_measurements
         self.family_wise_p_value = family_wise_p_value
         self.circuits_executed = 0 # for statistics
         self.unique_circuits: list[HashableQuantumCircuit] = []
-        self.measured_circuit_to_original_circuit_info: dict[HashableQuantumCircuit, tuple[Assertion, str, HashableQuantumCircuit]] = {}
+        self.measured_circuit_to_original_circuit_info: dict[HashableQuantumCircuit, tuple[StatisticalAssertion, str, HashableQuantumCircuit]] = {}
 
     #Assertions
     def assert_equal(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
@@ -92,24 +92,15 @@ class StatisticalAnalysisCoordinator:
 
         measurements = self._perform_measurements(backend)
 
-
-        # ok so here is the thing we get a dictionary of measurement objects, that have the assertion,F
-
-        # the dictionary comprehension was confusing me so I expanded it
         p_values = {}
         for property in properties:
             if property.classical_assertion_outcome:
-                # p_values[property] = {assertion: assertion.calculate_p_values(measurements[assertion]) for assertion in self.assertions_for_property[property]}
-
                 p_values[property] = {}
                 for assertion in self.assertions_for_property[property]:
-                    if isinstance(assertion, StandardAssertion):
-                        #  we do not call calculate_p_values on the assertion, as it is not implemented
-                        pass
-                    elif isinstance(assertion, Assertion):
+                    if isinstance(assertion, StatisticalAssertion):
                         p_value = assertion.calculate_p_values(measurements)
                         p_values[property][assertion] = p_value
-                    else:
+                    elif not isinstance(assertion, Assertion):
                         raise ValueError("Assertion must be a subclass of Assertion")
 
         # perform family wise error rate correction
@@ -125,14 +116,14 @@ class StatisticalAnalysisCoordinator:
                 self.results[property] = True
             for assertion in self.assertions_for_property[property]:
                 if isinstance(assertion, StandardAssertion):
-                    self.results[property] = (self.results[property] and assertion.standard_calculate_outcome(measurements))
-                elif isinstance(assertion, Assertion):
+                    self.results[property] = (self.results[property] and assertion.calculate_outcome(measurements))
+                elif isinstance(assertion, StatisticalAssertion):
                     self.results[property] = (self.results[property] and assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion]))
                 else:
-                    raise ValueError("Assertion must be a subclass of Assertion")
+                    raise ValueError("The provided assertions must be a subclass of Assertion")
 
     # creates a dictionary of measurements for each assertion,
-    def _perform_measurements(self, backend: Backend) -> dict[Assertion, Measurements]:
+    def _perform_measurements(self, backend: Backend) -> dict[StatisticalAssertion, Measurements]:
         measurements = Measurements()
 
         for circuit in self.unique_circuits:
@@ -159,7 +150,7 @@ class StatisticalAnalysisCoordinator:
                     self.unique_circuits.append(measured_circ)
             self.measured_circuit_to_original_circuit_info.update(measured_circuits)
 
-    def _get_measured_circuits(self, assertion: Assertion) -> dict[HashableQuantumCircuit, tuple[Assertion, list[str], HashableQuantumCircuit]]:
+    def _get_measured_circuits(self, assertion: StatisticalAssertion) -> dict[HashableQuantumCircuit, tuple[StatisticalAssertion, list[str], HashableQuantumCircuit]]:
         measured_circuits = {}
         measurement_config = assertion.get_measurement_configuration()
         for circ in measurement_config.get_measured_circuits():
@@ -197,11 +188,3 @@ class StatisticalAnalysisCoordinator:
             optimized_measurements.append((optimized_measurement_ids, optimized_qubits, optimized_operations))
 
         return optimized_measurements
-
-    # this code is not used anywhere
-    # def _extract_circuits(self, circuit_measurement_spec: dict[tuple[int, int], dict[str, QuantumCircuit]]) -> list[QuantumCircuit]:
-    #     circuits = []
-    #     for _, circuits_with_id in circuit_measurement_spec.items():
-    #         for _, circuit in circuits_with_id.items():
-    #             circuits.append(circuit)
-    #     return circuits

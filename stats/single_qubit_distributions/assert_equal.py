@@ -2,13 +2,13 @@ from typing import Sequence
 from scipy import stats as sci
 
 from QiskitPBT.utils import HashableQuantumCircuit
-from QiskitPBT.stats.assertion import Assertion
+from QiskitPBT.stats.assertion import StatisticalAssertion
 from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
 from QiskitPBT.stats.measurements import Measurements
 from QiskitPBT.stats.utils.common_measurements import measure_x, measure_y, measure_z
 
 
-class AssertEqual(Assertion):
+class AssertEqual(StatisticalAssertion):
     def __init__(self, qubits1: Sequence[int], circuit1: HashableQuantumCircuit, qubits2: Sequence[int], circuit2: HashableQuantumCircuit, basis = ["x", "y", "z"]) -> None:
     # TODO: add a clause for lists of qubits instead of single registers
         super().__init__()

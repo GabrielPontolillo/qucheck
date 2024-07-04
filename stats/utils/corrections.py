@@ -1,19 +1,17 @@
 from QiskitPBT.property import Property
-from QiskitPBT.stats.assertion import Assertion, StandardAssertion
+from QiskitPBT.stats.assertion import StatisticalAssertion, Assertion
 
 
-def holm_bonferroni_correction(assertions_per_property: dict[Property, list[Assertion]], p_values_per_property: dict[Property, dict[Assertion, list[float]]], family_wise_alpha=0.05) -> dict[Property, dict[Assertion, list[float]]]:
+def holm_bonferroni_correction(assertions_per_property: dict[Property, list[StatisticalAssertion]], p_values_per_property: dict[Property, dict[StatisticalAssertion, list[float]]], family_wise_alpha=0.05) -> dict[Property, dict[StatisticalAssertion, list[float]]]:
     p_vals = []
     for property, assertions in assertions_per_property.items():
         if property.classical_assertion_outcome:
             for assertion in assertions:
-                if isinstance(assertion, StandardAssertion):
-                    #  we do not attempt to correct p values for standard assertions,that do not apply a statistical test
-                    pass
-                elif isinstance(assertion, Assertion):
+                # only consider statistical assertions
+                if isinstance(assertion, StatisticalAssertion):
                     for p_value in p_values_per_property[property][assertion]:
                         p_vals.append([p_value, property, assertion])
-                else:
+                elif not isinstance(assertion, Assertion):
                     raise ValueError("Assertion must be a subclass of Assertion")
             
     # sort by p_val ascending order
