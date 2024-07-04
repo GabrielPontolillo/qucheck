@@ -7,7 +7,7 @@ from QiskitPBT.property import Property
 from QiskitPBT.stats.assert_entangled import AssertEntangled
 from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
 from QiskitPBT.utils import HashableQuantumCircuit
-from QiskitPBT.stats.assertion import Assertion
+from QiskitPBT.stats.assertion import Assertion, StandardAssertion
 from QiskitPBT.stats.measurements import Measurements
 from QiskitPBT.stats.single_qubit_distributions.assert_equal import AssertEqual
 from QiskitPBT.stats.single_qubit_distributions.assert_different import AssertDifferent
@@ -103,8 +103,14 @@ class StatisticalAnalysisCoordinator:
 
                 p_values[property] = {}
                 for assertion in self.assertions_for_property[property]:
-                    p_value = assertion.calculate_p_values(measurements)
-                    p_values[property][assertion] = p_value
+                    if isinstance(assertion, StandardAssertion):
+                        #  we do not call calculate_p_values on the assertion, as it is not implemented
+                        pass
+                    elif isinstance(assertion, Assertion):
+                        p_value = assertion.calculate_p_values(measurements)
+                        p_values[property][assertion] = p_value
+                    else:
+                        raise ValueError("Assertion must be a subclass of Assertion")
 
         # perform family wise error rate correction
         # Ideally, we need to sort all of the p-values from all assertions, then pass back the corrected alpha values to compare them to in a list
@@ -118,7 +124,12 @@ class StatisticalAnalysisCoordinator:
             if property not in self.results:
                 self.results[property] = True
             for assertion in self.assertions_for_property[property]:
-                self.results[property] = (self.results[property] and assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion]))
+                if isinstance(assertion, StandardAssertion):
+                    self.results[property] = (self.results[property] and assertion.standard_calculate_outcome(measurements))
+                elif isinstance(assertion, Assertion):
+                    self.results[property] = (self.results[property] and assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion]))
+                else:
+                    raise ValueError("Assertion must be a subclass of Assertion")
 
     # creates a dictionary of measurements for each assertion,
     def _perform_measurements(self, backend: Backend) -> dict[Assertion, Measurements]:

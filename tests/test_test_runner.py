@@ -11,6 +11,7 @@ from unittest import TestCase
 
 class TestTestRunner(TestCase):
     def tearDown(self):
+        TestRunner.property_classes = []
         TestRunner.property_objects = []
         TestRunner.seeds_list_dict = {}
 
@@ -75,6 +76,10 @@ class TestTestRunner(TestCase):
         # run the tests
         test_runner.run_tests()
         save_seeds = test_runner.seeds_list_dict
+
+        TestRunner.property_classes = []
+        TestRunner.property_objects = []
+        TestRunner.seeds_list_dict = {}
 
         test_runner2 = TestRunner([Inq0EqualOutq2, IdentityProperty], 3, 2, 1000)
         # run the tests

@@ -21,4 +21,4 @@ class EntangledPrecondition(Property):
         qc.h(0)
         qc.cx(0, 1)
         # TODO: for some reason this does not work on y basis
-        self.statistical_analysis.assert_entangled(self, [0, 1], qc, basis=["x", "z"])
+        self.statistical_analysis.assert_entangled(self, [0, 1], qc, basis=["x", "y", "z"])
