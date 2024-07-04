@@ -11,6 +11,7 @@ from unittest import TestCase
 
 class TestTestRunner(TestCase):
     def tearDown(self):
+        TestRunner.property_classes = []
         TestRunner.property_objects = []
         TestRunner.seeds_list_dict = {}
 
@@ -59,8 +60,10 @@ class TestTestRunner(TestCase):
         test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1, 1000)
         # run the tests
         test_runner.run_tests()
-        save_seeds = copy.deepcopy(test_runner.seeds_list_dict)
+        save_seeds = test_runner.seeds_list_dict
         # create an instance of the test runner
+        TestRunner.property_objects = []
+        TestRunner.generated_seeds = []
         test_runner2 = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1, 1000)
         # run the tests
         test_runner2.run_tests()
@@ -72,9 +75,13 @@ class TestTestRunner(TestCase):
         test_runner = TestRunner([Inq0EqualOutq2, IdentityProperty], 3, 1, 1000)
         # run the tests
         test_runner.run_tests()
-        save_seeds = copy.deepcopy(test_runner.seeds_list_dict)
-        # create an instance of the test runner
-        test_runner2 = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 2, 1000)
+        save_seeds = test_runner.seeds_list_dict
+
+        TestRunner.property_classes = []
+        TestRunner.property_objects = []
+        TestRunner.seeds_list_dict = {}
+
+        test_runner2 = TestRunner([Inq0EqualOutq2, IdentityProperty], 3, 2, 1000)
         # run the tests
         test_runner2.run_tests()
         save_seeds2 = test_runner2.seeds_list_dict

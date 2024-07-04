@@ -5,7 +5,7 @@ from qiskit.providers import Backend
 from QiskitPBT.property import Property
 from QiskitPBT.stats.assert_entangled import AssertEntangled
 from QiskitPBT.utils import HashableQuantumCircuit
-from QiskitPBT.stats.assertion import Assertion
+from QiskitPBT.stats.assertion import StatisticalAssertion, StandardAssertion, Assertion
 from QiskitPBT.stats.measurements import Measurements
 from QiskitPBT.stats.single_qubit_distributions.assert_equal import AssertEqual
 from QiskitPBT.stats.single_qubit_distributions.assert_different import AssertDifferent
@@ -14,17 +14,8 @@ from QiskitPBT.stats.execution_optimizer import ExecutionOptimizer
 
 
 class StatisticalAnalysisCoordinator:
-    # TODO: this should be a single instance fed to all properties?
-    # esentially the problem is that we are only considering the circuits from this single property when
-    # adding up the unique circuits in _perfrom_measurements
-    # there may be multiple properties that run the same circuit
-    # (now we are passing the same input to all properties that use the same generators)
-    # to check if its working we should see the execution time be roughly the same for the tests:
-    # test_run_tests and test_run_costs in test_testRunner
-    # aside from that, as a general sanity check, you can use all the case study tests to see if they pass, and all tests in test_coordinator
-
     def __init__(self, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
-        self.assertions_for_property: dict[Property, list[Assertion]] = {}
+        self.assertions_for_property: dict[Property, list[StatisticalAssertion]] = {}
         self.results: dict[Property, bool] = {}
         self.number_of_measurements = number_of_measurements
         self.family_wise_p_value = family_wise_p_value
@@ -93,13 +84,14 @@ class StatisticalAnalysisCoordinator:
 
         p_values = {}
         for property in properties:
-            #at this point if property is in results that means it has failed classical assertion outcome so we skip it
-            if property in self.results:
-                continue
-            p_values[property] = {}
-            for assertion in self.assertions_for_property[property]:
-                p_value = assertion.calculate_p_values(measurements)
-                p_values[property][assertion] = p_value
+            if property.classical_assertion_outcome and property not in self.results:
+                p_values[property] = {}
+                for assertion in self.assertions_for_property[property]:
+                    if isinstance(assertion, StatisticalAssertion):
+                        p_value = assertion.calculate_p_values(measurements)
+                        p_values[property][assertion] = p_value
+                    elif not isinstance(assertion, Assertion):
+                        raise ValueError("Assertion must be a subclass of Assertion")
 
         # perform family wise error rate correction
         # Ideally, we need to sort all of the p-values from all assertions, then pass back the corrected alpha values to compare them to in a list
@@ -113,10 +105,15 @@ class StatisticalAnalysisCoordinator:
             if property not in self.results:
                 self.results[property] = True
             for assertion in self.assertions_for_property[property]:
-                self.results[property] = (self.results[property] and assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion]))
+                if isinstance(assertion, StandardAssertion):
+                    self.results[property] = (self.results[property] and assertion.calculate_outcome(measurements))
+                elif isinstance(assertion, StatisticalAssertion):
+                    self.results[property] = (self.results[property] and assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion]))
+                else:
+                    raise ValueError("The provided assertions must be a subclass of Assertion")
 
     # creates a dictionary of measurements for each assertion,
-    def _perform_measurements(self, execution_optimizer: ExecutionOptimizer, backend: Backend) -> dict[Assertion, Measurements]:
+    def _perform_measurements(self, execution_optimizer: ExecutionOptimizer, backend: Backend) -> dict[StatisticalAssertion, Measurements]:
         measurements = Measurements()
 
         for circuit in execution_optimizer.get_circuits_to_execute():
