@@ -20,3 +20,11 @@ def measure_x() -> QuantumCircuit:
     circuit.h(0)
     circuit.measure(0, 0)
     return circuit
+
+
+def ry_then_measure(theta) -> QuantumCircuit:
+    circuit = QuantumCircuit(1, 1)
+    circuit.ry(theta, 0)
+    circuit.measure(0, 0)
+    return circuit
+

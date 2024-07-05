@@ -70,7 +70,7 @@ class TestTestRunner(TestCase):
         save_seeds2 = test_runner2.seeds_list_dict
         self.assertEqual(save_seeds, save_seeds2)
 
-    def test_different_seeds(self): # TODO: there is a problem here different seeds generating same local seeds?
+    def test_different_seeds(self):
         # create an instance of the test runner
         test_runner = TestRunner([Inq0EqualOutq2, IdentityProperty], 3, 1, 1000)
         # run the tests

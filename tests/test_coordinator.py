@@ -83,11 +83,13 @@ class TestCoordinator(TestCase):
         passing = coordinator.test_runner.list_passing_properties()
         passing = [elem.__name__ for elem in passing]
         print(passing)
-        self.assertEqual(len(passing), 1)
+        self.assertEqual(len(passing), 2)
         self.assertIn("EntangledPrecondition", passing)
+        self.assertIn("EntangledCheckOnGHZState", passing)
 
         failing = coordinator.test_runner.list_failing_properties()
         failing = [elem.__name__ for elem in failing]
         print(failing)
-        self.assertEqual(len(failing), 1)
+        self.assertEqual(len(failing), 2)
         self.assertIn("FailingPrecondition", failing)
+        self.assertIn("EntangledCheckOnUnentangledState", failing)

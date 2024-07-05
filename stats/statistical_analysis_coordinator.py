@@ -55,7 +55,7 @@ class StatisticalAnalysisCoordinator:
         else:
             self.assertions_for_property[property] = [AssertDifferent(qubits1, circ1, qubits2, circ2, basis)]
 
-    def assert_entangled(self, property: Property, qubits_pairs: tuple[int, int] | Sequence[tuple[int, int]], circuit: QuantumCircuit, basis = ["x", "y", "z"]):
+    def assert_entangled(self, property: Property, qubits_pairs: tuple[int, int] | Sequence[tuple[int, int]], circuit: QuantumCircuit, basis = ["z"]):
         # parse qubits so that assert equals always gets sequences of qubits
         if not isinstance(qubits_pairs[0], Sequence):
             qubits_pairs = (qubits_pairs, )
@@ -119,6 +119,7 @@ class StatisticalAnalysisCoordinator:
         for circuit in execution_optimizer.get_circuits_to_execute():
             # TODO: get counts actually returns (or used to) unparsed bit strings, so if there are 2 quantum registers there is a space in there - this may need some attention
             # this is necessary for measure to work
+            print(circuit)
             counts = backend.run(transpile(circuit, backend), shots=self.number_of_measurements).result().get_counts()
             self.circuits_executed += 1
             # get the original circuit, as well as basis measurements, and what assertions it is linked to
