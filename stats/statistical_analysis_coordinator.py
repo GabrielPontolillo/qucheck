@@ -9,13 +9,14 @@ from QiskitPBT.stats.assertion import StatisticalAssertion, StandardAssertion, A
 from QiskitPBT.stats.measurements import Measurements
 from QiskitPBT.stats.single_qubit_distributions.assert_equal import AssertEqual
 from QiskitPBT.stats.single_qubit_distributions.assert_different import AssertDifferent
+from QiskitPBT.stats.assert_most_frequent import AssertMostFrequent
 from QiskitPBT.stats.utils.corrections import holm_bonferroni_correction
 from QiskitPBT.stats.execution_optimizer import ExecutionOptimizer
 
 
 class StatisticalAnalysisCoordinator:
     def __init__(self, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
-        self.assertions_for_property: dict[Property, list[StatisticalAssertion]] = {}
+        self.assertions_for_property: dict[Property, list[Assertion]] = {}
         self.results: dict[Property, bool] = {}
         self.number_of_measurements = number_of_measurements
         self.family_wise_p_value = family_wise_p_value
@@ -55,18 +56,33 @@ class StatisticalAnalysisCoordinator:
         else:
             self.assertions_for_property[property] = [AssertDifferent(qubits1, circ1, qubits2, circ2, basis)]
 
-    def assert_entangled(self, property: Property, qubits_pairs: tuple[int, int] | Sequence[tuple[int, int]], circuit: QuantumCircuit, basis = ["z"]):
+    def assert_entangled(self, property: Property, qubits: Sequence[int], circuit: QuantumCircuit, basis = ["z"]):
         # parse qubits so that assert equals always gets sequences of qubits
-        if not isinstance(qubits_pairs[0], Sequence):
-            qubits_pairs = (qubits_pairs, )
+        if not isinstance(qubits, Sequence):
+            qubits = (qubits,)
         # hack to make circuits in assert equals be usable as dictionary keys (by ref)
         circ = circuit.copy()
         circ.__class__ = HashableQuantumCircuit
 
         if property in self.assertions_for_property:
-            self.assertions_for_property[property].append(AssertEntangled(qubits_pairs, circ,basis))
+            self.assertions_for_property[property].append(AssertEntangled(qubits, circ, basis))
         else:
-            self.assertions_for_property[property] = [AssertEntangled(qubits_pairs, circ,basis)]
+            self.assertions_for_property[property] = [AssertEntangled(qubits, circ, basis)]
+
+    def assert_most_frequent(self, property: Property, qubits: int | Sequence[int], circuit: QuantumCircuit, states: str | Sequence[str], basis = ["z"]):
+        # parse qubits so that assert equals always gets sequences of qubits / bitstrings
+        if not isinstance(qubits, Sequence):
+            qubits = (qubits,)
+        if not isinstance(states, Sequence):
+            marked_states = (states, )
+        # hack to make circuits in assert equals be usable as dictionary keys (by ref)
+        circ = circuit.copy()
+        circ.__class__ = HashableQuantumCircuit
+
+        if property in self.assertions_for_property:
+            self.assertions_for_property[property].append(AssertMostFrequent(qubits, circ, states, basis))
+        else:
+            self.assertions_for_property[property] = [AssertMostFrequent(qubits, circ, states, basis)]
     
     # Entrypoint for analysis
     def perform_analysis(self, properties: list[Property], backend: Backend=BasicSimulator()) -> None:
@@ -119,7 +135,6 @@ class StatisticalAnalysisCoordinator:
         for circuit in execution_optimizer.get_circuits_to_execute():
             # TODO: get counts actually returns (or used to) unparsed bit strings, so if there are 2 quantum registers there is a space in there - this may need some attention
             # this is necessary for measure to work
-            print(circuit)
             counts = backend.run(transpile(circuit, backend), shots=self.number_of_measurements).result().get_counts()
             self.circuits_executed += 1
             # get the original circuit, as well as basis measurements, and what assertions it is linked to

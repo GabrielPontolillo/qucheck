@@ -19,7 +19,7 @@ from QiskitPBT.stats.utils.common_measurements import measure_x, measure_y, meas
 #  going in the direction of CHSH inequality, works only for 2 qubits, extending to more qubits is possible through other
 #  metrics, but would balloon the number of measurements needed
 class AssertEntangled(StandardAssertion):
-    def __init__(self, qubits: Sequence[int], circuit: HashableQuantumCircuit, basis=["x", "y", "z"]) -> None:
+    def __init__(self, qubits: Sequence[int], circuit: HashableQuantumCircuit, basis=["z"]) -> None:
         super().__init__()
         self.qubits = qubits
         self.circuit = circuit
@@ -39,13 +39,15 @@ class AssertEntangled(StandardAssertion):
                 # get the relevant bits from the bitstrings only
                 for bitstring in bitstrings:
                     string_builder = ""
-                    for qubit in self.qubits[0]:
+                    for qubit in self.qubits:
                         string_builder += bitstring[len(bitstring) - qubit - 1]
                     relevant_bitstrings.append(string_builder)
 
             print(bitstring)
             print(relevant_bitstrings)
 
+            # the ''.join flips the 1's and 0's in the bitstring, as if the state is entangled, then the two options are
+            # 00 and 11, and the same for 01 and 10
             if relevant_bitstrings[0] != ''.join('1' if x == '0' else '0' for x in relevant_bitstrings[1]):
                 return False
 
@@ -54,11 +56,11 @@ class AssertEntangled(StandardAssertion):
     def get_measurement_configuration(self) -> MeasurementConfiguration:
         measurement_config = MeasurementConfiguration()
         if "x" in self.basis:
-            measurement_config.add_measurement("x", self.circuit, {i: measure_x() for i in self.qubits[0]})
+            measurement_config.add_measurement("x", self.circuit, {i: measure_x() for i in self.qubits})
         if "y" in self.basis:
-            measurement_config.add_measurement("y", self.circuit, {i: measure_y() for i in self.qubits[0]})
+            measurement_config.add_measurement("y", self.circuit, {i: measure_y() for i in self.qubits})
         if "z" in self.basis:
-            measurement_config.add_measurement("z", self.circuit, {i: measure_z() for i in self.qubits[0]})
+            measurement_config.add_measurement("z", self.circuit, {i: measure_z() for i in self.qubits})
 
         return measurement_config
 
