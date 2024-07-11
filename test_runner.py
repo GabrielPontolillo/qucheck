@@ -51,10 +51,10 @@ class TestRunner:
         # and the failing properties
         return [prop for prop in self.property_classes if prop not in self.list_failing_properties()]
 
-    def run_tests(self, backend=BasicSimulator(), measurements=2000, family_wise_p_value=0.01):
+    def run_tests(self, backend=BasicSimulator(), family_wise_p_value=0.01):
         # for each property class, we need to create a statistical analysis object
         # and then create a property object using the statistical analysis object
-        stat_analysis_coordinator = StatisticalAnalysisCoordinator(measurements, family_wise_p_value)
+        stat_analysis_coordinator = StatisticalAnalysisCoordinator(self.num_measurements, family_wise_p_value)
         properties = []
 
         for property in self.property_classes:

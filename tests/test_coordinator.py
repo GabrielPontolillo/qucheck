@@ -9,6 +9,11 @@ PARENT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.par
 
 
 class TestCoordinator(TestCase):
+    def tearDown(self):
+        TestRunner.property_classes = []
+        TestRunner.property_objects = []
+        TestRunner.seeds_list_dict = {}
+
     # basic test just to see if the coordinator runs without throwing an exception
     def test_coordinator(self):
         coordinator = Coordinator(5)
@@ -37,6 +42,11 @@ class TestCoordinator(TestCase):
         coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), 1000)
         save_seeds = coordinator.test_runner.seeds_list_dict
 
+        # reset the seeds and property objects to ensure next run works
+        TestRunner.seeds_list_dict = {}
+        TestRunner.property_classes = []
+        TestRunner.property_objects = []
+
         coordinator2 = Coordinator(num_inputs, 1)
         coordinator2.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), 1000)
         save_seeds2 = coordinator2.test_runner.seeds_list_dict
@@ -60,6 +70,7 @@ class TestCoordinator(TestCase):
 
         # reset the seeds and property objects to ensure next run works
         TestRunner.seeds_list_dict = {}
+        TestRunner.property_classes = []
         TestRunner.property_objects = []
 
         coordinator2 = Coordinator(num_inputs, 2)
@@ -93,3 +104,21 @@ class TestCoordinator(TestCase):
         self.assertEqual(len(failing), 2)
         self.assertIn("FailingPrecondition", failing)
         self.assertIn("EntangledCheckOnUnentangledState", failing)
+
+    # def test_coordinator_same_seeds(self):
+    #     # 25 is 28952, 15.3%
+    #     # 20 is 21700, 14.6%
+    #     # 15 is 10500, 9.9%
+    #     # 10 is 5180, 7.4%
+    #     # 5  is 1380, 4%
+    #     num_inputs = 100
+    #     coordinator = Coordinator(num_inputs, 1)
+    #     coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), 1000)
+    #     failing = coordinator.test_runner.list_failing_properties()
+    #     passing = coordinator.test_runner.list_passing_properties()
+    #     print(coordinator.test_runner.circuits_executed)
+    #     print(failing)
+    #     print(passing)
+
+
+

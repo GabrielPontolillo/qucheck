@@ -36,7 +36,7 @@ class Coordinator:
                         self.property_classes.add(obj)
         sys.path.pop(0)
 
-    def test(self, path, measurements: int):
+    def test(self, path, measurements: int = 2000):
         self.get_classes(path)
         print(self.property_classes)
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
