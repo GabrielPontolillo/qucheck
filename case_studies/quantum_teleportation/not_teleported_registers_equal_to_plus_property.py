@@ -24,13 +24,10 @@ class NotTeleportedPlus(Property):
         # stitch qc and quantum_teleportation together
         qc = qc.compose(qt)
 
-        print(qc)
-
         # initialise another circuit to |++> state
         # breaks if classical register is not explicitly defined?
         qc2 = QuantumCircuit(2, 2)
         qc2.h(0)
         qc2.h(1)
 
-        print(qc2)
         self.statistical_analysis.assert_equal(self, [0, 1], qc, [0, 1], qc2)

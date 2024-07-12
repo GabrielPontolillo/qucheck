@@ -64,9 +64,6 @@ class PhaseCorrectlyEstimatedEnoughQubits(Property):
         qpe2 = QuantumCircuit(estimation_qubits, estimation_qubits)
         qpe2.initialize(Statevector.from_label(binary_fraction), list(range(estimation_qubits)))
 
-        print(qpe)
-        print(qpe2)
-
         # need to reverse qubit order to get it to work, probably due to endianness
         self.statistical_analysis.assert_equal(self, list(range(estimation_qubits)), qpe, list(reversed(range(estimation_qubits))), qpe2)
 

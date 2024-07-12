@@ -11,7 +11,7 @@ from QiskitPBT.property import Property
 class GroversAlgorithmLowerRegisterMinus(Property):
     # specify the inputs that are to be generated
     def get_input_generators(self):
-        return [RandomGroversOracleMarkedStatesPairGenerator(3, 4)]
+        return [RandomGroversOracleMarkedStatesPairGenerator(4, 6)]
 
     # specify the preconditions for the test
     def preconditions(self, oracle_pair):
@@ -28,10 +28,6 @@ class GroversAlgorithmLowerRegisterMinus(Property):
         N = 2**(oracle.num_qubits-1)
         # number of marked states is used to identify the number of grover iterations to apply
         M = len(marked_states)
-
-        print(N)
-        print(marked_states)
-        print("---------")
 
         # src Nielsen and Chuang, quantum computation and quantum information
         n_iterations = int(np.floor((np.pi/4) * np.sqrt((N/M))))

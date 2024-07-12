@@ -24,15 +24,11 @@ class PhaseShiftToLinearShift(Property):
         qft_1.initialize(state, range(n))
         qft_1 = qft_1.compose(qft_general(n, swap=True).inverse(), reversed(range(n)))
         qft_1 = linear_shift(qft_1)
-        #print("--------------------")
-        #print(np.around(Statevector(qft_1).data, 2))
 
         qft_2 = QuantumCircuit(n, n)
         qft_2.initialize(state, range(n))
         qft_2 = phase_shift(qft_2)
         qft_2 = qft_2.compose(qft_general(n, swap=True).inverse(), reversed(range(n)))
-        #print(np.around(Statevector(qft_2).data, 2))
-        #print("--------------------")
 
         self.statistical_analysis.assert_equal(self, list(range(n)), qft_1, list(range(n)), qft_2)
 

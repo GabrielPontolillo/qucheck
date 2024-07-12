@@ -3,6 +3,7 @@ import importlib
 import inspect
 import random
 import sys
+import statsmodels.stats.power as smp
 
 from qiskit.providers.basic_provider import BasicSimulator
 
@@ -11,11 +12,12 @@ from QiskitPBT.test_runner import TestRunner
 
 
 class Coordinator:
-    def __init__(self, num_inputs, random_seed=None, backend=BasicSimulator()):
+    def __init__(self, num_inputs, random_seed=None, alpha=0.01, backend=BasicSimulator()):
         self.num_inputs = num_inputs
         self.property_classes = set()
         self.test_runner = None
         self.backend = backend
+        self.alpha = alpha
 
         # this random seed is used to generate other random seeds for the test runner, such that we can replay
         # an entire test run
@@ -40,7 +42,7 @@ class Coordinator:
         self.get_classes(path)
         print(self.property_classes)
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
-        self.test_runner.run_tests(self.backend)
+        self.test_runner.run_tests(self.backend, self.alpha)
 
     def print_outcomes(self):
         if self.test_runner is None:

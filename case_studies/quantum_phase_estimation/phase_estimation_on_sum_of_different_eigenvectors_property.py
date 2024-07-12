@@ -39,6 +39,5 @@ class PhaseEstimationSumDifferentEigenvectors(Property):
         print(qpe)
         print(qpe2)
 
-        # TODO: need to assert different
         self.statistical_analysis.assert_different(self, list(range(estimation_qubits)), qpe,
                                                    list(range(estimation_qubits)), qpe2)
