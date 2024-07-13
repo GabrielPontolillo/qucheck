@@ -14,7 +14,7 @@ class TestIdentityPropertyQFT(unittest.TestCase):
 
     def test_identity_property_qft(self):
         # run the test
-        runner = TestRunner([IdentityProperty], self.num_inputs, 1, 1000)
+        runner = TestRunner([IdentityProperty], self.num_inputs, 1, 1500)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -22,7 +22,7 @@ class TestIdentityPropertyQFT(unittest.TestCase):
 
     def test_phase_shift_property_qft(self):
         # run the test
-        runner = TestRunner([LinearShiftToPhaseShift], self.num_inputs, 1, 1000)
+        runner = TestRunner([LinearShiftToPhaseShift], self.num_inputs, 1, 1500)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -30,7 +30,7 @@ class TestIdentityPropertyQFT(unittest.TestCase):
 
     def test_linear_shift_property_qft(self):
         # run the test
-        runner = TestRunner([PhaseShiftToLinearShift], self.num_inputs, 5, 1000)
+        runner = TestRunner([PhaseShiftToLinearShift], self.num_inputs, 5, 1500)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []

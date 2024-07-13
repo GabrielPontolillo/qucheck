@@ -2,7 +2,6 @@ import random
 from qiskit import QuantumCircuit
 from QiskitPBT.case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa_circ
 from QiskitPBT.case_studies.deutsch_jozsa.dj_helpers import ConstantOracleInputGenerator, vmerge
-from QiskitPBT.input_generators import InputGenerator
 from QiskitPBT.property import Property
 
 

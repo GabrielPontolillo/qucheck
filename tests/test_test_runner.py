@@ -17,43 +17,71 @@ class TestTestRunner(TestCase):
 
     # test the run_tests method
     def test_run_tests(self):
+        # check correct number of circuits generated
+        # pass the classes directly
+        num_inputs = 5
+
         # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2], 10,  548, 1000)
+        test_runner = TestRunner([Inq0EqualOutq2], num_inputs,  548, 1000)
         # run the tests
         test_runner.run_tests()
-        print(test_runner.seeds_list_dict.values())
         self.assertEqual(test_runner.list_failing_properties(), [])
         self.assertEqual(test_runner.list_passing_properties(), [Inq0EqualOutq2])
+        self.assertEqual(test_runner.circuits_executed, num_inputs*2*3)
 
-    def test_run_tests_cost(self): # fails, should be automatically fixed when optimisation is fixed
+    def test_run_tests_same_number_circuits_executed_when_using_same_property_twice(self): # fails, should be automatically fixed when optimisation is fixed
+        num_inputs = 5
         # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2, NotTeleportedPlus], 2,  548, 1000)
+        test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], num_inputs,  548, 1000)
         # run the tests
         test_runner.run_tests()
-        print(test_runner.seeds_list_dict.values())
-        self.assertEqual(test_runner.list_failing_properties(), [])
-        self.assertEqual(test_runner.list_passing_properties(), [Inq0EqualOutq2, NotTeleportedPlus])
-
-    def test_run_tests_cost2(self):
-        # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 10,  548, 1000)
-        # run the tests
-        test_runner.run_tests()
-        print(test_runner.seeds_list_dict.values())
         self.assertEqual(test_runner.list_failing_properties(), [])
         self.assertEqual(test_runner.list_passing_properties(), [Inq0EqualOutq2, Inq0EqualOutq2])
+        self.assertEqual(test_runner.circuits_executed, num_inputs * 2 * 3)
 
-    def test_run_tests2(self):
+        TestRunner.property_classes = []
+        TestRunner.property_objects = []
+        TestRunner.seeds_list_dict = {}
+
+        test_runner2 = TestRunner([Inq0EqualOutq2], num_inputs,  548, 1000)
+
+        test_runner2.run_tests()
+        self.assertEqual(test_runner2.list_failing_properties(), [])
+        self.assertEqual(test_runner2.list_passing_properties(), [Inq0EqualOutq2])
+        self.assertEqual(test_runner2.circuits_executed, num_inputs * 2 * 3)
+
+    def test_run_tests_different_properties_same_input_optimisation_check(self): # fails, should be automatically fixed when optimisation is fixed
+        num_inputs = 5
         # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1910, 1000)
+        test_runner = TestRunner([Inq0EqualOutq2, NotTeleportedPlus], num_inputs,  548, 1000)
         # run the tests
         test_runner.run_tests()
-        # list the failing properties
-        print("failing properties:")
-        print(test_runner.list_failing_properties())
-        print("passing properties:")
-        # we actually get a list of passing properties objects
-        print(test_runner.list_passing_properties())
+        self.assertEqual(test_runner.list_failing_properties(), [])
+        self.assertEqual(test_runner.list_passing_properties(), [Inq0EqualOutq2, NotTeleportedPlus])
+        self.assertEqual(test_runner.circuits_executed, (num_inputs * 2 * 3) + 3)
+
+        TestRunner.property_classes = []
+        TestRunner.property_objects = []
+        TestRunner.seeds_list_dict = {}
+
+        test_runner2 = TestRunner([Inq0EqualOutq2], num_inputs,  548, 1000)
+
+        test_runner2.run_tests()
+        self.assertEqual(test_runner2.list_failing_properties(), [])
+        self.assertEqual(test_runner2.list_passing_properties(), [Inq0EqualOutq2])
+        self.assertEqual(test_runner2.circuits_executed, num_inputs * 2 * 3)
+
+        TestRunner.property_classes = []
+        TestRunner.property_objects = []
+        TestRunner.seeds_list_dict = {}
+
+        test_runner3 = TestRunner([NotTeleportedPlus], num_inputs, 548, 1000)
+
+        test_runner3.run_tests()
+        self.assertEqual(test_runner3.list_failing_properties(), [])
+        self.assertEqual(test_runner3.list_passing_properties(), [NotTeleportedPlus])
+        self.assertEqual(test_runner3.circuits_executed, (num_inputs * 1 * 3) + 3)
+
 
     def test_same_seeds(self):
         # create an instance of the test runner
@@ -64,6 +92,7 @@ class TestTestRunner(TestCase):
         # create an instance of the test runner
         TestRunner.property_objects = []
         TestRunner.generated_seeds = []
+
         test_runner2 = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1, 1000)
         # run the tests
         test_runner2.run_tests()
@@ -98,15 +127,6 @@ class TestTestRunner(TestCase):
         print("passing properties:")
         # we actually get a list of passing properties objects
         print(test_runner.list_passing_properties())
-
-    def test_two_different_properties(self):
-        # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2, IdentityProperty], 3, 1917, 1000)
-        # run the tests
-        test_runner.run_tests()
-        # list the failing properties
-        assert test_runner.list_failing_properties() == []
-        assert test_runner.list_passing_properties() == [Inq0EqualOutq2, IdentityProperty]
 
     def test_repeated_property_does_not_run_more_circuits(self):
         # create an instance of the test runner

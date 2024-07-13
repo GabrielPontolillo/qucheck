@@ -57,7 +57,8 @@ class TestRunner:
         stat_analysis_coordinator = StatisticalAnalysisCoordinator(self.num_measurements, family_wise_p_value)
         properties = []
 
-        for property in self.property_classes:
+        # needs to be sorted to ensure reproducibility, otherwise different seeds will be generated if random order
+        for property in sorted(self.property_classes, key=lambda x: x.__name__):
             # instantiate the property with statistical analysis object
             property_obj = property()
             properties.append(property_obj)

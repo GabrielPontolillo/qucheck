@@ -4,6 +4,7 @@ from QiskitPBT.case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa_cir
 from QiskitPBT.case_studies.deutsch_jozsa.dj_helpers import BalancedOracleInputGenerator
 from QiskitPBT.property import Property
 
+
 class DeutschJozsaWorksForBalancedFunction(Property):
     # specify the inputs that are to be generated
     def get_input_generators(self):

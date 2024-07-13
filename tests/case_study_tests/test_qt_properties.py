@@ -13,7 +13,7 @@ class TestQTProperties(unittest.TestCase):
 
     def test_equal_input_output(self):
         # run the test
-        runner = TestRunner([Inq0EqualOutq2], self.num_inputs, 1, 1000)
+        runner = TestRunner([Inq0EqualOutq2], self.num_inputs, 1, 1500)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -21,7 +21,7 @@ class TestQTProperties(unittest.TestCase):
 
     def test_not_teleported_plus(self):
         # run the test
-        runner = TestRunner([NotTeleportedPlus], self.num_inputs, 1, 1000)
+        runner = TestRunner([NotTeleportedPlus], self.num_inputs, 1, 1500)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -29,7 +29,7 @@ class TestQTProperties(unittest.TestCase):
 
     def test_unitary_before_and_after_teleport(self):
         # run the test
-        runner = TestRunner([UnitaryBeforeAndAfterTeleport], self.num_inputs, 1, 1000)
+        runner = TestRunner([UnitaryBeforeAndAfterTeleport], self.num_inputs, 1, 1500)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
