@@ -79,7 +79,7 @@ class ExecutionOptimizer:
         while True:
             qc = unique_circuit.copy()
             qc.reset_hash()
-            inserted_qubits = set()
+            inserted_qubits = {}
             measurement_specifications_in_circuit = []
             if False not in measurement_specification_inserted:
                 return full_circuits
@@ -90,15 +90,24 @@ class ExecutionOptimizer:
 
                 measurement_id, qubit_measurement_map, original_circuit = all_measurement_specifications[i]
                 
-                if len(inserted_qubits.intersection(qubit_measurement_map.keys())) > 0:
+                overlapping_qubits = set(inserted_qubits.keys()).intersection(qubit_measurement_map.keys())
+                should_append_circuit = True
+                
+                for qubit in overlapping_qubits:
+                    if inserted_qubits[qubit] != qubit_measurement_map[qubit]:
+                        should_append_circuit = False
+                        break
+                
+                if not should_append_circuit:
                     continue
                 else:
-                    inserted_qubits.update(qubit_measurement_map.keys())
                     measurement_specifications_in_circuit.append((measurement_id, original_circuit))
                     measurement_specification_inserted[i] = True
                     for qubit, measurement in qubit_measurement_map.items():
-                        qc.compose(measurement, (qubit,), (qubit,), inplace=True)
-            
+                        if qubit not in inserted_qubits:
+                            qc.compose(measurement, (qubit,), (qubit,), inplace=True)
+                    inserted_qubits.update(qubit_measurement_map)
+
             full_circuits[qc] = measurement_specifications_in_circuit
 
     def get_circuits_to_execute(self) -> list[QuantumCircuit]:
