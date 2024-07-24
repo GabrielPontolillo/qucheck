@@ -10,7 +10,7 @@ import unittest
 # test the identity property
 class TestQPEProperties(unittest.TestCase):
     def setUp(self):
-        self.num_inputs = 3
+        self.num_inputs = 100
 
     def test_eigenvector_property(self):
         # run the test
