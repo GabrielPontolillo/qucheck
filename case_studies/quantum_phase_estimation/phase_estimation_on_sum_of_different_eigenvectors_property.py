@@ -24,8 +24,8 @@ class PhaseEstimationSumDifferentEigenvectors(Property):
     def operations(self, eigenvector_unitary_pair, estimation_qubits):
         eigenvectors, unitary = eigenvector_unitary_pair
 
-        for eigenvector, eigenvalue in eigenvectors:
-            print(eigenvalue)
+        # for eigenvector, eigenvalue in eigenvectors:
+        #     print(eigenvalue)
 
         n = unitary.num_qubits
 
@@ -36,8 +36,8 @@ class PhaseEstimationSumDifferentEigenvectors(Property):
         normalized_sum_eigenvectors = (eigenvectors[0][0] + eigenvectors[1][0]) / np.sqrt(2)
         qpe2 = qpe_general(estimation_qubits, UnitaryGate(unitary), normalized_sum_eigenvectors)
 
-        print(qpe)
-        print(qpe2)
+        # print(qpe)
+        # print(qpe2)
 
         self.statistical_analysis.assert_different(self, list(range(estimation_qubits)), qpe,
                                                    list(range(estimation_qubits)), qpe2)
