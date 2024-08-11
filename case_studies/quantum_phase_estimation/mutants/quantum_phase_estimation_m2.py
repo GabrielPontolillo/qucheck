@@ -42,7 +42,7 @@ def qft_general(qubits, swap=True):
             control_index = qubit + offset
             target_index = qubit
             rotation_amount = (np.pi / 2 ** offset)
-            qft.cp(rotation_amount, control_index, target_index)
+            qft.cswap(rotation_amount, control_index, target_index)  # here
 
     # do swaps
     if swap:

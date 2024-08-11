@@ -1,0 +1,11 @@
+q-convert -i quantum_teleportation.qasm -s qasm -o quantum_teleportation.qs -d qsharp -w
+q-convert -i quantum_teleportation_m0.qasm -s qasm -o quantum_teleportation_m0.qs -d qsharp -w
+q-convert -i quantum_teleportation_m1.qasm -s qasm -o quantum_teleportation_m1.qs -d qsharp -w
+q-convert -i quantum_teleportation_m2.qasm -s qasm -o quantum_teleportation_m2.qs -d qsharp -w
+q-convert -i quantum_teleportation_m3.qasm -s qasm -o quantum_teleportation_m3.qs -d qsharp -w
+q-convert -i quantum_teleportation_m4.qasm -s qasm -o quantum_teleportation_m4.qs -d qsharp -w
+q-convert -i quantum_teleportation_m5.qasm -s qasm -o quantum_teleportation_m5.qs -d qsharp -w
+q-convert -i quantum_teleportation_m6.qasm -s qasm -o quantum_teleportation_m6.qs -d qsharp -w
+q-convert -i quantum_teleportation_m7.qasm -s qasm -o quantum_teleportation_m7.qs -d qsharp -w
+q-convert -i quantum_teleportation_m8.qasm -s qasm -o quantum_teleportation_m8.qs -d qsharp -w
+q-convert -i quantum_teleportation_m9.qasm -s qasm -o quantum_teleportation_m9.qs -d qsharp -w

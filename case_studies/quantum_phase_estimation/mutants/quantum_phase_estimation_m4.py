@@ -42,10 +42,15 @@ def qft_general(qubits, swap=True):
             control_index = qubit + offset
             target_index = qubit
             rotation_amount = (np.pi / 2 ** offset)
-            qft.cp(rotation_amount, control_index, target_index)
+            __qmutpy_qgi_func__(qft, rotation_amount, control_index, target_index)  # here
 
     # do swaps
     if swap:
         for qubit in range(qubits // 2):
             qft.swap(qubit, qubits - 1 - qubit)
     return qft
+
+
+def __qmutpy_qgi_func__(circ, arg1, arg2, arg3):
+    circ.cp(arg1, arg2, arg3)
+    circ.ccx(arg1, arg2, arg3)
