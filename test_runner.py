@@ -9,21 +9,20 @@
 # later on we need to allow for the choice of which statistical analysis object to use
 from typing import Sequence
 from QiskitPBT.property import Property
-from QiskitPBT.stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator
+from QiskitPBT.stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator, TestExecutionStatistics
 from qiskit_aer import AerSimulator
 import random
 
 
 class TestRunner:
-
     def __init__(self, property_classes: Sequence[Property.__class__], num_inputs: int, random_seed: int, num_measurements: int, shrinking=False, max_attempts=100):
         self.property_classes = property_classes
         self.num_inputs = num_inputs
         self.do_shrinking = shrinking
         self.max_attempts = max_attempts
         self.num_measurements = num_measurements
-        self.circuits_executed = 0
         self.property_objects: list[Property] = []
+        self.test_execution_stats: TestExecutionStatistics = None
         # keep track of seeds for testing purposes
         self.seeds_list_dict = {}
         random.seed(random_seed)
@@ -32,18 +31,14 @@ class TestRunner:
     def list_failing_properties(self):
         failing_properties = set()
 
-        for property in self.property_objects:
-            if not property.statistical_analysis.results[property]:
-                failing_properties.add(property.__class__)
+        for failed_property in self.test_execution_stats.failed_property:
+            failing_properties.add(failed_property.property.__class__)
     
         return list(failing_properties)
 
     # list all of the failing inputs for a specific property
-    def list_failing_inputs(self, property: Property) -> list[any]:
-        if not property.statistical_analysis.results[property]:
-            return self.seeds_list_dict[tuple(property.get_input_generators())]
-        else:
-            return []
+    def list_inputs(self, property: Property) -> list[any]:
+        return self.seeds_list_dict[tuple(property.get_input_generators())]
 
     # list all of the passing properties
     def list_passing_properties(self):
@@ -127,28 +122,5 @@ class TestRunner:
                     print("AssertionError: ", e)
                     print("Skipping statistical analysis for this property")
                     property_obj.classical_assertion_outcome = False
-
-        stat_analysis_coordinator.perform_analysis(properties, backend, run_optimization)
-
-        if self.do_shrinking:
-            self.shrinking()
-
-        self.circuits_executed += stat_analysis_coordinator.circuits_executed
-
-    def shrinking(self):
-        # now we need to implement shrinking
-        # if any properties failed, we need to shrink the inputs that were failing
-        # we will only try to shrink one failing input, if multiple inputs are failing for a property
-
-        # get the failing properties
-        failing_properties = self.list_failing_properties()
-
-        # what if we have a hierarchy of input generators, we test one example from each generator to see if it still passes or fails, then try to minimise within that
-        # if we pass the property operation to the shrink function?
-        # here is the thing, we need to also have an efficient description of the minimised state, so we can use it in the future (a bit string)
-        # not just the literal statevector
-
-
-
-
-
+        self.test_execution_stats = stat_analysis_coordinator.perform_analysis(properties, backend, run_optimization)
+        return self.test_execution_stats

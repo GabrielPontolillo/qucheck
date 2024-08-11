@@ -19,11 +19,12 @@ class TestCoordinator(TestCase):
         num_inputs = 5
         measurements = 2000
         coordinator = Coordinator(num_inputs, 1)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), measurements)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), measurements).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
         passing = coordinator.test_runner.list_passing_properties()
+        print(coordinator.test_runner.list_failing_properties())
         passing = [elem.__name__ for elem in passing]
         self.assertIn("NotTeleportedPlus", passing)
         self.assertIn("Inq0EqualOutq2", passing)
@@ -34,7 +35,7 @@ class TestCoordinator(TestCase):
         self.assertEqual(len(failing), 0)
 
         # +3 is the ++ circuits, 6*2 because: (2 circuits per property * 3 basis) * 2 properties that actually generate different circuits
-        self.assertEqual(coordinator.test_runner.circuits_executed, 6*num_inputs*2+3)
+        self.assertEqual(num_circ_executed, 6*num_inputs*2+3)
 
         self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 
@@ -42,7 +43,7 @@ class TestCoordinator(TestCase):
         num_inputs = 3
         measurements = 2160
         coordinator = Coordinator(num_inputs)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_phase_estimation"), measurements)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_phase_estimation"), measurements).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
@@ -57,9 +58,8 @@ class TestCoordinator(TestCase):
         failing = [elem.__name__ for elem in failing]
         self.assertEqual(len(failing), 0)
 
-        print(coordinator.test_runner.circuits_executed)
         # (2 circuits per property * 3 basis) * 4 properties that actually generate different circuits
-        self.assertEqual(coordinator.test_runner.circuits_executed, 6 * num_inputs * 4)
+        self.assertEqual(num_circ_executed, 6 * num_inputs * 4)
 
         self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 
@@ -67,7 +67,7 @@ class TestCoordinator(TestCase):
         num_inputs = 3
         measurements = 1950
         coordinator = Coordinator(num_inputs, 3)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_fourier_transform"), measurements)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_fourier_transform"), measurements).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
@@ -81,9 +81,8 @@ class TestCoordinator(TestCase):
         failing = [elem.__name__ for elem in failing]
         self.assertEqual(len(failing), 0)
 
-        print(coordinator.test_runner.circuits_executed)
         # (2 circuits per property * 3 basis) * 4 properties that actually generate different circuits
-        self.assertEqual(coordinator.test_runner.circuits_executed, 6 * num_inputs * 3)
+        self.assertEqual(num_circ_executed, 6 * num_inputs * 3)
 
         self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 
@@ -91,7 +90,7 @@ class TestCoordinator(TestCase):
         num_inputs = 3
         measurements = 2550
         coordinator = Coordinator(num_inputs, 4)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/grovers_algorithm"), measurements)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/grovers_algorithm"), measurements).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
@@ -105,9 +104,8 @@ class TestCoordinator(TestCase):
         failing = [elem.__name__ for elem in failing]
         self.assertEqual(len(failing), 0)
 
-        print(coordinator.test_runner.circuits_executed)
         # its 24, but need to double check if its correct
-        self.assertEqual(coordinator.test_runner.circuits_executed, 15)
+        self.assertEqual(num_circ_executed, 15)
 
         self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 
@@ -115,7 +113,7 @@ class TestCoordinator(TestCase):
         num_inputs = 2
         measurements = 1967
         coordinator = Coordinator(num_inputs, 34)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), measurements)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), measurements).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
@@ -137,9 +135,8 @@ class TestCoordinator(TestCase):
         all_seed_list = [seed for seed_list in save_seeds.values() for seed in seed_list]
         print(all_seed_list)
 
-        print(coordinator.test_runner.circuits_executed)
         # depends on the number of constant oracles generated (which shows that it is working) but have to fix value
-        self.assertEqual(coordinator.test_runner.circuits_executed, 24)
+        self.assertEqual(num_circ_executed, 24)
 
         self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 

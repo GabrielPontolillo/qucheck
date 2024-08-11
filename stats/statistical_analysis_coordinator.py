@@ -1,5 +1,3 @@
-from math import ceil
-from dask.distributed import LocalCluster, Client 
 from time import time
 from typing import Sequence
 from qiskit import QuantumCircuit, transpile
@@ -16,13 +14,22 @@ from QiskitPBT.stats.utils.corrections import holm_bonferroni_correction
 from QiskitPBT.stats.circuit_generator import CircuitGenerator
 
 
+class TestExecutionStatistics:
+    class FailedProperty:
+        def __init__(self, property: Property, failed_classical_assertion: bool, circuits: None | list[QuantumCircuit]):
+            self.property: Property = property
+            self.failed_classical_assertion: bool = failed_classical_assertion
+            self.circuits: None | list[QuantumCircuit] = circuits
+
+    def __init__(self) -> None:
+        self.number_circuits_executed = 0
+        self.failed_property = []
+        
 class StatisticalAnalysisCoordinator:
     def __init__(self, number_of_measurements=2000, family_wise_p_value=0.05) -> None:
         self.assertions_for_property: dict[Property, list[Assertion]] = {}
-        self.results: dict[Property, bool] = {}
         self.number_of_measurements = number_of_measurements
         self.family_wise_p_value = family_wise_p_value
-        self.circuits_executed = 0 # for statistics
 
     #Assertions
     def assert_equal(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
@@ -85,22 +92,24 @@ class StatisticalAnalysisCoordinator:
             self.assertions_for_property[property] = [AssertMostFrequent(qubits, circ, states, basis)]
     
     # Entrypoint for analysis
-    def perform_analysis(self, properties: list[Property], backend: Backend, run_optimization: bool) -> None:
-        execution_optimizer = CircuitGenerator(run_optimization)
+    def perform_analysis(self, properties: list[Property], backend: Backend, run_optimization: bool) -> TestExecutionStatistics:
+        circuit_generator = CircuitGenerator(run_optimization)
+        test_execution_stats = TestExecutionStatistics()
         # classical assertion failed dont run quantum
         for property in properties:
             if not property.classical_assertion_outcome:
-                self.results[property] = False
+                test_execution_stats.failed_property.append(TestExecutionStatistics.FailedProperty(property, True, None))
                 continue
 
             for assertion in self.assertions_for_property[property]:
-                execution_optimizer.add_measurement_configuration(assertion.get_measurement_configuration())
+                circuit_generator.add_measurement_configuration(assertion.get_measurement_configuration())
 
-        measurements = self._perform_measurements(execution_optimizer, backend)
+        measurements, num_circuits_executed = self._perform_measurements(circuit_generator, backend)
+        test_execution_stats.number_circuits_executed = num_circuits_executed
         start_time = time()
         p_values = {}
         for property in properties:
-            if property.classical_assertion_outcome and property not in self.results:
+            if property.classical_assertion_outcome and property.classical_assertion_outcome:
                 p_values[property] = {}
                 for assertion in self.assertions_for_property[property]:
                     if isinstance(assertion, StatisticalAssertion):
@@ -111,39 +120,49 @@ class StatisticalAnalysisCoordinator:
         
         print("p val calc time", time()-start_time)
 
-        # perform family wise error rate correction
-        # Ideally, we need to sort all of the p-values from all assertions, then pass back the corrected alpha values to compare them to in a list
-
         # Only do Holm Bonferroni Correction if there are p_values to correct (preconditions pass)
         if p_values:
             expected_p_values = holm_bonferroni_correction(self.assertions_for_property, p_values, self.family_wise_p_value)
 
         # calculate the outcome of each assertion
         for property in properties:
-            if property not in self.results:
-                self.results[property] = True
+            if not property.classical_assertion_outcome:
+                continue
             for assertion in self.assertions_for_property[property]:
                 if isinstance(assertion, StandardAssertion):
-                    self.results[property] = (self.results[property] and assertion.calculate_outcome(measurements))
+                    assertion_outcome = assertion.calculate_outcome(measurements)
                 elif isinstance(assertion, StatisticalAssertion):
-                    self.results[property] = (self.results[property] and assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion]))
+                    assertion_outcome = assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion])
                 else:
                     raise ValueError("The provided assertions must be a subclass of Assertion")
+                if not assertion_outcome:
+                    # this is bad, it relies on assertions having circs as attributes so this really is best guess, but since we are passing all measurements
+                    # its quite hard to figure out what exactly failed...
+                    failed_circuits = []
+                    for _, val in assertion.__dict__.items():
+                        if isinstance(val, QuantumCircuit):
+                            failed_circuits.append(val)
+                    test_execution_stats.failed_property.append(TestExecutionStatistics.FailedProperty(property, False, failed_circuits))
+        return test_execution_stats
 
     # creates a dictionary of measurements for each assertion,
-    def _perform_measurements(self, execution_optimizer: CircuitGenerator, backend: Backend) -> dict[StatisticalAssertion, Measurements]:
+    def _perform_measurements(self, circuit_generator: CircuitGenerator, backend: Backend) -> tuple[dict[StatisticalAssertion, Measurements], int]:
         start_time = time()
         measurements = Measurements()
-        circuits_to_execute = execution_optimizer.get_circuits_to_execute()
+        circuits_to_execute = circuit_generator.get_circuits_to_execute()
+        if len(circuits_to_execute) == 0:
+            return measurements, 0
         transpiled_circuits = transpile(circuits_to_execute, backend)
         print("preflight steps", time()-start_time)
         start_time = time()
         results = backend.run(transpiled_circuits, shots=self.number_of_measurements).result().get_counts()
-        self.circuits_executed += len(transpiled_circuits)
         print("circuit execution time", time()-start_time)
         start_time = time()
+        if len(circuits_to_execute) == 1:
+            results = (results,)
         for counts, original_circuit in zip(results, circuits_to_execute):
-            for measurement_name, original_circuit in execution_optimizer.get_measurement_info(original_circuit):
+            for measurement_name, original_circuit in circuit_generator.get_measurement_info(original_circuit):
                 measurements.add_measurement(original_circuit, measurement_name, counts)
         print("measurement allocation time", time()-start_time)
-        return measurements
+        # return measurements and num of circuits executed
+        return measurements, len(transpiled_circuits)

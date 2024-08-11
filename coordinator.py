@@ -8,6 +8,7 @@ import statsmodels.stats.power as smp
 from qiskit.providers.basic_provider import BasicSimulator
 
 from QiskitPBT.property import Property
+from QiskitPBT.stats.statistical_analysis_coordinator import TestExecutionStatistics
 from QiskitPBT.test_runner import TestRunner
 
 
@@ -38,11 +39,11 @@ class Coordinator:
                         self.property_classes.add(obj)
         sys.path.pop(0)
 
-    def test(self, path, measurements: int = 2000, run_optimization=True,):
+    def test(self, path, measurements: int = 2000, run_optimization=True) -> TestExecutionStatistics:
         self.get_classes(path)
         print(self.property_classes)
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
-        self.test_runner.run_tests(self.backend, self.alpha, run_optimization)
+        return self.test_runner.run_tests(self.backend, self.alpha, run_optimization)
 
     def print_outcomes(self):
         if self.test_runner is None:
@@ -54,7 +55,7 @@ class Coordinator:
         for prop_obj in self.test_runner.property_objects:
             if type(prop_obj) in failing_properties:
                 print("property: ", prop_obj)
-                print(self.test_runner.list_failing_inputs(prop_obj))
+                print(self.test_runner.list_inputs(prop_obj))
 
         print("passing properties:")
         print(self.test_runner.list_passing_properties())

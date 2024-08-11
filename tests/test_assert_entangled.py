@@ -16,7 +16,6 @@ class TestAssertEntangled(TestCase):
         test_runner = TestRunner([EntangledPrecondition], 2,  548, 1000)
         # run the tests
         test_runner.run_tests()
-        print(test_runner.circuits_executed)
         # list the failing properties
         assert test_runner.list_passing_properties() == [EntangledPrecondition]
         assert test_runner.list_failing_properties() == []
@@ -27,7 +26,6 @@ class TestAssertEntangled(TestCase):
         # run the tests
         test_runner.run_tests()
         # list the failing properties
-        print(test_runner.circuits_executed)
         assert test_runner.list_passing_properties() == []
         assert test_runner.list_failing_properties() == [EntangledCheckOnUnentangledState]
 
