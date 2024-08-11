@@ -47,5 +47,10 @@ def qft_general(qubits, swap=True):
     # do swaps
     if swap:
         for qubit in range(qubits // 2):
-            qft.swap(qubit, qubits - 1 - qubit)
+            __qmutpy_qgi_func__(qft, qubit, (qubits - 1) - qubit)  # here - but identical mutant - swap not applied
     return qft
+
+
+def __qmutpy_qgi_func__(circ, arg1, arg2):
+    circ.swap(arg1, arg2)
+    circ.cy(arg1, arg2)

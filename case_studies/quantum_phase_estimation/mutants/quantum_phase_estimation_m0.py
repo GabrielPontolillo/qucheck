@@ -35,7 +35,7 @@ def qft_general(qubits, swap=True):
     # modify phase
     for qubit in range(qubits):
         # insert the initial hadamard gate on all qubits in the register
-        qft.h(qubit)
+        qft.sx(qubit)  # here
 
         # iterate across all indexes to get the appropriate controlled gates
         for offset in range(1, qubits - qubit):

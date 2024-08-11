@@ -47,5 +47,5 @@ def qft_general(qubits, swap=True):
     # do swaps
     if swap:
         for qubit in range(qubits // 2):
-            qft.swap(qubit, qubits - 1 - qubit)
+            pass  # here
     return qft

@@ -12,7 +12,7 @@ def qpe_general(estimation_qubits, unitary_gate, eigenstate_of_unitary):
 
     # apply hadamard to all qubits in estimating register
     for i in range(estimation_qubits):
-        qpe.h(i)
+        qpe.sdg(i)  # here
 
     unitary_qubits = [i + estimation_qubits for i in range(unitary_gate.num_qubits)]
 
