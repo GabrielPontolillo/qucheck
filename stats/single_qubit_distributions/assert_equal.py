@@ -43,8 +43,6 @@ class AssertEqual(StatisticalAssertion):
 
     def calculate_outcome(self, p_values: Sequence[float], expected_p_values: Sequence[float]) -> bool:
         for p_value, expected_p_value in zip(p_values, expected_p_values):
-            print(f"p_value {p_value}")
-            print(f"expected_p_value {expected_p_value}")
             if p_value < expected_p_value:
                 return False
 

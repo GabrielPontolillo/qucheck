@@ -1,11 +1,11 @@
-from uuid import uuid4
 from qiskit import QuantumCircuit
 from QiskitPBT.stats.measurement_configuration import MeasurementConfiguration
 from QiskitPBT.utils import HashableQuantumCircuit
 
 
-class ExecutionOptimizer:
-    def __init__(self) -> None:
+class CircuitGenerator:
+    def __init__(self, run_optimization=True) -> None:
+        self.run_optimization = run_optimization
         self.measurement_info_for_unique_circuits: dict[HashableQuantumCircuit, list[tuple[str, HashableQuantumCircuit]]] = {}
         self.unoptimized_measurement_info: dict[HashableQuantumCircuit, list[tuple[str, dict[int, QuantumCircuit]]]] = {}
     
@@ -31,13 +31,6 @@ class ExecutionOptimizer:
                 self.unoptimized_measurement_info[circuit].append((measurement_id, stored_qubits_measurements))
     
     def _optimize(self) -> list[HashableQuantumCircuit]:
-        """TODO (write this properly):
-            2. this optimize has to do squashing / optimizing twice:
-                1. get unique base circuits (and a list of all identical circuit objects for each unique circuit)
-                2. generate some best effort measurement circuits from measurement config (non overlapping qubit sets go together)
-                3. once again optimize the resulting circuits (and keep a list of all identical circuit objects)
-                4. probably flatten/generate a list of really unique circuits to original base circuits and their measurement info
-        """
         # get unique base circuits:
         base_circuits = self.unoptimized_measurement_info.keys()
         unique_base_circuits = []
@@ -50,12 +43,11 @@ class ExecutionOptimizer:
             except ValueError:
                 unique_base_circuits.append(circuit)
                 unique_circuits_to_all[circuit] = [circuit]
-        
         # generate full circuits, we greedily add measurements to a circuit until we cannot add any more
         full_circuits: dict[HashableQuantumCircuit, list[tuple[str, HashableQuantumCircuit]]] = {}
         for unique_circuit in unique_base_circuits:
             full_circuits.update(self._get_full_circuits(unique_circuit, unique_circuits_to_all[unique_circuit]))
-
+ 
         # remove duplicates
         full_unique_circuits = []
         for full_circuit in full_circuits.keys():
@@ -65,8 +57,22 @@ class ExecutionOptimizer:
             except ValueError:
                 full_unique_circuits.append(full_circuit)
                 self.measurement_info_for_unique_circuits[full_circuit] = full_circuits[full_circuit]
-    
+
         return full_unique_circuits
+    
+    def _get_unoptimized_circuits(self) -> list[HashableQuantumCircuit]:
+        base_circuits = list(self.unoptimized_measurement_info.keys())
+        full_circuits = []
+        for circuit in base_circuits:
+            for measurement_id, qubit_spec in self.unoptimized_measurement_info[circuit]:
+                qc = circuit.copy()
+                qc.reset_hash()
+                for qubit, measurement in qubit_spec.items():
+                    qc.compose(measurement, (qubit,), (qubit,), inplace=True)
+                qc = self._get_hashable_circuit(qc)
+                self.measurement_info_for_unique_circuits[qc] = [(measurement_id, circuit)]
+                full_circuits.append(self._get_executable_circuit(qc))
+        return full_circuits
 
     def _get_full_circuits(self, unique_circuit: HashableQuantumCircuit, duplicate_circuits: HashableQuantumCircuit) -> dict[HashableQuantumCircuit, list[tuple[str, HashableQuantumCircuit]]]:
         all_measurement_specifications = []
@@ -115,8 +121,11 @@ class ExecutionOptimizer:
         Returns:
             list[QuantumCircuit]: list of unique circuits to be executed based on all measurement configs added to optimizer so far
         """
-        return [self._get_executable_circuit(circuit) for circuit in self._optimize()]
-    
+        if self.run_optimization:
+            return [self._get_executable_circuit(circuit) for circuit in self._optimize()]
+        else:
+            return [self._get_executable_circuit(circuit) for circuit in self._get_unoptimized_circuits()]
+
     def get_measurement_info(self, circuit: QuantumCircuit) -> list[tuple[str, HashableQuantumCircuit]]:
         """
         Args:

@@ -1,3 +1,4 @@
+from threading import Lock
 from QiskitPBT.utils import HashableQuantumCircuit
 
 

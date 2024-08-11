@@ -1,5 +1,4 @@
 # a test script for the test runner
-import copy
 from QiskitPBT.test_runner import TestRunner
 from QiskitPBT.case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2_property import Inq0EqualOutq2
 from QiskitPBT.case_studies.quantum_teleportation.not_teleported_registers_equal_to_plus_property import NotTeleportedPlus
@@ -136,5 +135,18 @@ class TestTestRunner(TestCase):
         circuits_run = test_runner.circuits_executed
         # create an instance of the test runner
         test_runner2 = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1, 1000)
+        test_runner2.run_tests()
+        # run the tests
+        self.assertEqual(circuits_run, test_runner2.circuits_executed)
+
+    def test_optimization_turned_off(self):
+        # create an instance of the test runner
+        test_runner = TestRunner([Inq0EqualOutq2], 3, 1, 1000)
+        # run the tests
+        test_runner.run_tests()
+        circuits_run = test_runner.circuits_executed
+        # create an instance of the test runner
+        test_runner2 = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1, 1000)
+        test_runner2.run_tests(run_optimization=False)
         # run the tests
         self.assertNotEqual(circuits_run, test_runner2.circuits_executed)

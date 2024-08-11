@@ -1,6 +1,8 @@
+from math import ceil
+from dask.distributed import LocalCluster, Client 
+from time import time
 from typing import Sequence
 from qiskit import QuantumCircuit, transpile
-from qiskit.providers.basic_provider import BasicSimulator
 from qiskit.providers import Backend
 from QiskitPBT.property import Property
 from QiskitPBT.stats.assert_entangled import AssertEntangled
@@ -11,7 +13,7 @@ from QiskitPBT.stats.single_qubit_distributions.assert_equal import AssertEqual
 from QiskitPBT.stats.single_qubit_distributions.assert_different import AssertDifferent
 from QiskitPBT.stats.assert_most_frequent import AssertMostFrequent
 from QiskitPBT.stats.utils.corrections import holm_bonferroni_correction
-from QiskitPBT.stats.execution_optimizer import ExecutionOptimizer
+from QiskitPBT.stats.circuit_generator import CircuitGenerator
 
 
 class StatisticalAnalysisCoordinator:
@@ -73,8 +75,6 @@ class StatisticalAnalysisCoordinator:
         # parse qubits so that assert equals always gets sequences of qubits / bitstrings
         if not isinstance(qubits, Sequence):
             qubits = (qubits,)
-        if not isinstance(states, Sequence):
-            marked_states = (states, )
         # hack to make circuits in assert equals be usable as dictionary keys (by ref)
         circ = circuit.copy()
         circ.__class__ = HashableQuantumCircuit
@@ -85,8 +85,8 @@ class StatisticalAnalysisCoordinator:
             self.assertions_for_property[property] = [AssertMostFrequent(qubits, circ, states, basis)]
     
     # Entrypoint for analysis
-    def perform_analysis(self, properties: list[Property], backend: Backend=BasicSimulator()) -> None:
-        execution_optimizer = ExecutionOptimizer()
+    def perform_analysis(self, properties: list[Property], backend: Backend, run_optimization: bool) -> None:
+        execution_optimizer = CircuitGenerator(run_optimization)
         # classical assertion failed dont run quantum
         for property in properties:
             if not property.classical_assertion_outcome:
@@ -97,7 +97,7 @@ class StatisticalAnalysisCoordinator:
                 execution_optimizer.add_measurement_configuration(assertion.get_measurement_configuration())
 
         measurements = self._perform_measurements(execution_optimizer, backend)
-
+        start_time = time()
         p_values = {}
         for property in properties:
             if property.classical_assertion_outcome and property not in self.results:
@@ -108,6 +108,8 @@ class StatisticalAnalysisCoordinator:
                         p_values[property][assertion] = p_value
                     elif not isinstance(assertion, Assertion):
                         raise ValueError("Assertion must be a subclass of Assertion")
+        
+        print("p val calc time", time()-start_time)
 
         # perform family wise error rate correction
         # Ideally, we need to sort all of the p-values from all assertions, then pass back the corrected alpha values to compare them to in a list
@@ -129,16 +131,19 @@ class StatisticalAnalysisCoordinator:
                     raise ValueError("The provided assertions must be a subclass of Assertion")
 
     # creates a dictionary of measurements for each assertion,
-    def _perform_measurements(self, execution_optimizer: ExecutionOptimizer, backend: Backend) -> dict[StatisticalAssertion, Measurements]:
+    def _perform_measurements(self, execution_optimizer: CircuitGenerator, backend: Backend) -> dict[StatisticalAssertion, Measurements]:
+        start_time = time()
         measurements = Measurements()
-
-        for circuit in execution_optimizer.get_circuits_to_execute():
-            # TODO: get counts actually returns (or used to) unparsed bit strings, so if there are 2 quantum registers there is a space in there - this may need some attention
-            # this is necessary for measure to work
-            counts = backend.run(transpile(circuit, backend), shots=self.number_of_measurements).result().get_counts()
-            self.circuits_executed += 1
-            # get the original circuit, as well as basis measurements, and what assertions it is linked to
-            for measurement_name, original_circuit in execution_optimizer.get_measurement_info(circuit):
+        circuits_to_execute = execution_optimizer.get_circuits_to_execute()
+        transpiled_circuits = transpile(circuits_to_execute, backend)
+        print("preflight steps", time()-start_time)
+        start_time = time()
+        results = backend.run(transpiled_circuits, shots=self.number_of_measurements).result().get_counts()
+        self.circuits_executed += len(transpiled_circuits)
+        print("circuit execution time", time()-start_time)
+        start_time = time()
+        for counts, original_circuit in zip(results, circuits_to_execute):
+            for measurement_name, original_circuit in execution_optimizer.get_measurement_info(original_circuit):
                 measurements.add_measurement(original_circuit, measurement_name, counts)
-
+        print("measurement allocation time", time()-start_time)
         return measurements
