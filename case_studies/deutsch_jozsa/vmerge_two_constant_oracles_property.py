@@ -1,6 +1,6 @@
 import random
 from qiskit import QuantumCircuit
-from QiskitPBT.case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa_circ
+from QiskitPBT.case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa
 from QiskitPBT.case_studies.deutsch_jozsa.dj_helpers import ConstantOracleInputGenerator, vmerge
 from QiskitPBT.property import Property
 
@@ -16,7 +16,7 @@ class DeutschJozsaVMergeTwoConstantOracles(Property):
 
     # specify the operations to be performed on the input
     def operations(self, oracle1: QuantumCircuit, oracle2: QuantumCircuit):
-        circ = deutsch_jozsa_circ(vmerge(oracle1, oracle2))
+        circ = deutsch_jozsa(vmerge(oracle1, oracle2))
 
         # if oracle is constant this should be all 0
         baseline = QuantumCircuit(circ.num_qubits - 1, circ.num_qubits - 1)

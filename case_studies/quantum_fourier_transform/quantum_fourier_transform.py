@@ -3,7 +3,7 @@ from qiskit import QuantumCircuit
 
 
 # returns the quantum fourier transform circuit
-def qft_general(qubits, swap=True):
+def quantum_fourier_transform(qubits, swap=True):
     # build circuit
     qft = QuantumCircuit(qubits, qubits)
 

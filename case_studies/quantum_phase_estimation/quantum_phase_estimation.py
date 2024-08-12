@@ -2,7 +2,7 @@ import numpy as np
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 
 
-def qpe_general(estimation_qubits, unitary_gate, eigenstate_of_unitary):
+def quantum_phase_estimation(estimation_qubits, unitary_gate, eigenstate_of_unitary):
     print(estimation_qubits)
 
     qpe = QuantumCircuit(estimation_qubits + unitary_gate.num_qubits, estimation_qubits + unitary_gate.num_qubits)

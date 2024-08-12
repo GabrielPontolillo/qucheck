@@ -8,7 +8,7 @@ from qiskit.circuit.library import UnitaryGate
 from qiskit.quantum_info import Operator, Statevector
 from QiskitPBT.property import Property
 from QiskitPBT.input_generators import RandomEigenvectorUnitaryPair, RandomUnitaryLimitedDecimals, InputGenerator
-from QiskitPBT.case_studies.quantum_phase_estimation.quantum_phase_estimation import qpe_general
+from QiskitPBT.case_studies.quantum_phase_estimation.quantum_phase_estimation import quantum_phase_estimation
 
 
 class PhaseCorrectlyEstimatedEnoughQubits(Property):
@@ -29,7 +29,7 @@ class PhaseCorrectlyEstimatedEnoughQubits(Property):
         eigenvectors, unitary, estimation_qubits = fixed_eigenvector_unitary_with_limited_qubits
 
         # perform qpe on with an eigenvector in lower register
-        qpe = qpe_general(estimation_qubits, UnitaryGate(unitary), eigenvectors[0][0])
+        qpe = quantum_phase_estimation(estimation_qubits, UnitaryGate(unitary), eigenvectors[0][0])
 
         # # state should be the computational basis state corresponding to the phase
         # need to get the phase from eigenvalue, make computational state from eigenvalue

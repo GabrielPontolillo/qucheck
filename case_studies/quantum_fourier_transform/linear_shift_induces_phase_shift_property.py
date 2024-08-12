@@ -3,7 +3,7 @@ import numpy as np
 from qiskit import QuantumCircuit
 from QiskitPBT.property import Property
 from QiskitPBT.input_generators.random_pauli_basis_state import RandomPauliBasisState
-from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
+from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import quantum_fourier_transform
 
 
 class LinearShiftToPhaseShift(Property):
@@ -22,7 +22,7 @@ class LinearShiftToPhaseShift(Property):
 
         qft_1 = QuantumCircuit(n, n)
         qft_1.initialize(state, reversed(range(n)))
-        qft_1 = qft_1.compose(qft_general(n, swap=False))
+        qft_1 = qft_1.compose(quantum_fourier_transform(n, swap=False))
         qft_1 = phase_shift(qft_1)
 
         init_state = state.data
@@ -31,7 +31,7 @@ class LinearShiftToPhaseShift(Property):
 
         qft_2 = QuantumCircuit(n, n)
         qft_2.initialize(shifted_vector, reversed(range(n)))
-        qft_2 = qft_2.compose(qft_general(n, swap=False))
+        qft_2 = qft_2.compose(quantum_fourier_transform(n, swap=False))
 
         self.statistical_analysis.assert_equal(self, list(range(n)), qft_1, list(range(n)), qft_2)
 

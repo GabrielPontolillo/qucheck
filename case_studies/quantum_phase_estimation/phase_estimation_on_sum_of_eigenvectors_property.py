@@ -4,7 +4,7 @@ import numpy as np
 from qiskit.circuit.library import UnitaryGate
 from QiskitPBT.property import Property
 from QiskitPBT.input_generators import RandomEigenvectorUnitaryPair, RandomTensorProductOfUnitary, Integer
-from QiskitPBT.case_studies.quantum_phase_estimation.quantum_phase_estimation import qpe_general
+from QiskitPBT.case_studies.quantum_phase_estimation.quantum_phase_estimation import quantum_phase_estimation
 
 
 class PhaseEstimationSumEigenvectors(Property):
@@ -34,11 +34,11 @@ class PhaseEstimationSumEigenvectors(Property):
         n = unitary.num_qubits
 
         # perform qpe on with an eigenvector in lower register
-        qpe = qpe_general(estimation_qubits, UnitaryGate(unitary), eigenvectors[0][0])
+        qpe = quantum_phase_estimation(estimation_qubits, UnitaryGate(unitary), eigenvectors[0][0])
 
         # sum of eigenvectors, then normalize
         normalized_sum_eigenvectors = (eigenvectors[0][0] + eigenvectors[1][0]) / np.sqrt(2)
-        qpe2 = qpe_general(estimation_qubits, UnitaryGate(unitary), normalized_sum_eigenvectors)
+        qpe2 = quantum_phase_estimation(estimation_qubits, UnitaryGate(unitary), normalized_sum_eigenvectors)
 
         print(qpe)
         print(qpe2)

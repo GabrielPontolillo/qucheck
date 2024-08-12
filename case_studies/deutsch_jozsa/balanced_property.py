@@ -1,6 +1,6 @@
 import random
 from qiskit import QuantumCircuit
-from QiskitPBT.case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa_circ
+from QiskitPBT.case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa
 from QiskitPBT.case_studies.deutsch_jozsa.dj_helpers import BalancedOracleInputGenerator
 from QiskitPBT.property import Property
 
@@ -16,7 +16,7 @@ class DeutschJozsaWorksForBalancedFunction(Property):
 
     # specify the operations to be performed on the input
     def operations(self, oracle: QuantumCircuit):
-        circ = deutsch_jozsa_circ(oracle)
+        circ = deutsch_jozsa(oracle)
 
         # if oracle is constant this should be all 0
         baseline = QuantumCircuit(oracle.num_qubits - 1, oracle.num_qubits - 1)

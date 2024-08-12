@@ -1,7 +1,7 @@
 from qiskit import QuantumCircuit
 
 
-def deutsch_jozsa_circ(oracle: QuantumCircuit) -> QuantumCircuit:
+def deutsch_jozsa(oracle: QuantumCircuit) -> QuantumCircuit:
     circuit = QuantumCircuit(oracle.num_qubits, oracle.num_qubits)
     
     circuit.x(circuit.qubits[-1])

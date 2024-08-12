@@ -1,7 +1,7 @@
 from qiskit import QuantumCircuit
 
 
-def deutsch_jozsa_circ(oracle: QuantumCircuit) -> QuantumCircuit:
+def deutsch_jozsa(oracle: QuantumCircuit) -> QuantumCircuit:
     circuit = QuantumCircuit(oracle.num_qubits, oracle.num_qubits)
     
     __qmutpy_qgi_func__(circuit, circuit.qubits[-1])  # mutation - equivalent

@@ -2,7 +2,7 @@
 from qiskit import QuantumCircuit
 from QiskitPBT.property import Property
 from QiskitPBT.input_generators.random_unitary import RandomUnitary
-from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import qft_general
+from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import quantum_fourier_transform
 
 
 class IdentityProperty(Property):
@@ -21,7 +21,7 @@ class IdentityProperty(Property):
         # perform Uxn ( Hxn ( QFT (0xn)) )
 
         # QFT (0xn)
-        qft = qft_general(n)
+        qft = quantum_fourier_transform(n)
 
         # Hxn
         for i in range(n):
