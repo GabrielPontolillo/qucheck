@@ -1,5 +1,4 @@
 from typing import Sequence
-from scipy import stats as sci
 
 from QiskitPBT.utils import HashableQuantumCircuit
 from QiskitPBT.stats.assertion import StandardAssertion

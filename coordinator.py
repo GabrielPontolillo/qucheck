@@ -3,7 +3,6 @@ import importlib
 import inspect
 import random
 import sys
-import statsmodels.stats.power as smp
 
 from qiskit.providers.basic_provider import BasicSimulator
 
@@ -43,7 +42,7 @@ class Coordinator:
         self.get_classes(path)
         print(self.property_classes)
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
-        return self.test_runner.run_tests(self.backend, self.alpha, run_optimization)
+        return self.test_runner.run_tests(backend=self.backend, run_optimization=run_optimization, family_wise_p_value=self.alpha)
 
     def print_outcomes(self):
         if self.test_runner is None:

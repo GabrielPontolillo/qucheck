@@ -152,7 +152,8 @@ class StatisticalAnalysisCoordinator:
         circuits_to_execute = circuit_generator.get_circuits_to_execute()
         if len(circuits_to_execute) == 0:
             return measurements, 0
-        transpiled_circuits = transpile(circuits_to_execute, backend)
+        # equivalent mutants would get transpiled to the same circuit, so we should run with no optimisation for mutation testing
+        transpiled_circuits = transpile(circuits_to_execute, backend, optimization_level=0)
         print("preflight steps", time()-start_time)
         start_time = time()
         results = backend.run(transpiled_circuits, shots=self.number_of_measurements).result().get_counts()

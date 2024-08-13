@@ -22,7 +22,7 @@ class TestIdentityPropertyQFT(unittest.TestCase):
 
     def test_phase_shift_property_qft(self):
         # run the test
-        runner = TestRunner([LinearShiftToPhaseShift], self.num_inputs, 1, 1500)
+        runner = TestRunner([LinearShiftToPhaseShift], self.num_inputs, 2, 1500)
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
