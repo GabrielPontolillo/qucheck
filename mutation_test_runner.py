@@ -40,7 +40,6 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
                                        f"{PATH}\\case_studies\\{algorithm_name}\\mutants\\{mutant_name}.py",
                                        algorithm_name)
     print(f"Testing {mutant_name}")
-    print(circuit_function())
 
     # importlib.reload(sys.modules[f'QiskitPBT.case_studies.{algorithm_name}.{algorithm_name}'])
     with patch(f"QiskitPBT.case_studies.{algorithm_name}.{algorithm_name}.{algorithm_name}", circuit_function):
