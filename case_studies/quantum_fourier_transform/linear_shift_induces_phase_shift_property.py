@@ -9,7 +9,7 @@ from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform 
 class LinearShiftToPhaseShift(Property):
     # specify the inputs that are to be generated
     def get_input_generators(self):
-        state = RandomPauliBasisState(1, 5, tuple("z"))
+        state = RandomPauliBasisState(2, 10, tuple("z"))
         return [state]
 
     # specify the preconditions for the test

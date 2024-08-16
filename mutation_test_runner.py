@@ -75,7 +75,7 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
         return result_row
 
 
-def test_and_store(algorithm_name):
+def test_and_store(algorithm_name, optimisation):
     inputs = [100, 50, 25]
     shots = [2000, 1000, 500]
     for input_val in inputs:
@@ -91,11 +91,11 @@ def test_and_store(algorithm_name):
 
                 # Run tests for regular mutants
                 for i in range(10):
-                    run_single_test(algorithm_name, input_val, measurements, "m", i, run_optimization=True, csvwriter=csvwriter)
+                    run_single_test(algorithm_name, input_val, measurements, "m", i, run_optimization=optimisation, csvwriter=csvwriter)
 
                 # Run tests for equivalent mutants
                 for i in range(5):
-                    run_single_test(algorithm_name, input_val, measurements, "em", i, run_optimization=True, csvwriter=csvwriter)
+                    run_single_test(algorithm_name, input_val, measurements, "em", i, run_optimization=optimisation, csvwriter=csvwriter)
 
 
 def reload_classes(folder_path):
@@ -111,4 +111,4 @@ def reload_classes(folder_path):
 # Run the test
 # test_and_store("quantum_teleportation")
 
-test_and_store("deutsch_jozsa")
+test_and_store("quantum_fourier_transform", False)

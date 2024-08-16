@@ -12,7 +12,7 @@ def quantum_phase_estimation(estimation_qubits, unitary_gate, eigenstate_of_unit
 
     # apply hadamard to all qubits in estimating register
     for i in range(estimation_qubits):
-        qpe.i(i)  # here
+        qpe.id(i)  # here
 
     unitary_qubits = [i + estimation_qubits for i in range(unitary_gate.num_qubits)]
 

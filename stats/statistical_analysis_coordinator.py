@@ -93,6 +93,7 @@ class StatisticalAnalysisCoordinator:
     
     # Entrypoint for analysis
     def perform_analysis(self, properties: list[Property], backend: Backend, run_optimization: bool) -> TestExecutionStatistics:
+        print(run_optimization)
         circuit_generator = CircuitGenerator(run_optimization)
         test_execution_stats = TestExecutionStatistics()
         # classical assertion failed dont run quantum
@@ -149,6 +150,7 @@ class StatisticalAnalysisCoordinator:
     def _perform_measurements(self, circuit_generator: CircuitGenerator, backend: Backend) -> tuple[dict[StatisticalAssertion, Measurements], int]:
         start_time = time()
         measurements = Measurements()
+        print("before get circuits")
         circuits_to_execute = circuit_generator.get_circuits_to_execute()
         if len(circuits_to_execute) == 0:
             return measurements, 0

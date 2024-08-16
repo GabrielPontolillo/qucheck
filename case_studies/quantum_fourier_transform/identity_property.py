@@ -8,7 +8,7 @@ from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform 
 class IdentityProperty(Property):
     # specify the inputs that are to be generated
     def get_input_generators(self):
-        unitary = RandomUnitary(1, 10)
+        unitary = RandomUnitary(2, 10)
         return [unitary]
 
     # specify the preconditions for the test
