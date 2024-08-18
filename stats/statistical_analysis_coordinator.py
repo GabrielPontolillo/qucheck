@@ -152,19 +152,22 @@ class StatisticalAnalysisCoordinator:
         measurements = Measurements()
         print("before get circuits")
         circuits_to_execute = circuit_generator.get_circuits_to_execute()
+        print("optim time", time()-start_time)
         if len(circuits_to_execute) == 0:
             return measurements, 0
         # equivalent mutants would get transpiled to the same circuit, so we should run with no optimisation for mutation testing
-        transpiled_circuits = transpile(circuits_to_execute, backend, optimization_level=0)
-        print("preflight steps", time()-start_time)
+        start_time = time()
+        print("num circuits to transpile", len(circuits_to_execute))
+        transpiled_circuits = transpile(circuits_to_execute, backend, optimization_level=1)
+        print("transpilation time", time()-start_time)
         start_time = time()
         results = backend.run(transpiled_circuits, shots=self.number_of_measurements).result().get_counts()
         print("circuit execution time", time()-start_time)
         start_time = time()
         if len(circuits_to_execute) == 1:
             results = (results,)
-        for counts, original_circuit in zip(results, circuits_to_execute):
-            for measurement_name, original_circuit in circuit_generator.get_measurement_info(original_circuit):
+        for counts, circuit in zip(results, circuits_to_execute):
+            for measurement_name, original_circuit in circuit_generator.get_measurement_info(circuit):
                 measurements.add_measurement(original_circuit, measurement_name, counts)
         print("measurement allocation time", time()-start_time)
         # return measurements and num of circuits executed

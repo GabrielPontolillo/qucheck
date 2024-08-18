@@ -1,6 +1,5 @@
-from uuid import uuid4
+import numpy
 from qiskit import QuantumCircuit
-from qiskit.quantum_info import Operator
 
 """
 hack to use quantum circuits as dictionary keys, 
@@ -12,8 +11,14 @@ class HashableQuantumCircuit(QuantumCircuit):
          if hasattr(self, "_hash_val"):
              return self._hash_val
          else:
-             self._hash_val = hash(uuid4())
+             self._hash_val =  hash(tuple(hash_instruction(instruction) for instruction in self._data))
              return self._hash_val
 
-    def reset_hash(self) -> None:
-        self._hash_val = hash(uuid4())
+def hash_instruction(instruction):
+    hashable_params = []
+    for param in instruction.operation.params:
+        if isinstance(param, numpy.ndarray):
+            hashable_params.append(tuple(map(tuple, param)))
+        else:
+            hashable_params.append(param)
+    return hash((instruction.operation.name, tuple(hashable_params), instruction.qubits, instruction.clbits))

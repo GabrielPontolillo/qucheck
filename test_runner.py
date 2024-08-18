@@ -10,7 +10,7 @@
 from typing import Sequence
 from QiskitPBT.property import Property
 from QiskitPBT.stats.statistical_analysis_coordinator import StatisticalAnalysisCoordinator, TestExecutionStatistics
-from qiskit.providers.basic_provider import BasicSimulator
+from qiskit_aer import AerSimulator
 import random
 
 
@@ -46,7 +46,7 @@ class TestRunner:
         # and the failing properties
         return [prop for prop in self.property_classes if prop not in self.list_failing_properties()]
 
-    def run_tests(self, backend=BasicSimulator(), run_optimization=True, family_wise_p_value=0.01):
+    def run_tests(self, backend=AerSimulator(), run_optimization=True, family_wise_p_value=0.01):
         # for each property class, we need to create a statistical analysis object
         # and then create a property object using the statistical analysis object
         stat_analysis_coordinator = StatisticalAnalysisCoordinator(self.num_measurements, family_wise_p_value)

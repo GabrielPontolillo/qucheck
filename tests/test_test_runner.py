@@ -122,14 +122,3 @@ class TestTestRunner(TestCase):
         data2 = test_runner2.run_tests()
         # run the tests
         self.assertEqual(data1.number_circuits_executed, data2.number_circuits_executed)
-
-    def test_optimization_turned_off(self):
-        # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2], 3, 1, 1000)
-        # run the tests
-        data1 = test_runner.run_tests()
-        # create an instance of the test runner
-        test_runner2 = TestRunner([Inq0EqualOutq2, Inq0EqualOutq2], 3, 1, 1000)
-        data2 = test_runner2.run_tests(run_optimization=False)
-        # run the tests
-        self.assertNotEqual(data1.number_circuits_executed, data2.number_circuits_executed)

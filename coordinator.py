@@ -4,7 +4,7 @@ import inspect
 import random
 import sys
 
-from qiskit.providers.basic_provider import BasicSimulator
+from qiskit_aer import AerSimulator
 
 from QiskitPBT.property import Property
 from QiskitPBT.stats.statistical_analysis_coordinator import TestExecutionStatistics
@@ -12,7 +12,7 @@ from QiskitPBT.test_runner import TestRunner
 
 
 class Coordinator:
-    def __init__(self, num_inputs, random_seed=None, alpha=0.01, backend=BasicSimulator()):
+    def __init__(self, num_inputs, random_seed=None, alpha=0.01, backend=AerSimulator()):
         self.num_inputs = num_inputs
         self.property_classes = set()
         self.test_runner = None

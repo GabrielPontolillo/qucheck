@@ -28,45 +28,25 @@ class CircuitGenerator:
                     break
 
             if unique:
-                self.unoptimized_measurement_info[circuit].append((measurement_id, stored_qubits_measurements))
+                self.unoptimized_measurement_info[circuit].append((measurement_id, qubits_measurements))
     
     def _optimize(self) -> list[HashableQuantumCircuit]:
         # get unique base circuits:
         base_circuits = self.unoptimized_measurement_info.keys()
-        unique_base_circuits = []
         # since we hash by reference, keep track of all duplicated circuits to feed back in get_measurement_info
-        unique_circuits_to_all: dict[HashableQuantumCircuit, list[HashableQuantumCircuit]] = {}
-        for circuit in base_circuits:
-            try:
-                inserted_circuit_idx = unique_base_circuits.index(circuit)
-                unique_circuits_to_all[unique_base_circuits[inserted_circuit_idx]].append(circuit)
-            except ValueError:
-                unique_base_circuits.append(circuit)
-                unique_circuits_to_all[circuit] = [circuit]
-        # generate full circuits, we greedily add measurements to a circuit until we cannot add any more
-        full_circuits: dict[HashableQuantumCircuit, list[tuple[str, HashableQuantumCircuit]]] = {}
+        unique_base_circuits = set(base_circuits) 
         for unique_circuit in unique_base_circuits:
-            full_circuits.update(self._get_full_circuits(unique_circuit, unique_circuits_to_all[unique_circuit]))
- 
+            self._get_full_circuits(unique_circuit)
         # remove duplicates
-        full_unique_circuits = []
-        for full_circuit in full_circuits.keys():
-            try:
-                circ_idx = full_unique_circuits.index(full_circuit)
-                self.measurement_info_for_unique_circuits[full_unique_circuits[circ_idx]].extend(full_circuits[full_circuit])
-            except ValueError:
-                full_unique_circuits.append(full_circuit)
-                self.measurement_info_for_unique_circuits[full_circuit] = full_circuits[full_circuit]
-
+        full_unique_circuits = set(self.measurement_info_for_unique_circuits.keys())
         return full_unique_circuits
     
-    def _get_unoptimized_circuits(self) -> list[HashableQuantumCircuit]:
+    def _get_unoptimized_circuits(self) -> list[QuantumCircuit]:
         base_circuits = list(self.unoptimized_measurement_info.keys())
         full_circuits = []
         for circuit in base_circuits:
             for measurement_id, qubit_spec in self.unoptimized_measurement_info[circuit]:
                 qc = circuit.copy()
-                qc.reset_hash()
                 for qubit, measurement in qubit_spec.items():
                     qc.compose(measurement, (qubit,), (qubit,), inplace=True)
                 qc = self._get_hashable_circuit(qc)
@@ -74,21 +54,17 @@ class CircuitGenerator:
                 full_circuits.append(self._get_executable_circuit(qc))
         return full_circuits
 
-    def _get_full_circuits(self, unique_circuit: HashableQuantumCircuit, duplicate_circuits: HashableQuantumCircuit) -> dict[HashableQuantumCircuit, list[tuple[str, HashableQuantumCircuit]]]:
+    def _get_full_circuits(self, circuit: HashableQuantumCircuit):#, duplicate_circuits: HashableQuantumCircuit) -> dict[HashableQuantumCircuit, list[tuple[str, HashableQuantumCircuit]]]:
         all_measurement_specifications = []
-        for circuit in duplicate_circuits:
-            for measurement_id, qubit_spec in self.unoptimized_measurement_info[circuit]:
-                all_measurement_specifications.append((measurement_id, qubit_spec, circuit))
+        for measurement_id, qubit_spec in self.unoptimized_measurement_info[circuit]:
+            all_measurement_specifications.append((measurement_id, qubit_spec, circuit))
         measurement_specification_inserted = [False for _ in all_measurement_specifications]
-
-        full_circuits: dict[HashableQuantumCircuit, list[tuple[str, HashableQuantumCircuit]]] = {}
         while True:
-            qc = unique_circuit.copy()
-            qc.reset_hash()
+            qc = circuit.copy()
             inserted_qubits = {}
             measurement_specifications_in_circuit = []
             if False not in measurement_specification_inserted:
-                return full_circuits
+                return
             
             for i in range(len(all_measurement_specifications)):
                 if measurement_specification_inserted[i]:
@@ -98,7 +74,6 @@ class CircuitGenerator:
                 
                 overlapping_qubits = set(inserted_qubits.keys()).intersection(qubit_measurement_map.keys())
                 should_append_circuit = True
-                
                 for qubit in overlapping_qubits:
                     if inserted_qubits[qubit] != qubit_measurement_map[qubit]:
                         should_append_circuit = False
@@ -114,7 +89,7 @@ class CircuitGenerator:
                             qc.compose(measurement, (qubit,), (qubit,), inplace=True)
                     inserted_qubits.update(qubit_measurement_map)
 
-            full_circuits[qc] = measurement_specifications_in_circuit
+            self.measurement_info_for_unique_circuits[qc] = measurement_specifications_in_circuit
 
     def get_circuits_to_execute(self) -> list[QuantumCircuit]:
         """
@@ -138,11 +113,9 @@ class CircuitGenerator:
         return self.measurement_info_for_unique_circuits[self._get_hashable_circuit(circuit)]
     
     def _get_hashable_circuit(self, circuit: QuantumCircuit) -> HashableQuantumCircuit:
-        circ = circuit.copy()
-        circ.__class__ = HashableQuantumCircuit
-        return circ
+        circuit.__class__ = HashableQuantumCircuit
+        return circuit
     
     def _get_executable_circuit(self, circuit: HashableQuantumCircuit) -> QuantumCircuit:
-        circ = circuit.copy()
-        circ.__class__ = QuantumCircuit
-        return circ
+        circuit.__class__ = QuantumCircuit
+        return circuit

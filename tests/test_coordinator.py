@@ -1,7 +1,6 @@
 # begin testing the coordinator
 import os
 from unittest import TestCase
-
 from QiskitPBT.coordinator import Coordinator
 from QiskitPBT.test_runner import TestRunner
 

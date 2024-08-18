@@ -6,7 +6,7 @@ from QiskitPBT.stats.utils.common_measurements import measure_x, measure_y
 from QiskitPBT.utils import HashableQuantumCircuit
 
 
-class TestExecutionOptimizer(TestCase):
+class TestCircuitGenerator(TestCase):
     def test_different_circuits_with_same_measurements_on_same_qubits(self):
         optimizer = CircuitGenerator()
         measurement1 = MeasurementConfiguration()
@@ -124,6 +124,7 @@ class TestExecutionOptimizer(TestCase):
         measurement1 = MeasurementConfiguration()
         measurement1.add_measurement("1", HashableQuantumCircuit(2, 2), {0: measure_x()})
         optimizer.add_measurement_configuration(measurement1)
+
         measurement2 = MeasurementConfiguration()
         measurement2.add_measurement("2", HashableQuantumCircuit(2, 2), {1: measure_y()})
         optimizer.add_measurement_configuration(measurement2)

@@ -8,6 +8,7 @@ from unittest.mock import patch
 from QiskitPBT.coordinator import Coordinator
 from QiskitPBT.test_runner import TestRunner
 import gc
+from qiskit_aer import AerSimulator
 
 PATH = os.path.abspath("")
 
@@ -37,18 +38,26 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
     mutant_name = f"{algorithm_name}_{mutant_type}{index}"
 
     circuit_function = import_function(mutant_name,
-                                       f"{PATH}\\case_studies\\{algorithm_name}\\mutants\\{mutant_name}.py",
+                                       f"{PATH}/QiskitPBT/case_studies/{algorithm_name}/mutants/{mutant_name}.py",
                                        algorithm_name)
     print(f"Testing {mutant_name}")
 
     # importlib.reload(sys.modules[f'QiskitPBT.case_studies.{algorithm_name}.{algorithm_name}'])
     with patch(f"QiskitPBT.case_studies.{algorithm_name}.{algorithm_name}.{algorithm_name}", circuit_function):
         # importlib.reload(sys.modules['QiskitPBT.coordinator'])
-        reload_classes(f"{PATH}\\case_studies\\{algorithm_name}")
-        coordinator = Coordinator(num_inputs, 1)
+        reload_classes(f"{PATH}/QiskitPBT/case_studies/{algorithm_name}")
+        backend = AerSimulator(method = 'statevector')
+        backend.set_options(
+            max_parallel_threads = 0,
+            max_parallel_experiments = 0,
+            max_parallel_shots = 1,
+            statevector_parallel_threshold = 8
+        )
+
+        coordinator = Coordinator(num_inputs, 1, backend=backend)
 
         start = time.time()
-        result = coordinator.test(f"{PATH}\\case_studies\\{algorithm_name}", measurements, run_optimization=run_optimization)
+        result = coordinator.test(f"{PATH}/QiskitPBT/case_studies/{algorithm_name}", measurements, run_optimization=run_optimization)
         end = time.time()
 
         # reload_classes(f"{PATH}\\case_studies\\{algorithm_name}")
@@ -111,4 +120,4 @@ def reload_classes(folder_path):
 # Run the test
 # test_and_store("quantum_teleportation")
 
-test_and_store("quantum_fourier_transform", False)
+test_and_store("quantum_fourier_transform", True)
