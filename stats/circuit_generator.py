@@ -54,7 +54,7 @@ class CircuitGenerator:
                 full_circuits.append(self._get_executable_circuit(qc))
         return full_circuits
 
-    def _get_full_circuits(self, circuit: HashableQuantumCircuit):#, duplicate_circuits: HashableQuantumCircuit) -> dict[HashableQuantumCircuit, list[tuple[str, HashableQuantumCircuit]]]:
+    def _get_full_circuits(self, circuit: HashableQuantumCircuit):
         all_measurement_specifications = []
         for measurement_id, qubit_spec in self.unoptimized_measurement_info[circuit]:
             all_measurement_specifications.append((measurement_id, qubit_spec, circuit))
