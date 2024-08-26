@@ -13,22 +13,10 @@ class CircuitGenerator:
         base_circuits = measurement_config.get_measured_circuits()
         for circuit in base_circuits:
             if circuit in self.unoptimized_measurement_info:
-                self._ensure_unique_measurement_specifications_insertion(circuit, measurement_config.get_measurements_for_circuit(circuit))
+                for measurement_id, qubits_measurements in measurement_config.get_measurements_for_circuit(circuit):
+                    self.unoptimized_measurement_info[circuit].append((measurement_id, qubits_measurements))
             else:
                 self.unoptimized_measurement_info[circuit] = measurement_config.get_measurements_for_circuit(circuit)
-    
-    # we probably dont need this as this would get optimized later on with circuits, but its probably cheaper like this then with circuit comparisons
-    def _ensure_unique_measurement_specifications_insertion(self, circuit: HashableQuantumCircuit, measurement_specifications: list[tuple[str, dict[int, QuantumCircuit]]]):
-        for measurement_id, qubits_measurements in measurement_specifications:
-            unique = True
-            # we assume the circuit is in the dict as its only called in context of self.add_measurement_configuration
-            for stored_measurement_id, stored_qubits_measurements in self.unoptimized_measurement_info[circuit]:
-                if measurement_id == stored_measurement_id and qubits_measurements == stored_qubits_measurements:
-                    unique = False
-                    break
-
-            if unique:
-                self.unoptimized_measurement_info[circuit].append((measurement_id, qubits_measurements))
     
     def _optimize(self) -> list[HashableQuantumCircuit]:
         # get unique base circuits:
