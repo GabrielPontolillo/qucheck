@@ -1,4 +1,3 @@
-from typing import Sequence
 from qiskit import QuantumCircuit
 
 from QiskitPBT.utils import HashableQuantumCircuit

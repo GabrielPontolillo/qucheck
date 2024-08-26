@@ -1,4 +1,5 @@
 from typing import Sequence
+from uuid import uuid4
 
 from QiskitPBT.utils import HashableQuantumCircuit
 from QiskitPBT.stats.assertion import StandardAssertion
@@ -23,10 +24,11 @@ class AssertEntangled(StandardAssertion):
         self.qubits = qubits
         self.circuit = circuit
         self.basis = basis
+        self.measurement_ids = {basis: uuid4() for basis in basis}
 
     def calculate_outcome(self, measurements: Measurements) -> bool:
         for basis in self.basis:
-            counts = measurements.get_counts(self.circuit, basis)[0]
+            counts = measurements.get_counts(self.circuit, self.measurement_ids[basis])
             # we know check that if 00 is in keys, then there must only be 11 in the keys
             # and the other way around  (01, 10)
             bitstrings = counts.keys()
@@ -42,9 +44,6 @@ class AssertEntangled(StandardAssertion):
                         string_builder += bitstring[len(bitstring) - qubit - 1]
                     relevant_bitstrings.append(string_builder)
 
-            print(bitstring)
-            print(relevant_bitstrings)
-
             # the ''.join flips the 1's and 0's in the bitstring, as if the state is entangled, then the two options are
             # 00 and 11, and the same for 01 and 10
             if relevant_bitstrings[0] != ''.join('1' if x == '0' else '0' for x in relevant_bitstrings[1]):
@@ -55,11 +54,11 @@ class AssertEntangled(StandardAssertion):
     def get_measurement_configuration(self) -> MeasurementConfiguration:
         measurement_config = MeasurementConfiguration()
         if "x" in self.basis:
-            measurement_config.add_measurement("x", self.circuit, {i: measure_x() for i in self.qubits})
+            measurement_config.add_measurement(self.measurement_ids["x"], self.circuit, {i: measure_x() for i in self.qubits})
         if "y" in self.basis:
-            measurement_config.add_measurement("y", self.circuit, {i: measure_y() for i in self.qubits})
+            measurement_config.add_measurement(self.measurement_ids["y"],self.circuit, {i: measure_y() for i in self.qubits})
         if "z" in self.basis:
-            measurement_config.add_measurement("z", self.circuit, {i: measure_z() for i in self.qubits})
+            measurement_config.add_measurement(self.measurement_ids["z"],self.circuit, {i: measure_z() for i in self.qubits})
 
         return measurement_config
 

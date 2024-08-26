@@ -1,10 +1,8 @@
-from functools import lru_cache
 import numpy as np
 from qiskit import QuantumCircuit
 
 
 # returns the quantum fourier transform circuit
-@lru_cache
 def quantum_fourier_transform(qubits, swap=True):
     # build circuit
     qft = QuantumCircuit(qubits, qubits)

@@ -1,4 +1,5 @@
 from typing import Sequence
+from uuid import uuid4
 from scipy import stats as sci
 
 from QiskitPBT.utils import HashableQuantumCircuit
@@ -17,25 +18,25 @@ class AssertEqual(StatisticalAssertion):
         self.qubits2 = qubits2
         self.circuit2 = circuit2
         self.basis = basis
+        self.measurement_ids = {basis: uuid4() for basis in basis}
 
     def calculate_p_values(self, measurements: Measurements) -> list[float]:
         p_vals = []
         for qubit1, qubit2 in zip(self.qubits1, self.qubits2):
             for basis in self.basis:
-                qubit1_counts = measurements.get_counts(self.circuit1, basis)
-                qubit2_counts = measurements.get_counts(self.circuit2, basis)
+                qubit1_counts = measurements.get_counts(self.circuit1, self.measurement_ids[basis])
+                qubit2_counts = measurements.get_counts(self.circuit2, self.measurement_ids[basis])
                 contingency_table = [[0, 0], [0, 0]]
-                for counts1, counts2 in zip(qubit1_counts, qubit2_counts):
-                    for bitstring, count in counts1.items():
-                        if bitstring[len(bitstring) - qubit1 - 1] == "0":
-                            contingency_table[0][0] += count
-                        else:
-                            contingency_table[0][1] += count
-                    for bitstring, count in counts2.items():
-                        if bitstring[len(bitstring) - qubit2 - 1] == "0":
-                            contingency_table[1][0] += count
-                        else:
-                            contingency_table[1][1] += count
+                for bitstring, count in qubit1_counts.items():
+                    if bitstring[len(bitstring) - qubit1 - 1] == "0":
+                        contingency_table[0][0] += count
+                    else:
+                        contingency_table[0][1] += count
+                for bitstring, count in qubit2_counts.items():
+                    if bitstring[len(bitstring) - qubit2 - 1] == "0":
+                        contingency_table[1][0] += count
+                    else:
+                        contingency_table[1][1] += count
                 _, p_value = sci.fisher_exact(contingency_table)
                 # TODO: this is kind of weird in the sense that we dont seperate p values of different qubits and just dump everything together
                 p_vals.append(p_value)
@@ -53,9 +54,9 @@ class AssertEqual(StatisticalAssertion):
         measurement_config = MeasurementConfiguration()
         for qubits, circ in [(self.qubits1, self.circuit1), (self.qubits2, self.circuit2)]:
             if "x" in self.basis:
-                measurement_config.add_measurement("x", circ, {i: measure_x() for i in qubits})
+                measurement_config.add_measurement(self.measurement_ids["x"], circ, {i: measure_x() for i in qubits})
             if "y" in self.basis:
-                measurement_config.add_measurement("y", circ, {i: measure_y() for i in qubits})
+                measurement_config.add_measurement(self.measurement_ids["y"], circ, {i: measure_y() for i in qubits})
             if "z" in self.basis:
-                measurement_config.add_measurement("z", circ, {i: measure_z() for i in qubits})
+                measurement_config.add_measurement(self.measurement_ids["z"], circ, {i: measure_z() for i in qubits})
         return measurement_config
