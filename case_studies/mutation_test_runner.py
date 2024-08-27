@@ -113,6 +113,6 @@ def reload_classes(folder_path):
 
 
 # Run the test
-# test_and_store("quantum_teleportation")
+test_and_store("quantum_teleportation", True)
 
-test_and_store("quantum_fourier_transform", True)
+# test_and_store("quantum_fourier_transform", True)

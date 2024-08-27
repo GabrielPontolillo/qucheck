@@ -1,8 +1,3 @@
-import random
-
-import numpy as np
-
-from qiskit import QuantumCircuit
 from case_studies.grovers_algorithm.grovers_algorithm import grovers_algorithm
 from case_studies.grovers_algorithm.grovers_algorithm_helpers import RandomGroversOracleMarkedStatesPairGenerator
 from qucheck.property import Property

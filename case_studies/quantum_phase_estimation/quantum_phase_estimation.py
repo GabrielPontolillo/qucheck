@@ -1,5 +1,5 @@
 import numpy as np
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit import QuantumCircuit
 
 
 def quantum_phase_estimation(estimation_qubits, unitary_gate, eigenstate_of_unitary):

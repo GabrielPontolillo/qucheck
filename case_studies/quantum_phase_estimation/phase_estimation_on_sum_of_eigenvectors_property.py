@@ -1,5 +1,4 @@
 # class that inherits from property based test
-from qiskit import QuantumCircuit
 import numpy as np
 from qiskit.circuit.library import UnitaryGate
 from qucheck.property import Property

@@ -1,6 +1,6 @@
 # a test script for the test runner
 from qucheck.test_runner import TestRunner
-from tests.mock_properties.frequency_test_property import FrequencyProperty,  UncertainFrequencyProperty
+from tests.mock_properties.frequency_test_property import FrequencyProperty, UncertainFrequencyProperty
 
 
 from unittest import TestCase

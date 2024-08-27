@@ -1,4 +1,3 @@
-import random
 from qiskit import QuantumCircuit
 from case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa
 from case_studies.deutsch_jozsa.dj_helpers import BalancedOracleInputGenerator

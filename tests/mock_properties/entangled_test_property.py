@@ -3,6 +3,7 @@ from qiskit import QuantumCircuit
 from qucheck.property import Property
 from qucheck.input_generators import RandomState
 
+
 class EntangledPrecondition(Property):
     # specify the inputs that are to be generated
     def get_input_generators(self):
