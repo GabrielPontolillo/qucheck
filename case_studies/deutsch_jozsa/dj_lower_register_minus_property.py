@@ -1,8 +1,8 @@
 import random
 from qiskit import QuantumCircuit
-from QiskitPBT.case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa
-from QiskitPBT.case_studies.deutsch_jozsa.dj_helpers import RandomOracleInputGenerator
-from QiskitPBT.property import Property
+from case_studies.deutsch_jozsa.deutsch_jozsa import deutsch_jozsa
+from case_studies.deutsch_jozsa.dj_helpers import RandomOracleInputGenerator
+from qucheck.property import Property
 
 
 class DeutschJozsaLowerRegisterMinus(Property):

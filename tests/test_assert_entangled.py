@@ -1,5 +1,4 @@
 # a test script for the test runner
-from .context import qucheck
 from qucheck.test_runner import TestRunner
 from tests.mock_properties.entangled_test_property import EntangledPrecondition, EntangledCheckOnUnentangledState, EntangledCheckOnGHZState
 

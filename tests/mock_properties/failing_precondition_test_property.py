@@ -2,7 +2,7 @@
 from qiskit import QuantumCircuit
 from qucheck.property import Property
 from qucheck.input_generators import RandomState
-from qucheck.case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
+from case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
 
 
 class FailingPrecondition(Property):

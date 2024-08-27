@@ -1,8 +1,8 @@
 # class that inherits from property based test
 from qiskit import QuantumCircuit
-from QiskitPBT.property import Property
-from QiskitPBT.input_generators import RandomState, RandomUnitary
-from QiskitPBT.case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
+from qucheck.property import Property
+from qucheck.input_generators import RandomState, RandomUnitary
+from case_studies.quantum_teleportation.quantum_teleportation import quantum_teleportation
 
 
 class UnitaryBeforeAndAfterTeleport(Property):

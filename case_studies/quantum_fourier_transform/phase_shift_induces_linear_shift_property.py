@@ -1,9 +1,9 @@
 # class that inherits from property based test
 import numpy as np
 from qiskit import QuantumCircuit
-from QiskitPBT.property import Property
-from QiskitPBT.input_generators import RandomFourierTransformState
-from QiskitPBT.case_studies.quantum_fourier_transform.quantum_fourier_transform import quantum_fourier_transform
+from qucheck.property import Property
+from qucheck.input_generators import RandomFourierTransformState
+from case_studies.quantum_fourier_transform.quantum_fourier_transform import quantum_fourier_transform
 
 
 class PhaseShiftToLinearShift(Property):

@@ -1,9 +1,9 @@
 # a test script for the test runner
 from qucheck.test_runner import TestRunner
-from qucheck.case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2_property import Inq0EqualOutq2
-from qucheck.case_studies.quantum_teleportation.not_teleported_registers_equal_to_plus_property import NotTeleportedPlus
-from qucheck.case_studies.quantum_fourier_transform.identity_property import IdentityProperty
-from qucheck.tests.mock_properties.failing_precondition_property import FailingPrecondition
+from case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2_property import Inq0EqualOutq2
+from case_studies.quantum_teleportation.not_teleported_registers_equal_to_plus_property import NotTeleportedPlus
+from case_studies.quantum_fourier_transform.identity_property import IdentityProperty
+from tests.mock_properties.failing_precondition_test_property import FailingPrecondition
 
 from unittest import TestCase
 

@@ -6,9 +6,9 @@ import cmath
 from fractions import Fraction
 from qiskit.circuit.library import UnitaryGate
 from qiskit.quantum_info import Operator, Statevector
-from QiskitPBT.property import Property
-from QiskitPBT.input_generators import RandomEigenvectorUnitaryPair, RandomUnitaryLimitedDecimals, InputGenerator
-from QiskitPBT.case_studies.quantum_phase_estimation.quantum_phase_estimation import quantum_phase_estimation
+from qucheck.property import Property
+from qucheck.input_generators import RandomEigenvectorUnitaryPair, RandomUnitaryLimitedDecimals, InputGenerator
+from case_studies.quantum_phase_estimation.quantum_phase_estimation import quantum_phase_estimation
 
 
 class PhaseCorrectlyEstimatedEnoughQubits(Property):

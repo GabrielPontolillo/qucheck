@@ -3,9 +3,9 @@ import random
 import numpy as np
 
 from qiskit import QuantumCircuit
-from QiskitPBT.case_studies.grovers_algorithm.grovers_algorithm import grovers_algorithm
-from QiskitPBT.case_studies.grovers_algorithm.grovers_algorithm_helpers import RandomGroversOracleMarkedStatesPairGenerator
-from QiskitPBT.property import Property
+from case_studies.grovers_algorithm.grovers_algorithm import grovers_algorithm
+from case_studies.grovers_algorithm.grovers_algorithm_helpers import RandomGroversOracleMarkedStatesPairGenerator
+from qucheck.property import Property
 
 
 class GroversAlgorithmMostFrequentMarked(Property):

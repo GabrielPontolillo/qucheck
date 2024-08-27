@@ -41,9 +41,7 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
                                        algorithm_name)
     print(f"Testing {mutant_name}")
 
-    # importlib.reload(sys.modules[f'qucheck.case_studies.{algorithm_name}.{algorithm_name}'])
-    with patch(f"QiskitPBT.case_studies.{algorithm_name}.{algorithm_name}.{algorithm_name}", circuit_function):
-        # importlib.reload(sys.modules['QiskitPBT.coordinator'])
+    with patch(f"case_studies.{algorithm_name}.{algorithm_name}.{algorithm_name}", circuit_function):
         reload_classes(f"{PATH}/QiskitPBT/case_studies/{algorithm_name}")
         backend = AerSimulator(method = 'statevector')
         backend.set_options(
@@ -107,7 +105,6 @@ def test_and_store(algorithm_name, optimisation):
 
 
 def reload_classes(folder_path):
-    # TODO: I kind of hate this but also maybe not?
     sys.path.insert(0, folder_path)
     for file in os.listdir(folder_path):
         if file.endswith('.py'):

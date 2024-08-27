@@ -1,6 +1,6 @@
 import random
 from qiskit import QuantumCircuit
-from QiskitPBT.input_generators.input_generator import InputGenerator
+from qucheck.input_generators.input_generator import InputGenerator
 
 
 class BalancedOracleInputGenerator(InputGenerator):

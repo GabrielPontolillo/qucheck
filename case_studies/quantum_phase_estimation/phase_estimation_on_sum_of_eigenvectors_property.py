@@ -2,9 +2,9 @@
 from qiskit import QuantumCircuit
 import numpy as np
 from qiskit.circuit.library import UnitaryGate
-from QiskitPBT.property import Property
-from QiskitPBT.input_generators import RandomEigenvectorUnitaryPair, RandomTensorProductOfUnitary, Integer
-from QiskitPBT.case_studies.quantum_phase_estimation.quantum_phase_estimation import quantum_phase_estimation
+from qucheck.property import Property
+from qucheck.input_generators import RandomEigenvectorUnitaryPair, RandomTensorProductOfUnitary, Integer
+from case_studies.quantum_phase_estimation.quantum_phase_estimation import quantum_phase_estimation
 
 
 class PhaseEstimationSumEigenvectors(Property):

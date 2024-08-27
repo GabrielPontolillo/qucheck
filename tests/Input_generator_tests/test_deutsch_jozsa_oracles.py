@@ -2,7 +2,7 @@ import itertools
 import numpy as np
 import unittest
 
-from qucheck.case_studies.deutsch_jozsa.dj_helpers import BalancedOracleInputGenerator, ConstantOracleInputGenerator, RandomOracleInputGenerator
+from case_studies.deutsch_jozsa.dj_helpers import BalancedOracleInputGenerator, ConstantOracleInputGenerator, RandomOracleInputGenerator
 from qiskit.quantum_info import Statevector, Operator
 
 

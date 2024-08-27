@@ -1,7 +1,7 @@
 from qiskit import QuantumCircuit
 import random
 
-from QiskitPBT.input_generators import InputGenerator
+from qucheck.input_generators import InputGenerator
 
 
 class RandomGroversOracleMarkedStatesPairGenerator(InputGenerator):

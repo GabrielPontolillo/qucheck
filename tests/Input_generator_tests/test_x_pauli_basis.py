@@ -5,7 +5,7 @@ import numpy as np
 import unittest
 
 from functools import reduce
-from QiskitPBT.input_generators.random_pauli_basis_state import RandomPauliBasisState
+from qucheck.input_generators.random_pauli_basis_state import RandomPauliBasisState
 from qiskit.quantum_info import Statevector
 
 
