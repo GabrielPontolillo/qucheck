@@ -1,7 +1,7 @@
 import numpy as np
 import unittest
 
-from QiskitPBT.input_generators.random_unitary_with_limited_decimals_eigenvalue import RandomUnitaryLimitedDecimals
+from qucheck.input_generators import RandomUnitaryLimitedDecimals
 
 
 class TestRandomUnitaryLimitedDecimals(unittest.TestCase):

@@ -1,12 +1,11 @@
 import importlib.util
 import csv
 import time
-import inspect
 import sys
 import os
 from unittest.mock import patch
-from QiskitPBT.coordinator import Coordinator
-from QiskitPBT.test_runner import TestRunner
+from qucheck.coordinator import Coordinator
+from qucheck.test_runner import TestRunner
 import gc
 from qiskit_aer import AerSimulator
 
@@ -42,7 +41,7 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
                                        algorithm_name)
     print(f"Testing {mutant_name}")
 
-    # importlib.reload(sys.modules[f'QiskitPBT.case_studies.{algorithm_name}.{algorithm_name}'])
+    # importlib.reload(sys.modules[f'qucheck.case_studies.{algorithm_name}.{algorithm_name}'])
     with patch(f"QiskitPBT.case_studies.{algorithm_name}.{algorithm_name}.{algorithm_name}", circuit_function):
         # importlib.reload(sys.modules['QiskitPBT.coordinator'])
         reload_classes(f"{PATH}/QiskitPBT/case_studies/{algorithm_name}")

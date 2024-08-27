@@ -1,6 +1,6 @@
 # a test script for the test runner
-from QiskitPBT.test_runner import TestRunner
-from QiskitPBT.tests.mock_properties.frequency_property import FrequencyProperty,  UncertainFrequencyProperty
+from qucheck.test_runner import TestRunner
+from qucheck.tests.mock_properties.frequency_property import FrequencyProperty,  UncertainFrequencyProperty
 
 
 from unittest import TestCase

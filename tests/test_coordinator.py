@@ -1,8 +1,8 @@
 # begin testing the coordinator
 import os
 from unittest import TestCase
-from QiskitPBT.coordinator import Coordinator
-from QiskitPBT.test_runner import TestRunner
+from qucheck.coordinator import Coordinator
+from qucheck.test_runner import TestRunner
 
 PARENT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
 

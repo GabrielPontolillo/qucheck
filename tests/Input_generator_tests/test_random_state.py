@@ -1,9 +1,7 @@
-import itertools
 import numpy as np
 import unittest
 
-from functools import reduce
-from QiskitPBT.input_generators.random_state import RandomState
+from qucheck.input_generators import RandomState
 from qiskit.quantum_info import Statevector
 
 

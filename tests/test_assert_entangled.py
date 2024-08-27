@@ -1,6 +1,7 @@
 # a test script for the test runner
-from QiskitPBT.test_runner import TestRunner
-from QiskitPBT.tests.mock_properties.entangled_property import EntangledPrecondition, EntangledCheckOnUnentangledState, EntangledCheckOnGHZState
+from .context import qucheck
+from qucheck.test_runner import TestRunner
+from tests.mock_properties.entangled_test_property import EntangledPrecondition, EntangledCheckOnUnentangledState, EntangledCheckOnGHZState
 
 
 from unittest import TestCase
