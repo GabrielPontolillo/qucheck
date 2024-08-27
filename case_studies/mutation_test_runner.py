@@ -37,13 +37,13 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
     mutant_name = f"{algorithm_name}_{mutant_type}{index}"
 
     circuit_function = import_function(mutant_name,
-                                       f"{PATH}/QiskitPBT/case_studies/{algorithm_name}/mutants/{mutant_name}.py",
+                                       f"{PATH}/{algorithm_name}/mutants/{mutant_name}.py",
                                        algorithm_name)
     print(f"Testing {mutant_name}")
 
     with patch(f"case_studies.{algorithm_name}.{algorithm_name}.{algorithm_name}", circuit_function):
-        reload_classes(f"{PATH}/QiskitPBT/case_studies/{algorithm_name}")
-        backend = AerSimulator(method = 'statevector')
+        reload_classes(f"{PATH}/{algorithm_name}")
+        backend = AerSimulator(method='statevector')
         backend.set_options(
             max_parallel_threads = 0,
             max_parallel_experiments = 0,
@@ -54,10 +54,9 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
         coordinator = Coordinator(num_inputs, 1, backend=backend)
 
         start = time.time()
-        result = coordinator.test(f"{PATH}/QiskitPBT/case_studies/{algorithm_name}", measurements, run_optimization=run_optimization)
+        result = coordinator.test(f"{PATH}/{algorithm_name}", measurements, run_optimization=run_optimization)
         end = time.time()
 
-        # reload_classes(f"{PATH}\\case_studies\\{algorithm_name}")
         num_circuits_executed = result.number_circuits_executed
         failed_properties = result.failed_property
         unique_properties = []
