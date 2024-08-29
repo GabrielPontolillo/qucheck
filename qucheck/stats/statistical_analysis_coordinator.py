@@ -32,7 +32,7 @@ class StatisticalAnalysisCoordinator:
         self.family_wise_p_value = family_wise_p_value
 
     #Assertions
-    def assert_equal(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
+    def assert_equal(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"], subsample=False):
         # parse qubits so that assert equals always gets sequences of qubits
         if not isinstance(qubits1, Sequence):
             qubits1 = (qubits1, )
@@ -43,10 +43,11 @@ class StatisticalAnalysisCoordinator:
         circ1.__class__ = HashableQuantumCircuit
         circ2 = circuit2.copy()
         circ2.__class__ = HashableQuantumCircuit
+        print("sending subsample", subsample)
         if property in self.assertions_for_property:
-            self.assertions_for_property[property].append(AssertEqual(qubits1, circ1, qubits2, circ2, basis))
+            self.assertions_for_property[property].append(AssertEqual(qubits1, circ1, qubits2, circ2, basis, subsample))
         else:
-            self.assertions_for_property[property] = [AssertEqual(qubits1, circ1, qubits2, circ2, basis)]
+            self.assertions_for_property[property] = [AssertEqual(qubits1, circ1, qubits2, circ2, basis, subsample)]
 
     def assert_different(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
         # parse qubits so that assert equals always gets sequences of qubits
