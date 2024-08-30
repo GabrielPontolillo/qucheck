@@ -31,7 +31,7 @@ class AssertEqual(StatisticalAssertion):
     def calculate_p_values(self, measurements: Measurements) -> list[float]:
         p_vals = []
         for qubit1, qubit2 in zip(self.qubits1, self.qubits2):
-            
+
             for basis in self.basis:
                 qubit1_counts = measurements.get_counts(self.circuit1, self.measurement_ids[basis])
                 qubit2_counts = measurements.get_counts(self.circuit2, self.measurement_ids[basis])
@@ -54,6 +54,14 @@ class AssertEqual(StatisticalAssertion):
                     p_vals.append(p_value)
 
                 else:
+                    num_shots = sum(qubit1_counts.values())
+                    # if number of experiments is greater than the number of shots, then we throw an exception
+                    if self.num_experiments > num_shots:
+                        raise ValueError("Number of experiments is greater than the number of shots")
+                    # number of shots needs to be divisible by number of experiments
+                    if num_shots % self.num_experiments != 0:
+                        raise ValueError("Number of shots needs to be divisible by number of experiments")
+
                     qubit1_counts_subsamples = split_into_subsamples(deepcopy(qubit1_counts), number_of_subsamples=self.num_experiments)
                     qubit2_counts_subsamples = split_into_subsamples(deepcopy(qubit2_counts), number_of_subsamples=self.num_experiments)
 
