@@ -38,10 +38,13 @@ class Coordinator:
                         self.property_classes.add(obj)
         sys.path.pop(0)
 
-    def test(self, path, measurements: int = 2000, run_optimization=True) -> TestExecutionStatistics:
+    def test(self, path, measurements: int = 2000, run_optimization=True, num_experiments: int = 50) -> TestExecutionStatistics:
+        # check measurements is divisible by experiments
+        if measurements % num_experiments != 0:
+            print("Warning: if using subsampling measurements is not divisible by experiments, will be rounded down")
         self.get_classes(path)
         print(self.property_classes)
-        self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
+        self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements, num_experiments)
         return self.test_runner.run_tests(backend=self.backend, run_optimization=run_optimization, family_wise_p_value=self.alpha)
 
     def print_outcomes(self):
