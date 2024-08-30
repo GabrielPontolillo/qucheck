@@ -10,6 +10,7 @@ from qucheck.input_generators.random_fourier_transform_state import RandomFourie
 from qucheck.input_generators.random_unitary import RandomUnitary
 from qucheck.input_generators.random_tensor_product_unitary import RandomTensorProductOfUnitary
 from qucheck.input_generators.random_unitary_with_limited_decimals_eigenvalue import RandomUnitaryLimitedDecimals
+from qucheck.input_generators.random_state_preparation_circuit import RandomStatePreparationCircuit
 
 # import misc generators
 from qucheck.input_generators.integer import Integer
