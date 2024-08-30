@@ -6,6 +6,8 @@ from qucheck.input_generators.input_generator import InputGenerator
 
 
 # uses the technique from "Quratest" to generate a circuit to randomly initialise a state using U gates and CNOT gates
+# https://doi.org/10.1109/ASE56229.2023.00196
+
 class RandomStatePreparationCircuit(InputGenerator):
     def __init__(self, number_of_qubits_low, number_of_qubits_high):
         self.number_of_qubits_low = number_of_qubits_low
