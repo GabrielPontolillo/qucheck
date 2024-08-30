@@ -13,7 +13,7 @@ class TestAssertEntangled(TestCase):
 
     def test_entangled_precondition(self):
         # create an instance of the test runner
-        test_runner = TestRunner([EntangledPrecondition], 2,  548, 1000)
+        test_runner = TestRunner([EntangledPrecondition], 2,  548, 5000)
         # run the tests
         test_runner.run_tests()
         # list the failing properties
@@ -22,7 +22,7 @@ class TestAssertEntangled(TestCase):
 
     def test_entangled_check_on_unentangled_state(self):
         # create an instance of the test runner
-        test_runner = TestRunner([EntangledCheckOnUnentangledState], 2,  548, 1000)
+        test_runner = TestRunner([EntangledCheckOnUnentangledState], 2,  548, 5000)
         # run the tests
         test_runner.run_tests()
         # list the failing properties
@@ -31,7 +31,7 @@ class TestAssertEntangled(TestCase):
 
     def test_entangled_check_on_GHZ_state(self):
         # create an instance of the test runner
-        test_runner = TestRunner([EntangledCheckOnGHZState], 1,  548, 1000)
+        test_runner = TestRunner([EntangledCheckOnGHZState], 1,  548, 5000)
         # run the tests
         test_runner.run_tests()
         # list the failing properties

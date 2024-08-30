@@ -56,11 +56,11 @@ class TestRandomStatePreparationCircuit(unittest.TestCase):
         self.assertEqual(len(us), 2*circuit.num_qubits)
 
     def test_qt_in_out_still_passes_with_this_gen(self):
-        runner = TestRunner([InOutQTCircuitGen], 5, 42, 2500)
+        runner = TestRunner([InOutQTCircuitGen], 5, 42, 5000)
         runner.run_tests()
         self.assertEqual(runner.list_passing_properties(), [InOutQTCircuitGen])
 
     def test_qt_plus_still_passes_with_this_gen(self):
-        runner = TestRunner([NotTeleportedPlusCircuitGen], 5, 42, 2500)
+        runner = TestRunner([NotTeleportedPlusCircuitGen], 5, 42, 5000)
         runner.run_tests()
         self.assertEqual(runner.list_passing_properties(), [NotTeleportedPlusCircuitGen])

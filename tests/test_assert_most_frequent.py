@@ -13,7 +13,7 @@ class TestAssertMostFrequent(TestCase):
 
     def test_single_frequency(self):
         # create an instance of the test runner
-        test_runner = TestRunner([FrequencyProperty], 10,  546, 1000)
+        test_runner = TestRunner([FrequencyProperty], 10,  546, 5000)
         # run the tests
         test_runner.run_tests()
         # list the failing properties
@@ -22,7 +22,7 @@ class TestAssertMostFrequent(TestCase):
 
     def test_multiple_frequency(self):
         # create an instance of the test runner
-        test_runner = TestRunner([UncertainFrequencyProperty], 10,  548, 1000)
+        test_runner = TestRunner([UncertainFrequencyProperty], 10,  548, 5000)
         # run the tests
         test_runner.run_tests()
         # list the failing properties
