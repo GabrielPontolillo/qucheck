@@ -1,3 +1,4 @@
+from time import time
 from qiskit import QuantumCircuit
 from qucheck.stats.measurement_configuration import MeasurementConfiguration
 from qucheck.utils import HashableQuantumCircuit
@@ -20,13 +21,14 @@ class CircuitGenerator:
     
     def _optimize(self) -> list[HashableQuantumCircuit]:
         # get unique base circuits:
-        base_circuits = self.unoptimized_measurement_info.keys()
+        base_circuits = set(self.unoptimized_measurement_info.keys())
+        print(len(base_circuits), [len(c.data) for c in base_circuits])
         # since we hash by reference, keep track of all duplicated circuits to feed back in get_measurement_info
-        unique_base_circuits = set(base_circuits) 
-        for unique_circuit in unique_base_circuits:
+        for unique_circuit in base_circuits:
             self._get_full_circuits(unique_circuit)
         # remove duplicates
         full_unique_circuits = set(self.measurement_info_for_unique_circuits.keys())
+        print(len(full_unique_circuits), sum([len(c.data) for c in full_unique_circuits])/len(full_unique_circuits))
         return full_unique_circuits
     
     def _get_unoptimized_circuits(self) -> list[QuantumCircuit]:
@@ -39,7 +41,7 @@ class CircuitGenerator:
                     qc.compose(measurement, (qubit,), (qubit,), inplace=True)
                 qc = self._get_hashable_circuit(qc)
                 self.measurement_info_for_unique_circuits[qc] = [(measurement_id, circuit)]
-                full_circuits.append(self._get_executable_circuit(qc))
+                full_circuits.append(qc)
         return full_circuits
 
     def _get_full_circuits(self, circuit: HashableQuantumCircuit):

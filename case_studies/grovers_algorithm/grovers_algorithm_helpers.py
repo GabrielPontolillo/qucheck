@@ -33,7 +33,7 @@ class RandomGroversOracleMarkedStatesPairGenerator(InputGenerator):
         for state in marked_states:
             marking_circ = marking_circuit(num_qubits, state)
             circuit = circuit.compose(marking_circ)
-
+        print("oracle (seed, num qubits, num marked states):", seed, num_qubits, M)
         return circuit, marked_states
 
 

@@ -8,7 +8,7 @@ from qucheck.property import Property
 class GroversAlgorithmMostFrequentMarked(Property):
     # specify the inputs that are to be generated
     def get_input_generators(self):
-        return [RandomGroversOracleMarkedStatesPairGenerator(4, 7)]
+        return [RandomGroversOracleMarkedStatesPairGenerator(4, 10)]
 
     # specify the preconditions for the test
     def preconditions(self, oracle_pair):

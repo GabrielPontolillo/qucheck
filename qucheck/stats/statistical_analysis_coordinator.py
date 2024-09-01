@@ -158,7 +158,10 @@ class StatisticalAnalysisCoordinator:
         # equivalent mutants would get transpiled to the same circuit, so we should run with no optimisation for mutation testing
         start_time = time()
         print("num circuits to transpile", len(circuits_to_execute))
+        print("len circs", sum([len(circ.data) for circ in circuits_to_execute])/len(circuits_to_execute))
         transpiled_circuits = transpile(circuits_to_execute, backend, optimization_level=1)
+        print("num circuits transpiled", len(transpiled_circuits))
+        print("len transpiled circs", sum([len(circ.data) for circ in transpiled_circuits])/len(transpiled_circuits))
         print("transpilation time", time()-start_time)
         start_time = time()
         results = backend.run(transpiled_circuits, shots=self.number_of_measurements).result().get_counts()

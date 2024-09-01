@@ -10,6 +10,7 @@ class TestGrovers(unittest.TestCase):
     def test_lower_register_minus(self):
         # run the test
         runner = TestRunner([GroversAlgorithmLowerRegisterMinus], 5, 42, 5000)
+        print("GroversAlgorithmLowerRegisterMinus")
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -18,6 +19,7 @@ class TestGrovers(unittest.TestCase):
     def test_most_frequent_marked(self):
         # run the test
         runner = TestRunner([GroversAlgorithmMostFrequentMarked], 5, 41, 5000)
+        print("GroversAlgorithmMostFrequentMarked")
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []
@@ -26,6 +28,7 @@ class TestGrovers(unittest.TestCase):
     def test_most_frequent_not_marked_when_too_many_marks(self):
         # run the test
         runner = TestRunner([GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked], 6, 40, 5000)
+        print("GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked")
         runner.run_tests()
         # the property should pass
         assert runner.list_failing_properties() == []

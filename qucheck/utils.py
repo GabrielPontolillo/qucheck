@@ -1,3 +1,4 @@
+from time import time
 import numpy
 from qiskit import QuantumCircuit
 
@@ -15,6 +16,11 @@ class HashableQuantumCircuit(QuantumCircuit):
         else:
             self._hash_val = hash(tuple(hash_instruction(instruction) for instruction in self._data))
             return self._hash_val
+        
+    def copy(self):
+        qc =  HashableQuantumCircuit.from_instructions(self.data, qubits=self.qubits, clbits=self.clbits)
+        qc.__class__ = HashableQuantumCircuit
+        return qc
 
 
 def hash_instruction(instruction):
