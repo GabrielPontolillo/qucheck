@@ -24,7 +24,8 @@ class TestExecutionStatistics:
     def __init__(self) -> None:
         self.number_circuits_executed = 0
         self.failed_property = []
-        
+
+
 class StatisticalAnalysisCoordinator:
     def __init__(self, number_of_measurements=2000, family_wise_p_value=0.01, num_experiments=50) -> None:
         self.assertions_for_property: dict[Property, list[Assertion]] = {}
@@ -33,12 +34,13 @@ class StatisticalAnalysisCoordinator:
         self.num_experiments = num_experiments
 
     #Assertions
-    def assert_equal(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"], subsample=False):
+    def assert_equal(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit,
+                     qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis=["x", "y", "z"], subsample=True):
         # parse qubits so that assert equals always gets sequences of qubits
         if not isinstance(qubits1, Sequence):
-            qubits1 = (qubits1, )
+            qubits1 = (qubits1,)
         if not isinstance(qubits2, Sequence):
-            qubits2 = (qubits2, )
+            qubits2 = (qubits2,)
         # hack to make circuits in assert equals be usable as dictionary keys (by ref)
         circ1 = circuit1.copy()
         circ1.__class__ = HashableQuantumCircuit
@@ -50,12 +52,13 @@ class StatisticalAnalysisCoordinator:
         else:
             self.assertions_for_property[property] = [AssertEqual(qubits1, circ1, qubits2, circ2, basis, subsample, self.num_experiments)]
 
-    def assert_different(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit, qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis = ["x", "y", "z"]):
+    def assert_different(self, property: Property, qubits1: int | Sequence[int], circuit1: QuantumCircuit,
+                         qubits2: int | Sequence[int], circuit2: QuantumCircuit, basis=["x", "y", "z"], subsample=True):
         # parse qubits so that assert equals always gets sequences of qubits
         if not isinstance(qubits1, Sequence):
-            qubits1 = (qubits1, )
+            qubits1 = (qubits1,)
         if not isinstance(qubits2, Sequence):
-            qubits2 = (qubits2, )
+            qubits2 = (qubits2,)
         # hack to make circuits in assert equals be usable as dictionary keys (by ref)
         circ1 = circuit1.copy()
         circ1.__class__ = HashableQuantumCircuit
@@ -63,11 +66,11 @@ class StatisticalAnalysisCoordinator:
         circ2.__class__ = HashableQuantumCircuit
 
         if property in self.assertions_for_property:
-            self.assertions_for_property[property].append(AssertDifferent(qubits1, circ1, qubits2, circ2, basis))
+            self.assertions_for_property[property].append(AssertDifferent(qubits1, circ1, qubits2, circ2, basis, subsample, self.num_experiments))
         else:
-            self.assertions_for_property[property] = [AssertDifferent(qubits1, circ1, qubits2, circ2, basis)]
+            self.assertions_for_property[property] = [AssertDifferent(qubits1, circ1, qubits2, circ2, basis, subsample, self.num_experiments)]
 
-    def assert_entangled(self, property: Property, qubits: Sequence[int], circuit: QuantumCircuit, basis = ["z"]):
+    def assert_entangled(self, property: Property, qubits: Sequence[int], circuit: QuantumCircuit, basis=["z"]):
         # parse qubits so that assert equals always gets sequences of qubits
         if not isinstance(qubits, Sequence):
             qubits = (qubits,)
@@ -80,7 +83,8 @@ class StatisticalAnalysisCoordinator:
         else:
             self.assertions_for_property[property] = [AssertEntangled(qubits, circ, basis)]
 
-    def assert_most_frequent(self, property: Property, qubits: int | Sequence[int], circuit: QuantumCircuit, states: str | Sequence[str], basis = ["z"]):
+    def assert_most_frequent(self, property: Property, qubits: int | Sequence[int], circuit: QuantumCircuit,
+                             states: str | Sequence[str], basis=["z"]):
         # parse qubits so that assert equals always gets sequences of qubits / bitstrings
         if not isinstance(qubits, Sequence):
             qubits = (qubits,)
@@ -92,16 +96,18 @@ class StatisticalAnalysisCoordinator:
             self.assertions_for_property[property].append(AssertMostFrequent(qubits, circ, states, basis))
         else:
             self.assertions_for_property[property] = [AssertMostFrequent(qubits, circ, states, basis)]
-    
+
     # Entrypoint for analysis
-    def perform_analysis(self, properties: list[Property], backend: Backend, run_optimization: bool) -> TestExecutionStatistics:
+    def perform_analysis(self, properties: list[Property], backend: Backend,
+                         run_optimization: bool) -> TestExecutionStatistics:
         print(run_optimization)
         circuit_generator = CircuitGenerator(run_optimization)
         test_execution_stats = TestExecutionStatistics()
         # classical assertion failed dont run quantum
         for property in properties:
             if not property.classical_assertion_outcome:
-                test_execution_stats.failed_property.append(TestExecutionStatistics.FailedProperty(property, True, None))
+                test_execution_stats.failed_property.append(
+                    TestExecutionStatistics.FailedProperty(property, True, None))
                 continue
 
             for assertion in self.assertions_for_property[property]:
@@ -120,12 +126,13 @@ class StatisticalAnalysisCoordinator:
                         p_values[property][assertion] = p_value
                     elif not isinstance(assertion, Assertion):
                         raise ValueError("Assertion must be a subclass of Assertion")
-        
-        print("p val calc time", time()-start_time)
+
+        print("p val calc time", time() - start_time)
 
         # Only do Holm Bonferroni Correction if there are p_values to correct (preconditions pass)
         if p_values:
-            expected_p_values = holm_bonferroni_correction(self.assertions_for_property, p_values, self.family_wise_p_value)
+            expected_p_values = holm_bonferroni_correction(self.assertions_for_property, p_values,
+                                                           self.family_wise_p_value)
 
         # calculate the outcome of each assertion
         for property in properties:
@@ -135,7 +142,8 @@ class StatisticalAnalysisCoordinator:
                 if isinstance(assertion, StandardAssertion):
                     assertion_outcome = assertion.calculate_outcome(measurements)
                 elif isinstance(assertion, StatisticalAssertion):
-                    assertion_outcome = assertion.calculate_outcome(p_values[property][assertion], expected_p_values[property][assertion])
+                    assertion_outcome = assertion.calculate_outcome(p_values[property][assertion],
+                                                                    expected_p_values[property][assertion])
                 else:
                     raise ValueError("The provided assertions must be a subclass of Assertion")
                 if not assertion_outcome:
@@ -145,16 +153,18 @@ class StatisticalAnalysisCoordinator:
                     for _, val in assertion.__dict__.items():
                         if isinstance(val, QuantumCircuit):
                             failed_circuits.append(val)
-                    test_execution_stats.failed_property.append(TestExecutionStatistics.FailedProperty(property, False, failed_circuits))
+                    test_execution_stats.failed_property.append(
+                        TestExecutionStatistics.FailedProperty(property, False, failed_circuits))
         return test_execution_stats
 
     # creates a dictionary of measurements for each assertion,
-    def _perform_measurements(self, circuit_generator: CircuitGenerator, backend: Backend) -> tuple[dict[StatisticalAssertion, Measurements], int]:
+    def _perform_measurements(self, circuit_generator: CircuitGenerator, backend: Backend) -> tuple[
+        dict[StatisticalAssertion, Measurements], int]:
         start_time = time()
         measurements = Measurements()
         print("before get circuits")
         circuits_to_execute = circuit_generator.get_circuits_to_execute()
-        print("optim time", time()-start_time)
+        print("optim time", time() - start_time)
         if len(circuits_to_execute) == 0:
             return measurements, 0
         # equivalent mutants would get transpiled to the same circuit, so we should run with no optimisation for mutation testing
@@ -163,17 +173,17 @@ class StatisticalAnalysisCoordinator:
         # optimisation level 0 is no optimisation - this is necessary for the mutation testing with equivalent mutants
         transpiled_circuits = transpile(circuits_to_execute, backend, optimization_level=0)
         print("num circuits transpiled", len(transpiled_circuits))
-        print("len transpiled circs", sum([len(circ.data) for circ in transpiled_circuits])/len(transpiled_circuits))
-        print("transpilation time", time()-start_time)
+        print("len transpiled circs", sum([len(circ.data) for circ in transpiled_circuits]) / len(transpiled_circuits))
+        print("transpilation time", time() - start_time)
         start_time = time()
         results = backend.run(transpiled_circuits, shots=self.number_of_measurements).result().get_counts()
-        print("circuit execution time", time()-start_time)
+        print("circuit execution time", time() - start_time)
         start_time = time()
         if len(circuits_to_execute) == 1:
             results = (results,)
         for counts, circuit in zip(results, circuits_to_execute):
             for measurement_name, original_circuit in circuit_generator.get_measurement_info(circuit):
                 measurements.add_measurement(original_circuit, measurement_name, counts)
-        print("measurement allocation time", time()-start_time)
+        print("measurement allocation time", time() - start_time)
         # return measurements and num of circuits executed
         return measurements, len(transpiled_circuits)

@@ -241,14 +241,12 @@ class TestCoordinator(TestCase):
                          run_optimization=True)
         passing = coordinator.test_runner.list_passing_properties()
         passing = [elem.__name__ for elem in passing]
-        print(passing)
         self.assertEqual(len(passing), 6)
         self.assertIn("EntangledPrecondition", passing)
         self.assertIn("EntangledCheckOnGHZState", passing)
 
         failing = coordinator.test_runner.list_failing_properties()
         failing = [elem.__name__ for elem in failing]
-        print(failing)
         self.assertEqual(len(failing), 2)
         self.assertIn("FailingPrecondition", failing)
         self.assertIn("EntangledCheckOnUnentangledState", failing)

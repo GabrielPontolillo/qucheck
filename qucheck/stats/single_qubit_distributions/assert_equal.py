@@ -16,7 +16,7 @@ from qucheck.stats.utils.sampling import split_into_subsamples
 
 class AssertEqual(StatisticalAssertion):
     def __init__(self, qubits1: Sequence[int], circuit1: HashableQuantumCircuit, qubits2: Sequence[int],
-                 circuit2: HashableQuantumCircuit, basis = ["x", "y", "z"], subsample=False, num_experiments=50) -> None:
+                 circuit2: HashableQuantumCircuit, basis = ["x", "y", "z"], subsample=True, num_experiments=50) -> None:
     # TODO: add a clause for lists of qubits instead of single registers
         super().__init__()
         self.qubits1 = qubits1
@@ -36,7 +36,7 @@ class AssertEqual(StatisticalAssertion):
                 qubit1_counts = measurements.get_counts(self.circuit1, self.measurement_ids[basis])
                 qubit2_counts = measurements.get_counts(self.circuit2, self.measurement_ids[basis])
 
-                print(f"subsample: {self.subsample}")
+                # print(f"subsample: {self.subsample}")
                 if not self.subsample:
 
                     contingency_table = [[0, 0], [0, 0]]
@@ -73,22 +73,32 @@ class AssertEqual(StatisticalAssertion):
                     c1_zero_counts = []
                     c2_zero_counts = []
                     for qubit1_subsample, qubit2_subsample in zip(qubit1_counts_subsamples, qubit2_counts_subsamples):
+                        # Initialize zero counts for this subsample
+                        qubit1_zero_count = 0
+                        qubit2_zero_count = 0
+
+                        # Count zeros for qubit1
                         for bitstring, count in qubit1_subsample.items():
                             if bitstring[len(bitstring) - qubit1 - 1] == "0":
-                                c1_zero_counts.append(count)
+                                qubit1_zero_count += count
+
+                        # Count zeros for qubit2
                         for bitstring, count in qubit2_subsample.items():
                             if bitstring[len(bitstring) - qubit2 - 1] == "0":
-                                c2_zero_counts.append(count)
+                                qubit2_zero_count += count
 
-                    print("zero counts 1")
-                    print(c1_zero_counts)
-                    print("zero counts 2")
-                    print(c2_zero_counts)
+                        # Append the counts (will be 0 if no zeros were found)
+                        c1_zero_counts.append(qubit1_zero_count)
+                        c2_zero_counts.append(qubit2_zero_count)
+
+                    # print("zero counts 1")
+                    # print(c1_zero_counts)
+                    # print("zero counts 2")
+                    # print(c2_zero_counts)
 
                     _, p_value = sci.ttest_ind(c1_zero_counts, c2_zero_counts)
                     if np.isnan(p_value):
                         p_value = 1
-                    # print(p_value)
                     p_vals.append(p_value)
         return p_vals
 
