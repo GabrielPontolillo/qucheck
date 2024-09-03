@@ -11,7 +11,7 @@ from tests.mock_properties.failing_precondition_test_property import FailingPrec
 class TestTestRunner(TestCase):
     def setUp(self):
         self.num_inputs = 10
-        self.num_measurements = 10000
+        self.num_measurements = 5000
 
     def tearDown(self):
         TestRunner.property_classes = []

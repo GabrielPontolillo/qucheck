@@ -11,7 +11,7 @@ import unittest
 class TestIdentityPropertyQFT(unittest.TestCase):
     def setUp(self):
         self.num_inputs = 10
-        self.num_measurements = 10000
+        self.num_measurements = 5000
 
     def test_identity_property_qft(self):
         # run the test

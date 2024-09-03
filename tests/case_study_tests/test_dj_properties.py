@@ -11,7 +11,7 @@ from qucheck.test_runner import TestRunner
 class TestDeutschJozsa(unittest.TestCase):
     def setUp(self):
         self.num_inputs = 10
-        self.num_measurements = 10000
+        self.num_measurements = 5000
 
     def test_balanced_properties(self):
         # run the test

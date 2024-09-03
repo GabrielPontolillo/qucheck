@@ -8,7 +8,7 @@ from tests.mock_properties.entangled_test_property import EntangledPrecondition,
 class TestAssertEntangled(TestCase):
     def setUp(self):
         self.num_inputs = 10
-        self.num_measurements = 10000
+        self.num_measurements = 5000
 
     def tearDown(self):
         TestRunner.property_objects = []

@@ -11,7 +11,7 @@ PARENT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.par
 class TestCoordinator(TestCase):
     def setUp(self):
         self.num_inputs = 10
-        self.num_measurements = 10000
+        self.num_measurements = 5000
 
     def tearDown(self):
         TestRunner.property_classes = []

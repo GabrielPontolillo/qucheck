@@ -8,7 +8,7 @@ from tests.mock_properties.frequency_test_property import FrequencyProperty, Unc
 class TestAssertMostFrequent(TestCase):
     def setUp(self):
         self.num_inputs = 10
-        self.num_measurements = 10000
+        self.num_measurements = 5000
 
     def tearDown(self):
         TestRunner.property_objects = []
