@@ -15,12 +15,13 @@ import random
 
 
 class TestRunner:
-    def __init__(self, property_classes: Sequence[Property.__class__], num_inputs: int, random_seed: int, num_measurements: int, shrinking=False, max_attempts=100):
+    def __init__(self, property_classes: Sequence[Property.__class__], num_inputs: int, random_seed: int, num_measurements: int, num_experiments: int = 50, shrinking=False, max_attempts=100):
         self.property_classes = property_classes
         self.num_inputs = num_inputs
         self.do_shrinking = shrinking
         self.max_attempts = max_attempts
         self.num_measurements = num_measurements
+        self.num_experiments = num_experiments
         self.property_objects: list[Property] = []
         self.test_execution_stats: TestExecutionStatistics = None
         # keep track of seeds for testing purposes
@@ -49,7 +50,7 @@ class TestRunner:
     def run_tests(self, backend=AerSimulator(), run_optimization=True, family_wise_p_value=0.01):
         # for each property class, we need to create a statistical analysis object
         # and then create a property object using the statistical analysis object
-        stat_analysis_coordinator = StatisticalAnalysisCoordinator(self.num_measurements, family_wise_p_value)
+        stat_analysis_coordinator = StatisticalAnalysisCoordinator(self.num_measurements, family_wise_p_value, self.num_experiments)
         properties = []
 
         # needs to be sorted to ensure reproducibility, otherwise different seeds will be generated if random order
