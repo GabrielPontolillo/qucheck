@@ -1,5 +1,6 @@
 import random
 import unittest
+
 from qiskit import QuantumCircuit
 
 from qucheck.input_generators import RandomStatePreparationCircuit
@@ -10,6 +11,8 @@ from tests.mock_properties.other_mocks import InOutQTCircuitGen, NotTeleportedPl
 class TestRandomStatePreparationCircuit(unittest.TestCase):
     def setUp(self):
         self.generator = RandomStatePreparationCircuit(2, 5)
+        self.num_inputs = 10
+        self.num_measurements = 10000
 
     def test_generates_circuit_instance(self):
         circuit = self.generator.generate(42)
@@ -53,14 +56,14 @@ class TestRandomStatePreparationCircuit(unittest.TestCase):
         val = random.randint(0, 120194)
         circuit = self.generator.generate(val)
         us = [gate for gate in circuit.data if gate[0].name == 'u']
-        self.assertEqual(len(us), 2*circuit.num_qubits)
+        self.assertEqual(len(us), 2 * circuit.num_qubits)
 
     def test_qt_in_out_still_passes_with_this_gen(self):
-        runner = TestRunner([InOutQTCircuitGen], 5, 42, 2500)
+        runner = TestRunner([InOutQTCircuitGen], self.num_inputs, 42, self.num_measurements)
         runner.run_tests()
         self.assertEqual(runner.list_passing_properties(), [InOutQTCircuitGen])
 
     def test_qt_plus_still_passes_with_this_gen(self):
-        runner = TestRunner([NotTeleportedPlusCircuitGen], 5, 42, 2500)
+        runner = TestRunner([NotTeleportedPlusCircuitGen], self.num_inputs, 42, self.num_measurements)
         runner.run_tests()
         self.assertEqual(runner.list_passing_properties(), [NotTeleportedPlusCircuitGen])
