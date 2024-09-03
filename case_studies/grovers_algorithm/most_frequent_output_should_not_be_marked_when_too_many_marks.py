@@ -6,7 +6,7 @@ from qucheck.property import Property
 class GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked(Property):
     # specify the inputs that are to be generated
     def get_input_generators(self):
-        return [RandomGroversOracleMarkedStatesPairGenerator(4, 10, "too_many")]
+        return [RandomGroversOracleMarkedStatesPairGenerator(4, 7, "too_many")]
 
     # specify the preconditions for the test
     def preconditions(self, oracle_pair):

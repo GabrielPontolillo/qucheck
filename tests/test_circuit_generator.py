@@ -21,7 +21,7 @@ class TestCircuitGenerator(TestCase):
         optimizer.add_measurement_configuration(measurement2)
 
         assert len(optimizer.get_circuits_to_execute()) == 2
-    
+
     def test_different_circuits_with_diff_measurements_on_diff_qubits(self):
         optimizer = CircuitGenerator()
         measurement1 = MeasurementConfiguration()
@@ -36,7 +36,7 @@ class TestCircuitGenerator(TestCase):
         optimizer.add_measurement_configuration(measurement2)
 
         assert len(optimizer.get_circuits_to_execute()) == 2
-    
+
     def test_different_circuits_with_same_measurements_on_diff_qubits(self):
         optimizer = CircuitGenerator()
         measurement1 = MeasurementConfiguration()
@@ -51,7 +51,7 @@ class TestCircuitGenerator(TestCase):
         optimizer.add_measurement_configuration(measurement2)
 
         assert len(optimizer.get_circuits_to_execute()) == 2
-    
+
     def test_different_circuits_with_diff_measurements_on_same_qubits(self):
         optimizer = CircuitGenerator()
         measurement1 = MeasurementConfiguration()
@@ -66,7 +66,7 @@ class TestCircuitGenerator(TestCase):
         optimizer.add_measurement_configuration(measurement2)
 
         assert len(optimizer.get_circuits_to_execute()) == 2
-    
+
     def test_different_circuits_with_same_measurements_on_overlapping_qubits(self):
         optimizer = CircuitGenerator()
         measurement1 = MeasurementConfiguration()
@@ -81,7 +81,7 @@ class TestCircuitGenerator(TestCase):
         optimizer.add_measurement_configuration(measurement2)
 
         assert len(optimizer.get_circuits_to_execute()) == 2
-    
+
     def test_different_circuits_with_diff_measurements_on_overlapping_qubits(self):
         optimizer = CircuitGenerator()
         measurement1 = MeasurementConfiguration()
@@ -96,7 +96,7 @@ class TestCircuitGenerator(TestCase):
         optimizer.add_measurement_configuration(measurement2)
 
         assert len(optimizer.get_circuits_to_execute()) == 2
-    
+
     def test_same_circuits_with_same_measurements_on_same_qubits(self):
         optimizer = CircuitGenerator()
         measurement1 = MeasurementConfiguration()
@@ -131,7 +131,6 @@ class TestCircuitGenerator(TestCase):
 
         assert len(optimizer.get_circuits_to_execute()) == 1
 
-    
     def test_same_circuit_different_measurements_on_overlapping_qubits(self):
         optimizer = CircuitGenerator()
         measurement1 = MeasurementConfiguration()

@@ -28,7 +28,6 @@ class CircuitGenerator:
             self._get_full_circuits(unique_circuit)
         # remove duplicates
         full_unique_circuits = set(self.measurement_info_for_unique_circuits.keys())
-        print(len(full_unique_circuits), sum([len(c.data) for c in full_unique_circuits])/len(full_unique_circuits))
         return full_unique_circuits
     
     def _get_unoptimized_circuits(self) -> list[QuantumCircuit]:

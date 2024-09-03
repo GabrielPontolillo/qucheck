@@ -1,6 +1,7 @@
 # begin testing the coordinator
 import os
 from unittest import TestCase
+
 from qucheck.coordinator import Coordinator
 from qucheck.test_runner import TestRunner
 
@@ -8,6 +9,10 @@ PARENT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.par
 
 
 class TestCoordinator(TestCase):
+    def setUp(self):
+        self.num_inputs = 10
+        self.num_measurements = 10000
+
     def tearDown(self):
         TestRunner.property_classes = []
         TestRunner.property_objects = []
@@ -15,10 +20,9 @@ class TestCoordinator(TestCase):
 
     # basic test just to see if the coordinator runs all teleportation properties
     def test_coordinator_all_teleportation_properties(self):
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 1)
-        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), measurements, run_optimization=True).number_circuits_executed
+        coordinator = Coordinator(self.num_inputs, 1)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"),
+                                             self.num_measurements, run_optimization=True).number_circuits_executed
 
         # test the number of inputs generated
         # all properties should pass
@@ -40,12 +44,9 @@ class TestCoordinator(TestCase):
         # self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 
     def test_coordinator_all_phase_estimation_properties(self):
-        # TODO: for some reason this is not working with 5 inputs and random seed set to 2
-        # not sure  how commmon this is but ill leave it for now
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 106)
-        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_phase_estimation"), measurements, run_optimization=True).number_circuits_executed
+        coordinator = Coordinator(self.num_inputs, 106)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_phase_estimation"),
+                                             self.num_measurements, run_optimization=True).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
@@ -66,10 +67,9 @@ class TestCoordinator(TestCase):
         # self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 
     def test_coordinator_all_fourier_transform_properties(self):
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 3)
-        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_fourier_transform"), measurements, run_optimization=True).number_circuits_executed
+        coordinator = Coordinator(self.num_inputs, 3)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_fourier_transform"),
+                                             self.num_measurements, run_optimization=True).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
@@ -89,10 +89,9 @@ class TestCoordinator(TestCase):
         # self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 
     def test_coordinator_all_grovers_properties(self):
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 4)
-        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/grovers_algorithm"), measurements, run_optimization=True).number_circuits_executed
+        coordinator = Coordinator(self.num_inputs, 4)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/grovers_algorithm"),
+                                             self.num_measurements, run_optimization=True).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
@@ -112,10 +111,9 @@ class TestCoordinator(TestCase):
         # self.assertEqual(coordinator.test_runner.num_measurements, measurements)
 
     def test_coordinator_all_deutsch_jozsa_properties(self):
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 34)
-        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), measurements, run_optimization=True).number_circuits_executed
+        coordinator = Coordinator(self.num_inputs, 34)
+        num_circ_executed = coordinator.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"),
+                                             self.num_measurements, run_optimization=True).number_circuits_executed
         # test the number of inputs generated
         # all properties should pass
         # test the number of shots taken
@@ -145,10 +143,9 @@ class TestCoordinator(TestCase):
     # test coordinator to check if it will generate the same local seeds with the same random seed
     # also checks if the correct number of inputs are generated if some of the generators are the same
     def test_coordinator_same_seeds_generated_with_same_global_seed(self):
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 1)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), measurements, run_optimization=True)
+        coordinator = Coordinator(self.num_inputs, 1)
+        coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), self.num_measurements,
+                         run_optimization=True)
         save_seeds = coordinator.test_runner.seeds_list_dict
 
         # reset the seeds and property objects to ensure next run works
@@ -156,27 +153,24 @@ class TestCoordinator(TestCase):
         TestRunner.property_classes = []
         TestRunner.property_objects = []
 
-        coordinator2 = Coordinator(num_inputs, 1)
-        coordinator2.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), measurements, run_optimization=True)
+        coordinator2 = Coordinator(self.num_inputs, 1)
+        coordinator2.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), self.num_measurements,
+                          run_optimization=True)
         save_seeds2 = coordinator2.test_runner.seeds_list_dict
-
-        print(save_seeds)
-        print(save_seeds2)
 
         # add up the sum of the length of all lists in the seed dictionary
         all_seed_list = [seed for seed_list in save_seeds.values() for seed in seed_list]
 
         # three properties, but two proerties with different input gens
-        self.assertEqual(len(all_seed_list), num_inputs * 2)
+        self.assertEqual(len(all_seed_list), self.num_inputs * 2)
 
         self.assertDictEqual(save_seeds, save_seeds2)
 
     # test coordinator to check if it will generate different local seeds with different random seeds
     def test_coordinator_different_seeds_with_different_global_seed(self):
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 1)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), measurements, run_optimization=True)
+        coordinator = Coordinator(self.num_inputs, 1)
+        coordinator.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), self.num_measurements,
+                         run_optimization=True)
         save_seeds = coordinator.test_runner.seeds_list_dict
 
         # reset the seeds and property objects to ensure next run works
@@ -184,8 +178,9 @@ class TestCoordinator(TestCase):
         TestRunner.property_classes = []
         TestRunner.property_objects = []
 
-        coordinator2 = Coordinator(num_inputs, 2)
-        coordinator2.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), measurements, run_optimization=True)
+        coordinator2 = Coordinator(self.num_inputs, 2)
+        coordinator2.test(os.path.join(PARENT_DIR, "case_studies/quantum_teleportation"), self.num_measurements,
+                          run_optimization=True)
         save_seeds2 = coordinator2.test_runner.seeds_list_dict
 
         print(save_seeds.values())
@@ -195,14 +190,13 @@ class TestCoordinator(TestCase):
         print(all_seed_list)
 
         # three properties, but two properties with different input gens
-        self.assertEqual(len(all_seed_list), num_inputs * 2)
+        self.assertEqual(len(all_seed_list), self.num_inputs * 2)
         self.assertNotEqual(save_seeds, save_seeds2)
 
     def test_coordinator_same_seeds_generated_with_same_global_seed_DJ_version(self):
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 34)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), measurements, run_optimization=True)
+        coordinator = Coordinator(self.num_inputs, 34)
+        coordinator.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), self.num_measurements,
+                         run_optimization=True)
         save_seeds = coordinator.test_runner.seeds_list_dict
         save_seeds = [seed for seed_list in save_seeds.values() for seed in seed_list]
 
@@ -211,22 +205,19 @@ class TestCoordinator(TestCase):
         TestRunner.property_classes = []
         TestRunner.property_objects = []
 
-        coordinator2 = Coordinator(num_inputs, 34)
-        coordinator2.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), measurements, run_optimization=True)
+        coordinator2 = Coordinator(self.num_inputs, 34)
+        coordinator2.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), self.num_measurements,
+                          run_optimization=True)
         save_seeds2 = coordinator2.test_runner.seeds_list_dict
         save_seeds2 = [seed for seed_list in save_seeds2.values() for seed in seed_list]
-
-        print(save_seeds)
-        print(save_seeds2)
 
         self.assertEqual(save_seeds, save_seeds2)
 
     # test coordinator to check if it will generate different local seeds with different random seeds
     def test_coordinator_different_seeds_with_different_global_seed_DJ_version(self):
-        num_inputs = 5
-        measurements = 5000
-        coordinator = Coordinator(num_inputs, 35)
-        coordinator.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), measurements, run_optimization=True)
+        coordinator = Coordinator(self.num_inputs, 35)
+        coordinator.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), self.num_measurements,
+                         run_optimization=True)
         save_seeds = coordinator.test_runner.seeds_list_dict
         save_seeds = [seed for seed_list in save_seeds.values() for seed in seed_list]
 
@@ -235,8 +226,9 @@ class TestCoordinator(TestCase):
         TestRunner.property_classes = []
         TestRunner.property_objects = []
 
-        coordinator2 = Coordinator(num_inputs, 36)
-        coordinator2.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), measurements, run_optimization=True)
+        coordinator2 = Coordinator(self.num_inputs, 36)
+        coordinator2.test(os.path.join(PARENT_DIR, "case_studies/deutsch_jozsa"), self.num_measurements,
+                          run_optimization=True)
         save_seeds2 = coordinator2.test_runner.seeds_list_dict
         save_seeds2 = [seed for seed_list in save_seeds2.values() for seed in seed_list]
 
@@ -244,9 +236,9 @@ class TestCoordinator(TestCase):
 
     # test coordinator, to check that the property will fail if the preconditions are not met
     def test_coordinator_failing_precondition(self):
-        measurements = 5000
-        coordinator = Coordinator(2, 902)
-        coordinator.test(os.path.join(PARENT_DIR, "tests/mock_properties"), measurements, run_optimization=True)
+        coordinator = Coordinator(self.num_inputs, 902)
+        coordinator.test(os.path.join(PARENT_DIR, "tests/mock_properties"), self.num_measurements,
+                         run_optimization=True)
         passing = coordinator.test_runner.list_passing_properties()
         passing = [elem.__name__ for elem in passing]
         print(passing)
@@ -260,6 +252,3 @@ class TestCoordinator(TestCase):
         self.assertEqual(len(failing), 2)
         self.assertIn("FailingPrecondition", failing)
         self.assertIn("EntangledCheckOnUnentangledState", failing)
-
-
-
