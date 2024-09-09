@@ -38,9 +38,11 @@ class Coordinator:
                         self.property_classes.add(obj)
         sys.path.pop(0)
 
-    def test(self, path, measurements: int = 2000, run_optimization=True) -> TestExecutionStatistics:
+    def test(self, path, measurements: int = 2000, run_optimization=True, number_of_properties=-1) -> TestExecutionStatistics:
         self.get_classes(path)
         print(self.property_classes)
+        if number_of_properties != -1:
+            self.property_classes = random.sample(self.property_classes, number_of_properties)
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
         return self.test_runner.run_tests(backend=self.backend, run_optimization=run_optimization, family_wise_p_value=self.alpha)
 

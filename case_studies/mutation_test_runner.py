@@ -32,7 +32,7 @@ def cleanup_test_runner():
     gc.collect()  # Force garbage collection
 
 
-def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index, run_optimization=False,
+def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index, run_optimization=True,
                     csvwriter=None):
     mutant_name = f"{algorithm_name}_{mutant_type}{index}"
 
