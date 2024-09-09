@@ -36,13 +36,16 @@ class Coordinator:
                     # TODO: I'm not convinced this works (if someone creates a base property class from which more concrete property classes inherit, it will pull in the abstract class and possibly blow up)
                     if inspect.isclass(obj) and issubclass(obj, Property) and obj is not Property:
                         self.property_classes.add(obj)
+        self.property_classes = sorted(self.property_classes, key=lambda x: x.__name__)
         sys.path.pop(0)
 
     def test(self, path, measurements: int = 2000, run_optimization=True, number_of_properties=-1) -> TestExecutionStatistics:
+        random.seed(self.random_seed)
         self.get_classes(path)
-        print(self.property_classes)
+        print(f"Detected: {self.property_classes}")
         if number_of_properties != -1:
-            self.property_classes = random.sample(self.property_classes, number_of_properties)
+            self.property_classes = set(random.sample(list(self.property_classes), number_of_properties))
+        print(f"Used: {self.property_classes}")
         self.test_runner = TestRunner(self.property_classes, self.num_inputs, self.random_seed, measurements)
         return self.test_runner.run_tests(backend=self.backend, run_optimization=run_optimization, family_wise_p_value=self.alpha)
 
