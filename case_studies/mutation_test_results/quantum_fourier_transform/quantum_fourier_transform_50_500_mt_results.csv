@@ -1,0 +1,16 @@
+Mutant Name,Result,Number of Circuits Executed,Number of Unique Failed Properties,Number of Failed Properties,Unique Failed Properties,Time Taken
+quantum_fourier_transform_m0,Fail,774,2,21,IdentityProperty & PhaseShiftToLinearShift,22.982178926467896
+quantum_fourier_transform_m1,Fail,774,3,125,IdentityProperty & LinearShiftToPhaseShift & PhaseShiftToLinearShift,22.2143816947937
+quantum_fourier_transform_m2,Fail,774,2,100,LinearShiftToPhaseShift & PhaseShiftToLinearShift,23.069212913513184
+quantum_fourier_transform_m3,Fail,774,2,62,IdentityProperty & PhaseShiftToLinearShift,22.685306310653687
+quantum_fourier_transform_m4,Fail,774,2,86,LinearShiftToPhaseShift & PhaseShiftToLinearShift,23.23928999900818
+quantum_fourier_transform_m5,Fail,774,2,66,IdentityProperty & PhaseShiftToLinearShift,22.914423942565918
+quantum_fourier_transform_m6,Fail,774,2,46,IdentityProperty & PhaseShiftToLinearShift,23.03770136833191
+quantum_fourier_transform_m7,Fail,774,2,74,IdentityProperty & PhaseShiftToLinearShift,22.919450044631958
+quantum_fourier_transform_m8,Fail,774,3,128,IdentityProperty & LinearShiftToPhaseShift & PhaseShiftToLinearShift,22.372694969177246
+quantum_fourier_transform_m9,Pass,774,0,0,,22.551921129226685
+quantum_fourier_transform_em0,Pass,774,0,0,,23.744743585586548
+quantum_fourier_transform_em1,Pass,774,0,0,,23.95372176170349
+quantum_fourier_transform_em2,Pass,774,0,0,,22.985488176345825
+quantum_fourier_transform_em3,Pass,774,0,0,,22.418879747390747
+quantum_fourier_transform_em4,Pass,774,0,0,,24.155155181884766

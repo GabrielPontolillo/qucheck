@@ -1,0 +1,16 @@
+Mutant Name,Result,Number of Circuits Executed,Number of Unique Failed Properties,Number of Failed Properties,Unique Failed Properties,Time Taken
+quantum_teleportation_m0,Fail,603,3,145,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.2624852657318115
+quantum_teleportation_m1,Fail,603,3,145,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.934500694274902
+quantum_teleportation_m2,Fail,603,3,143,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.321513652801514
+quantum_teleportation_m3,Fail,603,3,147,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.104492425918579
+quantum_teleportation_m4,Fail,603,3,141,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.1415488719940186
+quantum_teleportation_m5,Fail,603,3,146,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.9175450801849365
+quantum_teleportation_m6,Fail,603,3,141,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.99202823638916
+quantum_teleportation_m7,Fail,603,3,148,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.170419692993164
+quantum_teleportation_m8,Pass,603,0,0,,4.9999964237213135
+quantum_teleportation_m9,Fail,603,1,50,NotTeleportedPlus,5.207465648651123
+quantum_teleportation_em0,Pass,603,0,0,,5.136471748352051
+quantum_teleportation_em1,Pass,603,0,0,,4.994993209838867
+quantum_teleportation_em2,Pass,603,0,0,,5.128497123718262
+quantum_teleportation_em3,Pass,603,0,0,,5.037476301193237
+quantum_teleportation_em4,Pass,603,0,0,,5.2589967250823975

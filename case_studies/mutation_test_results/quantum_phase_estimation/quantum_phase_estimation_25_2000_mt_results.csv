@@ -1,0 +1,16 @@
+Mutant Name,Result,Number of Circuits Executed,Number of Unique Failed Properties,Number of Failed Properties,Unique Failed Properties,Time Taken
+quantum_phase_estimation_m0,Fail,537,1,25,PhaseCorrectlyEstimatedEnoughQubits,45.46403384208679
+quantum_phase_estimation_m1,Fail,537,2,50,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,42.92409038543701
+quantum_phase_estimation_m2,Fail,537,1,25,PhaseCorrectlyEstimatedEnoughQubits,49.65809440612793
+quantum_phase_estimation_m3,Fail,537,1,25,PhaseCorrectlyEstimatedEnoughQubits,47.533825397491455
+quantum_phase_estimation_m4,Fail,537,1,9,PhaseCorrectlyEstimatedEnoughQubits,48.2963080406189
+quantum_phase_estimation_m5,Fail,537,2,50,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,46.33987355232239
+quantum_phase_estimation_m6,Fail,537,1,20,PhaseCorrectlyEstimatedEnoughQubits,46.030704975128174
+quantum_phase_estimation_m7,Fail,537,2,50,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,47.23308777809143
+quantum_phase_estimation_m8,Fail,537,1,14,PhaseCorrectlyEstimatedEnoughQubits,51.4822301864624
+quantum_phase_estimation_m9,Fail,537,1,14,PhaseCorrectlyEstimatedEnoughQubits,51.92326998710632
+quantum_phase_estimation_em0,Pass,537,0,0,,51.20053052902222
+quantum_phase_estimation_em1,Pass,537,0,0,,50.424190282821655
+quantum_phase_estimation_em2,Pass,537,0,0,,50.15443134307861
+quantum_phase_estimation_em3,Pass,537,0,0,,48.0418803691864
+quantum_phase_estimation_em4,Pass,537,0,0,,46.02395677566528

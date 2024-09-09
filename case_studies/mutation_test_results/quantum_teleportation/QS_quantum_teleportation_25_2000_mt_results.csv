@@ -1,0 +1,16 @@
+Mutant Name,Result,Time Taken
+quantum_teleportation_m0,Fail,0.175
+quantum_teleportation_m1,Fail,0.271
+quantum_teleportation_m2,Pass,2.544
+quantum_teleportation_m3,Pass,2.59
+quantum_teleportation_m4,Pass,2.525
+quantum_teleportation_m5,Fail,0.161
+quantum_teleportation_m6,Fail,0.309
+quantum_teleportation_m7,Fail,0.319
+quantum_teleportation_m8,Pass,2.594
+quantum_teleportation_m9,Pass,2.56
+quantum_teleportation_em0,Pass,2.82
+quantum_teleportation_em1,Pass,2.682
+quantum_teleportation_em2,Pass,2.753
+quantum_teleportation_em3,Fail,1.107
+quantum_teleportation_em4,Pass,2.836

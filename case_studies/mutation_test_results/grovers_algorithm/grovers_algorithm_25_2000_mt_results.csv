@@ -1,0 +1,16 @@
+Mutant Name,Result,Number of Circuits Executed,Number of Unique Failed Properties,Number of Failed Properties,Unique Failed Properties,Time Taken
+grovers_algorithm_m0,Fail,100,2,50,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,35.92146587371826
+grovers_algorithm_m1,Fail,100,1,3,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,27.85505485534668
+grovers_algorithm_m2,Fail,100,3,61,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,27.67742395401001
+grovers_algorithm_m3,Fail,100,2,38,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,27.34709095954895
+grovers_algorithm_m4,Fail,100,2,36,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,27.182779788970947
+grovers_algorithm_m5,Fail,100,2,31,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,27.02988624572754
+grovers_algorithm_m6,Fail,100,2,39,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,27.600588083267212
+grovers_algorithm_m7,Fail,100,3,65,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,26.791954278945923
+grovers_algorithm_m8,Fail,100,2,40,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,27.790632963180542
+grovers_algorithm_m9,Fail,100,2,32,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,27.198500871658325
+grovers_algorithm_em0,Pass,100,0,0,,27.58668804168701
+grovers_algorithm_em1,Pass,100,0,0,,27.04494071006775
+grovers_algorithm_em2,Pass,100,0,0,,27.133304834365845
+grovers_algorithm_em3,Pass,100,0,0,,27.337494134902954
+grovers_algorithm_em4,Pass,100,0,0,,28.40751314163208

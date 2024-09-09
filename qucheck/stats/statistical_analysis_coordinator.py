@@ -46,7 +46,7 @@ class StatisticalAnalysisCoordinator:
         circ1.__class__ = HashableQuantumCircuit
         circ2 = circuit2.copy()
         circ2.__class__ = HashableQuantumCircuit
-        print("sending subsample", subsample)
+        # print("sending subsample", subsample)
         if property in self.assertions_for_property:
             self.assertions_for_property[property].append(AssertEqual(qubits1, circ1, qubits2, circ2, basis, subsample, self.num_experiments))
         else:

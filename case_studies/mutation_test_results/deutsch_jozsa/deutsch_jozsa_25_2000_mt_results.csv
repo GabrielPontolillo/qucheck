@@ -1,0 +1,16 @@
+Mutant Name,Result,Number of Circuits Executed,Number of Unique Failed Properties,Number of Failed Properties,Unique Failed Properties,Time Taken
+deutsch_jozsa_m0,Fail,187,4,63,DeutschJozsaVMergeTwoBalancedOracles & DeutschJozsaVMergeTwoConstantOracles & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.9137170314788818
+deutsch_jozsa_m1,Pass,187,0,0,,1.7677116394042969
+deutsch_jozsa_m2,Pass,187,0,0,,1.7563972473144531
+deutsch_jozsa_m3,Fail,187,2,50,DeutschJozsaVMergeTwoConstantOracles & DeutschJozsaWorksForConstantFunction,1.8858263492584229
+deutsch_jozsa_m4,Fail,187,2,50,DeutschJozsaVMergeTwoConstantOracles & DeutschJozsaWorksForConstantFunction,1.8182175159454346
+deutsch_jozsa_m5,Fail,187,2,50,DeutschJozsaVMergeTwoConstantOracles & DeutschJozsaWorksForConstantFunction,1.8773086071014404
+deutsch_jozsa_m6,Fail,187,3,75,DeutschJozsaLowerRegisterMinus & DeutschJozsaVMergeTwoConstantOracles & DeutschJozsaWorksForConstantFunction,1.8587164878845215
+deutsch_jozsa_m7,Pass,187,0,0,,1.7466566562652588
+deutsch_jozsa_m8,Fail,187,3,75,DeutschJozsaLowerRegisterMinus & DeutschJozsaVMergeTwoConstantOracles & DeutschJozsaWorksForConstantFunction,1.9030218124389648
+deutsch_jozsa_m9,Fail,187,2,50,DeutschJozsaVMergeTwoConstantOracles & DeutschJozsaWorksForConstantFunction,1.8812649250030518
+deutsch_jozsa_em0,Pass,187,0,0,,1.8016982078552246
+deutsch_jozsa_em1,Pass,187,0,0,,1.759981393814087
+deutsch_jozsa_em2,Pass,187,0,0,,1.8499503135681152
+deutsch_jozsa_em3,Pass,187,0,0,,1.8356215953826904
+deutsch_jozsa_em4,Pass,187,0,0,,1.8094310760498047
