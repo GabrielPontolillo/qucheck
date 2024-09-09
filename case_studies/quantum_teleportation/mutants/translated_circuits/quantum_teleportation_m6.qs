@@ -1,26 +1,20 @@
-namespace Quantum {
+namespace QSharpCheck {
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Convert;
 
-    function SetBitValue(reg: Int, bit: Int, value: Bool): Int {
-        if(value) {
-            return reg ||| (1 <<< bit);
-        } else {
-            return reg &&& ~~~(1 <<< bit);
-        }
-    }
-    
-    operation Circuit() : Unit {
-        using(qubits = Qubit[3]) {
-            H(qubits[1]);
-            csrn([qubits[1]], (qubits[2]));
-            CNOT(qubits[0], qubits[1]);
-            H(qubits[0]);
-            CNOT(qubits[1], qubits[2]);
-            Controlled Z([qubits[0]], (qubits[2]));
-            ResetAll(qubits);
-        }
+    operation Teleport(q0 : Qubit, q1 : Qubit, q2 : Qubit) : Unit {
+            H(q1);
+
+            // decompose CSX(1, 2) into RX(pi/2, 1) and R(PauliI, )
+            Controlled Rx([q1], (PI()/2.0, q2));
+            Controlled R([q1], (PauliI, -PI()/2.0, q2));
+
+            CNOT(q1, q2);
+            CNOT(q0, q1);
+            H(q0);
+            CNOT(q1, q2);
+            Controlled Z([q0], (q2));
     }
 }
