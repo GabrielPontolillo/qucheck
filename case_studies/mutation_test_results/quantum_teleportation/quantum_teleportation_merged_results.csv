@@ -1,0 +1,1126 @@
+Mutant Name,Number of Properties,Number of Inputs,Number of Measurements,Result,Number of Circuits Executed,Number of Unique Failed Properties,Number of Failed Properties,Unique Failed Properties,Time Taken
+quantum_teleportation_m0,1,16,1600,Fail,96,1,16,UnitaryBeforeAndAfterTeleport,0.5845866203308105
+quantum_teleportation_m1,1,16,1600,Fail,96,1,15,UnitaryBeforeAndAfterTeleport,0.5285532474517822
+quantum_teleportation_m2,1,16,1600,Fail,51,1,16,NotTeleportedPlus,0.3999078273773193
+quantum_teleportation_m3,1,16,1600,Fail,96,1,16,Inq0EqualOutq2,0.3788769245147705
+quantum_teleportation_m4,1,16,1600,Fail,51,1,16,NotTeleportedPlus,0.3427157402038574
+quantum_teleportation_m5,1,16,1600,Fail,51,1,16,NotTeleportedPlus,0.3584189414978027
+quantum_teleportation_m6,1,16,1600,Fail,96,1,14,UnitaryBeforeAndAfterTeleport,0.6105895042419434
+quantum_teleportation_m7,1,16,1600,Fail,96,1,16,UnitaryBeforeAndAfterTeleport,0.5864338874816895
+quantum_teleportation_m8,1,16,1600,Pass,51,0,0,,0.3253340721130371
+quantum_teleportation_m9,1,16,1600,Pass,96,0,0,,0.4538707733154297
+quantum_teleportation_em0,1,16,1600,Pass,96,0,0,,0.4096612930297851
+quantum_teleportation_em1,1,16,1600,Pass,96,0,0,,0.3888578414916992
+quantum_teleportation_em2,1,16,1600,Pass,96,0,0,,0.6118028163909912
+quantum_teleportation_em3,1,16,1600,Pass,51,0,0,,0.3312215805053711
+quantum_teleportation_em4,1,16,1600,Pass,51,0,0,,0.3468868732452392
+quantum_teleportation_m0,2,16,1600,Fail,147,2,31,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9664814472198486
+quantum_teleportation_m1,2,16,1600,Fail,99,2,32,Inq0EqualOutq2 & NotTeleportedPlus,0.6838436126708984
+quantum_teleportation_m2,2,16,1600,Fail,99,2,32,Inq0EqualOutq2 & NotTeleportedPlus,0.7521152496337891
+quantum_teleportation_m3,2,16,1600,Fail,99,2,32,Inq0EqualOutq2 & NotTeleportedPlus,0.6784141063690186
+quantum_teleportation_m4,2,16,1600,Fail,192,2,31,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.9534828662872314
+quantum_teleportation_m5,2,16,1600,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9226815700531006
+quantum_teleportation_m6,2,16,1600,Fail,147,2,31,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8775920867919922
+quantum_teleportation_m7,2,16,1600,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9663028717041016
+quantum_teleportation_m8,2,16,1600,Pass,147,0,0,,0.860511064529419
+quantum_teleportation_m9,2,16,1600,Fail,99,1,16,NotTeleportedPlus,0.7233774662017822
+quantum_teleportation_em0,2,16,1600,Pass,147,0,0,,0.919036865234375
+quantum_teleportation_em1,2,16,1600,Pass,99,0,0,,0.6736071109771729
+quantum_teleportation_em2,2,16,1600,Pass,192,0,0,,0.9833896160125732
+quantum_teleportation_em3,2,16,1600,Pass,99,0,0,,0.7229974269866943
+quantum_teleportation_em4,2,16,1600,Pass,147,0,0,,0.9185163974761964
+quantum_teleportation_m0,3,16,1600,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.2919697761535645
+quantum_teleportation_m1,3,16,1600,Fail,195,3,47,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.233107566833496
+quantum_teleportation_m2,3,16,1600,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.240166187286377
+quantum_teleportation_m3,3,16,1600,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.205916404724121
+quantum_teleportation_m4,3,16,1600,Fail,195,3,47,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.2503933906555176
+quantum_teleportation_m5,3,16,1600,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.2874364852905271
+quantum_teleportation_m6,3,16,1600,Fail,195,3,44,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.274061918258667
+quantum_teleportation_m7,3,16,1600,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.310450792312622
+quantum_teleportation_m8,3,16,1600,Pass,195,0,0,,1.2179241180419922
+quantum_teleportation_m9,3,16,1600,Fail,195,1,16,NotTeleportedPlus,1.365652322769165
+quantum_teleportation_em0,3,16,1600,Pass,195,0,0,,1.2964651584625244
+quantum_teleportation_em1,3,16,1600,Pass,195,0,0,,1.2264556884765625
+quantum_teleportation_em2,3,16,1600,Pass,195,0,0,,1.295682430267334
+quantum_teleportation_em3,3,16,1600,Pass,195,0,0,,1.2319114208221436
+quantum_teleportation_em4,3,16,1600,Pass,195,0,0,,1.2980644702911377
+quantum_teleportation_m0,1,16,200,Fail,51,1,16,NotTeleportedPlus,0.2429773807525634
+quantum_teleportation_m1,1,16,200,Fail,96,1,13,UnitaryBeforeAndAfterTeleport,0.3603267669677734
+quantum_teleportation_m2,1,16,200,Fail,96,1,14,UnitaryBeforeAndAfterTeleport,0.3175687789916992
+quantum_teleportation_m3,1,16,200,Fail,96,1,16,Inq0EqualOutq2,0.1800329685211181
+quantum_teleportation_m4,1,16,200,Fail,96,1,13,Inq0EqualOutq2,0.242692232131958
+quantum_teleportation_m5,1,16,200,Fail,96,1,16,Inq0EqualOutq2,0.192899465560913
+quantum_teleportation_m6,1,16,200,Fail,51,1,16,NotTeleportedPlus,0.2487072944641113
+quantum_teleportation_m7,1,16,200,Fail,51,1,14,NotTeleportedPlus,0.2515757083892822
+quantum_teleportation_m8,1,16,200,Pass,96,0,0,,0.2278351783752441
+quantum_teleportation_m9,1,16,200,Pass,96,0,0,,0.3844795227050781
+quantum_teleportation_em0,1,16,200,Pass,51,0,0,,0.2263898849487304
+quantum_teleportation_em1,1,16,200,Pass,51,0,0,,0.2634263038635254
+quantum_teleportation_em2,1,16,200,Pass,96,0,0,,0.3445034027099609
+quantum_teleportation_em3,1,16,200,Pass,51,0,0,,0.2089235782623291
+quantum_teleportation_em4,1,16,200,Pass,96,0,0,,0.2485151290893554
+quantum_teleportation_m0,2,16,200,Fail,192,2,30,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.5297963619232178
+quantum_teleportation_m1,2,16,200,Fail,147,2,26,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5551254749298096
+quantum_teleportation_m2,2,16,200,Fail,99,2,30,Inq0EqualOutq2 & NotTeleportedPlus,0.4661242961883545
+quantum_teleportation_m3,2,16,200,Fail,99,2,32,Inq0EqualOutq2 & NotTeleportedPlus,0.5183591842651367
+quantum_teleportation_m4,2,16,200,Fail,99,2,31,Inq0EqualOutq2 & NotTeleportedPlus,0.5204119682312012
+quantum_teleportation_m5,2,16,200,Fail,147,2,29,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5194063186645508
+quantum_teleportation_m6,2,16,200,Fail,99,2,32,Inq0EqualOutq2 & NotTeleportedPlus,0.5255856513977051
+quantum_teleportation_m7,2,16,200,Fail,192,2,32,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.5908725261688232
+quantum_teleportation_m8,2,16,200,Pass,99,0,0,,0.4520506858825683
+quantum_teleportation_m9,2,16,200,Fail,147,1,16,NotTeleportedPlus,0.6325340270996094
+quantum_teleportation_em0,2,16,200,Pass,99,0,0,,0.4819743633270263
+quantum_teleportation_em1,2,16,200,Pass,192,0,0,,0.497053861618042
+quantum_teleportation_em2,2,16,200,Pass,192,0,0,,0.5465395450592041
+quantum_teleportation_em3,2,16,200,Pass,147,0,0,,0.4634804725646972
+quantum_teleportation_em4,2,16,200,Pass,99,0,0,,0.5352134704589844
+quantum_teleportation_m0,3,16,200,Fail,195,3,46,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8531148433685303
+quantum_teleportation_m1,3,16,200,Fail,195,3,43,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.7763381004333496
+quantum_teleportation_m2,3,16,200,Fail,195,3,46,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8008558750152588
+quantum_teleportation_m3,3,16,200,Fail,195,3,46,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.7399320602416992
+quantum_teleportation_m4,3,16,200,Fail,195,3,43,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8440420627593994
+quantum_teleportation_m5,3,16,200,Fail,195,3,45,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8134963512420654
+quantum_teleportation_m6,3,16,200,Fail,195,3,45,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8098611831665039
+quantum_teleportation_m7,3,16,200,Fail,195,3,47,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8211262226104736
+quantum_teleportation_m8,3,16,200,Pass,195,0,0,,0.7665092945098877
+quantum_teleportation_m9,3,16,200,Fail,195,1,16,NotTeleportedPlus,0.9128749370574952
+quantum_teleportation_em0,3,16,200,Pass,195,0,0,,0.8254740238189697
+quantum_teleportation_em1,3,16,200,Pass,195,0,0,,0.76082444190979
+quantum_teleportation_em2,3,16,200,Pass,195,0,0,,0.8228092193603516
+quantum_teleportation_em3,3,16,200,Pass,195,0,0,,0.7695305347442627
+quantum_teleportation_em4,3,16,200,Pass,195,0,0,,0.8450503349304199
+quantum_teleportation_m0,1,16,3200,Fail,51,1,16,NotTeleportedPlus,0.5213897228240967
+quantum_teleportation_m1,1,16,3200,Fail,96,1,16,Inq0EqualOutq2,0.6029369831085205
+quantum_teleportation_m2,1,16,3200,Fail,96,1,16,UnitaryBeforeAndAfterTeleport,0.7716240882873535
+quantum_teleportation_m3,1,16,3200,Fail,96,1,16,Inq0EqualOutq2,0.5978138446807861
+quantum_teleportation_m4,1,16,3200,Fail,51,1,16,NotTeleportedPlus,0.5051712989807129
+quantum_teleportation_m5,1,16,3200,Fail,96,1,16,UnitaryBeforeAndAfterTeleport,0.7836124897003174
+quantum_teleportation_m6,1,16,3200,Fail,96,1,15,UnitaryBeforeAndAfterTeleport,0.8019132614135742
+quantum_teleportation_m7,1,16,3200,Fail,96,1,16,Inq0EqualOutq2,0.6585729122161865
+quantum_teleportation_m8,1,16,3200,Pass,96,0,0,,0.7513036727905273
+quantum_teleportation_m9,1,16,3200,Fail,51,1,16,NotTeleportedPlus,0.4811375141143799
+quantum_teleportation_em0,1,16,3200,Pass,96,0,0,,0.8383824825286865
+quantum_teleportation_em1,1,16,3200,Pass,51,0,0,,0.4480218887329101
+quantum_teleportation_em2,1,16,3200,Pass,51,0,0,,0.4675850868225097
+quantum_teleportation_em3,1,16,3200,Pass,96,0,0,,0.6675901412963867
+quantum_teleportation_em4,1,16,3200,Pass,96,0,0,,0.7918004989624023
+quantum_teleportation_m0,2,16,3200,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.244039535522461
+quantum_teleportation_m1,2,16,3200,Fail,99,2,31,Inq0EqualOutq2 & NotTeleportedPlus,0.9589293003082277
+quantum_teleportation_m2,2,16,3200,Fail,99,2,29,Inq0EqualOutq2 & NotTeleportedPlus,0.9009687900543212
+quantum_teleportation_m3,2,16,3200,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.2131824493408203
+quantum_teleportation_m4,2,16,3200,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.2286410331726074
+quantum_teleportation_m5,2,16,3200,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.2155132293701172
+quantum_teleportation_m6,2,16,3200,Fail,192,2,32,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.4339303970336914
+quantum_teleportation_m7,2,16,3200,Fail,192,2,32,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.4513752460479736
+quantum_teleportation_m8,2,16,3200,Pass,99,0,0,,0.8985843658447266
+quantum_teleportation_m9,2,16,3200,Fail,99,1,16,NotTeleportedPlus,0.9885740280151368
+quantum_teleportation_em0,2,16,3200,Pass,99,0,0,,0.9900906085968018
+quantum_teleportation_em1,2,16,3200,Pass,99,0,0,,0.9095189571380616
+quantum_teleportation_em2,2,16,3200,Pass,147,0,0,,1.2659900188446045
+quantum_teleportation_em3,2,16,3200,Pass,192,0,0,,1.3728115558624268
+quantum_teleportation_em4,2,16,3200,Pass,192,0,0,,1.3885979652404783
+quantum_teleportation_m0,3,16,3200,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.7475953102111816
+quantum_teleportation_m1,3,16,3200,Fail,195,3,47,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6601369380950928
+quantum_teleportation_m2,3,16,3200,Fail,195,3,47,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6372990608215332
+quantum_teleportation_m3,3,16,3200,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.667497634887695
+quantum_teleportation_m4,3,16,3200,Fail,195,3,46,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.7399861812591553
+quantum_teleportation_m5,3,16,3200,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.7424910068511963
+quantum_teleportation_m6,3,16,3200,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.7049624919891355
+quantum_teleportation_m7,3,16,3200,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.796165943145752
+quantum_teleportation_m8,3,16,3200,Pass,195,0,0,,1.6716930866241455
+quantum_teleportation_m9,3,16,3200,Fail,195,1,16,NotTeleportedPlus,1.744182586669922
+quantum_teleportation_em0,3,16,3200,Pass,195,0,0,,1.818607807159424
+quantum_teleportation_em1,3,16,3200,Pass,195,0,0,,1.682788610458374
+quantum_teleportation_em2,3,16,3200,Pass,195,0,0,,1.750051975250244
+quantum_teleportation_em3,3,16,3200,Pass,195,0,0,,1.6951792240142822
+quantum_teleportation_em4,3,16,3200,Pass,195,0,0,,1.7574741840362549
+quantum_teleportation_m0,1,16,400,Fail,96,1,15,UnitaryBeforeAndAfterTeleport,0.4484932422637939
+quantum_teleportation_m1,1,16,400,Fail,96,1,16,Inq0EqualOutq2,0.2056813240051269
+quantum_teleportation_m2,1,16,400,Fail,51,1,16,NotTeleportedPlus,0.2545795440673828
+quantum_teleportation_m3,1,16,400,Fail,96,1,16,Inq0EqualOutq2,0.2174851894378662
+quantum_teleportation_m4,1,16,400,Fail,96,1,15,Inq0EqualOutq2,0.2219879627227783
+quantum_teleportation_m5,1,16,400,Fail,51,1,16,NotTeleportedPlus,0.3221783638000488
+quantum_teleportation_m6,1,16,400,Fail,51,1,16,NotTeleportedPlus,0.2581357955932617
+quantum_teleportation_m7,1,16,400,Fail,96,1,16,UnitaryBeforeAndAfterTeleport,0.4160230159759521
+quantum_teleportation_m8,1,16,400,Pass,51,0,0,,0.2871332168579101
+quantum_teleportation_m9,1,16,400,Fail,51,1,16,NotTeleportedPlus,0.2804386615753174
+quantum_teleportation_em0,1,16,400,Pass,51,0,0,,0.2526135444641113
+quantum_teleportation_em1,1,16,400,Pass,96,0,0,,0.388028621673584
+quantum_teleportation_em2,1,16,400,Pass,96,0,0,,0.3762950897216797
+quantum_teleportation_em3,1,16,400,Pass,51,0,0,,0.2287085056304931
+quantum_teleportation_em4,1,16,400,Pass,96,0,0,,0.2835292816162109
+quantum_teleportation_m0,2,16,400,Fail,192,2,32,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.6049554347991943
+quantum_teleportation_m1,2,16,400,Fail,147,2,31,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6002407073974609
+quantum_teleportation_m2,2,16,400,Fail,99,2,30,Inq0EqualOutq2 & NotTeleportedPlus,0.4906985759735107
+quantum_teleportation_m3,2,16,400,Fail,99,2,31,Inq0EqualOutq2 & NotTeleportedPlus,0.5614769458770752
+quantum_teleportation_m4,2,16,400,Fail,147,2,30,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5975027084350586
+quantum_teleportation_m5,2,16,400,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5864033699035645
+quantum_teleportation_m6,2,16,400,Fail,192,2,28,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.6019575595855713
+quantum_teleportation_m7,2,16,400,Fail,192,2,32,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.6211855411529541
+quantum_teleportation_m8,2,16,400,Pass,99,0,0,,0.5254707336425781
+quantum_teleportation_m9,2,16,400,Fail,99,1,16,NotTeleportedPlus,0.5750842094421387
+quantum_teleportation_em0,2,16,400,Pass,192,0,0,,0.6214983463287354
+quantum_teleportation_em1,2,16,400,Pass,99,0,0,,0.4845945835113525
+quantum_teleportation_em2,2,16,400,Pass,99,0,0,,0.5768642425537109
+quantum_teleportation_em3,2,16,400,Pass,192,0,0,,0.5545902252197266
+quantum_teleportation_em4,2,16,400,Pass,192,0,0,,0.5693249702453613
+quantum_teleportation_m0,3,16,400,Fail,195,3,46,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9377081394195556
+quantum_teleportation_m1,3,16,400,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.848059892654419
+quantum_teleportation_m2,3,16,400,Fail,195,3,45,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8913800716400146
+quantum_teleportation_m3,3,16,400,Fail,195,3,47,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.7954895496368408
+quantum_teleportation_m4,3,16,400,Fail,195,3,44,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9171738624572754
+quantum_teleportation_m5,3,16,400,Fail,195,3,46,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8839998245239258
+quantum_teleportation_m6,3,16,400,Fail,195,3,47,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8455519676208496
+quantum_teleportation_m7,3,16,400,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.001335620880127
+quantum_teleportation_m8,3,16,400,Pass,195,0,0,,0.776810884475708
+quantum_teleportation_m9,3,16,400,Fail,195,1,16,NotTeleportedPlus,0.9633078575134276
+quantum_teleportation_em0,3,16,400,Pass,195,0,0,,0.9503791332244872
+quantum_teleportation_em1,3,16,400,Pass,195,0,0,,0.8445663452148438
+quantum_teleportation_em2,3,16,400,Pass,195,0,0,,0.9165534973144532
+quantum_teleportation_em3,3,16,400,Pass,195,0,0,,0.7791318893432617
+quantum_teleportation_em4,3,16,400,Pass,195,0,0,,0.9679558277130128
+quantum_teleportation_m0,1,16,800,Fail,96,1,16,Inq0EqualOutq2,0.3027968406677246
+quantum_teleportation_m1,1,16,800,Fail,51,1,16,NotTeleportedPlus,0.2841317653656006
+quantum_teleportation_m2,1,16,800,Fail,96,1,16,Inq0EqualOutq2,0.2707476615905761
+quantum_teleportation_m3,1,16,800,Fail,51,1,16,NotTeleportedPlus,0.3504595756530761
+quantum_teleportation_m4,1,16,800,Fail,96,1,16,Inq0EqualOutq2,0.2709224224090576
+quantum_teleportation_m5,1,16,800,Fail,96,1,15,UnitaryBeforeAndAfterTeleport,0.4426999092102051
+quantum_teleportation_m6,1,16,800,Fail,96,1,15,UnitaryBeforeAndAfterTeleport,0.4921550750732422
+quantum_teleportation_m7,1,16,800,Fail,51,1,15,NotTeleportedPlus,0.307370662689209
+quantum_teleportation_m8,1,16,800,Pass,96,0,0,,0.2699532508850097
+quantum_teleportation_m9,1,16,800,Pass,96,0,0,,0.5356647968292236
+quantum_teleportation_em0,1,16,800,Pass,96,0,0,,0.436410903930664
+quantum_teleportation_em1,1,16,800,Pass,96,0,0,,0.2681639194488525
+quantum_teleportation_em2,1,16,800,Pass,51,0,0,,0.3503601551055908
+quantum_teleportation_em3,1,16,800,Pass,51,0,0,,0.2682468891143799
+quantum_teleportation_em4,1,16,800,Pass,96,0,0,,0.4427781105041504
+quantum_teleportation_m0,2,16,800,Fail,192,2,31,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.7326798439025879
+quantum_teleportation_m1,2,16,800,Fail,99,2,31,Inq0EqualOutq2 & NotTeleportedPlus,0.62640380859375
+quantum_teleportation_m2,2,16,800,Fail,99,2,32,Inq0EqualOutq2 & NotTeleportedPlus,0.5654287338256836
+quantum_teleportation_m3,2,16,800,Fail,99,2,32,Inq0EqualOutq2 & NotTeleportedPlus,0.6151599884033203
+quantum_teleportation_m4,2,16,800,Fail,192,2,29,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.7048354148864746
+quantum_teleportation_m5,2,16,800,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6902921199798584
+quantum_teleportation_m6,2,16,800,Fail,192,2,30,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.7284319400787354
+quantum_teleportation_m7,2,16,800,Fail,147,2,32,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.7385804653167725
+quantum_teleportation_m8,2,16,800,Pass,147,0,0,,0.6796402931213379
+quantum_teleportation_m9,2,16,800,Fail,147,1,16,NotTeleportedPlus,0.811948299407959
+quantum_teleportation_em0,2,16,800,Pass,147,0,0,,0.6803426742553711
+quantum_teleportation_em1,2,16,800,Pass,192,0,0,,0.692908525466919
+quantum_teleportation_em2,2,16,800,Pass,192,0,0,,0.7566165924072266
+quantum_teleportation_em3,2,16,800,Pass,99,0,0,,0.5471031665802002
+quantum_teleportation_em4,2,16,800,Pass,147,0,0,,0.7330794334411621
+quantum_teleportation_m0,3,16,800,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.070992946624756
+quantum_teleportation_m1,3,16,800,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9869072437286376
+quantum_teleportation_m2,3,16,800,Fail,195,3,45,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.994802474975586
+quantum_teleportation_m3,3,16,800,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9798123836517334
+quantum_teleportation_m4,3,16,800,Fail,195,3,48,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.0344252586364746
+quantum_teleportation_m5,3,16,800,Fail,195,3,45,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.0273354053497314
+quantum_teleportation_m6,3,16,800,Fail,195,3,44,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.038160800933838
+quantum_teleportation_m7,3,16,800,Fail,195,3,47,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.0200541019439695
+quantum_teleportation_m8,3,16,800,Pass,195,0,0,,1.028144121170044
+quantum_teleportation_m9,3,16,800,Fail,195,1,16,NotTeleportedPlus,1.048217535018921
+quantum_teleportation_em0,3,16,800,Pass,195,0,0,,1.0855469703674316
+quantum_teleportation_em1,3,16,800,Pass,195,0,0,,0.9798638820648192
+quantum_teleportation_em2,3,16,800,Pass,195,0,0,,1.0458791255950928
+quantum_teleportation_em3,3,16,800,Pass,195,0,0,,0.976510524749756
+quantum_teleportation_em4,3,16,800,Pass,195,0,0,,1.0392744541168213
+quantum_teleportation_m0,1,32,1600,Fail,192,1,31,UnitaryBeforeAndAfterTeleport,1.1775221824645996
+quantum_teleportation_m1,1,32,1600,Fail,99,1,32,NotTeleportedPlus,0.6827077865600586
+quantum_teleportation_m2,1,32,1600,Fail,99,1,32,NotTeleportedPlus,0.6323537826538086
+quantum_teleportation_m3,1,32,1600,Fail,192,1,31,UnitaryBeforeAndAfterTeleport,1.0555040836334229
+quantum_teleportation_m4,1,32,1600,Fail,192,1,30,UnitaryBeforeAndAfterTeleport,1.0899178981781006
+quantum_teleportation_m5,1,32,1600,Fail,192,1,32,UnitaryBeforeAndAfterTeleport,1.1262712478637695
+quantum_teleportation_m6,1,32,1600,Fail,192,1,30,UnitaryBeforeAndAfterTeleport,1.0727133750915527
+quantum_teleportation_m7,1,32,1600,Fail,192,1,32,Inq0EqualOutq2,0.8468673229217529
+quantum_teleportation_m8,1,32,1600,Pass,192,0,0,,0.7954447269439697
+quantum_teleportation_m9,1,32,1600,Pass,192,0,0,,1.174558162689209
+quantum_teleportation_em0,1,32,1600,Pass,192,0,0,,0.8310346603393555
+quantum_teleportation_em1,1,32,1600,Pass,192,0,0,,0.7383935451507568
+quantum_teleportation_em2,1,32,1600,Pass,192,0,0,,0.8361074924468994
+quantum_teleportation_em3,1,32,1600,Pass,99,0,0,,0.655426025390625
+quantum_teleportation_em4,1,32,1600,Pass,192,0,0,,0.7809460163116455
+quantum_teleportation_m0,2,32,1600,Fail,195,2,64,Inq0EqualOutq2 & NotTeleportedPlus,1.4653265476226809
+quantum_teleportation_m1,2,32,1600,Fail,291,2,61,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6880910396575928
+quantum_teleportation_m2,2,32,1600,Fail,291,2,64,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.705760478973389
+quantum_teleportation_m3,2,32,1600,Fail,291,2,64,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6913821697235107
+quantum_teleportation_m4,2,32,1600,Fail,291,2,64,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.7179877758026123
+quantum_teleportation_m5,2,32,1600,Fail,384,2,63,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.8709535598754885
+quantum_teleportation_m6,2,32,1600,Fail,384,2,61,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.8525245189666748
+quantum_teleportation_m7,2,32,1600,Fail,195,2,64,Inq0EqualOutq2 & NotTeleportedPlus,1.4725205898284912
+quantum_teleportation_m8,2,32,1600,Fail,291,1,1,UnitaryBeforeAndAfterTeleport,1.6439383029937744
+quantum_teleportation_m9,2,32,1600,Pass,384,0,0,,1.9942219257354736
+quantum_teleportation_em0,2,32,1600,Fail,384,1,1,Inq0EqualOutq2,1.877488374710083
+quantum_teleportation_em1,2,32,1600,Pass,195,0,0,,1.3990209102630615
+quantum_teleportation_em2,2,32,1600,Pass,195,0,0,,1.4290874004364014
+quantum_teleportation_em3,2,32,1600,Pass,384,0,0,,1.7849819660186768
+quantum_teleportation_em4,2,32,1600,Pass,384,0,0,,1.874891996383667
+quantum_teleportation_m0,3,32,1600,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.5756077766418457
+quantum_teleportation_m1,3,32,1600,Fail,387,3,94,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.40452241897583
+quantum_teleportation_m2,3,32,1600,Fail,387,3,93,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.459717273712158
+quantum_teleportation_m3,3,32,1600,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.400803565979004
+quantum_teleportation_m4,3,32,1600,Fail,387,3,95,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.4701030254364014
+quantum_teleportation_m5,3,32,1600,Fail,387,3,93,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.5584475994110107
+quantum_teleportation_m6,3,32,1600,Fail,387,3,94,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.487462043762207
+quantum_teleportation_m7,3,32,1600,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.6195406913757324
+quantum_teleportation_m8,3,32,1600,Pass,387,0,0,,2.3938698768615723
+quantum_teleportation_m9,3,32,1600,Fail,387,1,32,NotTeleportedPlus,2.670902729034424
+quantum_teleportation_em0,3,32,1600,Pass,387,0,0,,2.543890476226806
+quantum_teleportation_em1,3,32,1600,Pass,387,0,0,,2.356234312057495
+quantum_teleportation_em2,3,32,1600,Pass,387,0,0,,2.538903951644897
+quantum_teleportation_em3,3,32,1600,Pass,387,0,0,,2.411221981048584
+quantum_teleportation_em4,3,32,1600,Pass,387,0,0,,2.552566766738892
+quantum_teleportation_m0,1,32,200,Fail,192,1,28,UnitaryBeforeAndAfterTeleport,0.6761021614074707
+quantum_teleportation_m1,1,32,200,Fail,192,1,30,UnitaryBeforeAndAfterTeleport,0.6290948390960693
+quantum_teleportation_m2,1,32,200,Fail,192,1,28,Inq0EqualOutq2,0.3874464035034179
+quantum_teleportation_m3,1,32,200,Fail,192,1,32,Inq0EqualOutq2,0.3401172161102295
+quantum_teleportation_m4,1,32,200,Fail,192,1,27,UnitaryBeforeAndAfterTeleport,0.6390361785888672
+quantum_teleportation_m5,1,32,200,Fail,192,1,28,UnitaryBeforeAndAfterTeleport,0.6619107723236084
+quantum_teleportation_m6,1,32,200,Fail,192,1,28,Inq0EqualOutq2,0.3402953147888183
+quantum_teleportation_m7,1,32,200,Fail,99,1,30,NotTeleportedPlus,0.5160136222839355
+quantum_teleportation_m8,1,32,200,Pass,192,0,0,,0.3343796730041504
+quantum_teleportation_m9,1,32,200,Fail,99,1,32,NotTeleportedPlus,0.5337815284729004
+quantum_teleportation_em0,1,32,200,Pass,99,0,0,,0.4190943241119385
+quantum_teleportation_em1,1,32,200,Pass,192,0,0,,0.3883843421936035
+quantum_teleportation_em2,1,32,200,Pass,192,0,0,,0.6286189556121826
+quantum_teleportation_em3,1,32,200,Pass,99,0,0,,0.4254803657531738
+quantum_teleportation_em4,1,32,200,Pass,99,0,0,,0.4572675228118896
+quantum_teleportation_m0,2,32,200,Fail,291,2,58,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.1829700469970703
+quantum_teleportation_m1,2,32,200,Fail,291,2,60,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.0295345783233645
+quantum_teleportation_m2,2,32,200,Fail,384,2,61,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.9453377723693848
+quantum_teleportation_m3,2,32,200,Fail,384,2,58,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.927565336227417
+quantum_teleportation_m4,2,32,200,Fail,291,2,57,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.0087287425994873
+quantum_teleportation_m5,2,32,200,Fail,291,2,58,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.0660183429718018
+quantum_teleportation_m6,2,32,200,Fail,384,2,47,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.0151746273040771
+quantum_teleportation_m7,2,32,200,Fail,384,2,61,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.1260178089141846
+quantum_teleportation_m8,2,32,200,Pass,195,0,0,,0.899054765701294
+quantum_teleportation_m9,2,32,200,Pass,384,0,0,,1.0889897346496582
+quantum_teleportation_em0,2,32,200,Pass,195,0,0,,1.014784812927246
+quantum_teleportation_em1,2,32,200,Fail,384,1,1,UnitaryBeforeAndAfterTeleport,0.914846658706665
+quantum_teleportation_em2,2,32,200,Pass,384,0,0,,1.0233514308929443
+quantum_teleportation_em3,2,32,200,Pass,195,0,0,,0.9479575157165528
+quantum_teleportation_em4,2,32,200,Pass,384,0,0,,1.0216147899627686
+quantum_teleportation_m0,3,32,200,Fail,387,3,90,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6787917613983154
+quantum_teleportation_m1,3,32,200,Fail,387,3,89,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.5455293655395508
+quantum_teleportation_m2,3,32,200,Fail,387,3,88,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.5520217418670654
+quantum_teleportation_m3,3,32,200,Fail,387,3,90,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.485623121261597
+quantum_teleportation_m4,3,32,200,Fail,387,3,86,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.5653095245361328
+quantum_teleportation_m5,3,32,200,Fail,387,3,88,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6158342361450195
+quantum_teleportation_m6,3,32,200,Fail,387,3,83,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6189730167388916
+quantum_teleportation_m7,3,32,200,Fail,387,3,92,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6741728782653809
+quantum_teleportation_m8,3,32,200,Pass,387,0,0,,1.490652084350586
+quantum_teleportation_m9,3,32,200,Fail,387,1,32,NotTeleportedPlus,1.724980115890503
+quantum_teleportation_em0,3,32,200,Pass,387,0,0,,1.6493809223175049
+quantum_teleportation_em1,3,32,200,Pass,387,0,0,,1.5137779712677002
+quantum_teleportation_em2,3,32,200,Pass,387,0,0,,1.5985047817230225
+quantum_teleportation_em3,3,32,200,Pass,387,0,0,,1.501976490020752
+quantum_teleportation_em4,3,32,200,Pass,387,0,0,,1.6413607597351074
+quantum_teleportation_m0,1,32,3200,Fail,99,1,32,NotTeleportedPlus,0.9722650051116944
+quantum_teleportation_m1,1,32,3200,Fail,99,1,32,NotTeleportedPlus,0.8537518978118896
+quantum_teleportation_m2,1,32,3200,Fail,192,1,32,UnitaryBeforeAndAfterTeleport,1.5520529747009275
+quantum_teleportation_m3,1,32,3200,Fail,192,1,32,Inq0EqualOutq2,1.165665864944458
+quantum_teleportation_m4,1,32,3200,Fail,99,1,31,NotTeleportedPlus,0.9176218509674072
+quantum_teleportation_m5,1,32,3200,Fail,99,1,32,NotTeleportedPlus,0.8902499675750732
+quantum_teleportation_m6,1,32,3200,Fail,192,1,32,Inq0EqualOutq2,1.2391340732574463
+quantum_teleportation_m7,1,32,3200,Fail,192,1,32,Inq0EqualOutq2,1.2260968685150146
+quantum_teleportation_m8,1,32,3200,Pass,99,0,0,,0.8907878398895264
+quantum_teleportation_m9,1,32,3200,Pass,192,0,0,,1.2316598892211914
+quantum_teleportation_em0,1,32,3200,Pass,192,0,0,,1.2811412811279297
+quantum_teleportation_em1,1,32,3200,Pass,99,0,0,,0.8445315361022949
+quantum_teleportation_em2,1,32,3200,Pass,192,0,0,,1.5809075832366943
+quantum_teleportation_em3,1,32,3200,Pass,192,0,0,,1.2399084568023682
+quantum_teleportation_em4,1,32,3200,Pass,192,0,0,,1.5831749439239502
+quantum_teleportation_m0,2,32,3200,Fail,291,2,64,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.5293805599212646
+quantum_teleportation_m1,2,32,3200,Fail,195,2,64,Inq0EqualOutq2 & NotTeleportedPlus,1.837096691131592
+quantum_teleportation_m2,2,32,3200,Fail,384,2,64,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,2.7193288803100586
+quantum_teleportation_m3,2,32,3200,Fail,195,2,64,Inq0EqualOutq2 & NotTeleportedPlus,1.82311487197876
+quantum_teleportation_m4,2,32,3200,Fail,384,2,63,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,2.70847487449646
+quantum_teleportation_m5,2,32,3200,Fail,384,2,64,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,2.7970988750457764
+quantum_teleportation_m6,2,32,3200,Fail,384,2,63,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,2.7855591773986816
+quantum_teleportation_m7,2,32,3200,Fail,291,2,64,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.514711141586304
+quantum_teleportation_m8,2,32,3200,Pass,195,0,0,,1.8246452808380127
+quantum_teleportation_m9,2,32,3200,Fail,291,1,32,NotTeleportedPlus,2.614182949066162
+quantum_teleportation_em0,2,32,3200,Pass,384,0,0,,2.811321973800659
+quantum_teleportation_em1,2,32,3200,Pass,291,0,0,,2.3506181240081787
+quantum_teleportation_em2,2,32,3200,Pass,384,0,0,,2.799393892288208
+quantum_teleportation_em3,2,32,3200,Pass,291,0,0,,2.3840930461883545
+quantum_teleportation_em4,2,32,3200,Pass,384,0,0,,2.795501232147217
+quantum_teleportation_m0,3,32,3200,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.4200901985168457
+quantum_teleportation_m1,3,32,3200,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.3258965015411377
+quantum_teleportation_m2,3,32,3200,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.3732054233551025
+quantum_teleportation_m3,3,32,3200,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.292483329772949
+quantum_teleportation_m4,3,32,3200,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.379870653152466
+quantum_teleportation_m5,3,32,3200,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.442748069763184
+quantum_teleportation_m6,3,32,3200,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.445089340209961
+quantum_teleportation_m7,3,32,3200,Fail,387,3,95,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.492121458053589
+quantum_teleportation_m8,3,32,3200,Pass,387,0,0,,3.3173370361328125
+quantum_teleportation_m9,3,32,3200,Fail,387,1,32,NotTeleportedPlus,3.5605275630950928
+quantum_teleportation_em0,3,32,3200,Pass,387,0,0,,3.4285175800323486
+quantum_teleportation_em1,3,32,3200,Pass,387,0,0,,3.33410120010376
+quantum_teleportation_em2,3,32,3200,Pass,387,0,0,,3.4984750747680664
+quantum_teleportation_em3,3,32,3200,Pass,387,0,0,,3.3460733890533447
+quantum_teleportation_em4,3,32,3200,Pass,387,0,0,,3.486229419708252
+quantum_teleportation_m0,1,32,400,Fail,99,1,32,NotTeleportedPlus,0.547285795211792
+quantum_teleportation_m1,1,32,400,Fail,192,1,32,Inq0EqualOutq2,0.3932771682739258
+quantum_teleportation_m2,1,32,400,Fail,99,1,32,NotTeleportedPlus,0.5111236572265625
+quantum_teleportation_m3,1,32,400,Fail,192,1,32,UnitaryBeforeAndAfterTeleport,0.6361312866210938
+quantum_teleportation_m4,1,32,400,Fail,99,1,32,NotTeleportedPlus,0.4876198768615722
+quantum_teleportation_m5,1,32,400,Fail,99,1,32,NotTeleportedPlus,0.4765853881835937
+quantum_teleportation_m6,1,32,400,Fail,99,1,32,NotTeleportedPlus,0.5180654525756836
+quantum_teleportation_m7,1,32,400,Fail,99,1,32,NotTeleportedPlus,0.5023376941680908
+quantum_teleportation_m8,1,32,400,Pass,99,0,0,,0.4615335464477539
+quantum_teleportation_m9,1,32,400,Pass,192,0,0,,0.8298459053039551
+quantum_teleportation_em0,1,32,400,Pass,192,0,0,,0.7721502780914307
+quantum_teleportation_em1,1,32,400,Pass,192,0,0,,0.6350436210632324
+quantum_teleportation_em2,1,32,400,Pass,192,0,0,,0.4865272045135498
+quantum_teleportation_em3,1,32,400,Pass,192,0,0,,0.6947824954986572
+quantum_teleportation_em4,1,32,400,Pass,192,0,0,,0.4265313148498535
+quantum_teleportation_m0,2,32,400,Fail,384,2,62,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.2253670692443848
+quantum_teleportation_m1,2,32,400,Fail,291,2,63,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.149477243423462
+quantum_teleportation_m2,2,32,400,Fail,195,2,63,Inq0EqualOutq2 & NotTeleportedPlus,1.0117311477661133
+quantum_teleportation_m3,2,32,400,Fail,384,2,60,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.0799260139465332
+quantum_teleportation_m4,2,32,400,Fail,384,2,58,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.1058135032653809
+quantum_teleportation_m5,2,32,400,Fail,291,2,64,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.179309368133545
+quantum_teleportation_m6,2,32,400,Fail,195,2,64,Inq0EqualOutq2 & NotTeleportedPlus,1.0383856296539309
+quantum_teleportation_m7,2,32,400,Fail,384,2,62,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.3037080764770508
+quantum_teleportation_m8,2,32,400,Pass,384,0,0,,1.0478780269622805
+quantum_teleportation_m9,2,32,400,Fail,195,1,32,NotTeleportedPlus,1.086619853973389
+quantum_teleportation_em0,2,32,400,Pass,291,0,0,,1.1879642009735107
+quantum_teleportation_em1,2,32,400,Pass,291,0,0,,1.130443096160889
+quantum_teleportation_em2,2,32,400,Pass,195,0,0,,1.0587608814239502
+quantum_teleportation_em3,2,32,400,Pass,291,0,0,,1.078432559967041
+quantum_teleportation_em4,2,32,400,Pass,384,0,0,,1.1658501625061035
+quantum_teleportation_m0,3,32,400,Fail,387,3,93,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.8261640071868896
+quantum_teleportation_m1,3,32,400,Fail,387,3,93,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.676112174987793
+quantum_teleportation_m2,3,32,400,Fail,387,3,91,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.7100872993469238
+quantum_teleportation_m3,3,32,400,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.6368508338928225
+quantum_teleportation_m4,3,32,400,Fail,387,3,91,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.7124998569488523
+quantum_teleportation_m5,3,32,400,Fail,387,3,91,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.7638602256774902
+quantum_teleportation_m6,3,32,400,Fail,387,3,87,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.781562566757202
+quantum_teleportation_m7,3,32,400,Fail,387,3,93,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.86816668510437
+quantum_teleportation_m8,3,32,400,Pass,387,0,0,,1.601806879043579
+quantum_teleportation_m9,3,32,400,Fail,387,1,32,NotTeleportedPlus,1.8895068168640137
+quantum_teleportation_em0,3,32,400,Pass,387,0,0,,1.800041913986206
+quantum_teleportation_em1,3,32,400,Pass,387,0,0,,1.6556236743927002
+quantum_teleportation_em2,3,32,400,Pass,387,0,0,,1.7363333702087402
+quantum_teleportation_em3,3,32,400,Pass,387,0,0,,1.644862413406372
+quantum_teleportation_em4,3,32,400,Pass,387,0,0,,1.7973201274871826
+quantum_teleportation_m0,1,32,800,Fail,99,1,32,NotTeleportedPlus,0.6169013977050781
+quantum_teleportation_m1,1,32,800,Fail,192,1,28,UnitaryBeforeAndAfterTeleport,0.7806260585784912
+quantum_teleportation_m2,1,32,800,Fail,192,1,30,UnitaryBeforeAndAfterTeleport,0.8481099605560303
+quantum_teleportation_m3,1,32,800,Fail,99,1,32,NotTeleportedPlus,0.5519742965698242
+quantum_teleportation_m4,1,32,800,Fail,192,1,30,Inq0EqualOutq2,0.5136091709136963
+quantum_teleportation_m5,1,32,800,Fail,192,1,32,Inq0EqualOutq2,0.5757918357849121
+quantum_teleportation_m6,1,32,800,Fail,192,1,28,UnitaryBeforeAndAfterTeleport,0.8765192031860352
+quantum_teleportation_m7,1,32,800,Fail,99,1,31,NotTeleportedPlus,0.5716426372528076
+quantum_teleportation_m8,1,32,800,Pass,192,0,0,,0.8308484554290771
+quantum_teleportation_m9,1,32,800,Pass,192,0,0,,0.557774543762207
+quantum_teleportation_em0,1,32,800,Pass,192,0,0,,0.8985724449157715
+quantum_teleportation_em1,1,32,800,Pass,192,0,0,,0.8061094284057617
+quantum_teleportation_em2,1,32,800,Pass,192,0,0,,0.5512564182281494
+quantum_teleportation_em3,1,32,800,Pass,192,0,0,,0.5672147274017334
+quantum_teleportation_em4,1,32,800,Pass,99,0,0,,0.5263257026672363
+quantum_teleportation_m0,2,32,800,Fail,291,2,62,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.4813117980957031
+quantum_teleportation_m1,2,32,800,Fail,195,2,63,Inq0EqualOutq2 & NotTeleportedPlus,1.1890361309051514
+quantum_teleportation_m2,2,32,800,Fail,195,2,63,Inq0EqualOutq2 & NotTeleportedPlus,1.1371238231658936
+quantum_teleportation_m3,2,32,800,Fail,384,2,64,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.314419507980347
+quantum_teleportation_m4,2,32,800,Fail,195,2,64,Inq0EqualOutq2 & NotTeleportedPlus,1.1696128845214844
+quantum_teleportation_m5,2,32,800,Fail,195,2,64,Inq0EqualOutq2 & NotTeleportedPlus,1.1735258102416992
+quantum_teleportation_m6,2,32,800,Fail,195,2,64,Inq0EqualOutq2 & NotTeleportedPlus,1.2188501358032229
+quantum_teleportation_m7,2,32,800,Fail,291,2,64,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.4893898963928225
+quantum_teleportation_m8,2,32,800,Pass,291,0,0,,1.2874133586883545
+quantum_teleportation_m9,2,32,800,Fail,384,1,1,UnitaryBeforeAndAfterTeleport,1.501429319381714
+quantum_teleportation_em0,2,32,800,Pass,291,0,0,,1.3766398429870603
+quantum_teleportation_em1,2,32,800,Fail,195,1,1,NotTeleportedPlus,1.1629235744476318
+quantum_teleportation_em2,2,32,800,Pass,291,0,0,,1.3771417140960691
+quantum_teleportation_em3,2,32,800,Pass,384,0,0,,1.3186256885528564
+quantum_teleportation_em4,2,32,800,Pass,195,0,0,,1.201545476913452
+quantum_teleportation_m0,3,32,800,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.095771789550781
+quantum_teleportation_m1,3,32,800,Fail,387,3,93,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.9539754390716555
+quantum_teleportation_m2,3,32,800,Fail,387,3,92,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.9716413021087649
+quantum_teleportation_m3,3,32,800,Fail,387,3,95,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.8907928466796875
+quantum_teleportation_m4,3,32,800,Fail,387,3,94,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.9713318347930908
+quantum_teleportation_m5,3,32,800,Fail,387,3,94,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.051857709884644
+quantum_teleportation_m6,3,32,800,Fail,387,3,92,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.0452160835266118
+quantum_teleportation_m7,3,32,800,Fail,387,3,96,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.0785505771636963
+quantum_teleportation_m8,3,32,800,Pass,387,0,0,,1.9179024696350095
+quantum_teleportation_m9,3,32,800,Fail,387,1,32,NotTeleportedPlus,2.1985559463500977
+quantum_teleportation_em0,3,32,800,Pass,387,0,0,,2.06744122505188
+quantum_teleportation_em1,3,32,800,Pass,387,0,0,,1.874567985534668
+quantum_teleportation_em2,3,32,800,Pass,387,0,0,,2.045649290084839
+quantum_teleportation_em3,3,32,800,Pass,387,0,0,,1.909834623336792
+quantum_teleportation_em4,3,32,800,Pass,387,0,0,,2.0656962394714355
+quantum_teleportation_m0,1,4,1600,Fail,24,1,4,Inq0EqualOutq2,0.1076531410217285
+quantum_teleportation_m1,1,4,1600,Fail,15,1,4,NotTeleportedPlus,0.1112713813781738
+quantum_teleportation_m2,1,4,1600,Fail,15,1,4,NotTeleportedPlus,0.1074652671813964
+quantum_teleportation_m3,1,4,1600,Fail,24,1,4,Inq0EqualOutq2,0.1045150756835937
+quantum_teleportation_m4,1,4,1600,Fail,24,1,4,Inq0EqualOutq2,0.1046884059906005
+quantum_teleportation_m5,1,4,1600,Fail,24,1,3,UnitaryBeforeAndAfterTeleport,0.1698420047760009
+quantum_teleportation_m6,1,4,1600,Fail,24,1,3,UnitaryBeforeAndAfterTeleport,0.1598455905914306
+quantum_teleportation_m7,1,4,1600,Fail,15,1,4,NotTeleportedPlus,0.1121280193328857
+quantum_teleportation_m8,1,4,1600,Pass,24,0,0,,0.1566472053527832
+quantum_teleportation_m9,1,4,1600,Fail,15,1,4,NotTeleportedPlus,0.1731023788452148
+quantum_teleportation_em0,1,4,1600,Pass,15,0,0,,0.1096820831298828
+quantum_teleportation_em1,1,4,1600,Pass,24,0,0,,0.1057438850402832
+quantum_teleportation_em2,1,4,1600,Pass,15,0,0,,0.1102123260498046
+quantum_teleportation_em3,1,4,1600,Pass,15,0,0,,0.108713150024414
+quantum_teleportation_em4,1,4,1600,Pass,24,0,0,,0.1623828411102295
+quantum_teleportation_m0,2,4,1600,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3013713359832763
+quantum_teleportation_m1,2,4,1600,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2328324317932129
+quantum_teleportation_m2,2,4,1600,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.1949918270111084
+quantum_teleportation_m3,2,4,1600,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2322151660919189
+quantum_teleportation_m4,2,4,1600,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2429063320159912
+quantum_teleportation_m5,2,4,1600,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2463889122009277
+quantum_teleportation_m6,2,4,1600,Fail,39,2,7,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3000900745391845
+quantum_teleportation_m7,2,4,1600,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.1974477767944336
+quantum_teleportation_m8,2,4,1600,Pass,27,0,0,,0.1913604736328125
+quantum_teleportation_m9,2,4,1600,Pass,48,0,0,,0.2749137878417969
+quantum_teleportation_em0,2,4,1600,Pass,27,0,0,,0.2093358039855957
+quantum_teleportation_em1,2,4,1600,Pass,39,0,0,,0.2316999435424804
+quantum_teleportation_em2,2,4,1600,Pass,48,0,0,,0.312253475189209
+quantum_teleportation_em3,2,4,1600,Pass,48,0,0,,0.2474067211151123
+quantum_teleportation_em4,2,4,1600,Pass,48,0,0,,0.2612595558166504
+quantum_teleportation_m0,3,4,1600,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4182734489440918
+quantum_teleportation_m1,3,4,1600,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3245508670806885
+quantum_teleportation_m2,3,4,1600,Fail,51,3,11,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3309690952301025
+quantum_teleportation_m3,3,4,1600,Fail,51,3,11,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3153254985809326
+quantum_teleportation_m4,3,4,1600,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3801233768463135
+quantum_teleportation_m5,3,4,1600,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3365724086761474
+quantum_teleportation_m6,3,4,1600,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3429765701293945
+quantum_teleportation_m7,3,4,1600,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3445723056793213
+quantum_teleportation_m8,3,4,1600,Pass,51,0,0,,0.3744776248931885
+quantum_teleportation_m9,3,4,1600,Fail,51,1,4,NotTeleportedPlus,0.351604700088501
+quantum_teleportation_em0,3,4,1600,Pass,51,0,0,,0.3408398628234863
+quantum_teleportation_em1,3,4,1600,Pass,51,0,0,,0.3789973258972168
+quantum_teleportation_em2,3,4,1600,Pass,51,0,0,,0.3396739959716797
+quantum_teleportation_em3,3,4,1600,Pass,51,0,0,,0.3110277652740478
+quantum_teleportation_em4,3,4,1600,Pass,51,0,0,,0.3401041030883789
+quantum_teleportation_m0,1,4,200,Fail,15,1,4,NotTeleportedPlus,0.0776543617248535
+quantum_teleportation_m1,1,4,200,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1057455539703369
+quantum_teleportation_m2,1,4,200,Fail,15,1,4,NotTeleportedPlus,0.0741748809814453
+quantum_teleportation_m3,1,4,200,Fail,24,1,3,UnitaryBeforeAndAfterTeleport,0.1047437191009521
+quantum_teleportation_m4,1,4,200,Fail,15,1,4,NotTeleportedPlus,0.0761690139770507
+quantum_teleportation_m5,1,4,200,Fail,15,1,4,NotTeleportedPlus,0.0851476192474365
+quantum_teleportation_m6,1,4,200,Fail,24,1,4,Inq0EqualOutq2,0.0606021881103515
+quantum_teleportation_m7,1,4,200,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1769988536834716
+quantum_teleportation_m8,1,4,200,Pass,15,0,0,,0.0666263103485107
+quantum_teleportation_m9,1,4,200,Fail,15,1,4,NotTeleportedPlus,0.0851571559906005
+quantum_teleportation_em0,1,4,200,Pass,24,0,0,,0.0686748027801513
+quantum_teleportation_em1,1,4,200,Pass,24,0,0,,0.0581324100494384
+quantum_teleportation_em2,1,4,200,Fail,15,1,1,NotTeleportedPlus,0.074653148651123
+quantum_teleportation_em3,1,4,200,Pass,24,0,0,,0.1047425270080566
+quantum_teleportation_em4,1,4,200,Pass,15,0,0,,0.0741364955902099
+quantum_teleportation_m0,2,4,200,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.1949946880340576
+quantum_teleportation_m1,2,4,200,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.14129638671875
+quantum_teleportation_m2,2,4,200,Fail,48,2,8,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.1428174972534179
+quantum_teleportation_m3,2,4,200,Fail,48,2,8,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.1382009983062744
+quantum_teleportation_m4,2,4,200,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.1629624366760254
+quantum_teleportation_m5,2,4,200,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.1621210575103759
+quantum_teleportation_m6,2,4,200,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.208031415939331
+quantum_teleportation_m7,2,4,200,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.147404670715332
+quantum_teleportation_m8,2,4,200,Pass,27,0,0,,0.1344494819641113
+quantum_teleportation_m9,2,4,200,Fail,27,1,4,NotTeleportedPlus,0.1538407802581787
+quantum_teleportation_em0,2,4,200,Pass,39,0,0,,0.1548559665679931
+quantum_teleportation_em1,2,4,200,Pass,48,0,0,,0.1388182640075683
+quantum_teleportation_em2,2,4,200,Pass,48,0,0,,0.208036184310913
+quantum_teleportation_em3,2,4,200,Pass,48,0,0,,0.1343381404876709
+quantum_teleportation_em4,2,4,200,Pass,48,0,0,,0.1598613262176513
+quantum_teleportation_m0,3,4,200,Fail,51,3,11,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3048145771026611
+quantum_teleportation_m1,3,4,200,Fail,51,3,11,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2154977321624755
+quantum_teleportation_m2,3,4,200,Fail,51,3,10,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2170960903167724
+quantum_teleportation_m3,3,4,200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2602491378784179
+quantum_teleportation_m4,3,4,200,Fail,51,3,11,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2167475223541259
+quantum_teleportation_m5,3,4,200,Fail,51,3,10,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2240660190582275
+quantum_teleportation_m6,3,4,200,Fail,51,3,10,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2204017639160156
+quantum_teleportation_m7,3,4,200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2869155406951904
+quantum_teleportation_m8,3,4,200,Pass,51,0,0,,0.2015678882598877
+quantum_teleportation_m9,3,4,200,Fail,51,1,4,NotTeleportedPlus,0.2385685443878173
+quantum_teleportation_em0,3,4,200,Pass,51,0,0,,0.2227697372436523
+quantum_teleportation_em1,3,4,200,Pass,51,0,0,,0.2612254619598388
+quantum_teleportation_em2,3,4,200,Pass,51,0,0,,0.2215616703033447
+quantum_teleportation_em3,3,4,200,Pass,51,0,0,,0.215472936630249
+quantum_teleportation_em4,3,4,200,Pass,51,0,0,,0.2265286445617675
+quantum_teleportation_m0,1,4,3200,Fail,15,1,4,NotTeleportedPlus,0.1383037567138672
+quantum_teleportation_m1,1,4,3200,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.2079455852508545
+quantum_teleportation_m2,1,4,3200,Fail,24,1,4,Inq0EqualOutq2,0.1478273868560791
+quantum_teleportation_m3,1,4,3200,Fail,15,1,4,NotTeleportedPlus,0.1438047885894775
+quantum_teleportation_m4,1,4,3200,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.2146153450012207
+quantum_teleportation_m5,1,4,3200,Fail,15,1,4,NotTeleportedPlus,0.1423513889312744
+quantum_teleportation_m6,1,4,3200,Fail,24,1,4,Inq0EqualOutq2,0.1548116207122802
+quantum_teleportation_m7,1,4,3200,Fail,15,1,4,NotTeleportedPlus,0.1527268886566162
+quantum_teleportation_m8,1,4,3200,Pass,24,0,0,,0.1502742767333984
+quantum_teleportation_m9,1,4,3200,Pass,24,0,0,,0.1643493175506591
+quantum_teleportation_em0,1,4,3200,Pass,15,0,0,,0.1453070640563964
+quantum_teleportation_em1,1,4,3200,Pass,15,0,0,,0.1425561904907226
+quantum_teleportation_em2,1,4,3200,Pass,15,0,0,,0.1449003219604492
+quantum_teleportation_em3,1,4,3200,Pass,24,0,0,,0.2040779590606689
+quantum_teleportation_em4,1,4,3200,Pass,24,0,0,,0.1605172157287597
+quantum_teleportation_m0,2,4,3200,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3273205757141113
+quantum_teleportation_m1,2,4,3200,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3181822299957275
+quantum_teleportation_m2,2,4,3200,Fail,48,2,8,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.4058742523193359
+quantum_teleportation_m3,2,4,3200,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.2430644035339355
+quantum_teleportation_m4,2,4,3200,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3228809833526611
+quantum_teleportation_m5,2,4,3200,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.2496290206909179
+quantum_teleportation_m6,2,4,3200,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3314707279205322
+quantum_teleportation_m7,2,4,3200,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.2486336231231689
+quantum_teleportation_m8,2,4,3200,Pass,27,0,0,,0.2904810905456543
+quantum_teleportation_m9,2,4,3200,Pass,48,0,0,,0.381375789642334
+quantum_teleportation_em0,2,4,3200,Pass,27,0,0,,0.2570302486419678
+quantum_teleportation_em1,2,4,3200,Pass,48,0,0,,0.3468186855316162
+quantum_teleportation_em2,2,4,3200,Pass,48,0,0,,0.3777849674224853
+quantum_teleportation_em3,2,4,3200,Pass,48,0,0,,0.358083963394165
+quantum_teleportation_em4,2,4,3200,Pass,27,0,0,,0.3080897331237793
+quantum_teleportation_m0,3,4,3200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4696180820465088
+quantum_teleportation_m1,3,4,3200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4391040802001953
+quantum_teleportation_m2,3,4,3200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.488593578338623
+quantum_teleportation_m3,3,4,3200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4331300258636474
+quantum_teleportation_m4,3,4,3200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4464144706726074
+quantum_teleportation_m5,3,4,3200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5024552345275879
+quantum_teleportation_m6,3,4,3200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4563944339752197
+quantum_teleportation_m7,3,4,3200,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4555656909942627
+quantum_teleportation_m8,3,4,3200,Pass,51,0,0,,0.4351711273193359
+quantum_teleportation_m9,3,4,3200,Fail,51,1,4,NotTeleportedPlus,0.5156459808349609
+quantum_teleportation_em0,3,4,3200,Pass,51,0,0,,0.4581854343414306
+quantum_teleportation_em1,3,4,3200,Pass,51,0,0,,0.4344632625579834
+quantum_teleportation_em2,3,4,3200,Pass,51,0,0,,0.4545886516571045
+quantum_teleportation_em3,3,4,3200,Pass,51,0,0,,0.4874937534332275
+quantum_teleportation_em4,3,4,3200,Pass,51,0,0,,0.4615035057067871
+quantum_teleportation_m0,1,4,400,Fail,15,1,4,NotTeleportedPlus,0.0807154178619384
+quantum_teleportation_m1,1,4,400,Fail,15,1,4,NotTeleportedPlus,0.0785059928894043
+quantum_teleportation_m2,1,4,400,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1192989349365234
+quantum_teleportation_m3,1,4,400,Fail,15,1,4,NotTeleportedPlus,0.0791006088256836
+quantum_teleportation_m4,1,4,400,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1674158573150634
+quantum_teleportation_m5,1,4,400,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1202554702758789
+quantum_teleportation_m6,1,4,400,Fail,24,1,4,Inq0EqualOutq2,0.068162202835083
+quantum_teleportation_m7,1,4,400,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1362781524658203
+quantum_teleportation_m8,1,4,400,Pass,24,0,0,,0.1087300777435302
+quantum_teleportation_m9,1,4,400,Pass,24,0,0,,0.1327848434448242
+quantum_teleportation_em0,1,4,400,Pass,15,0,0,,0.0825450420379638
+quantum_teleportation_em1,1,4,400,Pass,24,0,0,,0.0636181831359863
+quantum_teleportation_em2,1,4,400,Pass,24,0,0,,0.0726368427276611
+quantum_teleportation_em3,1,4,400,Pass,24,0,0,,0.0686795711517334
+quantum_teleportation_em4,1,4,400,Pass,24,0,0,,0.1247756481170654
+quantum_teleportation_m0,2,4,400,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.1492118835449218
+quantum_teleportation_m1,2,4,400,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.1718332767486572
+quantum_teleportation_m2,2,4,400,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.1509692668914795
+quantum_teleportation_m3,2,4,400,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.1605212688446045
+quantum_teleportation_m4,2,4,400,Fail,48,2,7,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.2131800651550293
+quantum_teleportation_m5,2,4,400,Fail,48,2,8,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.1713819503784179
+quantum_teleportation_m6,2,4,400,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.1774957180023193
+quantum_teleportation_m7,2,4,400,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.185450792312622
+quantum_teleportation_m8,2,4,400,Pass,27,0,0,,0.1478445529937744
+quantum_teleportation_m9,2,4,400,Fail,39,1,4,NotTeleportedPlus,0.1984407901763916
+quantum_teleportation_em0,2,4,400,Pass,27,0,0,,0.2042901515960693
+quantum_teleportation_em1,2,4,400,Pass,27,0,0,,0.1478345394134521
+quantum_teleportation_em2,2,4,400,Pass,27,0,0,,0.1530234813690185
+quantum_teleportation_em3,2,4,400,Pass,39,0,0,,0.1603426933288574
+quantum_teleportation_em4,2,4,400,Pass,27,0,0,,0.154844045639038
+quantum_teleportation_m0,3,4,400,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2723486423492431
+quantum_teleportation_m1,3,4,400,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2323653697967529
+quantum_teleportation_m2,3,4,400,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.280029296875
+quantum_teleportation_m3,3,4,400,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2321500778198242
+quantum_teleportation_m4,3,4,400,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2353103160858154
+quantum_teleportation_m5,3,4,400,Fail,51,3,11,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2447140216827392
+quantum_teleportation_m6,3,4,400,Fail,51,3,10,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2872323989868164
+quantum_teleportation_m7,3,4,400,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2546460628509521
+quantum_teleportation_m8,3,4,400,Pass,51,0,0,,0.2219514846801757
+quantum_teleportation_m9,3,4,400,Fail,51,1,4,NotTeleportedPlus,0.2593905925750732
+quantum_teleportation_em0,3,4,400,Pass,51,0,0,,0.2951579093933105
+quantum_teleportation_em1,3,4,400,Pass,51,0,0,,0.2263031005859375
+quantum_teleportation_em2,3,4,400,Pass,51,0,0,,0.2531707286834717
+quantum_teleportation_em3,3,4,400,Pass,51,0,0,,0.2270143032073974
+quantum_teleportation_em4,3,4,400,Pass,51,0,0,,0.3006227016448974
+quantum_teleportation_m0,1,4,800,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1884596347808838
+quantum_teleportation_m1,1,4,800,Fail,24,1,3,Inq0EqualOutq2,0.0761406421661377
+quantum_teleportation_m2,1,4,800,Fail,15,1,4,NotTeleportedPlus,0.091198444366455
+quantum_teleportation_m3,1,4,800,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1276922225952148
+quantum_teleportation_m4,1,4,800,Fail,24,1,4,Inq0EqualOutq2,0.0816755294799804
+quantum_teleportation_m5,1,4,800,Fail,15,1,4,NotTeleportedPlus,0.09269380569458
+quantum_teleportation_m6,1,4,800,Fail,24,1,3,UnitaryBeforeAndAfterTeleport,0.1423165798187255
+quantum_teleportation_m7,1,4,800,Fail,24,1,4,UnitaryBeforeAndAfterTeleport,0.1387937068939209
+quantum_teleportation_m8,1,4,800,Pass,24,0,0,,0.1245269775390625
+quantum_teleportation_m9,1,4,800,Fail,15,1,4,NotTeleportedPlus,0.1047229766845703
+quantum_teleportation_em0,1,4,800,Pass,24,0,0,,0.1337721347808838
+quantum_teleportation_em1,1,4,800,Pass,24,0,0,,0.0751407146453857
+quantum_teleportation_em2,1,4,800,Pass,15,0,0,,0.1526267528533935
+quantum_teleportation_em3,1,4,800,Pass,15,0,0,,0.0850098133087158
+quantum_teleportation_em4,1,4,800,Pass,24,0,0,,0.1412994861602783
+quantum_teleportation_m0,2,4,800,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2065157890319824
+quantum_teleportation_m1,2,4,800,Fail,48,2,8,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.1874563694000244
+quantum_teleportation_m2,2,4,800,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2010602951049804
+quantum_teleportation_m3,2,4,800,Fail,39,2,8,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2285118103027343
+quantum_teleportation_m4,2,4,800,Fail,48,2,8,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.1884093284606933
+quantum_teleportation_m5,2,4,800,Fail,39,2,7,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2109794616699218
+quantum_teleportation_m6,2,4,800,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.170438528060913
+quantum_teleportation_m7,2,4,800,Fail,27,2,8,Inq0EqualOutq2 & NotTeleportedPlus,0.1679854393005371
+quantum_teleportation_m8,2,4,800,Pass,39,0,0,,0.1850407123565673
+quantum_teleportation_m9,2,4,800,Pass,48,0,0,,0.2684283256530761
+quantum_teleportation_em0,2,4,800,Pass,39,0,0,,0.1986157894134521
+quantum_teleportation_em1,2,4,800,Pass,39,0,0,,0.1897807121276855
+quantum_teleportation_em2,2,4,800,Pass,27,0,0,,0.1737890243530273
+quantum_teleportation_em3,2,4,800,Pass,39,0,0,,0.1838769912719726
+quantum_teleportation_em4,2,4,800,Pass,48,0,0,,0.1965589523315429
+quantum_teleportation_m0,3,4,800,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3050971031188965
+quantum_teleportation_m1,3,4,800,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3147995471954345
+quantum_teleportation_m2,3,4,800,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2686734199523926
+quantum_teleportation_m3,3,4,800,Fail,51,3,11,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2672107219696045
+quantum_teleportation_m4,3,4,800,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2703595161437988
+quantum_teleportation_m5,3,4,800,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3317415714263916
+quantum_teleportation_m6,3,4,800,Fail,51,3,12,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2792477607727051
+quantum_teleportation_m7,3,4,800,Fail,51,3,11,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2885398864746094
+quantum_teleportation_m8,3,4,800,Fail,51,1,1,UnitaryBeforeAndAfterTeleport,0.255500316619873
+quantum_teleportation_m9,3,4,800,Fail,51,1,4,NotTeleportedPlus,0.3430221080780029
+quantum_teleportation_em0,3,4,800,Pass,51,0,0,,0.2781147956848144
+quantum_teleportation_em1,3,4,800,Pass,51,0,0,,0.2586009502410888
+quantum_teleportation_em2,3,4,800,Pass,51,0,0,,0.2804405689239502
+quantum_teleportation_em3,3,4,800,Pass,51,0,0,,0.3130614757537842
+quantum_teleportation_em4,3,4,800,Pass,51,0,0,,0.27974534034729
+quantum_teleportation_m0,1,64,1600,Fail,384,1,63,UnitaryBeforeAndAfterTeleport,2.3426966667175293
+quantum_teleportation_m1,1,64,1600,Fail,384,1,64,Inq0EqualOutq2,1.4460780620574951
+quantum_teleportation_m2,1,64,1600,Fail,195,1,64,NotTeleportedPlus,1.3055191040039062
+quantum_teleportation_m3,1,64,1600,Fail,384,1,63,UnitaryBeforeAndAfterTeleport,2.0618081092834477
+quantum_teleportation_m4,1,64,1600,Fail,195,1,64,NotTeleportedPlus,1.2891101837158203
+quantum_teleportation_m5,1,64,1600,Fail,195,1,64,NotTeleportedPlus,1.380749225616455
+quantum_teleportation_m6,1,64,1600,Fail,384,1,64,Inq0EqualOutq2,1.5172886848449707
+quantum_teleportation_m7,1,64,1600,Fail,384,1,64,UnitaryBeforeAndAfterTeleport,2.316973924636841
+quantum_teleportation_m8,1,64,1600,Pass,384,0,0,,1.52095627784729
+quantum_teleportation_m9,1,64,1600,Pass,384,0,0,,2.351001501083374
+quantum_teleportation_em0,1,64,1600,Pass,195,0,0,,1.351792812347412
+quantum_teleportation_em1,1,64,1600,Pass,195,0,0,,1.2497503757476809
+quantum_teleportation_em2,1,64,1600,Pass,384,0,0,,2.200427770614624
+quantum_teleportation_em3,1,64,1600,Pass,384,0,0,,1.5363702774047852
+quantum_teleportation_em4,1,64,1600,Pass,384,0,0,,1.5761046409606934
+quantum_teleportation_m0,2,64,1600,Fail,768,2,128,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,4.146020889282227
+quantum_teleportation_m1,2,64,1600,Fail,579,2,126,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.4735589027404785
+quantum_teleportation_m2,2,64,1600,Fail,387,2,127,Inq0EqualOutq2 & NotTeleportedPlus,2.8143763542175293
+quantum_teleportation_m3,2,64,1600,Fail,768,2,127,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,3.48173189163208
+quantum_teleportation_m4,2,64,1600,Fail,579,2,123,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.4469106197357178
+quantum_teleportation_m5,2,64,1600,Fail,768,2,125,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,3.731464385986328
+quantum_teleportation_m6,2,64,1600,Fail,387,2,128,Inq0EqualOutq2 & NotTeleportedPlus,2.9417614936828613
+quantum_teleportation_m7,2,64,1600,Fail,768,2,128,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,3.903341293334961
+quantum_teleportation_m8,2,64,1600,Pass,579,0,0,,3.259908437728882
+quantum_teleportation_m9,2,64,1600,Fail,768,1,1,UnitaryBeforeAndAfterTeleport,3.936671495437622
+quantum_teleportation_em0,2,64,1600,Pass,768,0,0,,3.7947182655334473
+quantum_teleportation_em1,2,64,1600,Pass,387,0,0,,2.711613655090332
+quantum_teleportation_em2,2,64,1600,Pass,768,0,0,,3.766902208328247
+quantum_teleportation_em3,2,64,1600,Pass,579,0,0,,3.304164171218872
+quantum_teleportation_em4,2,64,1600,Pass,768,0,0,,3.772095203399658
+quantum_teleportation_m0,3,64,1600,Fail,771,3,191,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.256512880325317
+quantum_teleportation_m1,3,64,1600,Fail,771,3,188,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.882315158843994
+quantum_teleportation_m2,3,64,1600,Fail,771,3,191,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.944201231002808
+quantum_teleportation_m3,3,64,1600,Fail,771,3,191,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.828660726547241
+quantum_teleportation_m4,3,64,1600,Fail,771,3,190,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.926575183868408
+quantum_teleportation_m5,3,64,1600,Fail,771,3,190,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.133630037307739
+quantum_teleportation_m6,3,64,1600,Fail,771,3,189,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.13188362121582
+quantum_teleportation_m7,3,64,1600,Fail,771,3,190,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,5.445092678070068
+quantum_teleportation_m8,3,64,1600,Pass,771,0,0,,4.892024755477905
+quantum_teleportation_m9,3,64,1600,Fail,771,1,64,NotTeleportedPlus,5.465471982955933
+quantum_teleportation_em0,3,64,1600,Pass,771,0,0,,5.150166273117065
+quantum_teleportation_em1,3,64,1600,Pass,771,0,0,,4.829211950302124
+quantum_teleportation_em2,3,64,1600,Pass,771,0,0,,5.144327878952026
+quantum_teleportation_em3,3,64,1600,Pass,771,0,0,,4.910810470581055
+quantum_teleportation_em4,3,64,1600,Pass,771,0,0,,5.196753978729248
+quantum_teleportation_m0,1,64,200,Fail,384,1,54,UnitaryBeforeAndAfterTeleport,1.4507076740264893
+quantum_teleportation_m1,1,64,200,Fail,384,1,61,Inq0EqualOutq2,0.6172881126403809
+quantum_teleportation_m2,1,64,200,Fail,195,1,64,NotTeleportedPlus,0.8373870849609375
+quantum_teleportation_m3,1,64,200,Fail,195,1,64,NotTeleportedPlus,0.8137645721435547
+quantum_teleportation_m4,1,64,200,Fail,384,1,55,Inq0EqualOutq2,0.6893515586853027
+quantum_teleportation_m5,1,64,200,Fail,384,1,59,Inq0EqualOutq2,0.7029404640197754
+quantum_teleportation_m6,1,64,200,Fail,384,1,46,UnitaryBeforeAndAfterTeleport,1.2300989627838137
+quantum_teleportation_m7,1,64,200,Fail,195,1,63,NotTeleportedPlus,0.9776558876037598
+quantum_teleportation_m8,1,64,200,Pass,195,0,0,,0.7093980312347412
+quantum_teleportation_m9,1,64,200,Pass,384,0,0,,1.46917724609375
+quantum_teleportation_em0,1,64,200,Pass,195,0,0,,0.8641939163208008
+quantum_teleportation_em1,1,64,200,Pass,384,0,0,,1.1485836505889893
+quantum_teleportation_em2,1,64,200,Pass,384,0,0,,1.3346846103668213
+quantum_teleportation_em3,1,64,200,Pass,384,0,0,,0.6994473934173584
+quantum_teleportation_em4,1,64,200,Pass,384,0,0,,0.7573118209838867
+quantum_teleportation_m0,2,64,200,Fail,387,2,128,Inq0EqualOutq2 & NotTeleportedPlus,1.931135177612305
+quantum_teleportation_m1,2,64,200,Fail,768,2,110,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.8241217136383057
+quantum_teleportation_m2,2,64,200,Fail,768,2,112,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,1.873750925064087
+quantum_teleportation_m3,2,64,200,Fail,579,2,124,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,1.932333707809448
+quantum_teleportation_m4,2,64,200,Fail,387,2,110,Inq0EqualOutq2 & NotTeleportedPlus,1.883953332901001
+quantum_teleportation_m5,2,64,200,Fail,387,2,122,Inq0EqualOutq2 & NotTeleportedPlus,1.9202549457550049
+quantum_teleportation_m6,2,64,200,Fail,387,2,116,Inq0EqualOutq2 & NotTeleportedPlus,1.8672738075256348
+quantum_teleportation_m7,2,64,200,Fail,579,2,123,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.331639528274536
+quantum_teleportation_m8,2,64,200,Pass,387,0,0,,1.8188133239746092
+quantum_teleportation_m9,2,64,200,Fail,387,1,64,NotTeleportedPlus,1.9837069511413572
+quantum_teleportation_em0,2,64,200,Pass,387,0,0,,1.9542155265808103
+quantum_teleportation_em1,2,64,200,Pass,768,0,0,,1.8067898750305176
+quantum_teleportation_em2,2,64,200,Pass,387,0,0,,1.9455316066741943
+quantum_teleportation_em3,2,64,200,Pass,579,0,0,,1.9026532173156736
+quantum_teleportation_em4,2,64,200,Pass,579,0,0,,2.139288663864136
+quantum_teleportation_m0,3,64,200,Fail,771,3,182,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.329380750656128
+quantum_teleportation_m1,3,64,200,Fail,771,3,173,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.04555606842041
+quantum_teleportation_m2,3,64,200,Fail,771,3,173,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.0239453315734863
+quantum_teleportation_m3,3,64,200,Fail,771,3,185,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.0330584049224854
+quantum_teleportation_m4,3,64,200,Fail,771,3,163,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.072237491607666
+quantum_teleportation_m5,3,64,200,Fail,771,3,168,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.1992416381835938
+quantum_teleportation_m6,3,64,200,Fail,771,3,159,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.190018892288208
+quantum_teleportation_m7,3,64,200,Fail,771,3,188,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.437102794647217
+quantum_teleportation_m8,3,64,200,Pass,771,0,0,,2.8930180072784424
+quantum_teleportation_m9,3,64,200,Fail,771,1,64,NotTeleportedPlus,3.506432294845581
+quantum_teleportation_em0,3,64,200,Pass,771,0,0,,3.197213649749756
+quantum_teleportation_em1,3,64,200,Pass,771,0,0,,2.999840497970581
+quantum_teleportation_em2,3,64,200,Pass,771,0,0,,3.184274196624756
+quantum_teleportation_em3,3,64,200,Pass,771,0,0,,2.9992964267730717
+quantum_teleportation_em4,3,64,200,Pass,771,0,0,,3.260575771331787
+quantum_teleportation_m0,1,64,3200,Fail,384,1,64,UnitaryBeforeAndAfterTeleport,2.8066647052764893
+quantum_teleportation_m1,1,64,3200,Fail,195,1,64,NotTeleportedPlus,1.7231967449188232
+quantum_teleportation_m2,1,64,3200,Fail,384,1,63,Inq0EqualOutq2,2.394845485687256
+quantum_teleportation_m3,1,64,3200,Fail,195,1,64,NotTeleportedPlus,1.7493555545806885
+quantum_teleportation_m4,1,64,3200,Fail,195,1,64,NotTeleportedPlus,1.7272136211395264
+quantum_teleportation_m5,1,64,3200,Fail,384,1,64,Inq0EqualOutq2,2.3205511569976807
+quantum_teleportation_m6,1,64,3200,Fail,195,1,64,NotTeleportedPlus,1.8930656909942627
+quantum_teleportation_m7,1,64,3200,Fail,384,1,64,Inq0EqualOutq2,2.4212958812713623
+quantum_teleportation_m8,1,64,3200,Pass,384,0,0,,2.998389720916748
+quantum_teleportation_m9,1,64,3200,Pass,384,0,0,,2.464632749557495
+quantum_teleportation_em0,1,64,3200,Pass,384,0,0,,2.376953363418579
+quantum_teleportation_em1,1,64,3200,Pass,384,0,0,,3.0445480346679688
+quantum_teleportation_em2,1,64,3200,Pass,384,0,0,,2.486042261123657
+quantum_teleportation_em3,1,64,3200,Pass,195,0,0,,1.7453365325927734
+quantum_teleportation_em4,1,64,3200,Fail,195,1,1,NotTeleportedPlus,1.8554701805114744
+quantum_teleportation_m0,2,64,3200,Fail,387,2,128,Inq0EqualOutq2 & NotTeleportedPlus,3.961492300033569
+quantum_teleportation_m1,2,64,3200,Fail,387,2,127,Inq0EqualOutq2 & NotTeleportedPlus,3.736019134521485
+quantum_teleportation_m2,2,64,3200,Fail,579,2,127,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.774038791656494
+quantum_teleportation_m3,2,64,3200,Fail,387,2,128,Inq0EqualOutq2 & NotTeleportedPlus,3.693591594696045
+quantum_teleportation_m4,2,64,3200,Fail,387,2,128,Inq0EqualOutq2 & NotTeleportedPlus,3.697366714477539
+quantum_teleportation_m5,2,64,3200,Fail,768,2,126,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,5.541654109954834
+quantum_teleportation_m6,2,64,3200,Fail,768,2,126,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,5.409387826919556
+quantum_teleportation_m7,2,64,3200,Fail,387,2,127,Inq0EqualOutq2 & NotTeleportedPlus,4.169434547424316
+quantum_teleportation_m8,2,64,3200,Pass,768,0,0,,5.46000075340271
+quantum_teleportation_m9,2,64,3200,Pass,768,0,0,,5.80007791519165
+quantum_teleportation_em0,2,64,3200,Pass,579,0,0,,4.9454333782196045
+quantum_teleportation_em1,2,64,3200,Pass,768,0,0,,5.317460775375366
+quantum_teleportation_em2,2,64,3200,Pass,579,0,0,,4.9530029296875
+quantum_teleportation_em3,2,64,3200,Pass,387,0,0,,3.8174684047698975
+quantum_teleportation_em4,2,64,3200,Pass,579,0,0,,4.877871036529541
+quantum_teleportation_m0,3,64,3200,Fail,771,3,192,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,7.088067293167114
+quantum_teleportation_m1,3,64,3200,Fail,771,3,192,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,6.753673315048218
+quantum_teleportation_m2,3,64,3200,Fail,771,3,192,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,7.14002537727356
+quantum_teleportation_m3,3,64,3200,Fail,771,3,192,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,6.752098321914673
+quantum_teleportation_m4,3,64,3200,Fail,771,3,189,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,6.920862436294556
+quantum_teleportation_m5,3,64,3200,Fail,771,3,191,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,6.989439249038696
+quantum_teleportation_m6,3,64,3200,Fail,771,3,191,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,7.0785439014434814
+quantum_teleportation_m7,3,64,3200,Fail,771,3,190,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,7.013467788696289
+quantum_teleportation_m8,3,64,3200,Pass,771,0,0,,6.654003858566284
+quantum_teleportation_m9,3,64,3200,Fail,771,1,64,NotTeleportedPlus,7.203489303588867
+quantum_teleportation_em0,3,64,3200,Pass,771,0,0,,7.070014476776123
+quantum_teleportation_em1,3,64,3200,Pass,771,0,0,,6.746021032333374
+quantum_teleportation_em2,3,64,3200,Pass,771,0,0,,7.170000076293945
+quantum_teleportation_em3,3,64,3200,Pass,771,0,0,,6.591554403305054
+quantum_teleportation_em4,3,64,3200,Pass,771,0,0,,7.044967412948608
+quantum_teleportation_m0,1,64,400,Fail,195,1,64,NotTeleportedPlus,1.0182459354400637
+quantum_teleportation_m1,1,64,400,Fail,195,1,64,NotTeleportedPlus,0.9152281284332277
+quantum_teleportation_m2,1,64,400,Fail,195,1,64,NotTeleportedPlus,0.9033663272857666
+quantum_teleportation_m3,1,64,400,Fail,384,1,63,Inq0EqualOutq2,0.7614021301269531
+quantum_teleportation_m4,1,64,400,Fail,384,1,60,Inq0EqualOutq2,0.8270392417907715
+quantum_teleportation_m5,1,64,400,Fail,195,1,64,NotTeleportedPlus,0.9490914344787598
+quantum_teleportation_m6,1,64,400,Fail,384,1,64,Inq0EqualOutq2,0.8145215511322021
+quantum_teleportation_m7,1,64,400,Fail,384,1,59,Inq0EqualOutq2,0.955847978591919
+quantum_teleportation_m8,1,64,400,Pass,384,0,0,,1.277085781097412
+quantum_teleportation_m9,1,64,400,Pass,384,0,0,,1.5929672718048096
+quantum_teleportation_em0,1,64,400,Pass,384,0,0,,0.9276986122131348
+quantum_teleportation_em1,1,64,400,Pass,195,0,0,,0.7987053394317627
+quantum_teleportation_em2,1,64,400,Pass,384,0,0,,0.8838837146759033
+quantum_teleportation_em3,1,64,400,Pass,384,0,0,,1.3252527713775637
+quantum_teleportation_em4,1,64,400,Pass,384,0,0,,1.4454171657562256
+quantum_teleportation_m0,2,64,400,Fail,387,2,128,Inq0EqualOutq2 & NotTeleportedPlus,2.078517198562622
+quantum_teleportation_m1,2,64,400,Fail,579,2,123,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.196083068847656
+quantum_teleportation_m2,2,64,400,Fail,579,2,120,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.2370078563690186
+quantum_teleportation_m3,2,64,400,Fail,387,2,127,Inq0EqualOutq2 & NotTeleportedPlus,2.0226001739501958
+quantum_teleportation_m4,2,64,400,Fail,768,2,119,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,2.1449131965637207
+quantum_teleportation_m5,2,64,400,Fail,768,2,122,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,2.2239060401916504
+quantum_teleportation_m6,2,64,400,Fail,579,2,110,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.352074384689331
+quantum_teleportation_m7,2,64,400,Fail,387,2,128,Inq0EqualOutq2 & NotTeleportedPlus,2.103904962539673
+quantum_teleportation_m8,2,64,400,Pass,579,0,0,,2.1015408039093018
+quantum_teleportation_m9,2,64,400,Pass,768,0,0,,2.4705047607421875
+quantum_teleportation_em0,2,64,400,Pass,579,0,0,,2.407334327697754
+quantum_teleportation_em1,2,64,400,Pass,768,0,0,,2.10296630859375
+quantum_teleportation_em2,2,64,400,Pass,768,0,0,,2.380950689315796
+quantum_teleportation_em3,2,64,400,Pass,579,0,0,,2.1497905254364014
+quantum_teleportation_em4,2,64,400,Fail,579,1,1,UnitaryBeforeAndAfterTeleport,2.365675210952759
+quantum_teleportation_m0,3,64,400,Fail,771,3,187,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.650799036026001
+quantum_teleportation_m1,3,64,400,Fail,771,3,182,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.2803196907043457
+quantum_teleportation_m2,3,64,400,Fail,771,3,183,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.3707170486450195
+quantum_teleportation_m3,3,64,400,Fail,771,3,188,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.322750806808472
+quantum_teleportation_m4,3,64,400,Fail,771,3,178,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.4321539402008057
+quantum_teleportation_m5,3,64,400,Fail,771,3,182,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.439270496368408
+quantum_teleportation_m6,3,64,400,Fail,771,3,180,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.5876271724700928
+quantum_teleportation_m7,3,64,400,Fail,771,3,191,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.664701223373413
+quantum_teleportation_m8,3,64,400,Fail,771,1,1,UnitaryBeforeAndAfterTeleport,3.232416868209839
+quantum_teleportation_m9,3,64,400,Fail,771,1,64,NotTeleportedPlus,3.7918777465820312
+quantum_teleportation_em0,3,64,400,Pass,771,0,0,,3.5694892406463623
+quantum_teleportation_em1,3,64,400,Pass,771,0,0,,3.2835795879364014
+quantum_teleportation_em2,3,64,400,Pass,771,0,0,,3.5686049461364746
+quantum_teleportation_em3,3,64,400,Pass,771,0,0,,3.221169948577881
+quantum_teleportation_em4,3,64,400,Pass,771,0,0,,3.612718105316162
+quantum_teleportation_m0,1,64,800,Fail,384,1,62,UnitaryBeforeAndAfterTeleport,1.8701884746551516
+quantum_teleportation_m1,1,64,800,Fail,195,1,64,NotTeleportedPlus,0.9800539016723632
+quantum_teleportation_m2,1,64,800,Fail,195,1,64,NotTeleportedPlus,1.066783428192139
+quantum_teleportation_m3,1,64,800,Fail,384,1,64,UnitaryBeforeAndAfterTeleport,1.5961861610412598
+quantum_teleportation_m4,1,64,800,Fail,384,1,58,UnitaryBeforeAndAfterTeleport,1.6238970756530762
+quantum_teleportation_m5,1,64,800,Fail,195,1,64,NotTeleportedPlus,1.1161222457885742
+quantum_teleportation_m6,1,64,800,Fail,384,1,64,Inq0EqualOutq2,1.0727262496948242
+quantum_teleportation_m7,1,64,800,Fail,384,1,64,UnitaryBeforeAndAfterTeleport,1.8291563987731931
+quantum_teleportation_m8,1,64,800,Pass,384,0,0,,1.0398836135864258
+quantum_teleportation_m9,1,64,800,Pass,384,0,0,,1.123676300048828
+quantum_teleportation_em0,1,64,800,Pass,384,0,0,,1.7233343124389648
+quantum_teleportation_em1,1,64,800,Pass,384,0,0,,1.061004638671875
+quantum_teleportation_em2,1,64,800,Pass,384,0,0,,1.6839587688446045
+quantum_teleportation_em3,1,64,800,Pass,384,0,0,,1.0918927192687988
+quantum_teleportation_em4,1,64,800,Pass,384,0,0,,1.7002058029174805
+quantum_teleportation_m0,2,64,800,Fail,579,2,124,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.927175521850586
+quantum_teleportation_m1,2,64,800,Fail,387,2,127,Inq0EqualOutq2 & NotTeleportedPlus,2.273325204849243
+quantum_teleportation_m2,2,64,800,Fail,579,2,123,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.675408124923706
+quantum_teleportation_m3,2,64,800,Fail,579,2,125,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.569699287414551
+quantum_teleportation_m4,2,64,800,Fail,768,2,118,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,2.6738102436065674
+quantum_teleportation_m5,2,64,800,Fail,579,2,125,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,2.7785701751708984
+quantum_teleportation_m6,2,64,800,Fail,387,2,128,Inq0EqualOutq2 & NotTeleportedPlus,2.327831029891968
+quantum_teleportation_m7,2,64,800,Fail,387,2,124,Inq0EqualOutq2 & NotTeleportedPlus,2.4471776485443115
+quantum_teleportation_m8,2,64,800,Pass,387,0,0,,2.2294607162475586
+quantum_teleportation_m9,2,64,800,Fail,579,1,64,NotTeleportedPlus,3.047001600265503
+quantum_teleportation_em0,2,64,800,Pass,387,0,0,,2.385524034500122
+quantum_teleportation_em1,2,64,800,Pass,579,0,0,,2.549050092697144
+quantum_teleportation_em2,2,64,800,Pass,579,0,0,,2.76417875289917
+quantum_teleportation_em3,2,64,800,Pass,768,0,0,,2.621783971786499
+quantum_teleportation_em4,2,64,800,Pass,387,0,0,,2.380998373031616
+quantum_teleportation_m0,3,64,800,Fail,771,3,191,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.089620351791382
+quantum_teleportation_m1,3,64,800,Fail,771,3,187,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.881659984588623
+quantum_teleportation_m2,3,64,800,Fail,771,3,186,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.84981107711792
+quantum_teleportation_m3,3,64,800,Fail,771,3,191,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.877004384994507
+quantum_teleportation_m4,3,64,800,Fail,771,3,187,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,3.8826146125793457
+quantum_teleportation_m5,3,64,800,Fail,771,3,186,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.132404088973999
+quantum_teleportation_m6,3,64,800,Fail,771,3,183,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.042513847351074
+quantum_teleportation_m7,3,64,800,Fail,771,3,192,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,4.2451019287109375
+quantum_teleportation_m8,3,64,800,Pass,771,0,0,,3.8376693725585938
+quantum_teleportation_m9,3,64,800,Fail,771,1,64,NotTeleportedPlus,4.249115228652954
+quantum_teleportation_em0,3,64,800,Pass,771,0,0,,4.163392543792725
+quantum_teleportation_em1,3,64,800,Pass,771,0,0,,3.770271062850952
+quantum_teleportation_em2,3,64,800,Fail,771,1,1,UnitaryBeforeAndAfterTeleport,4.135755300521851
+quantum_teleportation_em3,3,64,800,Pass,771,0,0,,3.7753427028656006
+quantum_teleportation_em4,3,64,800,Pass,771,0,0,,4.144442558288574
+quantum_teleportation_m0,1,8,1600,Fail,48,1,8,Inq0EqualOutq2,0.2080950736999511
+quantum_teleportation_m1,1,8,1600,Fail,48,1,7,UnitaryBeforeAndAfterTeleport,0.3039107322692871
+quantum_teleportation_m2,1,8,1600,Fail,48,1,8,Inq0EqualOutq2,0.2001988887786865
+quantum_teleportation_m3,1,8,1600,Fail,27,1,8,NotTeleportedPlus,0.1965618133544922
+quantum_teleportation_m4,1,8,1600,Fail,48,1,8,Inq0EqualOutq2,0.2572760581970215
+quantum_teleportation_m5,1,8,1600,Fail,48,1,8,Inq0EqualOutq2,0.2194817066192627
+quantum_teleportation_m6,1,8,1600,Fail,27,1,8,NotTeleportedPlus,0.2134487628936767
+quantum_teleportation_m7,1,8,1600,Fail,27,1,8,NotTeleportedPlus,0.1909286975860595
+quantum_teleportation_m8,1,8,1600,Fail,48,1,1,UnitaryBeforeAndAfterTeleport,0.2855482101440429
+quantum_teleportation_m9,1,8,1600,Fail,27,1,8,NotTeleportedPlus,0.2028000354766845
+quantum_teleportation_em0,1,8,1600,Pass,48,0,0,,0.208348274230957
+quantum_teleportation_em1,1,8,1600,Pass,48,0,0,,0.2672467231750488
+quantum_teleportation_em2,1,8,1600,Pass,48,0,0,,0.2243156433105468
+quantum_teleportation_em3,1,8,1600,Pass,48,0,0,,0.3011093139648437
+quantum_teleportation_em4,1,8,1600,Pass,27,0,0,,0.1824164390563964
+quantum_teleportation_m0,2,8,1600,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4691123962402344
+quantum_teleportation_m1,2,8,1600,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.3702132701873779
+quantum_teleportation_m2,2,8,1600,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.4129900932312011
+quantum_teleportation_m3,2,8,1600,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4249591827392578
+quantum_teleportation_m4,2,8,1600,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4848020076751709
+quantum_teleportation_m5,2,8,1600,Fail,96,2,16,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.4741494655609131
+quantum_teleportation_m6,2,8,1600,Fail,96,2,16,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.4686963558197021
+quantum_teleportation_m7,2,8,1600,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.4313607215881347
+quantum_teleportation_m8,2,8,1600,Pass,75,0,0,,0.4175386428833008
+quantum_teleportation_m9,2,8,1600,Fail,51,1,8,NotTeleportedPlus,0.3868563175201416
+quantum_teleportation_em0,2,8,1600,Pass,96,0,0,,0.5434257984161377
+quantum_teleportation_em1,2,8,1600,Pass,51,0,0,,0.3561768531799316
+quantum_teleportation_em2,2,8,1600,Pass,75,0,0,,0.4472744464874267
+quantum_teleportation_em3,2,8,1600,Pass,75,0,0,,0.480065107345581
+quantum_teleportation_em4,2,8,1600,Pass,96,0,0,,0.4826939105987549
+quantum_teleportation_m0,3,8,1600,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.7090308666229248
+quantum_teleportation_m1,3,8,1600,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6073544025421143
+quantum_teleportation_m2,3,8,1600,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6668124198913574
+quantum_teleportation_m3,3,8,1600,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6009542942047119
+quantum_teleportation_m4,3,8,1600,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6638860702514648
+quantum_teleportation_m5,3,8,1600,Fail,99,3,23,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6338469982147217
+quantum_teleportation_m6,3,8,1600,Fail,99,3,23,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6801707744598389
+quantum_teleportation_m7,3,8,1600,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6540248394012451
+quantum_teleportation_m8,3,8,1600,Pass,99,0,0,,0.6440157890319824
+quantum_teleportation_m9,3,8,1600,Fail,99,1,8,NotTeleportedPlus,0.6664555072784424
+quantum_teleportation_em0,3,8,1600,Pass,99,0,0,,0.6846308708190918
+quantum_teleportation_em1,3,8,1600,Pass,99,0,0,,0.6004068851470947
+quantum_teleportation_em2,3,8,1600,Pass,99,0,0,,0.6859066486358643
+quantum_teleportation_em3,3,8,1600,Pass,99,0,0,,0.5985989570617676
+quantum_teleportation_em4,3,8,1600,Fail,99,1,1,NotTeleportedPlus,0.6891233921051025
+quantum_teleportation_m0,1,8,200,Fail,27,1,8,NotTeleportedPlus,0.1260144710540771
+quantum_teleportation_m1,1,8,200,Fail,48,1,7,UnitaryBeforeAndAfterTeleport,0.1858935356140136
+quantum_teleportation_m2,1,8,200,Fail,48,1,8,Inq0EqualOutq2,0.095700979232788
+quantum_teleportation_m3,1,8,200,Fail,27,1,8,NotTeleportedPlus,0.1387941837310791
+quantum_teleportation_m4,1,8,200,Fail,48,1,8,Inq0EqualOutq2,0.1047403812408447
+quantum_teleportation_m5,1,8,200,Fail,27,1,8,NotTeleportedPlus,0.1473448276519775
+quantum_teleportation_m6,1,8,200,Fail,48,1,6,UnitaryBeforeAndAfterTeleport,0.2506158351898193
+quantum_teleportation_m7,1,8,200,Fail,48,1,8,Inq0EqualOutq2,0.1063058376312255
+quantum_teleportation_m8,1,8,200,Pass,48,0,0,,0.1753902435302734
+quantum_teleportation_m9,1,8,200,Pass,48,0,0,,0.2117421627044677
+quantum_teleportation_em0,1,8,200,Pass,27,0,0,,0.1170024871826171
+quantum_teleportation_em1,1,8,200,Pass,48,0,0,,0.1007113456726074
+quantum_teleportation_em2,1,8,200,Pass,27,0,0,,0.1838710308074951
+quantum_teleportation_em3,1,8,200,Pass,48,0,0,,0.1799066066741943
+quantum_teleportation_em4,1,8,200,Pass,27,0,0,,0.1284325122833252
+quantum_teleportation_m0,2,8,200,Fail,75,2,15,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2976558208465576
+quantum_teleportation_m1,2,8,200,Fail,75,2,14,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.2693433761596679
+quantum_teleportation_m2,2,8,200,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3177483081817627
+quantum_teleportation_m3,2,8,200,Fail,96,2,16,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.2445344924926757
+quantum_teleportation_m4,2,8,200,Fail,75,2,15,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.270209789276123
+quantum_teleportation_m5,2,8,200,Fail,96,2,12,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.3086037635803222
+quantum_teleportation_m6,2,8,200,Fail,96,2,11,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.2628986835479736
+quantum_teleportation_m7,2,8,200,Fail,96,2,16,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.2950408458709717
+quantum_teleportation_m8,2,8,200,Pass,75,0,0,,0.3018577098846435
+quantum_teleportation_m9,2,8,200,Fail,75,1,8,NotTeleportedPlus,0.3140645027160644
+quantum_teleportation_em0,2,8,200,Pass,51,0,0,,0.254514217376709
+quantum_teleportation_em1,2,8,200,Pass,75,0,0,,0.3084497451782226
+quantum_teleportation_em2,2,8,200,Pass,75,0,0,,0.2770376205444336
+quantum_teleportation_em3,2,8,200,Pass,96,0,0,,0.2440900802612304
+quantum_teleportation_em4,2,8,200,Pass,51,0,0,,0.3080143928527832
+quantum_teleportation_m0,3,8,200,Fail,99,3,23,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4336318969726562
+quantum_teleportation_m1,3,8,200,Fail,99,3,23,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4350433349609375
+quantum_teleportation_m2,3,8,200,Fail,99,3,21,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3907432556152344
+quantum_teleportation_m3,3,8,200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4340701103210449
+quantum_teleportation_m4,3,8,200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3925309181213379
+quantum_teleportation_m5,3,8,200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.450951337814331
+quantum_teleportation_m6,3,8,200,Fail,99,3,20,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4015121459960937
+quantum_teleportation_m7,3,8,200,Fail,99,3,23,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4834229946136474
+quantum_teleportation_m8,3,8,200,Pass,99,0,0,,0.3724737167358398
+quantum_teleportation_m9,3,8,200,Fail,99,1,8,NotTeleportedPlus,0.4940977096557617
+quantum_teleportation_em0,3,8,200,Pass,99,0,0,,0.454831600189209
+quantum_teleportation_em1,3,8,200,Pass,99,0,0,,0.3721456527709961
+quantum_teleportation_em2,3,8,200,Pass,99,0,0,,0.452094554901123
+quantum_teleportation_em3,3,8,200,Pass,99,0,0,,0.3763117790222168
+quantum_teleportation_em4,3,8,200,Pass,99,0,0,,0.4594268798828125
+quantum_teleportation_m0,1,8,3200,Fail,48,1,8,UnitaryBeforeAndAfterTeleport,0.4252595901489258
+quantum_teleportation_m1,1,8,3200,Fail,48,1,8,Inq0EqualOutq2,0.3060181140899658
+quantum_teleportation_m2,1,8,3200,Fail,48,1,8,Inq0EqualOutq2,0.3230133056640625
+quantum_teleportation_m3,1,8,3200,Fail,27,1,8,NotTeleportedPlus,0.2520279884338379
+quantum_teleportation_m4,1,8,3200,Fail,48,1,8,Inq0EqualOutq2,0.3040318489074707
+quantum_teleportation_m5,1,8,3200,Fail,27,1,8,NotTeleportedPlus,0.313101053237915
+quantum_teleportation_m6,1,8,3200,Fail,48,1,7,UnitaryBeforeAndAfterTeleport,0.4152240753173828
+quantum_teleportation_m7,1,8,3200,Fail,27,1,8,NotTeleportedPlus,0.2428281307220459
+quantum_teleportation_m8,1,8,3200,Fail,48,1,1,UnitaryBeforeAndAfterTeleport,0.397810697555542
+quantum_teleportation_m9,1,8,3200,Fail,27,1,8,NotTeleportedPlus,0.251542329788208
+quantum_teleportation_em0,1,8,3200,Pass,48,0,0,,0.3176355361938476
+quantum_teleportation_em1,1,8,3200,Pass,48,0,0,,0.454024076461792
+quantum_teleportation_em2,1,8,3200,Pass,48,0,0,,0.3151426315307617
+quantum_teleportation_em3,1,8,3200,Pass,48,0,0,,0.3259737491607666
+quantum_teleportation_em4,1,8,3200,Pass,27,0,0,,0.2572424411773681
+quantum_teleportation_m0,2,8,3200,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6237533092498779
+quantum_teleportation_m1,2,8,3200,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.4682254791259765
+quantum_teleportation_m2,2,8,3200,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.5366480350494385
+quantum_teleportation_m3,2,8,3200,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.4766263961791992
+quantum_teleportation_m4,2,8,3200,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.6040151119232178
+quantum_teleportation_m5,2,8,3200,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.683100700378418
+quantum_teleportation_m6,2,8,3200,Fail,96,2,16,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.709014892578125
+quantum_teleportation_m7,2,8,3200,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.4879956245422363
+quantum_teleportation_m8,2,8,3200,Pass,96,0,0,,0.7403049468994141
+quantum_teleportation_m9,2,8,3200,Pass,96,0,0,,0.7359981536865234
+quantum_teleportation_em0,2,8,3200,Pass,96,0,0,,0.7083837985992432
+quantum_teleportation_em1,2,8,3200,Fail,96,1,1,UnitaryBeforeAndAfterTeleport,0.7334718704223633
+quantum_teleportation_em2,2,8,3200,Pass,96,0,0,,0.7111082077026367
+quantum_teleportation_em3,2,8,3200,Fail,75,1,2,UnitaryBeforeAndAfterTeleport,0.588172435760498
+quantum_teleportation_em4,2,8,3200,Pass,96,0,0,,0.769902229309082
+quantum_teleportation_m0,3,8,3200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8738224506378174
+quantum_teleportation_m1,3,8,3200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8808450698852539
+quantum_teleportation_m2,3,8,3200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8437812328338623
+quantum_teleportation_m3,3,8,3200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.876610279083252
+quantum_teleportation_m4,3,8,3200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8423526287078857
+quantum_teleportation_m5,3,8,3200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9042191505432128
+quantum_teleportation_m6,3,8,3200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.8711447715759277
+quantum_teleportation_m7,3,8,3200,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.9135453701019288
+quantum_teleportation_m8,3,8,3200,Pass,99,0,0,,0.8190908432006836
+quantum_teleportation_m9,3,8,3200,Fail,99,1,8,NotTeleportedPlus,0.9367761611938475
+quantum_teleportation_em0,3,8,3200,Pass,99,0,0,,0.8666322231292725
+quantum_teleportation_em1,3,8,3200,Pass,99,0,0,,0.8813223838806152
+quantum_teleportation_em2,3,8,3200,Pass,99,0,0,,0.9103007316589355
+quantum_teleportation_em3,3,8,3200,Pass,99,0,0,,0.8375711441040039
+quantum_teleportation_em4,3,8,3200,Pass,99,0,0,,0.9171385765075684
+quantum_teleportation_m0,1,8,400,Fail,27,1,8,NotTeleportedPlus,0.1443212032318115
+quantum_teleportation_m1,1,8,400,Fail,27,1,8,NotTeleportedPlus,0.1905381679534912
+quantum_teleportation_m2,1,8,400,Fail,27,1,8,NotTeleportedPlus,0.1357538700103759
+quantum_teleportation_m3,1,8,400,Fail,48,1,7,UnitaryBeforeAndAfterTeleport,0.1892707347869873
+quantum_teleportation_m4,1,8,400,Fail,48,1,8,Inq0EqualOutq2,0.1176822185516357
+quantum_teleportation_m5,1,8,400,Fail,27,1,8,NotTeleportedPlus,0.1577999591827392
+quantum_teleportation_m6,1,8,400,Fail,48,1,8,Inq0EqualOutq2,0.1157495975494384
+quantum_teleportation_m7,1,8,400,Fail,27,1,8,NotTeleportedPlus,0.1661798954010009
+quantum_teleportation_m8,1,8,400,Pass,48,0,0,,0.2336249351501464
+quantum_teleportation_m9,1,8,400,Pass,48,0,0,,0.2359073162078857
+quantum_teleportation_em0,1,8,400,Pass,27,0,0,,0.1287722587585449
+quantum_teleportation_em1,1,8,400,Pass,48,0,0,,0.1968791484832763
+quantum_teleportation_em2,1,8,400,Pass,48,0,0,,0.1208271980285644
+quantum_teleportation_em3,1,8,400,Pass,27,0,0,,0.1412727832794189
+quantum_teleportation_em4,1,8,400,Pass,48,0,0,,0.263108491897583
+quantum_teleportation_m0,2,8,400,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.388451337814331
+quantum_teleportation_m1,2,8,400,Fail,96,2,15,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.2804462909698486
+quantum_teleportation_m2,2,8,400,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.2710752487182617
+quantum_teleportation_m3,2,8,400,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.3224923610687256
+quantum_teleportation_m4,2,8,400,Fail,51,2,15,Inq0EqualOutq2 & NotTeleportedPlus,0.2711148262023926
+quantum_teleportation_m5,2,8,400,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.2808897495269775
+quantum_teleportation_m6,2,8,400,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.2775709629058838
+quantum_teleportation_m7,2,8,400,Fail,96,2,16,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.3801600933074951
+quantum_teleportation_m8,2,8,400,Pass,51,0,0,,0.2639126777648926
+quantum_teleportation_m9,2,8,400,Fail,75,1,8,NotTeleportedPlus,0.3977499008178711
+quantum_teleportation_em0,2,8,400,Pass,51,0,0,,0.2774224281311035
+quantum_teleportation_em1,2,8,400,Pass,51,0,0,,0.2582573890686035
+quantum_teleportation_em2,2,8,400,Pass,51,0,0,,0.3272092342376709
+quantum_teleportation_em3,2,8,400,Pass,75,0,0,,0.2794239521026611
+quantum_teleportation_em4,2,8,400,Pass,51,0,0,,0.2800254821777344
+quantum_teleportation_m0,3,8,400,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5148699283599854
+quantum_teleportation_m1,3,8,400,Fail,99,3,21,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.418550968170166
+quantum_teleportation_m2,3,8,400,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4741003513336181
+quantum_teleportation_m3,3,8,400,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4207160472869873
+quantum_teleportation_m4,3,8,400,Fail,99,3,22,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4785845279693603
+quantum_teleportation_m5,3,8,400,Fail,99,3,23,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4468674659729004
+quantum_teleportation_m6,3,8,400,Fail,99,3,21,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4891455173492431
+quantum_teleportation_m7,3,8,400,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4709012508392334
+quantum_teleportation_m8,3,8,400,Pass,99,0,0,,0.4604384899139404
+quantum_teleportation_m9,3,8,400,Fail,99,1,8,NotTeleportedPlus,0.4639606475830078
+quantum_teleportation_em0,3,8,400,Pass,99,0,0,,0.4894776344299316
+quantum_teleportation_em1,3,8,400,Pass,99,0,0,,0.4574775695800781
+quantum_teleportation_em2,3,8,400,Pass,99,0,0,,0.4455869197845459
+quantum_teleportation_em3,3,8,400,Pass,99,0,0,,0.4679982662200928
+quantum_teleportation_em4,3,8,400,Pass,99,0,0,,0.4519853591918945
+quantum_teleportation_m0,1,8,800,Fail,48,1,8,Inq0EqualOutq2,0.1541159152984619
+quantum_teleportation_m1,1,8,800,Fail,27,1,8,NotTeleportedPlus,0.1693558692932129
+quantum_teleportation_m2,1,8,800,Fail,48,1,8,Inq0EqualOutq2,0.1462938785552978
+quantum_teleportation_m3,1,8,800,Fail,48,1,8,UnitaryBeforeAndAfterTeleport,0.2865562438964844
+quantum_teleportation_m4,1,8,800,Fail,48,1,8,UnitaryBeforeAndAfterTeleport,0.2398455142974853
+quantum_teleportation_m5,1,8,800,Fail,48,1,8,UnitaryBeforeAndAfterTeleport,0.2388410568237304
+quantum_teleportation_m6,1,8,800,Fail,27,1,8,NotTeleportedPlus,0.1637680530548095
+quantum_teleportation_m7,1,8,800,Fail,48,1,8,Inq0EqualOutq2,0.1545298099517822
+quantum_teleportation_m8,1,8,800,Pass,48,0,0,,0.1618702411651611
+quantum_teleportation_m9,1,8,800,Fail,27,1,8,NotTeleportedPlus,0.2395334243774414
+quantum_teleportation_em0,1,8,800,Pass,48,0,0,,0.2377254962921142
+quantum_teleportation_em1,1,8,800,Pass,48,0,0,,0.1478207111358642
+quantum_teleportation_em2,1,8,800,Pass,27,0,0,,0.1653614044189453
+quantum_teleportation_em3,1,8,800,Pass,27,0,0,,0.1508467197418213
+quantum_teleportation_em4,1,8,800,Pass,27,0,0,,0.1568610668182373
+quantum_teleportation_m0,2,8,800,Fail,75,2,15,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3805141448974609
+quantum_teleportation_m1,2,8,800,Fail,96,2,16,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.4038023948669433
+quantum_teleportation_m2,2,8,800,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.3527719974517822
+quantum_teleportation_m3,2,8,800,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.3054287433624267
+quantum_teleportation_m4,2,8,800,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.353799819946289
+quantum_teleportation_m5,2,8,800,Fail,96,2,16,Inq0EqualOutq2 & UnitaryBeforeAndAfterTeleport,0.3526496887207031
+quantum_teleportation_m6,2,8,800,Fail,51,2,16,Inq0EqualOutq2 & NotTeleportedPlus,0.3151712417602539
+quantum_teleportation_m7,2,8,800,Fail,75,2,16,NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4334661960601806
+quantum_teleportation_m8,2,8,800,Pass,96,0,0,,0.3390171527862549
+quantum_teleportation_m9,2,8,800,Pass,96,0,0,,0.3884069919586181
+quantum_teleportation_em0,2,8,800,Pass,96,0,0,,0.4264025688171386
+quantum_teleportation_em1,2,8,800,Pass,75,0,0,,0.3356785774230957
+quantum_teleportation_em2,2,8,800,Pass,51,0,0,,0.3143258094787597
+quantum_teleportation_em3,2,8,800,Pass,96,0,0,,0.396435022354126
+quantum_teleportation_em4,2,8,800,Fail,75,1,1,UnitaryBeforeAndAfterTeleport,0.3581798076629638
+quantum_teleportation_m0,3,8,800,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5868580341339111
+quantum_teleportation_m1,3,8,800,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4879024028778076
+quantum_teleportation_m2,3,8,800,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5404226779937744
+quantum_teleportation_m3,3,8,800,Fail,99,3,23,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.4778535366058349
+quantum_teleportation_m4,3,8,800,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5575752258300781
+quantum_teleportation_m5,3,8,800,Fail,99,3,23,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5084891319274902
+quantum_teleportation_m6,3,8,800,Fail,99,3,22,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5700514316558838
+quantum_teleportation_m7,3,8,800,Fail,99,3,24,Inq0EqualOutq2 & NotTeleportedPlus & UnitaryBeforeAndAfterTeleport,0.5308115482330322
+quantum_teleportation_m8,3,8,800,Pass,99,0,0,,0.5250382423400879
+quantum_teleportation_m9,3,8,800,Fail,99,1,8,NotTeleportedPlus,0.5381073951721191
+quantum_teleportation_em0,3,8,800,Pass,99,0,0,,0.5588779449462891
+quantum_teleportation_em1,3,8,800,Pass,99,0,0,,0.4791078567504883
+quantum_teleportation_em2,3,8,800,Pass,99,0,0,,0.5649378299713135
+quantum_teleportation_em3,3,8,800,Pass,99,0,0,,0.4753706455230713
+quantum_teleportation_em4,3,8,800,Pass,99,0,0,,0.5734767913818359

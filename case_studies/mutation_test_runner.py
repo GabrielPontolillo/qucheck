@@ -3,6 +3,7 @@ import csv
 import time
 import sys
 import os
+import pandas as pd
 from unittest.mock import patch
 from qucheck.coordinator import Coordinator
 from qucheck.test_runner import TestRunner
@@ -32,7 +33,7 @@ def cleanup_test_runner():
     gc.collect()  # Force garbage collection
 
 
-def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index, run_optimization=True,
+def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index, number_of_properties, run_optimization=True,
                     csvwriter=None):
     mutant_name = f"{algorithm_name}_{mutant_type}{index}"
 
@@ -51,10 +52,10 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
             statevector_parallel_threshold = 8
         )
 
-        coordinator = Coordinator(num_inputs, 1, backend=backend)
+        coordinator = Coordinator(num_inputs, backend=backend)
 
         start = time.time()
-        result = coordinator.test(f"{PATH}/{algorithm_name}", measurements, run_optimization=run_optimization)
+        result = coordinator.test(f"{PATH}/{algorithm_name}", measurements, run_optimization=run_optimization, number_of_properties=number_of_properties)
         end = time.time()
 
         num_circuits_executed = result.number_circuits_executed
@@ -70,7 +71,7 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
         num_failed_properties = len(failed_properties)
         outcome = "Fail" if num_failed_properties > 0 else "Pass"
 
-        result_row = [mutant_name, str(outcome), str(num_circuits_executed), str(num_unique_failed_properties),
+        result_row = [mutant_name, number_of_properties, num_inputs, measurements, str(outcome), str(num_circuits_executed), str(num_unique_failed_properties),
                       str(num_failed_properties), str(failed_property_string), str(end - start)]
 
         if csvwriter:
@@ -81,26 +82,27 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
 
 
 def test_and_store(algorithm_name, optimisation):
-    inputs = [100, 50, 25]
-    shots = [2000, 1000, 500]
+    inputs = [64, 32, 16, 8, 4]
+    shots = [3200, 1600, 800, 400, 200]
+    number_of_properties_list = [3, 2, 1]
     for input_val in inputs:
         for measurements in shots:
-            print(f"number of inputs: {input_val}, number of measurements: {measurements}")
-            filename = f"mutation_test_results/{algorithm_name}/{algorithm_name}_{input_val}_{measurements}_mt_results.csv"
-            dir_path = os.path.dirname(filename)
-            if dir_path and not os.path.exists(dir_path):
-                os.makedirs(dir_path)
-            with open(filename, 'w', newline='') as csvfile:
-                csvwriter = csv.writer(csvfile)
-                csvwriter.writerow(["Mutant Name", "Result", "Number of Circuits Executed", "Number of Unique Failed Properties", "Number of Failed Properties", "Unique Failed Properties", "Time Taken"])
+            for number_of_properties in number_of_properties_list:
+                print(f"number of inputs: {input_val}, number of measurements: {measurements}, number of properties: {number_of_properties}")
+                filename = f"mutation_test_results/{algorithm_name}/{algorithm_name}_{input_val}_{measurements}_{number_of_properties}_mt_results.csv"
+                dir_path = os.path.dirname(filename)
+                if dir_path and not os.path.exists(dir_path):
+                    os.makedirs(dir_path)
+                with open(filename, 'w', newline='') as csvfile:
+                    csvwriter = csv.writer(csvfile)
+                    csvwriter.writerow(["Mutant Name", "Number of Properties", "Number of Inputs", "Number of Measurements", "Result", "Number of Circuits Executed", "Number of Unique Failed Properties", "Number of Failed Properties", "Unique Failed Properties", "Time Taken"])
+                    # Run tests for regular mutants
+                    for i in range(10):
+                        run_single_test(algorithm_name, input_val, measurements, "m", i, number_of_properties, run_optimization=optimisation, csvwriter=csvwriter)
 
-                # Run tests for regular mutants
-                for i in range(10):
-                    run_single_test(algorithm_name, input_val, measurements, "m", i, run_optimization=optimisation, csvwriter=csvwriter)
-
-                # Run tests for equivalent mutants
-                for i in range(5):
-                    run_single_test(algorithm_name, input_val, measurements, "em", i, run_optimization=optimisation, csvwriter=csvwriter)
+                    # Run tests for equivalent mutants
+                    for i in range(5):
+                        run_single_test(algorithm_name, input_val, measurements, "em", i, number_of_properties, run_optimization=optimisation, csvwriter=csvwriter)
 
 
 def reload_classes(folder_path):
@@ -112,5 +114,37 @@ def reload_classes(folder_path):
     sys.path.pop(0)
 
 
+def merge_csv_files(algorithm_name):
+    # Define the directory where the CSV files are stored
+    directory = f"mutation_test_results/{algorithm_name}/"
+
+    # Get all CSV files in the directory
+    all_files = [os.path.join(directory, f) for f in os.listdir(directory) if
+                 f.endswith('.csv') and f != f"{algorithm_name}_merged_results.csv"]
+
+    # Read and combine all CSV files
+    dataframes = []
+    for file in all_files:
+        df = pd.read_csv(file)
+        dataframes.append(df)
+
+    # Merge all dataframes
+    if dataframes:
+        merged_df = pd.concat(dataframes, ignore_index=True)
+
+        # Save the merged results
+        merged_filename = os.path.join(directory, f"{algorithm_name}_merged_results.csv")
+        merged_df.to_csv(merged_filename, index=False)
+        print(f"Merged results saved to {merged_filename}")
+
+        # Delete individual CSV files
+        for file in all_files:
+            os.remove(file)
+            print(f"Deleted: {file}")
+    else:
+        print(f"No CSV files found in {directory}")
+
+
 # Run the test
-test_and_store("quantum_teleportation", True)
+test_and_store("deutsch_jozsa", True)
+merge_csv_files("deutsch_jozsa")
