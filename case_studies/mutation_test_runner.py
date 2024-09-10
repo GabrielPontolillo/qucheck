@@ -146,5 +146,5 @@ def merge_csv_files(algorithm_name):
 
 
 # Run the test
-test_and_store("deutsch_jozsa", True)
-merge_csv_files("deutsch_jozsa")
+test_and_store("quantum_fourier_transform", True)
+merge_csv_files("quantum_fourier_transform")
