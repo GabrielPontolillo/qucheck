@@ -1,10 +1,8 @@
 import numpy as np
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit import QuantumCircuit
 
 
 def quantum_phase_estimation(estimation_qubits, unitary_gate, eigenstate_of_unitary):
-    print(estimation_qubits)
-
     qpe = QuantumCircuit(estimation_qubits + unitary_gate.num_qubits, estimation_qubits + unitary_gate.num_qubits)
 
     # initialise the unitary register to the specified eigenvector of U
@@ -42,7 +40,7 @@ def qft_general(qubits, swap=True):
             control_index = qubit + offset
             target_index = qubit
             rotation_amount = (np.pi / 2 ** offset)
-            qft.cswap(rotation_amount, control_index, target_index)  # here
+            qft.rzx(rotation_amount, control_index, target_index) # here
 
     # do swaps
     if swap:

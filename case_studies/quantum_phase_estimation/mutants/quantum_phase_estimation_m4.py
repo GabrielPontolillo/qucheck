@@ -1,5 +1,5 @@
 import numpy as np
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit import QuantumCircuit
 
 
 def quantum_phase_estimation(estimation_qubits, unitary_gate, eigenstate_of_unitary):
@@ -35,14 +35,14 @@ def qft_general(qubits, swap=True):
     # modify phase
     for qubit in range(qubits):
         # insert the initial hadamard gate on all qubits in the register
-        qft.h(qubit)
+        __qmutpy_qgi_func__(qft, qubit)
 
         # iterate across all indexes to get the appropriate controlled gates
         for offset in range(1, qubits - qubit):
             control_index = qubit + offset
             target_index = qubit
             rotation_amount = (np.pi / 2 ** offset)
-            __qmutpy_qgi_func__(qft, rotation_amount, control_index, target_index)  # here
+            qft.cp(rotation_amount, control_index, target_index)
 
     # do swaps
     if swap:
@@ -51,6 +51,7 @@ def qft_general(qubits, swap=True):
     return qft
 
 
-def __qmutpy_qgi_func__(circ, arg1, arg2, arg3):
-    circ.cp(arg1, arg2, arg3)
-    circ.ccx(arg1, arg2, arg3)
+def __qmutpy_qgi_func__(circ, qubit):
+     circ.h(qubit)
+     circ.sdg(qubit)
+

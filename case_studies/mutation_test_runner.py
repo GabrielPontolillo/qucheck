@@ -82,8 +82,8 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
 
 
 def test_and_store(algorithm_name, optimisation):
-    inputs = [64, 32, 16, 8, 4]
-    shots = [3200, 1600, 800, 400, 200]
+    inputs = [64, 32, 16, 8, 4, 2, 1]
+    shots = [3200, 1600, 800, 400, 200, 100, 50]
     number_of_properties_list = [3, 2, 1]
     for input_val in inputs:
         for measurements in shots:
@@ -146,5 +146,5 @@ def merge_csv_files(algorithm_name):
 
 
 # Run the test
-test_and_store("quantum_fourier_transform", True)
-merge_csv_files("quantum_fourier_transform")
+test_and_store("quantum_phase_estimation", True)
+merge_csv_files("quantum_phase_estimation")
