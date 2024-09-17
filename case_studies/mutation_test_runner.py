@@ -82,9 +82,11 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
 
 
 def test_and_store(algorithm_name, optimisation):
-    inputs = [64, 32, 16, 8, 4, 2, 1]
-    shots = [3200, 1600, 800, 400, 200, 100, 50]
-    number_of_properties_list = [3, 2, 1]
+    # inputs = [64, 32, 16, 8, 4, 2, 1]
+    # shots = [3200, 1600, 800, 400, 200, 100, 50]
+    inputs = [64, 32]
+    shots = [3200, 1600]
+    number_of_properties_list = [1]
     for input_val in inputs:
         for measurements in shots:
             for number_of_properties in number_of_properties_list:
@@ -114,13 +116,13 @@ def reload_classes(folder_path):
     sys.path.pop(0)
 
 
-def merge_csv_files(algorithm_name):
+def merge_csv_files(algorithm_name, name_mod=None):
     # Define the directory where the CSV files are stored
     directory = f"mutation_test_results/{algorithm_name}/"
 
     # Get all CSV files in the directory
     all_files = [os.path.join(directory, f) for f in os.listdir(directory) if
-                 f.endswith('.csv') and f != f"{algorithm_name}_merged_results.csv"]
+                 f.endswith('.csv') and not f.endswith("_merged_results.csv")]
 
     # Read and combine all CSV files
     dataframes = []
@@ -133,7 +135,10 @@ def merge_csv_files(algorithm_name):
         merged_df = pd.concat(dataframes, ignore_index=True)
 
         # Save the merged results
-        merged_filename = os.path.join(directory, f"{algorithm_name}_merged_results.csv")
+        if name_mod:
+            merged_filename = os.path.join(directory, f"{algorithm_name}_{name_mod}_merged_results.csv")
+        else:
+            merged_filename = os.path.join(directory, f"{algorithm_name}_merged_results.csv")
         merged_df.to_csv(merged_filename, index=False)
         print(f"Merged results saved to {merged_filename}")
 
@@ -146,5 +151,5 @@ def merge_csv_files(algorithm_name):
 
 
 # Run the test
-test_and_store("quantum_phase_estimation", True)
-merge_csv_files("quantum_phase_estimation")
+test_and_store("quantum_teleportation", True)
+merge_csv_files("quantum_teleportation", name_mod="in_out_eq")
