@@ -1,4 +1,4 @@
-Mutant Name,Result,Time Taken,shots,config,inputs
+Mutant Name,Result,Time Taken,Number of Measurements,config,Number of Inputs
 quantum_teleportation_m0,Fail,0.239,3200,40x80,64
 quantum_teleportation_m1,Fail,0.227,3200,40x80,64
 quantum_teleportation_m2,Pass,9.94,3200,40x80,64
