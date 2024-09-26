@@ -2204,3 +2204,633 @@ deutsch_jozsa_em1,3,8,800,Pass,49,0,0,,0.338710069656372
 deutsch_jozsa_em2,3,8,800,Pass,48,0,0,,0.3556642532348633
 deutsch_jozsa_em3,3,8,800,Pass,48,0,0,,0.3780384063720703
 deutsch_jozsa_em4,3,8,800,Pass,48,0,0,,0.3246967792510986
+deutsch_jozsa_m0,1,16,25,Pass,51,0,0,,0.1477739810943603
+deutsch_jozsa_m1,1,16,25,Pass,21,0,0,,0.1755235195159912
+deutsch_jozsa_m2,1,16,25,Pass,20,0,0,,0.1835138797760009
+deutsch_jozsa_m3,1,16,25,Pass,51,0,0,,0.1928784847259521
+deutsch_jozsa_m4,1,16,25,Pass,51,0,0,,0.1484155654907226
+deutsch_jozsa_m5,1,16,25,Pass,51,0,0,,0.159151554107666
+deutsch_jozsa_m6,1,16,25,Fail,22,1,16,DeutschJozsaWorksForConstantFunction,0.2608046531677246
+deutsch_jozsa_m7,1,16,25,Pass,22,0,0,,0.2986271381378174
+deutsch_jozsa_m8,1,16,25,Fail,51,1,15,DeutschJozsaLowerRegisterMinus,0.1603150367736816
+deutsch_jozsa_m9,1,16,25,Pass,51,0,0,,0.1557099819183349
+deutsch_jozsa_em0,1,16,25,Pass,51,0,0,,0.1698207855224609
+deutsch_jozsa_em1,1,16,25,Pass,22,0,0,,0.2978434562683105
+deutsch_jozsa_em2,1,16,25,Pass,22,0,0,,0.2067751884460449
+deutsch_jozsa_em3,1,16,25,Pass,21,0,0,,0.2304458618164062
+deutsch_jozsa_em4,1,16,25,Pass,22,0,0,,0.2357192039489746
+deutsch_jozsa_m0,2,16,25,Fail,38,2,17,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.49517822265625
+deutsch_jozsa_m1,2,16,25,Pass,38,0,0,,0.3631849288940429
+deutsch_jozsa_m2,2,16,25,Pass,38,0,0,,0.4288172721862793
+deutsch_jozsa_m3,2,16,25,Pass,72,0,0,,0.3677597045898437
+deutsch_jozsa_m4,2,16,25,Pass,72,0,0,,0.3897054195404053
+deutsch_jozsa_m5,2,16,25,Fail,38,1,16,DeutschJozsaWorksForConstantFunction,0.4660425186157226
+deutsch_jozsa_m6,2,16,25,Fail,73,2,32,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.4312694072723388
+deutsch_jozsa_m7,2,16,25,Pass,73,0,0,,0.2998256683349609
+deutsch_jozsa_m8,2,16,25,Fail,72,2,28,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.4375398159027099
+deutsch_jozsa_m9,2,16,25,Pass,73,0,0,,0.3551790714263916
+deutsch_jozsa_em0,2,16,25,Pass,73,0,0,,0.3682072162628174
+deutsch_jozsa_em1,2,16,25,Pass,72,0,0,,0.3347053527832031
+deutsch_jozsa_em2,2,16,25,Pass,73,0,0,,0.3922421932220459
+deutsch_jozsa_em3,2,16,25,Pass,38,0,0,,0.3878049850463867
+deutsch_jozsa_em4,2,16,25,Pass,73,0,0,,0.4228386878967285
+deutsch_jozsa_m0,3,16,25,Fail,89,1,16,DeutschJozsaWorksForConstantFunction,0.6009409427642822
+deutsch_jozsa_m1,3,16,25,Pass,89,0,0,,0.5304741859436035
+deutsch_jozsa_m2,3,16,25,Pass,89,0,0,,0.4832229614257812
+deutsch_jozsa_m3,3,16,25,Fail,89,1,16,DeutschJozsaWorksForConstantFunction,0.6470985412597656
+deutsch_jozsa_m4,3,16,25,Fail,89,2,17,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.5821537971496582
+deutsch_jozsa_m5,3,16,25,Fail,89,1,16,DeutschJozsaWorksForConstantFunction,0.5665290355682373
+deutsch_jozsa_m6,3,16,25,Fail,89,2,32,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.6616132259368896
+deutsch_jozsa_m7,3,16,25,Pass,89,0,0,,0.5126211643218994
+deutsch_jozsa_m8,3,16,25,Fail,88,2,27,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.5767982006072998
+deutsch_jozsa_m9,3,16,25,Fail,89,1,15,DeutschJozsaWorksForConstantFunction,0.6230282783508301
+deutsch_jozsa_em0,3,16,25,Pass,89,0,0,,0.5499134063720703
+deutsch_jozsa_em1,3,16,25,Pass,89,0,0,,0.4539105892181396
+deutsch_jozsa_em2,3,16,25,Pass,89,0,0,,0.556509256362915
+deutsch_jozsa_em3,3,16,25,Pass,89,0,0,,0.5460691452026367
+deutsch_jozsa_em4,3,16,25,Pass,89,0,0,,0.4770863056182861
+deutsch_jozsa_m0,1,1,25,Pass,2,0,0,,0.0125148296356201
+deutsch_jozsa_m1,1,1,25,Pass,2,0,0,,0.0531404018402099
+deutsch_jozsa_m2,1,1,25,Pass,2,0,0,,0.0135233402252197
+deutsch_jozsa_m3,1,1,25,Pass,2,0,0,,0.016878604888916
+deutsch_jozsa_m4,1,1,25,Pass,2,0,0,,0.015578269958496
+deutsch_jozsa_m5,1,1,25,Pass,6,0,0,,0.0137414932250976
+deutsch_jozsa_m6,1,1,25,Fail,2,1,1,DeutschJozsaWorksForConstantFunction,0.0135955810546875
+deutsch_jozsa_m7,1,1,25,Pass,6,0,0,,0.01503586769104
+deutsch_jozsa_m8,1,1,25,Fail,6,1,1,DeutschJozsaLowerRegisterMinus,0.0185270309448242
+deutsch_jozsa_m9,1,1,25,Pass,6,0,0,,0.0155215263366699
+deutsch_jozsa_em0,1,1,25,Pass,2,0,0,,0.0150251388549804
+deutsch_jozsa_em1,1,1,25,Pass,2,0,0,,0.0095219612121582
+deutsch_jozsa_em2,1,1,25,Pass,2,0,0,,0.0140278339385986
+deutsch_jozsa_em3,1,1,25,Pass,2,0,0,,0.0080292224884033
+deutsch_jozsa_em4,1,1,25,Pass,2,0,0,,0.009509801864624
+deutsch_jozsa_m0,2,1,25,Fail,4,1,1,DeutschJozsaWorksForConstantFunction,0.0310518741607666
+deutsch_jozsa_m1,2,1,25,Pass,8,0,0,,0.0185356140136718
+deutsch_jozsa_m2,2,1,25,Pass,8,0,0,,0.0170304775238037
+deutsch_jozsa_m3,2,1,25,Pass,8,0,0,,0.0250320434570312
+deutsch_jozsa_m4,2,1,25,Fail,8,1,1,DeutschJozsaWorksForConstantFunction,0.020608901977539
+deutsch_jozsa_m5,2,1,25,Pass,8,0,0,,0.0255634784698486
+deutsch_jozsa_m6,2,1,25,Fail,4,1,1,DeutschJozsaWorksForConstantFunction,0.0260355472564697
+deutsch_jozsa_m7,2,1,25,Pass,4,0,0,,0.0250332355499267
+deutsch_jozsa_m8,2,1,25,Fail,4,1,1,DeutschJozsaWorksForConstantFunction,0.0313942432403564
+deutsch_jozsa_m9,2,1,25,Pass,8,0,0,,0.0200705528259277
+deutsch_jozsa_em0,2,1,25,Pass,4,0,0,,0.0175104141235351
+deutsch_jozsa_em1,2,1,25,Pass,8,0,0,,0.01802659034729
+deutsch_jozsa_em2,2,1,25,Pass,8,0,0,,0.0255403518676757
+deutsch_jozsa_em3,2,1,25,Pass,8,0,0,,0.0206563472747802
+deutsch_jozsa_em4,2,1,25,Pass,8,0,0,,0.0236639976501464
+deutsch_jozsa_m0,3,1,25,Fail,10,1,1,DeutschJozsaWorksForConstantFunction,0.0362544059753418
+deutsch_jozsa_m1,3,1,25,Pass,9,0,0,,0.0250368118286132
+deutsch_jozsa_m2,3,1,25,Pass,10,0,0,,0.0276088714599609
+deutsch_jozsa_m3,3,1,25,Fail,10,1,1,DeutschJozsaWorksForConstantFunction,0.0932505130767822
+deutsch_jozsa_m4,3,1,25,Fail,10,1,1,DeutschJozsaWorksForConstantFunction,0.0477800369262695
+deutsch_jozsa_m5,3,1,25,Fail,10,1,1,DeutschJozsaWorksForConstantFunction,0.0505659580230712
+deutsch_jozsa_m6,3,1,25,Fail,10,2,2,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.0405807495117187
+deutsch_jozsa_m7,3,1,25,Pass,9,0,0,,0.0315611362457275
+deutsch_jozsa_m8,3,1,25,Fail,10,2,2,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.0409541130065918
+deutsch_jozsa_m9,3,1,25,Fail,9,1,1,DeutschJozsaWorksForConstantFunction,0.0440623760223388
+deutsch_jozsa_em0,3,1,25,Pass,10,0,0,,0.0285420417785644
+deutsch_jozsa_em1,3,1,25,Pass,10,0,0,,0.031670331954956
+deutsch_jozsa_em2,3,1,25,Pass,10,0,0,,0.040057897567749
+deutsch_jozsa_em3,3,1,25,Pass,10,0,0,,0.0460875034332275
+deutsch_jozsa_em4,3,1,25,Pass,9,0,0,,0.0300650596618652
+deutsch_jozsa_m0,1,2,25,Pass,9,0,0,,0.0265336036682128
+deutsch_jozsa_m1,1,2,25,Pass,4,0,0,,0.0305428504943847
+deutsch_jozsa_m2,1,2,25,Pass,4,0,0,,0.0237736701965332
+deutsch_jozsa_m3,1,2,25,Pass,9,0,0,,0.0208706855773925
+deutsch_jozsa_m4,1,2,25,Fail,4,1,2,DeutschJozsaWorksForConstantFunction,0.0269913673400878
+deutsch_jozsa_m5,1,2,25,Fail,4,1,2,DeutschJozsaWorksForConstantFunction,0.0295517444610595
+deutsch_jozsa_m6,1,2,25,Pass,4,0,0,,0.0328598022460937
+deutsch_jozsa_m7,1,2,25,Pass,4,0,0,,0.0165278911590576
+deutsch_jozsa_m8,1,2,25,Fail,4,1,2,DeutschJozsaWorksForConstantFunction,0.024120807647705
+deutsch_jozsa_m9,1,2,25,Pass,4,0,0,,0.0265436172485351
+deutsch_jozsa_em0,1,2,25,Pass,4,0,0,,0.0155513286590576
+deutsch_jozsa_em1,1,2,25,Pass,9,0,0,,0.0217418670654296
+deutsch_jozsa_em2,1,2,25,Pass,3,0,0,,0.0180315971374511
+deutsch_jozsa_em3,1,2,25,Pass,4,0,0,,0.0250122547149658
+deutsch_jozsa_em4,1,2,25,Pass,4,0,0,,0.0232045650482177
+deutsch_jozsa_m0,2,2,25,Fail,13,1,2,DeutschJozsaWorksForConstantFunction,0.0641219615936279
+deutsch_jozsa_m1,2,2,25,Pass,13,0,0,,0.0610933303833007
+deutsch_jozsa_m2,2,2,25,Pass,13,0,0,,0.0485713481903076
+deutsch_jozsa_m3,2,2,25,Pass,13,0,0,,0.0545794963836669
+deutsch_jozsa_m4,2,2,25,Fail,13,1,2,DeutschJozsaWorksForConstantFunction,0.0465688705444335
+deutsch_jozsa_m5,2,2,25,Fail,13,1,2,DeutschJozsaWorksForConstantFunction,0.0511541366577148
+deutsch_jozsa_m6,2,2,25,Fail,13,2,4,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.0615952014923095
+deutsch_jozsa_m7,2,2,25,Pass,13,0,0,,0.0445616245269775
+deutsch_jozsa_m8,2,2,25,Fail,13,1,2,DeutschJozsaLowerRegisterMinus,0.1007771492004394
+deutsch_jozsa_m9,2,2,25,Fail,8,1,2,DeutschJozsaWorksForConstantFunction,0.0698308944702148
+deutsch_jozsa_em0,2,2,25,Pass,7,0,0,,0.0450267791748046
+deutsch_jozsa_em1,2,2,25,Pass,6,0,0,,0.0455703735351562
+deutsch_jozsa_em2,2,2,25,Pass,13,0,0,,0.0395674705505371
+deutsch_jozsa_em3,2,2,25,Pass,7,0,0,,0.0458576679229736
+deutsch_jozsa_em4,2,2,25,Pass,12,0,0,,0.0317168235778808
+deutsch_jozsa_m0,3,2,25,Fail,16,1,2,DeutschJozsaWorksForConstantFunction,0.1432416439056396
+deutsch_jozsa_m1,3,2,25,Pass,15,0,0,,0.0726344585418701
+deutsch_jozsa_m2,3,2,25,Pass,16,0,0,,0.0901415348052978
+deutsch_jozsa_m3,3,2,25,Fail,17,1,2,DeutschJozsaWorksForConstantFunction,0.1076905727386474
+deutsch_jozsa_m4,3,2,25,Fail,16,1,2,DeutschJozsaWorksForConstantFunction,0.0956664085388183
+deutsch_jozsa_m5,3,2,25,Fail,16,1,2,DeutschJozsaWorksForConstantFunction,0.1101958751678466
+deutsch_jozsa_m6,3,2,25,Fail,16,2,4,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.1111869812011718
+deutsch_jozsa_m7,3,2,25,Pass,17,0,0,,0.0816471576690673
+deutsch_jozsa_m8,3,2,25,Fail,16,2,4,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.0901331901550293
+deutsch_jozsa_m9,3,2,25,Fail,16,1,2,DeutschJozsaWorksForConstantFunction,0.1026890277862548
+deutsch_jozsa_em0,3,2,25,Pass,17,0,0,,0.1267237663269043
+deutsch_jozsa_em1,3,2,25,Pass,16,0,0,,0.0696082115173339
+deutsch_jozsa_em2,3,2,25,Pass,16,0,0,,0.0916748046875
+deutsch_jozsa_em3,3,2,25,Pass,16,0,0,,0.0816397666931152
+deutsch_jozsa_em4,3,2,25,Pass,17,0,0,,0.0851414203643798
+deutsch_jozsa_m0,1,32,25,Pass,38,0,0,,0.4696149826049804
+deutsch_jozsa_m1,1,32,25,Pass,38,0,0,,0.3306734561920166
+deutsch_jozsa_m2,1,32,25,Pass,38,0,0,,0.4779417514801025
+deutsch_jozsa_m3,1,32,25,Fail,38,1,32,DeutschJozsaWorksForConstantFunction,0.4568045139312744
+deutsch_jozsa_m4,1,32,25,Pass,38,0,0,,0.5132334232330322
+deutsch_jozsa_m5,1,32,25,Fail,38,1,32,DeutschJozsaWorksForConstantFunction,0.460721492767334
+deutsch_jozsa_m6,1,32,25,Pass,38,0,0,,0.5032491683959961
+deutsch_jozsa_m7,1,32,25,Pass,99,0,0,,0.3252849578857422
+deutsch_jozsa_m8,1,32,25,Fail,99,1,26,DeutschJozsaLowerRegisterMinus,0.3810417652130127
+deutsch_jozsa_m9,1,32,25,Pass,99,0,0,,0.2725419998168945
+deutsch_jozsa_em0,1,32,25,Pass,38,0,0,,0.4729783535003662
+deutsch_jozsa_em1,1,32,25,Pass,38,0,0,,0.3183388710021972
+deutsch_jozsa_em2,1,32,25,Pass,99,0,0,,0.3201684951782226
+deutsch_jozsa_em3,1,32,25,Pass,38,0,0,,0.3588109016418457
+deutsch_jozsa_em4,1,32,25,Pass,99,0,0,,0.2932369709014892
+deutsch_jozsa_m0,2,32,25,Fail,137,1,32,DeutschJozsaWorksForConstantFunction,0.7192399501800537
+deutsch_jozsa_m1,2,32,25,Pass,137,0,0,,0.605212926864624
+deutsch_jozsa_m2,2,32,25,Pass,137,0,0,,0.734081506729126
+deutsch_jozsa_m3,2,32,25,Pass,137,0,0,,0.7423830032348633
+deutsch_jozsa_m4,2,32,25,Fail,70,1,31,DeutschJozsaWorksForConstantFunction,0.9308710098266602
+deutsch_jozsa_m5,2,32,25,Pass,137,0,0,,0.7862327098846436
+deutsch_jozsa_m6,2,32,25,Fail,137,1,32,DeutschJozsaLowerRegisterMinus,0.7947943210601807
+deutsch_jozsa_m7,2,32,25,Pass,137,0,0,,0.6852681636810303
+deutsch_jozsa_m8,2,32,25,Fail,137,2,57,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.7892625331878662
+deutsch_jozsa_m9,2,32,25,Fail,137,1,1,DeutschJozsaWorksForBalancedFunction,0.7628614902496338
+deutsch_jozsa_em0,2,32,25,Pass,137,0,0,,0.6463499069213867
+deutsch_jozsa_em1,2,32,25,Pass,137,0,0,,0.6928198337554932
+deutsch_jozsa_em2,2,32,25,Pass,137,0,0,,0.6582293510437012
+deutsch_jozsa_em3,2,32,25,Pass,70,0,0,,0.7052760124206543
+deutsch_jozsa_em4,2,32,25,Pass,137,0,0,,0.6489894390106201
+deutsch_jozsa_m0,3,32,25,Fail,169,1,32,DeutschJozsaWorksForConstantFunction,1.1574008464813232
+deutsch_jozsa_m1,3,32,25,Pass,169,0,0,,1.0223770141601562
+deutsch_jozsa_m2,3,32,25,Pass,169,0,0,,0.9899537563323976
+deutsch_jozsa_m3,3,32,25,Fail,169,1,31,DeutschJozsaWorksForConstantFunction,1.205681324005127
+deutsch_jozsa_m4,3,32,25,Fail,169,1,32,DeutschJozsaWorksForConstantFunction,1.1538875102996826
+deutsch_jozsa_m5,3,32,25,Fail,169,1,32,DeutschJozsaWorksForConstantFunction,1.1639387607574463
+deutsch_jozsa_m6,3,32,25,Fail,169,3,64,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.233827829360962
+deutsch_jozsa_m7,3,32,25,Pass,169,0,0,,1.0173912048339844
+deutsch_jozsa_m8,3,32,25,Fail,169,3,54,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.2538602352142334
+deutsch_jozsa_m9,3,32,25,Fail,169,2,33,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.1910650730133057
+deutsch_jozsa_em0,3,32,25,Pass,169,0,0,,1.1343541145324707
+deutsch_jozsa_em1,3,32,25,Pass,169,0,0,,1.0247187614440918
+deutsch_jozsa_em2,3,32,25,Pass,169,0,0,,1.0672976970672607
+deutsch_jozsa_em3,3,32,25,Pass,169,0,0,,1.0157816410064695
+deutsch_jozsa_em4,3,32,25,Pass,169,0,0,,1.0864198207855225
+deutsch_jozsa_m0,1,4,25,Pass,7,0,0,,0.0621273517608642
+deutsch_jozsa_m1,1,4,25,Pass,8,0,0,,0.0543382167816162
+deutsch_jozsa_m2,1,4,25,Pass,7,0,0,,0.0300512313842773
+deutsch_jozsa_m3,1,4,25,Pass,7,0,0,,0.0469381809234619
+deutsch_jozsa_m4,1,4,25,Fail,6,1,4,DeutschJozsaWorksForConstantFunction,0.0419387817382812
+deutsch_jozsa_m5,1,4,25,Fail,8,1,4,DeutschJozsaWorksForConstantFunction,0.0579979419708251
+deutsch_jozsa_m6,1,4,25,Fail,7,1,4,DeutschJozsaWorksForConstantFunction,0.0710971355438232
+deutsch_jozsa_m7,1,4,25,Pass,6,0,0,,0.0275335311889648
+deutsch_jozsa_m8,1,4,25,Pass,7,0,0,,0.0427167415618896
+deutsch_jozsa_m9,1,4,25,Pass,8,0,0,,0.0522389411926269
+deutsch_jozsa_em0,1,4,25,Pass,6,0,0,,0.0554723739624023
+deutsch_jozsa_em1,1,4,25,Pass,6,0,0,,0.0455691814422607
+deutsch_jozsa_em2,1,4,25,Pass,6,0,0,,0.0498027801513671
+deutsch_jozsa_em3,1,4,25,Pass,7,0,0,,0.0477032661437988
+deutsch_jozsa_em4,1,4,25,Pass,15,0,0,,0.0438809394836425
+deutsch_jozsa_m0,2,4,25,Fail,21,1,4,DeutschJozsaWorksForConstantFunction,0.1237142086029052
+deutsch_jozsa_m1,2,4,25,Pass,22,0,0,,0.0896661281585693
+deutsch_jozsa_m2,2,4,25,Pass,22,0,0,,0.0986709594726562
+deutsch_jozsa_m3,2,4,25,Pass,22,0,0,,0.1136896610260009
+deutsch_jozsa_m4,2,4,25,Fail,13,1,4,DeutschJozsaWorksForConstantFunction,0.147230863571167
+deutsch_jozsa_m5,2,4,25,Fail,11,1,4,DeutschJozsaWorksForConstantFunction,0.0957441329956054
+deutsch_jozsa_m6,2,4,25,Fail,23,2,8,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.1555342674255371
+deutsch_jozsa_m7,2,4,25,Pass,23,0,0,,0.0998499393463134
+deutsch_jozsa_m8,2,4,25,Fail,22,2,8,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.1111822128295898
+deutsch_jozsa_m9,2,4,25,Pass,23,0,0,,0.1222057342529296
+deutsch_jozsa_em0,2,4,25,Pass,12,0,0,,0.1182301044464111
+deutsch_jozsa_em1,2,4,25,Pass,21,0,0,,0.0766797065734863
+deutsch_jozsa_em2,2,4,25,Pass,23,0,0,,0.1132075786590576
+deutsch_jozsa_em3,2,4,25,Pass,22,0,0,,0.0926539897918701
+deutsch_jozsa_em4,2,4,25,Pass,13,0,0,,0.1897966861724853
+deutsch_jozsa_m0,3,4,25,Fail,29,1,4,DeutschJozsaWorksForConstantFunction,0.1698036193847656
+deutsch_jozsa_m1,3,4,25,Pass,27,0,0,,0.1438832283020019
+deutsch_jozsa_m2,3,4,25,Pass,28,0,0,,0.146752119064331
+deutsch_jozsa_m3,3,4,25,Fail,28,1,4,DeutschJozsaWorksForConstantFunction,0.1898219585418701
+deutsch_jozsa_m4,3,4,25,Fail,28,1,4,DeutschJozsaWorksForConstantFunction,0.2089486122131347
+deutsch_jozsa_m5,3,4,25,Fail,27,1,4,DeutschJozsaWorksForConstantFunction,0.1779730319976806
+deutsch_jozsa_m6,3,4,25,Fail,27,2,8,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.170729398727417
+deutsch_jozsa_m7,3,4,25,Pass,28,0,0,,0.1219065189361572
+deutsch_jozsa_m8,3,4,25,Fail,28,2,8,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.1773250102996826
+deutsch_jozsa_m9,3,4,25,Fail,28,1,4,DeutschJozsaWorksForConstantFunction,0.2165985107421875
+deutsch_jozsa_em0,3,4,25,Pass,28,0,0,,0.1569719314575195
+deutsch_jozsa_em1,3,4,25,Pass,28,0,0,,0.1422591209411621
+deutsch_jozsa_em2,3,4,25,Pass,28,0,0,,0.1547458171844482
+deutsch_jozsa_em3,3,4,25,Pass,28,0,0,,0.1703028678894043
+deutsch_jozsa_em4,3,4,25,Pass,27,0,0,,0.2022788524627685
+deutsch_jozsa_m0,1,64,25,Fail,70,1,4,DeutschJozsaWorksForBalancedFunction,0.840162992477417
+deutsch_jozsa_m1,1,64,25,Pass,70,0,0,,0.6358802318572998
+deutsch_jozsa_m2,1,64,25,Pass,70,0,0,,0.8382432460784912
+deutsch_jozsa_m3,1,64,25,Pass,70,0,0,,0.8877162933349609
+deutsch_jozsa_m4,1,64,25,Fail,70,1,64,DeutschJozsaWorksForConstantFunction,0.9311187267303468
+deutsch_jozsa_m5,1,64,25,Fail,70,1,64,DeutschJozsaWorksForConstantFunction,0.9150755405426024
+deutsch_jozsa_m6,1,64,25,Fail,70,1,64,DeutschJozsaWorksForConstantFunction,0.9432165622711182
+deutsch_jozsa_m7,1,64,25,Pass,70,0,0,,0.6082315444946289
+deutsch_jozsa_m8,1,64,25,Fail,70,1,64,DeutschJozsaWorksForConstantFunction,0.9563686847686768
+deutsch_jozsa_m9,1,64,25,Pass,195,0,0,,0.5029745101928711
+deutsch_jozsa_em0,1,64,25,Pass,195,0,0,,0.6475005149841309
+deutsch_jozsa_em1,1,64,25,Pass,195,0,0,,0.5811276435852051
+deutsch_jozsa_em2,1,64,25,Pass,70,0,0,,0.7156569957733154
+deutsch_jozsa_em3,1,64,25,Pass,70,0,0,,0.6660065650939941
+deutsch_jozsa_em4,1,64,25,Pass,70,0,0,,0.8412880897521973
+deutsch_jozsa_m0,2,64,25,Fail,265,1,64,DeutschJozsaWorksForConstantFunction,1.5045437812805176
+deutsch_jozsa_m1,2,64,25,Pass,265,0,0,,1.3536491394042969
+deutsch_jozsa_m2,2,64,25,Pass,134,0,0,,1.3504366874694824
+deutsch_jozsa_m3,2,64,25,Fail,265,1,2,DeutschJozsaWorksForBalancedFunction,1.5091819763183594
+deutsch_jozsa_m4,2,64,25,Fail,134,2,64,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.748107671737671
+deutsch_jozsa_m5,2,64,25,Fail,265,1,4,DeutschJozsaWorksForBalancedFunction,1.5091371536254885
+deutsch_jozsa_m6,2,64,25,Fail,134,2,64,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.887184858322144
+deutsch_jozsa_m7,2,64,25,Pass,134,0,0,,1.4230384826660156
+deutsch_jozsa_m8,2,64,25,Fail,265,2,35,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction,1.6334173679351809
+deutsch_jozsa_m9,2,64,25,Fail,265,1,2,DeutschJozsaWorksForBalancedFunction,1.4575178623199463
+deutsch_jozsa_em0,2,64,25,Pass,265,0,0,,1.499539136886597
+deutsch_jozsa_em1,2,64,25,Pass,265,0,0,,1.1540179252624512
+deutsch_jozsa_em2,2,64,25,Pass,265,0,0,,1.3641510009765625
+deutsch_jozsa_em3,2,64,25,Pass,134,0,0,,1.4778625965118408
+deutsch_jozsa_em4,2,64,25,Pass,134,0,0,,1.4811773300170898
+deutsch_jozsa_m0,3,64,25,Fail,329,2,65,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.297546148300171
+deutsch_jozsa_m1,3,64,25,Pass,329,0,0,,1.9062438011169436
+deutsch_jozsa_m2,3,64,25,Pass,329,0,0,,1.9860076904296875
+deutsch_jozsa_m3,3,64,25,Fail,329,2,62,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.4396684169769287
+deutsch_jozsa_m4,3,64,25,Fail,329,2,66,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.414064645767212
+deutsch_jozsa_m5,3,64,25,Fail,329,2,63,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.3801491260528564
+deutsch_jozsa_m6,3,64,25,Fail,329,2,123,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,2.4386110305786133
+deutsch_jozsa_m7,3,64,25,Pass,329,0,0,,1.9953808784484863
+deutsch_jozsa_m8,3,64,25,Fail,329,3,95,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.4259955883026123
+deutsch_jozsa_m9,3,64,25,Fail,329,2,68,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.429999589920044
+deutsch_jozsa_em0,3,64,25,Pass,329,0,0,,2.062657117843628
+deutsch_jozsa_em1,3,64,25,Pass,329,0,0,,1.997150182723999
+deutsch_jozsa_em2,3,64,25,Pass,329,0,0,,2.2464966773986816
+deutsch_jozsa_em3,3,64,25,Pass,329,0,0,,2.1556382179260254
+deutsch_jozsa_em4,3,64,25,Pass,329,0,0,,2.114001989364624
+deutsch_jozsa_m0,1,8,25,Pass,13,0,0,,0.1178951263427734
+deutsch_jozsa_m1,1,8,25,Pass,13,0,0,,0.0901370048522949
+deutsch_jozsa_m2,1,8,25,Pass,13,0,0,,0.1315550804138183
+deutsch_jozsa_m3,1,8,25,Pass,13,0,0,,0.1572325229644775
+deutsch_jozsa_m4,1,8,25,Pass,27,0,0,,0.0661830902099609
+deutsch_jozsa_m5,1,8,25,Pass,13,0,0,,0.1733665466308593
+deutsch_jozsa_m6,1,8,25,Fail,13,1,8,DeutschJozsaWorksForConstantFunction,0.1875166893005371
+deutsch_jozsa_m7,1,8,25,Pass,12,0,0,,0.0912051200866699
+deutsch_jozsa_m8,1,8,25,Fail,12,1,8,DeutschJozsaWorksForConstantFunction,0.1592977046966552
+deutsch_jozsa_m9,1,8,25,Pass,27,0,0,,0.0741095542907714
+deutsch_jozsa_em0,1,8,25,Pass,12,0,0,,0.1162643432617187
+deutsch_jozsa_em1,1,8,25,Pass,27,0,0,,0.0856318473815918
+deutsch_jozsa_em2,1,8,25,Pass,27,0,0,,0.1066813468933105
+deutsch_jozsa_em3,1,8,25,Pass,13,0,0,,0.122903823852539
+deutsch_jozsa_em4,1,8,25,Pass,12,0,0,,0.169792890548706
+deutsch_jozsa_m0,2,8,25,Fail,41,1,1,DeutschJozsaWorksForBalancedFunction,0.1718652248382568
+deutsch_jozsa_m1,2,8,25,Pass,39,0,0,,0.1705446243286132
+deutsch_jozsa_m2,2,8,25,Pass,40,0,0,,0.2115054130554199
+deutsch_jozsa_m3,2,8,25,Fail,39,1,8,DeutschJozsaWorksForConstantFunction,0.2003686428070068
+deutsch_jozsa_m4,2,8,25,Fail,21,1,8,DeutschJozsaWorksForConstantFunction,0.2373325824737548
+deutsch_jozsa_m5,2,8,25,Fail,22,1,8,DeutschJozsaWorksForConstantFunction,0.2499756813049316
+deutsch_jozsa_m6,2,8,25,Fail,40,2,16,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.2327473163604736
+deutsch_jozsa_m7,2,8,25,Pass,22,0,0,,0.2063934803009033
+deutsch_jozsa_m8,2,8,25,Fail,40,1,7,DeutschJozsaLowerRegisterMinus,0.2266581058502197
+deutsch_jozsa_m9,2,8,25,Fail,22,1,8,DeutschJozsaWorksForConstantFunction,0.2615983486175537
+deutsch_jozsa_em0,2,8,25,Pass,40,0,0,,0.2192015647888183
+deutsch_jozsa_em1,2,8,25,Pass,22,0,0,,0.2116479873657226
+deutsch_jozsa_em2,2,8,25,Pass,39,0,0,,0.1743388175964355
+deutsch_jozsa_em3,2,8,25,Pass,40,0,0,,0.1802451610565185
+deutsch_jozsa_em4,2,8,25,Pass,22,0,0,,0.280557632446289
+deutsch_jozsa_m0,3,8,25,Fail,49,1,8,DeutschJozsaWorksForConstantFunction,0.3630473613739013
+deutsch_jozsa_m1,3,8,25,Pass,49,0,0,,0.2547059059143066
+deutsch_jozsa_m2,3,8,25,Pass,49,0,0,,0.2708306312561035
+deutsch_jozsa_m3,3,8,25,Fail,48,1,8,DeutschJozsaWorksForConstantFunction,0.3367962837219238
+deutsch_jozsa_m4,3,8,25,Fail,49,1,8,DeutschJozsaWorksForConstantFunction,0.2996132373809814
+deutsch_jozsa_m5,3,8,25,Fail,49,1,8,DeutschJozsaWorksForConstantFunction,0.3161978721618652
+deutsch_jozsa_m6,3,8,25,Fail,49,2,16,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.361917495727539
+deutsch_jozsa_m7,3,8,25,Pass,49,0,0,,0.2429430484771728
+deutsch_jozsa_m8,3,8,25,Fail,49,2,16,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.3841779232025146
+deutsch_jozsa_m9,3,8,25,Fail,48,1,8,DeutschJozsaWorksForConstantFunction,0.3065392971038818
+deutsch_jozsa_em0,3,8,25,Pass,48,0,0,,0.2524914741516113
+deutsch_jozsa_em1,3,8,25,Pass,49,0,0,,0.3179037570953369
+deutsch_jozsa_em2,3,8,25,Pass,49,0,0,,0.2811610698699951
+deutsch_jozsa_em3,3,8,25,Pass,49,0,0,,0.2750675678253174
+deutsch_jozsa_em4,3,8,25,Pass,49,0,0,,0.3385083675384521
+deutsch_jozsa_m0,1,16,12,Pass,51,0,0,,0.148606538772583
+deutsch_jozsa_m1,1,16,12,Pass,51,0,0,,0.1560976505279541
+deutsch_jozsa_m2,1,16,12,Pass,22,0,0,,0.270031213760376
+deutsch_jozsa_m3,1,16,12,Fail,22,1,9,DeutschJozsaWorksForBalancedFunction,0.2917499542236328
+deutsch_jozsa_m4,1,16,12,Fail,22,1,11,DeutschJozsaWorksForBalancedFunction,0.2849361896514892
+deutsch_jozsa_m5,1,16,12,Fail,22,1,12,DeutschJozsaWorksForBalancedFunction,0.2800354957580566
+deutsch_jozsa_m6,1,16,12,Fail,51,1,12,DeutschJozsaLowerRegisterMinus,0.479029893875122
+deutsch_jozsa_m7,1,16,12,Pass,51,0,0,,0.1576189994812011
+deutsch_jozsa_m8,1,16,12,Pass,51,0,0,,0.1784017086029052
+deutsch_jozsa_m9,1,16,12,Fail,22,1,15,DeutschJozsaWorksForBalancedFunction,0.2914938926696777
+deutsch_jozsa_em0,1,16,12,Pass,51,0,0,,0.1482858657836914
+deutsch_jozsa_em1,1,16,12,Pass,21,0,0,,0.3005354404449463
+deutsch_jozsa_em2,1,16,12,Pass,22,0,0,,0.2149691581726074
+deutsch_jozsa_em3,1,16,12,Pass,22,0,0,,0.2283320426940918
+deutsch_jozsa_em4,1,16,12,Pass,21,0,0,,0.1827991008758545
+deutsch_jozsa_m0,2,16,12,Fail,38,1,16,DeutschJozsaWorksForConstantFunction,0.5075154304504395
+deutsch_jozsa_m1,2,16,12,Pass,72,0,0,,0.4160244464874267
+deutsch_jozsa_m2,2,16,12,Pass,72,0,0,,0.3028078079223633
+deutsch_jozsa_m3,2,16,12,Fail,73,1,14,DeutschJozsaWorksForBalancedFunction,0.433748722076416
+deutsch_jozsa_m4,2,16,12,Fail,38,2,17,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.4960424900054931
+deutsch_jozsa_m5,2,16,12,Fail,73,1,14,DeutschJozsaWorksForBalancedFunction,0.4718801975250244
+deutsch_jozsa_m6,2,16,12,Fail,38,2,15,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.4709892272949219
+deutsch_jozsa_m7,2,16,12,Pass,73,0,0,,0.351085901260376
+deutsch_jozsa_m8,2,16,12,Fail,73,1,15,DeutschJozsaWorksForBalancedFunction,0.4721665382385254
+deutsch_jozsa_m9,2,16,12,Fail,73,1,3,DeutschJozsaWorksForConstantFunction,0.3667123317718506
+deutsch_jozsa_em0,2,16,12,Pass,72,0,0,,0.4409956932067871
+deutsch_jozsa_em1,2,16,12,Pass,72,0,0,,0.3385655879974365
+deutsch_jozsa_em2,2,16,12,Pass,73,0,0,,0.4284679889678955
+deutsch_jozsa_em3,2,16,12,Pass,38,0,0,,0.4130401611328125
+deutsch_jozsa_em4,2,16,12,Pass,73,0,0,,0.4185616970062256
+deutsch_jozsa_m0,3,16,12,Fail,89,1,16,DeutschJozsaWorksForConstantFunction,0.6232612133026123
+deutsch_jozsa_m1,3,16,12,Pass,89,0,0,,0.5762827396392822
+deutsch_jozsa_m2,3,16,12,Pass,89,0,0,,0.6051034927368164
+deutsch_jozsa_m3,3,16,12,Fail,89,2,17,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.7274854183197021
+deutsch_jozsa_m4,3,16,12,Fail,89,2,17,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.7909185886383057
+deutsch_jozsa_m5,3,16,12,Fail,89,2,16,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.722989559173584
+deutsch_jozsa_m6,3,16,12,Fail,89,3,27,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.5934708118438721
+deutsch_jozsa_m7,3,16,12,Pass,89,0,0,,0.593698263168335
+deutsch_jozsa_m8,3,16,12,Fail,89,2,17,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.7278904914855957
+deutsch_jozsa_m9,3,16,12,Fail,89,1,16,DeutschJozsaWorksForBalancedFunction,0.6244196891784668
+deutsch_jozsa_em0,3,16,12,Pass,89,0,0,,0.597259521484375
+deutsch_jozsa_em1,3,16,12,Pass,89,0,0,,0.5473096370697021
+deutsch_jozsa_em2,3,16,12,Pass,89,0,0,,0.5798659324645996
+deutsch_jozsa_em3,3,16,12,Pass,89,0,0,,0.6257715225219727
+deutsch_jozsa_em4,3,16,12,Pass,89,0,0,,0.59700608253479
+deutsch_jozsa_m0,1,1,12,Fail,2,1,1,DeutschJozsaWorksForConstantFunction,0.0118391513824462
+deutsch_jozsa_m1,1,1,12,Pass,2,0,0,,0.0166501998901367
+deutsch_jozsa_m2,1,1,12,Pass,6,0,0,,0.0176374912261962
+deutsch_jozsa_m3,1,1,12,Pass,6,0,0,,0.0173280239105224
+deutsch_jozsa_m4,1,1,12,Pass,2,0,0,,0.0167171955108642
+deutsch_jozsa_m5,1,1,12,Pass,6,0,0,,0.0163521766662597
+deutsch_jozsa_m6,1,1,12,Fail,6,1,1,DeutschJozsaLowerRegisterMinus,0.0155589580535888
+deutsch_jozsa_m7,1,1,12,Pass,2,0,0,,0.0125319957733154
+deutsch_jozsa_m8,1,1,12,Pass,2,0,0,,0.0130290985107421
+deutsch_jozsa_m9,1,1,12,Pass,6,0,0,,0.0164651870727539
+deutsch_jozsa_em0,1,1,12,Pass,2,0,0,,0.0115234851837158
+deutsch_jozsa_em1,1,1,12,Pass,2,0,0,,0.0100214481353759
+deutsch_jozsa_em2,1,1,12,Pass,6,0,0,,0.0155355930328369
+deutsch_jozsa_em3,1,1,12,Pass,6,0,0,,0.0150384902954101
+deutsch_jozsa_em4,1,1,12,Pass,6,0,0,,0.0145869255065917
+deutsch_jozsa_m0,2,1,12,Pass,8,0,0,,0.0240118503570556
+deutsch_jozsa_m1,2,1,12,Pass,8,0,0,,0.0239953994750976
+deutsch_jozsa_m2,2,1,12,Pass,8,0,0,,0.0229468345642089
+deutsch_jozsa_m3,2,1,12,Pass,8,0,0,,0.0259046554565429
+deutsch_jozsa_m4,2,1,12,Fail,8,1,1,DeutschJozsaWorksForConstantFunction,0.0276365280151367
+deutsch_jozsa_m5,2,1,12,Fail,3,1,1,DeutschJozsaWorksForConstantFunction,0.0311355590820312
+deutsch_jozsa_m6,2,1,12,Fail,3,1,1,DeutschJozsaWorksForConstantFunction,0.0231873989105224
+deutsch_jozsa_m7,2,1,12,Pass,8,0,0,,0.0252187252044677
+deutsch_jozsa_m8,2,1,12,Fail,8,1,1,DeutschJozsaWorksForConstantFunction,0.0330467224121093
+deutsch_jozsa_m9,2,1,12,Fail,3,1,1,DeutschJozsaWorksForConstantFunction,0.0265605449676513
+deutsch_jozsa_em0,2,1,12,Pass,8,0,0,,0.0239932537078857
+deutsch_jozsa_em1,2,1,12,Pass,4,0,0,,0.0254740715026855
+deutsch_jozsa_em2,2,1,12,Pass,8,0,0,,0.0279412269592285
+deutsch_jozsa_em3,2,1,12,Pass,3,0,0,,0.0190792083740234
+deutsch_jozsa_em4,2,1,12,Pass,4,0,0,,0.0248365402221679
+deutsch_jozsa_m0,3,1,12,Fail,10,1,1,DeutschJozsaWorksForConstantFunction,0.0394222736358642
+deutsch_jozsa_m1,3,1,12,Pass,10,0,0,,0.0305171012878417
+deutsch_jozsa_m2,3,1,12,Pass,9,0,0,,0.0269684791564941
+deutsch_jozsa_m3,3,1,12,Fail,10,2,2,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.04298996925354
+deutsch_jozsa_m4,3,1,12,Fail,10,1,1,DeutschJozsaWorksForConstantFunction,0.0464835166931152
+deutsch_jozsa_m5,3,1,12,Fail,9,1,1,DeutschJozsaWorksForConstantFunction,0.0461528301239013
+deutsch_jozsa_m6,3,1,12,Fail,10,3,3,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.0477302074432373
+deutsch_jozsa_m7,3,1,12,Pass,10,0,0,,0.0276758670806884
+deutsch_jozsa_m8,3,1,12,Fail,10,1,1,DeutschJozsaWorksForBalancedFunction,0.0434067249298095
+deutsch_jozsa_m9,3,1,12,Fail,10,1,1,DeutschJozsaWorksForBalancedFunction,0.0375099182128906
+deutsch_jozsa_em0,3,1,12,Pass,10,0,0,,0.0361998081207275
+deutsch_jozsa_em1,3,1,12,Pass,10,0,0,,0.0417990684509277
+deutsch_jozsa_em2,3,1,12,Pass,10,0,0,,0.0384948253631591
+deutsch_jozsa_em3,3,1,12,Pass,10,0,0,,0.0325427055358886
+deutsch_jozsa_em4,3,1,12,Pass,10,0,0,,0.0964431762695312
+deutsch_jozsa_m0,1,2,12,Pass,4,0,0,,0.0895719528198242
+deutsch_jozsa_m1,1,2,12,Pass,9,0,0,,0.0223364830017089
+deutsch_jozsa_m2,1,2,12,Pass,3,0,0,,0.0270500183105468
+deutsch_jozsa_m3,1,2,12,Fail,4,1,2,DeutschJozsaWorksForBalancedFunction,0.0300588607788085
+deutsch_jozsa_m4,1,2,12,Pass,9,0,0,,0.0310001373291015
+deutsch_jozsa_m5,1,2,12,Fail,3,1,1,DeutschJozsaWorksForBalancedFunction,0.0276226997375488
+deutsch_jozsa_m6,1,2,12,Pass,4,0,0,,0.0309705734252929
+deutsch_jozsa_m7,1,2,12,Pass,4,0,0,,0.0264358520507812
+deutsch_jozsa_m8,1,2,12,Fail,4,1,1,DeutschJozsaWorksForConstantFunction,0.0286469459533691
+deutsch_jozsa_m9,1,2,12,Pass,4,0,0,,0.0238406658172607
+deutsch_jozsa_em0,1,2,12,Pass,9,0,0,,0.0269465446472167
+deutsch_jozsa_em1,1,2,12,Pass,4,0,0,,0.0210118293762207
+deutsch_jozsa_em2,1,2,12,Pass,4,0,0,,0.0320196151733398
+deutsch_jozsa_em3,1,2,12,Pass,4,0,0,,0.0187118053436279
+deutsch_jozsa_em4,1,2,12,Pass,3,0,0,,0.0187776088714599
+deutsch_jozsa_m0,2,2,12,Pass,13,0,0,,0.0631825923919677
+deutsch_jozsa_m1,2,2,12,Pass,7,0,0,,0.0542728900909423
+deutsch_jozsa_m2,2,2,12,Pass,12,0,0,,0.0440964698791503
+deutsch_jozsa_m3,2,2,12,Pass,13,0,0,,0.0534961223602294
+deutsch_jozsa_m4,2,2,12,Pass,13,0,0,,0.041649580001831
+deutsch_jozsa_m5,2,2,12,Fail,13,1,1,DeutschJozsaWorksForConstantFunction,0.0597341060638427
+deutsch_jozsa_m6,2,2,12,Fail,13,1,2,DeutschJozsaLowerRegisterMinus,0.0561530590057373
+deutsch_jozsa_m7,2,2,12,Pass,7,0,0,,0.0440998077392578
+deutsch_jozsa_m8,2,2,12,Pass,13,0,0,,0.0504469871520996
+deutsch_jozsa_m9,2,2,12,Fail,13,1,1,DeutschJozsaWorksForBalancedFunction,0.0594301223754882
+deutsch_jozsa_em0,2,2,12,Pass,13,0,0,,0.0455753803253173
+deutsch_jozsa_em1,2,2,12,Pass,6,0,0,,0.0431447029113769
+deutsch_jozsa_em2,2,2,12,Pass,13,0,0,,0.0482950210571289
+deutsch_jozsa_em3,2,2,12,Pass,7,0,0,,0.0511469841003418
+deutsch_jozsa_em4,2,2,12,Pass,7,0,0,,0.04286789894104
+deutsch_jozsa_m0,3,2,12,Fail,17,1,2,DeutschJozsaWorksForConstantFunction,0.1015999317169189
+deutsch_jozsa_m1,3,2,12,Pass,15,0,0,,0.0686430931091308
+deutsch_jozsa_m2,3,2,12,Pass,16,0,0,,0.0781788825988769
+deutsch_jozsa_m3,3,2,12,Fail,16,2,2,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.1768786907196045
+deutsch_jozsa_m4,3,2,12,Fail,17,1,1,DeutschJozsaWorksForBalancedFunction,0.0966603755950927
+deutsch_jozsa_m5,3,2,12,Fail,16,2,4,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.1147122383117675
+deutsch_jozsa_m6,3,2,12,Fail,16,3,4,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.1029524803161621
+deutsch_jozsa_m7,3,2,12,Pass,15,0,0,,0.0655708312988281
+deutsch_jozsa_m8,3,2,12,Fail,17,1,1,DeutschJozsaWorksForBalancedFunction,0.1057114601135253
+deutsch_jozsa_m9,3,2,12,Fail,17,2,3,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.1052091121673584
+deutsch_jozsa_em0,3,2,12,Pass,16,0,0,,0.08064866065979
+deutsch_jozsa_em1,3,2,12,Pass,17,0,0,,0.0901718139648437
+deutsch_jozsa_em2,3,2,12,Pass,16,0,0,,0.0761530399322509
+deutsch_jozsa_em3,3,2,12,Pass,17,0,0,,0.1553637981414795
+deutsch_jozsa_em4,3,2,12,Pass,16,0,0,,0.0947918891906738
+deutsch_jozsa_m0,1,32,12,Fail,38,1,32,DeutschJozsaWorksForConstantFunction,0.6063089370727539
+deutsch_jozsa_m1,1,32,12,Pass,99,0,0,,0.2739346027374267
+deutsch_jozsa_m2,1,32,12,Pass,99,0,0,,0.3595130443572998
+deutsch_jozsa_m3,1,32,12,Fail,38,1,26,DeutschJozsaWorksForBalancedFunction,0.5002796649932861
+deutsch_jozsa_m4,1,32,12,Fail,38,1,22,DeutschJozsaWorksForBalancedFunction,0.5439610481262207
+deutsch_jozsa_m5,1,32,12,Pass,99,0,0,,0.2703416347503662
+deutsch_jozsa_m6,1,32,12,Fail,38,1,32,DeutschJozsaWorksForBalancedFunction,0.5301046371459961
+deutsch_jozsa_m7,1,32,12,Pass,99,0,0,,0.2631330490112304
+deutsch_jozsa_m8,1,32,12,Fail,38,1,30,DeutschJozsaWorksForBalancedFunction,0.6026196479797363
+deutsch_jozsa_m9,1,32,12,Fail,38,1,27,DeutschJozsaWorksForBalancedFunction,0.5095846652984619
+deutsch_jozsa_em0,1,32,12,Pass,99,0,0,,0.3611884117126465
+deutsch_jozsa_em1,1,32,12,Pass,99,0,0,,0.2814710140228271
+deutsch_jozsa_em2,1,32,12,Pass,38,0,0,,0.5188248157501221
+deutsch_jozsa_em3,1,32,12,Pass,99,0,0,,0.290562629699707
+deutsch_jozsa_em4,1,32,12,Pass,38,0,0,,0.534557580947876
+deutsch_jozsa_m0,2,32,12,Fail,70,2,33,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.9436750411987304
+deutsch_jozsa_m1,2,32,12,Pass,70,0,0,,0.8623678684234619
+deutsch_jozsa_m2,2,32,12,Pass,137,0,0,,0.8104338645935059
+deutsch_jozsa_m3,2,32,12,Fail,70,2,33,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.9369504451751708
+deutsch_jozsa_m4,2,32,12,Fail,137,1,31,DeutschJozsaWorksForBalancedFunction,0.7840549945831299
+deutsch_jozsa_m5,2,32,12,Fail,137,1,30,DeutschJozsaWorksForBalancedFunction,0.7967476844787598
+deutsch_jozsa_m6,2,32,12,Fail,137,2,44,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction,0.8242135047912598
+deutsch_jozsa_m7,2,32,12,Pass,137,0,0,,0.9009897708892822
+deutsch_jozsa_m8,2,32,12,Fail,137,1,31,DeutschJozsaWorksForBalancedFunction,0.8639371395111084
+deutsch_jozsa_m9,2,32,12,Fail,70,2,34,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.019423246383667
+deutsch_jozsa_em0,2,32,12,Pass,137,0,0,,0.6691102981567383
+deutsch_jozsa_em1,2,32,12,Pass,137,0,0,,0.7154324054718018
+deutsch_jozsa_em2,2,32,12,Pass,137,0,0,,0.7260870933532715
+deutsch_jozsa_em3,2,32,12,Pass,137,0,0,,0.6192328929901123
+deutsch_jozsa_em4,2,32,12,Pass,70,0,0,,0.7980368137359619
+deutsch_jozsa_m0,3,32,12,Fail,169,2,34,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.1990880966186523
+deutsch_jozsa_m1,3,32,12,Pass,169,0,0,,1.0594961643218994
+deutsch_jozsa_m2,3,32,12,Pass,169,0,0,,1.1096246242523191
+deutsch_jozsa_m3,3,32,12,Fail,169,1,31,DeutschJozsaWorksForBalancedFunction,1.2484145164489746
+deutsch_jozsa_m4,3,32,12,Fail,169,2,32,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.2479372024536133
+deutsch_jozsa_m5,3,32,12,Fail,169,2,33,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.2987136840820312
+deutsch_jozsa_m6,3,32,12,Fail,169,2,48,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction,1.3092701435089111
+deutsch_jozsa_m7,3,32,12,Pass,169,0,0,,1.3372397422790527
+deutsch_jozsa_m8,3,32,12,Fail,169,2,31,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.2945051193237305
+deutsch_jozsa_m9,3,32,12,Fail,169,2,32,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.2564008235931396
+deutsch_jozsa_em0,3,32,12,Pass,169,0,0,,1.1181514263153076
+deutsch_jozsa_em1,3,32,12,Pass,169,0,0,,1.003779411315918
+deutsch_jozsa_em2,3,32,12,Pass,169,0,0,,1.181469202041626
+deutsch_jozsa_em3,3,32,12,Pass,169,0,0,,1.1106042861938477
+deutsch_jozsa_em4,3,32,12,Pass,169,0,0,,1.0890130996704102
+deutsch_jozsa_m0,1,4,12,Pass,7,0,0,,0.0816633701324462
+deutsch_jozsa_m1,1,4,12,Pass,8,0,0,,0.0474965572357177
+deutsch_jozsa_m2,1,4,12,Pass,6,0,0,,0.092254638671875
+deutsch_jozsa_m3,1,4,12,Fail,7,1,1,DeutschJozsaWorksForConstantFunction,0.0547354221343994
+deutsch_jozsa_m4,1,4,12,Fail,7,1,2,DeutschJozsaWorksForBalancedFunction,0.0489544868469238
+deutsch_jozsa_m5,1,4,12,Pass,15,0,0,,0.0485503673553466
+deutsch_jozsa_m6,1,4,12,Fail,7,1,4,DeutschJozsaWorksForBalancedFunction,0.0639872550964355
+deutsch_jozsa_m7,1,4,12,Pass,7,0,0,,0.0449943542480468
+deutsch_jozsa_m8,1,4,12,Fail,7,1,2,DeutschJozsaWorksForConstantFunction,0.0589778423309326
+deutsch_jozsa_m9,1,4,12,Pass,15,0,0,,0.0435554981231689
+deutsch_jozsa_em0,1,4,12,Pass,6,0,0,,0.0479609966278076
+deutsch_jozsa_em1,1,4,12,Pass,6,0,0,,0.0332071781158447
+deutsch_jozsa_em2,1,4,12,Pass,7,0,0,,0.0452747344970703
+deutsch_jozsa_em3,1,4,12,Pass,7,0,0,,0.0330045223236084
+deutsch_jozsa_em4,1,4,12,Pass,15,0,0,,0.0480322837829589
+deutsch_jozsa_m0,2,4,12,Fail,14,1,4,DeutschJozsaWorksForConstantFunction,0.3024904727935791
+deutsch_jozsa_m1,2,4,12,Pass,14,0,0,,0.1601905822753906
+deutsch_jozsa_m2,2,4,12,Pass,12,0,0,,0.1045775413513183
+deutsch_jozsa_m3,2,4,12,Fail,12,2,5,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.1345043182373047
+deutsch_jozsa_m4,2,4,12,Pass,21,0,0,,0.0930416584014892
+deutsch_jozsa_m5,2,4,12,Fail,22,1,1,DeutschJozsaWorksForConstantFunction,0.1080155372619628
+deutsch_jozsa_m6,2,4,12,Fail,21,2,7,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction,0.099783182144165
+deutsch_jozsa_m7,2,4,12,Pass,23,0,0,,0.0972311496734619
+deutsch_jozsa_m8,2,4,12,Fail,21,1,1,DeutschJozsaWorksForBalancedFunction,0.1912159919738769
+deutsch_jozsa_m9,2,4,12,Fail,22,1,3,DeutschJozsaWorksForBalancedFunction,0.1092872619628906
+deutsch_jozsa_em0,2,4,12,Pass,22,0,0,,0.0982306003570556
+deutsch_jozsa_em1,2,4,12,Pass,21,0,0,,0.0882184505462646
+deutsch_jozsa_em2,2,4,12,Pass,21,0,0,,0.1319503784179687
+deutsch_jozsa_em3,2,4,12,Pass,22,0,0,,0.1140236854553222
+deutsch_jozsa_em4,2,4,12,Pass,22,0,0,,0.1062185764312744
+deutsch_jozsa_m0,3,4,12,Fail,28,1,4,DeutschJozsaWorksForConstantFunction,0.2730576992034912
+deutsch_jozsa_m1,3,4,12,Pass,27,0,0,,0.1291155815124511
+deutsch_jozsa_m2,3,4,12,Pass,26,0,0,,0.1100282669067382
+deutsch_jozsa_m3,3,4,12,Fail,27,2,4,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.2003536224365234
+deutsch_jozsa_m4,3,4,12,Fail,28,1,4,DeutschJozsaWorksForBalancedFunction,0.1815674304962158
+deutsch_jozsa_m5,3,4,12,Fail,28,2,7,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.1672003269195556
+deutsch_jozsa_m6,3,4,12,Fail,28,3,8,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.2462148666381836
+deutsch_jozsa_m7,3,4,12,Pass,26,0,0,,0.118434190750122
+deutsch_jozsa_m8,3,4,12,Fail,27,3,6,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.1834368705749511
+deutsch_jozsa_m9,3,4,12,Fail,27,1,4,DeutschJozsaWorksForBalancedFunction,0.1587445735931396
+deutsch_jozsa_em0,3,4,12,Pass,28,0,0,,0.1494221687316894
+deutsch_jozsa_em1,3,4,12,Pass,28,0,0,,0.2017931938171386
+deutsch_jozsa_em2,3,4,12,Pass,27,0,0,,0.1633176803588867
+deutsch_jozsa_em3,3,4,12,Pass,27,0,0,,0.1577422618865966
+deutsch_jozsa_em4,3,4,12,Pass,28,0,0,,0.1852736473083496
+deutsch_jozsa_m0,1,64,12,Fail,70,1,64,DeutschJozsaWorksForConstantFunction,1.0605196952819824
+deutsch_jozsa_m1,1,64,12,Pass,195,0,0,,0.5802741050720215
+deutsch_jozsa_m2,1,64,12,Pass,70,0,0,,0.7077789306640625
+deutsch_jozsa_m3,1,64,12,Fail,70,1,62,DeutschJozsaWorksForBalancedFunction,1.0541083812713623
+deutsch_jozsa_m4,1,64,12,Pass,195,0,0,,0.5607514381408691
+deutsch_jozsa_m5,1,64,12,Pass,195,0,0,,0.6119999885559082
+deutsch_jozsa_m6,1,64,12,Fail,70,1,3,DeutschJozsaWorksForConstantFunction,1.0023009777069092
+deutsch_jozsa_m7,1,64,12,Pass,195,0,0,,0.6663072109222412
+deutsch_jozsa_m8,1,64,12,Fail,70,1,56,DeutschJozsaWorksForBalancedFunction,1.0434575080871582
+deutsch_jozsa_m9,1,64,12,Fail,70,1,59,DeutschJozsaWorksForBalancedFunction,1.0704548358917236
+deutsch_jozsa_em0,1,64,12,Pass,195,0,0,,0.6562247276306152
+deutsch_jozsa_em1,1,64,12,Pass,195,0,0,,0.5769956111907959
+deutsch_jozsa_em2,1,64,12,Pass,70,0,0,,0.9298765659332277
+deutsch_jozsa_em3,1,64,12,Pass,195,0,0,,0.6537775993347168
+deutsch_jozsa_em4,1,64,12,Pass,70,0,0,,0.6934890747070312
+deutsch_jozsa_m0,2,64,12,Fail,265,1,3,DeutschJozsaWorksForBalancedFunction,1.4450421333312988
+deutsch_jozsa_m1,2,64,12,Pass,265,0,0,,1.2675461769104004
+deutsch_jozsa_m2,2,64,12,Pass,134,0,0,,1.58793044090271
+deutsch_jozsa_m3,2,64,12,Fail,265,1,62,DeutschJozsaWorksForBalancedFunction,1.6081788539886477
+deutsch_jozsa_m4,2,64,12,Fail,134,2,66,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,1.817796230316162
+deutsch_jozsa_m5,2,64,12,Fail,134,2,69,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.022191286087036
+deutsch_jozsa_m6,2,64,12,Fail,265,2,85,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction,1.6059017181396484
+deutsch_jozsa_m7,2,64,12,Pass,134,0,0,,1.5614535808563232
+deutsch_jozsa_m8,2,64,12,Fail,265,2,5,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,1.6200215816497805
+deutsch_jozsa_m9,2,64,12,Pass,265,0,0,,1.7988734245300293
+deutsch_jozsa_em0,2,64,12,Pass,134,0,0,,1.621018409729004
+deutsch_jozsa_em1,2,64,12,Pass,265,0,0,,1.2220067977905271
+deutsch_jozsa_em2,2,64,12,Pass,134,0,0,,1.663515567779541
+deutsch_jozsa_em3,2,64,12,Pass,265,0,0,,1.5725886821746826
+deutsch_jozsa_em4,2,64,12,Pass,265,0,0,,1.277562379837036
+deutsch_jozsa_m0,3,64,12,Fail,329,2,65,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.5346791744232178
+deutsch_jozsa_m1,3,64,12,Pass,329,0,0,,2.125543594360352
+deutsch_jozsa_m2,3,64,12,Pass,329,0,0,,2.4908692836761475
+deutsch_jozsa_m3,3,64,12,Fail,329,2,65,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.6030166149139404
+deutsch_jozsa_m4,3,64,12,Fail,329,2,64,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.573991537094116
+deutsch_jozsa_m5,3,64,12,Fail,329,2,66,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.519028663635254
+deutsch_jozsa_m6,3,64,12,Fail,329,3,95,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.493980646133423
+deutsch_jozsa_m7,3,64,12,Pass,329,0,0,,2.089937925338745
+deutsch_jozsa_m8,3,64,12,Fail,329,2,64,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.7500014305114746
+deutsch_jozsa_m9,3,64,12,Fail,329,2,67,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,2.567979574203491
+deutsch_jozsa_em0,3,64,12,Pass,329,0,0,,2.2767724990844727
+deutsch_jozsa_em1,3,64,12,Pass,329,0,0,,2.153444290161133
+deutsch_jozsa_em2,3,64,12,Pass,329,0,0,,2.319826126098633
+deutsch_jozsa_em3,3,64,12,Pass,329,0,0,,2.1675329208374023
+deutsch_jozsa_em4,3,64,12,Pass,329,0,0,,2.280535221099853
+deutsch_jozsa_m0,1,8,12,Pass,27,0,0,,0.0921037197113037
+deutsch_jozsa_m1,1,8,12,Pass,13,0,0,,0.1231482028961181
+deutsch_jozsa_m2,1,8,12,Pass,13,0,0,,0.1149647235870361
+deutsch_jozsa_m3,1,8,12,Fail,14,1,3,DeutschJozsaWorksForConstantFunction,0.1729707717895507
+deutsch_jozsa_m4,1,8,12,Fail,11,1,6,DeutschJozsaWorksForBalancedFunction,0.0930941104888916
+deutsch_jozsa_m5,1,8,12,Fail,13,1,4,DeutschJozsaWorksForConstantFunction,0.1437561511993408
+deutsch_jozsa_m6,1,8,12,Fail,14,1,4,DeutschJozsaWorksForBalancedFunction,0.1454708576202392
+deutsch_jozsa_m7,1,8,12,Pass,12,0,0,,0.0932893753051757
+deutsch_jozsa_m8,1,8,12,Pass,27,0,0,,0.1525521278381347
+deutsch_jozsa_m9,1,8,12,Fail,13,1,2,DeutschJozsaWorksForConstantFunction,0.15716552734375
+deutsch_jozsa_em0,1,8,12,Pass,13,0,0,,0.1000339984893798
+deutsch_jozsa_em1,1,8,12,Pass,13,0,0,,0.1370410919189453
+deutsch_jozsa_em2,1,8,12,Pass,27,0,0,,0.0932755470275878
+deutsch_jozsa_em3,1,8,12,Pass,27,0,0,,0.1017143726348877
+deutsch_jozsa_em4,1,8,12,Pass,27,0,0,,0.1132562160491943
+deutsch_jozsa_m0,2,8,12,Fail,22,1,8,DeutschJozsaWorksForConstantFunction,0.248807668685913
+deutsch_jozsa_m1,2,8,12,Pass,39,0,0,,0.1265885829925537
+deutsch_jozsa_m2,2,8,12,Pass,22,0,0,,0.2913205623626709
+deutsch_jozsa_m3,2,8,12,Fail,39,1,7,DeutschJozsaWorksForBalancedFunction,0.2180423736572265
+deutsch_jozsa_m4,2,8,12,Fail,41,1,7,DeutschJozsaWorksForBalancedFunction,0.2069683074951172
+deutsch_jozsa_m5,2,8,12,Fail,39,1,1,DeutschJozsaWorksForConstantFunction,0.192836046218872
+deutsch_jozsa_m6,2,8,12,Fail,40,2,11,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForConstantFunction,0.266348123550415
+deutsch_jozsa_m7,2,8,12,Pass,40,0,0,,0.1922461986541748
+deutsch_jozsa_m8,2,8,12,Fail,22,2,8,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.2875368595123291
+deutsch_jozsa_m9,2,8,12,Fail,22,2,12,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.2586791515350342
+deutsch_jozsa_em0,2,8,12,Pass,39,0,0,,0.2595868110656738
+deutsch_jozsa_em1,2,8,12,Pass,22,0,0,,0.223902940750122
+deutsch_jozsa_em2,2,8,12,Pass,38,0,0,,0.1820135116577148
+deutsch_jozsa_em3,2,8,12,Pass,39,0,0,,0.1869258880615234
+deutsch_jozsa_em4,2,8,12,Pass,38,0,0,,0.2291285991668701
+deutsch_jozsa_m0,3,8,12,Fail,48,1,8,DeutschJozsaWorksForConstantFunction,0.3727984428405761
+deutsch_jozsa_m1,3,8,12,Pass,48,0,0,,0.2576487064361572
+deutsch_jozsa_m2,3,8,12,Pass,49,0,0,,0.2702312469482422
+deutsch_jozsa_m3,3,8,12,Fail,48,1,5,DeutschJozsaWorksForBalancedFunction,0.3740456104278564
+deutsch_jozsa_m4,3,8,12,Fail,48,2,9,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.3114261627197265
+deutsch_jozsa_m5,3,8,12,Fail,49,2,9,DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.3253374099731445
+deutsch_jozsa_m6,3,8,12,Fail,49,3,15,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.3910896778106689
+deutsch_jozsa_m7,3,8,12,Pass,49,0,0,,0.2816591262817383
+deutsch_jozsa_m8,3,8,12,Fail,48,3,10,DeutschJozsaLowerRegisterMinus & DeutschJozsaWorksForBalancedFunction & DeutschJozsaWorksForConstantFunction,0.389230728149414
+deutsch_jozsa_m9,3,8,12,Fail,49,1,5,DeutschJozsaWorksForBalancedFunction,0.3296332359313965
+deutsch_jozsa_em0,3,8,12,Pass,49,0,0,,0.2887101173400879
+deutsch_jozsa_em1,3,8,12,Pass,48,0,0,,0.3281233310699463
+deutsch_jozsa_em2,3,8,12,Pass,49,0,0,,0.2920608520507812
+deutsch_jozsa_em3,3,8,12,Pass,49,0,0,,0.2805414199829101
+deutsch_jozsa_em4,3,8,12,Pass,49,0,0,,0.3154642581939697

@@ -2204,3 +2204,633 @@ grovers_algorithm_em1,3,8,800,Pass,35,0,0,,17.127896070480347
 grovers_algorithm_em2,3,8,800,Pass,35,0,0,,15.653323411941528
 grovers_algorithm_em3,3,8,800,Pass,35,0,0,,17.021361589431763
 grovers_algorithm_em4,3,8,800,Pass,35,0,0,,7.294992446899414
+grovers_algorithm_m0,1,16,25,Pass,16,0,0,,0.3539741039276123
+grovers_algorithm_m1,1,16,25,Fail,16,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3736979961395263
+grovers_algorithm_m2,1,16,25,Fail,16,1,11,GroversAlgorithmMostFrequentMarked,0.1761083602905273
+grovers_algorithm_m3,1,16,25,Fail,16,1,15,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.4007782936096191
+grovers_algorithm_m4,1,16,25,Fail,16,1,13,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2830166816711426
+grovers_algorithm_m5,1,16,25,Fail,16,1,10,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3426587581634521
+grovers_algorithm_m6,1,16,25,Fail,16,1,13,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.362987756729126
+grovers_algorithm_m7,1,16,25,Fail,16,1,9,GroversAlgorithmMostFrequentMarked,0.1720600128173828
+grovers_algorithm_m8,1,16,25,Fail,16,1,9,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.4094665050506592
+grovers_algorithm_m9,1,16,25,Fail,16,1,13,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3262054920196533
+grovers_algorithm_em0,1,16,25,Pass,16,0,0,,0.2915806770324707
+grovers_algorithm_em1,1,16,25,Pass,51,0,0,,0.3421580791473388
+grovers_algorithm_em2,1,16,25,Pass,51,0,0,,0.3277590274810791
+grovers_algorithm_em3,1,16,25,Pass,51,0,0,,0.2943527698516845
+grovers_algorithm_em4,1,16,25,Pass,16,0,0,,0.1343636512756347
+grovers_algorithm_m0,2,16,25,Fail,67,1,16,GroversAlgorithmLowerRegisterMinus,0.5677018165588379
+grovers_algorithm_m1,2,16,25,Fail,51,1,2,GroversAlgorithmMostFrequentMarked,22.96323251724243
+grovers_algorithm_m2,2,16,25,Fail,67,2,27,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.6099765300750732
+grovers_algorithm_m3,2,16,25,Fail,51,1,9,GroversAlgorithmMostFrequentMarked,18.053528547286987
+grovers_algorithm_m4,2,16,25,Fail,51,1,15,GroversAlgorithmMostFrequentMarked,13.700525045394896
+grovers_algorithm_m5,2,16,25,Fail,67,1,12,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.6169416904449463
+grovers_algorithm_m6,2,16,25,Fail,32,2,26,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.4285831451416015
+grovers_algorithm_m7,2,16,25,Fail,67,2,27,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.5909895896911621
+grovers_algorithm_m8,2,16,25,Fail,32,2,27,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3656067848205566
+grovers_algorithm_m9,2,16,25,Fail,67,2,15,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.7235305309295654
+grovers_algorithm_em0,2,16,25,Pass,67,0,0,,0.5766110420227051
+grovers_algorithm_em1,2,16,25,Pass,32,0,0,,0.5868887901306152
+grovers_algorithm_em2,2,16,25,Fail,31,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.4609260559082031
+grovers_algorithm_em3,2,16,25,Pass,32,0,0,,2.0571861267089844
+grovers_algorithm_em4,2,16,25,Pass,51,0,0,,37.72024607658386
+grovers_algorithm_m0,3,16,25,Fail,67,2,32,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,22.454131603240967
+grovers_algorithm_m1,3,16,25,Fail,67,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,22.634132862091064
+grovers_algorithm_m2,3,16,25,Fail,64,3,42,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,31.413178205490112
+grovers_algorithm_m3,3,16,25,Fail,67,2,28,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,9.660714864730837
+grovers_algorithm_m4,3,16,25,Fail,67,2,23,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,26.48768639564514
+grovers_algorithm_m5,3,16,25,Fail,67,2,27,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,32.72968029975891
+grovers_algorithm_m6,3,16,25,Fail,67,2,24,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,14.799948930740356
+grovers_algorithm_m7,3,16,25,Fail,64,3,40,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,20.22000551223755
+grovers_algorithm_m8,3,16,25,Fail,67,2,17,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,25.463261127471924
+grovers_algorithm_m9,3,16,25,Fail,67,2,22,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,22.903981685638428
+grovers_algorithm_em0,3,16,25,Fail,67,1,2,GroversAlgorithmMostFrequentMarked,30.34911608695984
+grovers_algorithm_em1,3,16,25,Pass,64,0,0,,21.95196771621704
+grovers_algorithm_em2,3,16,25,Fail,67,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,26.90337371826172
+grovers_algorithm_em3,3,16,25,Pass,67,0,0,,8.379199266433716
+grovers_algorithm_em4,3,16,25,Pass,67,0,0,,25.39982962608337
+grovers_algorithm_m0,1,1,25,Pass,1,0,0,,0.0125119686126708
+grovers_algorithm_m1,1,1,25,Pass,1,0,0,,0.03359055519104
+grovers_algorithm_m2,1,1,25,Fail,6,1,1,GroversAlgorithmLowerRegisterMinus,0.03717041015625
+grovers_algorithm_m3,1,1,25,Pass,6,0,0,,0.0188751220703125
+grovers_algorithm_m4,1,1,25,Fail,1,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0140652656555175
+grovers_algorithm_m5,1,1,25,Fail,1,1,1,GroversAlgorithmMostFrequentMarked,0.0120160579681396
+grovers_algorithm_m6,1,1,25,Pass,6,0,0,,0.0205452442169189
+grovers_algorithm_m7,1,1,25,Fail,1,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0487024784088134
+grovers_algorithm_m8,1,1,25,Fail,1,1,1,GroversAlgorithmMostFrequentMarked,0.0115399360656738
+grovers_algorithm_m9,1,1,25,Fail,1,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0215511322021484
+grovers_algorithm_em0,1,1,25,Pass,1,0,0,,0.0135302543640136
+grovers_algorithm_em1,1,1,25,Pass,1,0,0,,0.064096450805664
+grovers_algorithm_em2,1,1,25,Pass,1,0,0,,0.0140342712402343
+grovers_algorithm_em3,1,1,25,Pass,1,0,0,,0.0165300369262695
+grovers_algorithm_em4,1,1,25,Pass,6,0,0,,0.0266859531402587
+grovers_algorithm_m0,2,1,25,Fail,2,1,1,GroversAlgorithmMostFrequentMarked,0.0383920669555664
+grovers_algorithm_m1,2,1,25,Pass,2,0,0,,0.0140213966369628
+grovers_algorithm_m2,2,1,25,Fail,7,2,2,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0451257228851318
+grovers_algorithm_m3,2,1,25,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0643837451934814
+grovers_algorithm_m4,2,1,25,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0388250350952148
+grovers_algorithm_m5,2,1,25,Fail,6,1,1,GroversAlgorithmMostFrequentMarked,0.4982709884643554
+grovers_algorithm_m6,2,1,25,Pass,7,0,0,,0.0204894542694091
+grovers_algorithm_m7,2,1,25,Fail,7,1,1,GroversAlgorithmLowerRegisterMinus,0.0276412963867187
+grovers_algorithm_m8,2,1,25,Fail,6,1,1,GroversAlgorithmMostFrequentMarked,0.0291492938995361
+grovers_algorithm_m9,2,1,25,Fail,2,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0201082229614257
+grovers_algorithm_em0,2,1,25,Pass,2,0,0,,0.0248944759368896
+grovers_algorithm_em1,2,1,25,Pass,2,0,0,,0.0484585762023925
+grovers_algorithm_em2,2,1,25,Pass,7,0,0,,0.1323416233062744
+grovers_algorithm_em3,2,1,25,Pass,7,0,0,,0.0428824424743652
+grovers_algorithm_em4,2,1,25,Pass,7,0,0,,0.0318999290466308
+grovers_algorithm_m0,3,1,25,Fail,7,2,2,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,1.186570405960083
+grovers_algorithm_m1,3,1,25,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.3076183795928955
+grovers_algorithm_m2,3,1,25,Fail,7,2,2,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,0.0364644527435302
+grovers_algorithm_m3,3,1,25,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0317614078521728
+grovers_algorithm_m4,3,1,25,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0315437316894531
+grovers_algorithm_m5,3,1,25,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.8363752365112305
+grovers_algorithm_m6,3,1,25,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.440185785293579
+grovers_algorithm_m7,3,1,25,Fail,7,3,3,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1412053108215332
+grovers_algorithm_m8,3,1,25,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0431149005889892
+grovers_algorithm_m9,3,1,25,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0297191143035888
+grovers_algorithm_em0,3,1,25,Pass,7,0,0,,0.9987037181854248
+grovers_algorithm_em1,3,1,25,Pass,7,0,0,,6.33919358253479
+grovers_algorithm_em2,3,1,25,Pass,7,0,0,,0.0489757061004638
+grovers_algorithm_em3,3,1,25,Pass,7,0,0,,1.5567827224731443
+grovers_algorithm_em4,3,1,25,Pass,7,0,0,,0.1365060806274414
+grovers_algorithm_m0,1,2,25,Fail,9,1,2,GroversAlgorithmLowerRegisterMinus,0.0372910499572753
+grovers_algorithm_m1,1,2,25,Pass,9,0,0,,0.0289757251739501
+grovers_algorithm_m2,1,2,25,Fail,9,1,2,GroversAlgorithmLowerRegisterMinus,0.078911542892456
+grovers_algorithm_m3,1,2,25,Fail,2,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0928537845611572
+grovers_algorithm_m4,1,2,25,Pass,9,0,0,,0.0482091903686523
+grovers_algorithm_m5,1,2,25,Pass,9,0,0,,0.0300459861755371
+grovers_algorithm_m6,1,2,25,Pass,2,0,0,,0.0320408344268798
+grovers_algorithm_m7,1,2,25,Fail,2,1,1,GroversAlgorithmMostFrequentMarked,0.0135271549224853
+grovers_algorithm_m8,1,2,25,Fail,2,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0782535076141357
+grovers_algorithm_m9,1,2,25,Fail,2,1,1,GroversAlgorithmMostFrequentMarked,0.0397436618804931
+grovers_algorithm_em0,1,2,25,Pass,2,0,0,,0.04472017288208
+grovers_algorithm_em1,1,2,25,Pass,9,0,0,,0.0330812931060791
+grovers_algorithm_em2,1,2,25,Pass,2,0,0,,0.0170917510986328
+grovers_algorithm_em3,1,2,25,Pass,9,0,0,,0.0644876956939697
+grovers_algorithm_em4,1,2,25,Pass,9,0,0,,0.0418930053710937
+grovers_algorithm_m0,2,2,25,Fail,11,1,2,GroversAlgorithmLowerRegisterMinus,0.063232421875
+grovers_algorithm_m1,2,2,25,Pass,9,0,0,,0.0420935153961181
+grovers_algorithm_m2,2,2,25,Fail,9,2,3,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,0.0448484420776367
+grovers_algorithm_m3,2,2,25,Fail,4,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0401134490966796
+grovers_algorithm_m4,2,2,25,Fail,9,1,2,GroversAlgorithmMostFrequentMarked,5.494596004486084
+grovers_algorithm_m5,2,2,25,Pass,9,0,0,,0.0343768596649169
+grovers_algorithm_m6,2,2,25,Fail,4,1,1,GroversAlgorithmMostFrequentMarked,0.0915641784667968
+grovers_algorithm_m7,2,2,25,Fail,11,2,4,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0867390632629394
+grovers_algorithm_m8,2,2,25,Fail,9,1,1,GroversAlgorithmMostFrequentMarked,2.565631866455078
+grovers_algorithm_m9,2,2,25,Fail,11,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0941419601440429
+grovers_algorithm_em0,2,2,25,Pass,9,0,0,,7.519782304763794
+grovers_algorithm_em1,2,2,25,Pass,11,0,0,,0.0750012397766113
+grovers_algorithm_em2,2,2,25,Pass,9,0,0,,0.047830581665039
+grovers_algorithm_em3,2,2,25,Pass,9,0,0,,5.100915431976318
+grovers_algorithm_em4,2,2,25,Pass,4,0,0,,0.0426363945007324
+grovers_algorithm_m0,3,2,25,Fail,11,2,4,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,3.899292230606079
+grovers_algorithm_m1,3,2,25,Pass,11,0,0,,1.984494924545288
+grovers_algorithm_m2,3,2,25,Fail,11,3,4,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.6456899642944336
+grovers_algorithm_m3,3,2,25,Fail,11,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,6.386174201965332
+grovers_algorithm_m4,3,2,25,Fail,11,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,3.957892417907715
+grovers_algorithm_m5,3,2,25,Fail,11,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0638442039489746
+grovers_algorithm_m6,3,2,25,Fail,11,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.105881929397583
+grovers_algorithm_m7,3,2,25,Fail,11,3,5,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1074256896972656
+grovers_algorithm_m8,3,2,25,Fail,11,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,7.67894983291626
+grovers_algorithm_m9,3,2,25,Fail,11,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1057684421539306
+grovers_algorithm_em0,3,2,25,Pass,11,0,0,,9.492926120758057
+grovers_algorithm_em1,3,2,25,Pass,11,0,0,,3.624152183532715
+grovers_algorithm_em2,3,2,25,Pass,11,0,0,,1.2746570110321045
+grovers_algorithm_em3,3,2,25,Pass,11,0,0,,2.3018722534179688
+grovers_algorithm_em4,3,2,25,Fail,11,1,1,GroversAlgorithmMostFrequentMarked,11.223689794540403
+grovers_algorithm_m0,1,32,25,Fail,99,1,32,GroversAlgorithmLowerRegisterMinus,0.6979467868804932
+grovers_algorithm_m1,1,32,25,Pass,99,0,0,,0.4970800876617431
+grovers_algorithm_m2,1,32,25,Fail,29,1,23,GroversAlgorithmMostFrequentMarked,0.3022768497467041
+grovers_algorithm_m3,1,32,25,Fail,31,1,22,GroversAlgorithmMostFrequentMarked,0.2953541278839111
+grovers_algorithm_m4,1,32,25,Fail,32,1,23,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.59865403175354
+grovers_algorithm_m5,1,32,25,Fail,32,1,22,GroversAlgorithmMostFrequentMarked,0.2677474021911621
+grovers_algorithm_m6,1,32,25,Fail,32,1,27,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.5536503791809082
+grovers_algorithm_m7,1,32,25,Fail,99,1,32,GroversAlgorithmLowerRegisterMinus,0.6802568435668945
+grovers_algorithm_m8,1,32,25,Fail,31,1,18,GroversAlgorithmMostFrequentMarked,0.3311522006988525
+grovers_algorithm_m9,1,32,25,Fail,32,1,26,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.7109146118164062
+grovers_algorithm_em0,1,32,25,Pass,31,0,0,,0.270188570022583
+grovers_algorithm_em1,1,32,25,Pass,96,0,0,,0.615034818649292
+grovers_algorithm_em2,1,32,25,Fail,32,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.6882832050323486
+grovers_algorithm_em3,1,32,25,Fail,32,1,2,GroversAlgorithmMostFrequentMarked,0.2989695072174072
+grovers_algorithm_em4,1,32,25,Pass,99,0,0,,0.5558505058288574
+grovers_algorithm_m0,2,32,25,Fail,62,1,32,GroversAlgorithmMostFrequentMarked,0.928563117980957
+grovers_algorithm_m1,2,32,25,Fail,63,2,11,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.9598801136016846
+grovers_algorithm_m2,2,32,25,Fail,64,2,47,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.9537572860717772
+grovers_algorithm_m3,2,32,25,Fail,96,1,22,GroversAlgorithmMostFrequentMarked,39.69904375076294
+grovers_algorithm_m4,2,32,25,Fail,64,2,54,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.9757628440856934
+grovers_algorithm_m5,2,32,25,Fail,93,1,21,GroversAlgorithmMostFrequentMarked,52.81007719039917
+grovers_algorithm_m6,2,32,25,Fail,128,1,22,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.146146535873413
+grovers_algorithm_m7,2,32,25,Fail,131,2,59,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.194312572479248
+grovers_algorithm_m8,2,32,25,Fail,128,1,24,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.246990203857422
+grovers_algorithm_m9,2,32,25,Fail,131,1,23,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.096949338912964
+grovers_algorithm_em0,2,32,25,Pass,131,0,0,,1.3464789390563965
+grovers_algorithm_em1,2,32,25,Pass,99,0,0,,41.13510274887085
+grovers_algorithm_em2,2,32,25,Fail,64,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.912907600402832
+grovers_algorithm_em3,2,32,25,Pass,64,0,0,,1.139263153076172
+grovers_algorithm_em4,2,32,25,Pass,64,0,0,,0.8089971542358398
+grovers_algorithm_m0,3,32,25,Fail,128,2,60,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,50.20615339279175
+grovers_algorithm_m1,3,32,25,Fail,122,2,12,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,29.953852891922
+grovers_algorithm_m2,3,32,25,Fail,131,3,81,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,58.83847618103027
+grovers_algorithm_m3,3,32,25,Fail,131,2,51,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,57.66899108886719
+grovers_algorithm_m4,3,32,25,Fail,131,2,52,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,71.71811842918396
+grovers_algorithm_m5,3,32,25,Fail,131,2,35,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,66.02810835838318
+grovers_algorithm_m6,3,32,25,Fail,128,2,56,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,56.85079860687256
+grovers_algorithm_m7,3,32,25,Fail,131,3,75,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,71.7906105518341
+grovers_algorithm_m8,3,32,25,Fail,128,2,47,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,46.89124774932861
+grovers_algorithm_m9,3,32,25,Fail,131,2,42,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,62.12511396408081
+grovers_algorithm_em0,3,32,25,Fail,131,1,1,GroversAlgorithmMostFrequentMarked,42.42480111122131
+grovers_algorithm_em1,3,32,25,Fail,125,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,42.53518176078797
+grovers_algorithm_em2,3,32,25,Pass,131,0,0,,42.77476859092712
+grovers_algorithm_em3,3,32,25,Pass,131,0,0,,36.15272068977356
+grovers_algorithm_em4,3,32,25,Pass,131,0,0,,36.4558379650116
+grovers_algorithm_m0,1,4,25,Fail,4,1,4,GroversAlgorithmMostFrequentMarked,0.0463266372680664
+grovers_algorithm_m1,1,4,25,Pass,15,0,0,,0.0678269863128662
+grovers_algorithm_m2,1,4,25,Fail,15,1,4,GroversAlgorithmLowerRegisterMinus,0.1283159255981445
+grovers_algorithm_m3,1,4,25,Fail,4,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0826647281646728
+grovers_algorithm_m4,1,4,25,Pass,15,0,0,,0.0620138645172119
+grovers_algorithm_m5,1,4,25,Pass,15,0,0,,0.125293493270874
+grovers_algorithm_m6,1,4,25,Fail,4,1,3,GroversAlgorithmMostFrequentMarked,0.0846428871154785
+grovers_algorithm_m7,1,4,25,Fail,4,1,3,GroversAlgorithmMostFrequentMarked,0.0352783203125
+grovers_algorithm_m8,1,4,25,Fail,4,1,3,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0967457294464111
+grovers_algorithm_m9,1,4,25,Fail,4,1,2,GroversAlgorithmMostFrequentMarked,0.0303404331207275
+grovers_algorithm_em0,1,4,25,Pass,4,0,0,,0.0397007465362548
+grovers_algorithm_em1,1,4,25,Pass,4,0,0,,0.056161880493164
+grovers_algorithm_em2,1,4,25,Pass,4,0,0,,0.0371489524841308
+grovers_algorithm_em3,1,4,25,Fail,4,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1722557544708252
+grovers_algorithm_em4,1,4,25,Pass,4,0,0,,0.0323264598846435
+grovers_algorithm_m0,2,4,25,Fail,19,1,4,GroversAlgorithmLowerRegisterMinus,0.1448521614074707
+grovers_algorithm_m1,2,4,25,Fail,8,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1377856731414795
+grovers_algorithm_m2,2,4,25,Fail,19,2,7,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1643300056457519
+grovers_algorithm_m3,2,4,25,Fail,15,1,4,GroversAlgorithmMostFrequentMarked,1.926142930984497
+grovers_algorithm_m4,2,4,25,Fail,15,1,4,GroversAlgorithmMostFrequentMarked,0.0692465305328369
+grovers_algorithm_m5,2,4,25,Fail,19,1,3,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.196070909500122
+grovers_algorithm_m6,2,4,25,Fail,19,1,3,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1778194904327392
+grovers_algorithm_m7,2,4,25,Fail,8,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1640787124633789
+grovers_algorithm_m8,2,4,25,Fail,19,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2063791751861572
+grovers_algorithm_m9,2,4,25,Fail,15,1,4,GroversAlgorithmMostFrequentMarked,0.1113181114196777
+grovers_algorithm_em0,2,4,25,Pass,15,0,0,,4.0978102684021
+grovers_algorithm_em1,2,4,25,Pass,8,0,0,,0.1188030242919921
+grovers_algorithm_em2,2,4,25,Pass,15,0,0,,0.7285304069519043
+grovers_algorithm_em3,2,4,25,Fail,15,1,1,GroversAlgorithmMostFrequentMarked,10.449263572692873
+grovers_algorithm_em4,2,4,25,Pass,8,0,0,,0.0750069618225097
+grovers_algorithm_m0,3,4,25,Fail,19,2,7,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,9.53327989578247
+grovers_algorithm_m1,3,4,25,Fail,19,3,5,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,6.884388208389282
+grovers_algorithm_m2,3,4,25,Fail,19,3,8,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.776597261428833
+grovers_algorithm_m3,3,4,25,Fail,19,2,5,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,6.321537733078003
+grovers_algorithm_m4,3,4,25,Fail,19,2,5,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.257612705230713
+grovers_algorithm_m5,3,4,25,Fail,19,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.503986597061157
+grovers_algorithm_m6,3,4,25,Fail,19,2,7,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,11.48421859741211
+grovers_algorithm_m7,3,4,25,Fail,19,3,10,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,13.336934089660645
+grovers_algorithm_m8,3,4,25,Fail,19,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,5.150650262832642
+grovers_algorithm_m9,3,4,25,Fail,19,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,13.742398500442505
+grovers_algorithm_em0,3,4,25,Pass,19,0,0,,5.87388277053833
+grovers_algorithm_em1,3,4,25,Fail,19,1,1,GroversAlgorithmMostFrequentMarked,5.046923875808716
+grovers_algorithm_em2,3,4,25,Pass,19,0,0,,9.81919527053833
+grovers_algorithm_em3,3,4,25,Pass,19,0,0,,0.1755971908569336
+grovers_algorithm_em4,3,4,25,Pass,19,0,0,,4.535836696624756
+grovers_algorithm_m0,1,64,25,Pass,64,0,0,,1.532466173171997
+grovers_algorithm_m1,1,64,25,Fail,64,1,12,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.2950265407562256
+grovers_algorithm_m2,1,64,25,Fail,64,1,50,GroversAlgorithmMostFrequentMarked,0.5772392749786377
+grovers_algorithm_m3,1,64,25,Fail,64,1,46,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.0891740322113037
+grovers_algorithm_m4,1,64,25,Fail,60,1,52,GroversAlgorithmMostFrequentMarked,0.5615336894989014
+grovers_algorithm_m5,1,64,25,Pass,195,0,0,,1.176997184753418
+grovers_algorithm_m6,1,64,25,Pass,192,0,0,,1.0974845886230469
+grovers_algorithm_m7,1,64,25,Fail,63,1,52,GroversAlgorithmMostFrequentMarked,0.5200355052947998
+grovers_algorithm_m8,1,64,25,Pass,180,0,0,,1.191955327987671
+grovers_algorithm_m9,1,64,25,Pass,186,0,0,,1.110997200012207
+grovers_algorithm_em0,1,64,25,Pass,63,0,0,,0.5420405864715576
+grovers_algorithm_em1,1,64,25,Pass,192,0,0,,1.325488805770874
+grovers_algorithm_em2,1,64,25,Fail,64,1,5,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.343010425567627
+grovers_algorithm_em3,1,64,25,Fail,64,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.2835023403167725
+grovers_algorithm_em4,1,64,25,Fail,64,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.2345077991485596
+grovers_algorithm_m0,2,64,25,Fail,127,1,64,GroversAlgorithmMostFrequentMarked,1.5975019931793213
+grovers_algorithm_m1,2,64,25,Fail,250,1,17,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.536453485488892
+grovers_algorithm_m2,2,64,25,Fail,122,2,86,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.641561508178711
+grovers_algorithm_m3,2,64,25,Fail,186,1,48,GroversAlgorithmMostFrequentMarked,120.29189991950987
+grovers_algorithm_m4,2,64,25,Fail,192,1,47,GroversAlgorithmMostFrequentMarked,117.14797568321228
+grovers_algorithm_m5,2,64,25,Fail,195,1,39,GroversAlgorithmMostFrequentMarked,108.30643272399902
+grovers_algorithm_m6,2,64,25,Fail,126,2,104,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.724514722824097
+grovers_algorithm_m7,2,64,25,Fail,124,2,93,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.012471914291382
+grovers_algorithm_m8,2,64,25,Fail,247,1,44,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.5260016918182373
+grovers_algorithm_m9,2,64,25,Fail,183,1,32,GroversAlgorithmMostFrequentMarked,93.93995690345764
+grovers_algorithm_em0,2,64,25,Fail,256,1,3,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.489995002746582
+grovers_algorithm_em1,2,64,25,Fail,244,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.280991554260254
+grovers_algorithm_em2,2,64,25,Fail,183,1,1,GroversAlgorithmMostFrequentMarked,107.344952583313
+grovers_algorithm_em3,2,64,25,Fail,125,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.6680457592010498
+grovers_algorithm_em4,2,64,25,Pass,128,0,0,,1.6909966468811035
+grovers_algorithm_m0,3,64,25,Fail,256,2,103,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,128.73683762550354
+grovers_algorithm_m1,3,64,25,Fail,253,2,16,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,126.74145221710204
+grovers_algorithm_m2,3,64,25,Fail,253,3,154,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,115.29040002822876
+grovers_algorithm_m3,3,64,25,Fail,256,2,99,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,103.36149406433104
+grovers_algorithm_m4,3,64,25,Fail,253,2,107,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,109.81257176399232
+grovers_algorithm_m5,3,64,25,Fail,253,2,89,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,98.84923362731934
+grovers_algorithm_m6,3,64,25,Fail,253,3,101,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,119.46593737602234
+grovers_algorithm_m7,3,64,25,Fail,247,3,164,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,109.39615726470949
+grovers_algorithm_m8,3,64,25,Fail,250,2,89,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,115.14782667160034
+grovers_algorithm_m9,3,64,25,Fail,256,2,91,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,78.50908041000366
+grovers_algorithm_em0,3,64,25,Fail,259,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,123.99011492729188
+grovers_algorithm_em1,3,64,25,Fail,253,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,104.27024602890016
+grovers_algorithm_em2,3,64,25,Fail,256,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,119.22412204742432
+grovers_algorithm_em3,3,64,25,Fail,259,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,86.65428304672241
+grovers_algorithm_em4,3,64,25,Fail,253,1,4,GroversAlgorithmMostFrequentMarked,146.19993829727173
+grovers_algorithm_m0,1,8,25,Fail,8,1,8,GroversAlgorithmMostFrequentMarked,0.1093096733093261
+grovers_algorithm_m1,1,8,25,Fail,8,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1771478652954101
+grovers_algorithm_m2,1,8,25,Fail,8,1,6,GroversAlgorithmMostFrequentMarked,0.0577831268310546
+grovers_algorithm_m3,1,8,25,Fail,8,1,5,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1826024055480957
+grovers_algorithm_m4,1,8,25,Fail,8,1,7,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2117896080017089
+grovers_algorithm_m5,1,8,25,Pass,24,0,0,,0.1901779174804687
+grovers_algorithm_m6,1,8,25,Fail,8,1,7,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1278192996978759
+grovers_algorithm_m7,1,8,25,Fail,8,1,7,GroversAlgorithmMostFrequentMarked,0.0871257781982421
+grovers_algorithm_m8,1,8,25,Pass,27,0,0,,0.1234421730041503
+grovers_algorithm_m9,1,8,25,Fail,8,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1221234798431396
+grovers_algorithm_em0,1,8,25,Pass,8,0,0,,0.0717940330505371
+grovers_algorithm_em1,1,8,25,Pass,8,0,0,,0.1652922630310058
+grovers_algorithm_em2,1,8,25,Pass,8,0,0,,0.0638253688812255
+grovers_algorithm_em3,1,8,25,Pass,8,0,0,,0.0991804599761962
+grovers_algorithm_em4,1,8,25,Pass,8,0,0,,0.1840460300445556
+grovers_algorithm_m0,2,8,25,Fail,16,1,8,GroversAlgorithmMostFrequentMarked,0.2733678817749023
+grovers_algorithm_m1,2,8,25,Fail,16,1,2,GroversAlgorithmMostFrequentMarked,0.2531211376190185
+grovers_algorithm_m2,2,8,25,Fail,35,2,13,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3473484516143799
+grovers_algorithm_m3,2,8,25,Fail,27,1,6,GroversAlgorithmMostFrequentMarked,9.740298748016356
+grovers_algorithm_m4,2,8,25,Fail,27,1,4,GroversAlgorithmMostFrequentMarked,21.01523852348328
+grovers_algorithm_m5,2,8,25,Fail,27,1,4,GroversAlgorithmMostFrequentMarked,21.73564839363098
+grovers_algorithm_m6,2,8,25,Fail,16,2,11,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2097101211547851
+grovers_algorithm_m7,2,8,25,Fail,16,2,13,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.223637580871582
+grovers_algorithm_m8,2,8,25,Fail,35,1,8,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.441577672958374
+grovers_algorithm_m9,2,8,25,Fail,27,1,6,GroversAlgorithmMostFrequentMarked,18.1530556678772
+grovers_algorithm_em0,2,8,25,Fail,16,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1888322830200195
+grovers_algorithm_em1,2,8,25,Fail,35,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3381898403167724
+grovers_algorithm_em2,2,8,25,Pass,27,0,0,,16.96782422065735
+grovers_algorithm_em3,2,8,25,Pass,27,0,0,,7.750363111495972
+grovers_algorithm_em4,2,8,25,Pass,16,0,0,,0.1736731529235839
+grovers_algorithm_m0,3,8,25,Fail,35,2,15,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,20.8870210647583
+grovers_algorithm_m1,3,8,25,Fail,35,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,12.17239785194397
+grovers_algorithm_m2,3,8,25,Fail,35,3,17,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,23.803835153579712
+grovers_algorithm_m3,3,8,25,Fail,35,2,9,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,18.606991291046143
+grovers_algorithm_m4,3,8,25,Fail,35,2,13,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,20.05000400543213
+grovers_algorithm_m5,3,8,25,Fail,35,2,12,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,18.291537761688232
+grovers_algorithm_m6,3,8,25,Fail,35,2,13,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,17.636368989944458
+grovers_algorithm_m7,3,8,25,Fail,35,3,22,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,19.363927841186523
+grovers_algorithm_m8,3,8,25,Fail,35,2,13,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,16.751012086868286
+grovers_algorithm_m9,3,8,25,Fail,35,2,13,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,12.117623567581177
+grovers_algorithm_em0,3,8,25,Pass,35,0,0,,4.47039270401001
+grovers_algorithm_em1,3,8,25,Fail,35,1,1,GroversAlgorithmMostFrequentMarked,15.455480575561523
+grovers_algorithm_em2,3,8,25,Pass,35,0,0,,19.45625305175781
+grovers_algorithm_em3,3,8,25,Fail,35,1,1,GroversAlgorithmMostFrequentMarked,26.859634399414062
+grovers_algorithm_em4,3,8,25,Pass,35,0,0,,16.37838125228882
+grovers_algorithm_m0,1,16,12,Fail,16,1,16,GroversAlgorithmMostFrequentMarked,3.269514322280884
+grovers_algorithm_m1,1,16,12,Pass,51,0,0,,0.3289613723754883
+grovers_algorithm_m2,1,16,12,Fail,48,1,16,GroversAlgorithmLowerRegisterMinus,0.3475303649902344
+grovers_algorithm_m3,1,16,12,Fail,16,1,15,GroversAlgorithmMostFrequentMarked,0.1269669532775879
+grovers_algorithm_m4,1,16,12,Fail,16,1,13,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.4499578475952148
+grovers_algorithm_m5,1,16,12,Fail,16,1,12,GroversAlgorithmMostFrequentMarked,0.201491117477417
+grovers_algorithm_m6,1,16,12,Pass,51,0,0,,0.3454022407531738
+grovers_algorithm_m7,1,16,12,Pass,51,0,0,,0.397853136062622
+grovers_algorithm_m8,1,16,12,Fail,16,1,10,GroversAlgorithmMostFrequentMarked,0.1804690361022949
+grovers_algorithm_m9,1,16,12,Fail,16,1,14,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.5287802219390869
+grovers_algorithm_em0,1,16,12,Pass,16,0,0,,0.1617360115051269
+grovers_algorithm_em1,1,16,12,Fail,16,1,1,GroversAlgorithmMostFrequentMarked,0.1976947784423828
+grovers_algorithm_em2,1,16,12,Pass,51,0,0,,0.3395917415618896
+grovers_algorithm_em3,1,16,12,Pass,16,0,0,,0.2138757705688476
+grovers_algorithm_em4,1,16,12,Pass,16,0,0,,0.7226219177246094
+grovers_algorithm_m0,2,16,12,Fail,51,1,16,GroversAlgorithmMostFrequentMarked,23.61292028427124
+grovers_algorithm_m1,2,16,12,Fail,67,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.8130021095275879
+grovers_algorithm_m2,2,16,12,Fail,32,2,25,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.5627837181091309
+grovers_algorithm_m3,2,16,12,Fail,67,1,14,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.5505075454711914
+grovers_algorithm_m4,2,16,12,Fail,51,1,13,GroversAlgorithmMostFrequentMarked,27.034850597381592
+grovers_algorithm_m5,2,16,12,Fail,51,1,7,GroversAlgorithmMostFrequentMarked,41.820056200027466
+grovers_algorithm_m6,2,16,12,Fail,32,2,25,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3347952365875244
+grovers_algorithm_m7,2,16,12,Fail,32,2,18,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.4825103282928467
+grovers_algorithm_m8,2,16,12,Fail,32,2,20,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.5909719467163086
+grovers_algorithm_m9,2,16,12,Fail,48,1,11,GroversAlgorithmMostFrequentMarked,33.43197727203369
+grovers_algorithm_em0,2,16,12,Fail,67,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.6370024681091309
+grovers_algorithm_em1,2,16,12,Pass,67,0,0,,4.155672788619995
+grovers_algorithm_em2,2,16,12,Pass,48,0,0,,26.11045503616333
+grovers_algorithm_em3,2,16,12,Pass,32,0,0,,0.5115110874176025
+grovers_algorithm_em4,2,16,12,Pass,67,0,0,,0.6813318729400635
+grovers_algorithm_m0,3,16,12,Fail,67,2,22,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,31.37824821472168
+grovers_algorithm_m1,3,16,12,Fail,67,2,9,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,29.675710678100582
+grovers_algorithm_m2,3,16,12,Fail,67,3,41,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,19.519023656845093
+grovers_algorithm_m3,3,16,12,Fail,67,2,25,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,28.220000982284542
+grovers_algorithm_m4,3,16,12,Fail,67,2,22,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,41.27197504043579
+grovers_algorithm_m5,3,16,12,Fail,67,2,24,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,33.87460494041443
+grovers_algorithm_m6,3,16,12,Fail,67,2,25,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,28.90528631210327
+grovers_algorithm_m7,3,16,12,Fail,67,3,24,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,20.43284249305725
+grovers_algorithm_m8,3,16,12,Fail,67,3,24,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,32.999205589294434
+grovers_algorithm_m9,3,16,12,Fail,67,2,23,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,22.17544913291931
+grovers_algorithm_em0,3,16,12,Pass,67,0,0,,31.95027232170105
+grovers_algorithm_em1,3,16,12,Pass,67,0,0,,24.148388385772705
+grovers_algorithm_em2,3,16,12,Fail,67,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,26.003899097442627
+grovers_algorithm_em3,3,16,12,Pass,67,0,0,,46.41892743110657
+grovers_algorithm_em4,3,16,12,Fail,67,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,24.018601179122925
+grovers_algorithm_m0,1,1,12,Fail,1,1,1,GroversAlgorithmMostFrequentMarked,0.0240492820739746
+grovers_algorithm_m1,1,1,12,Pass,1,0,0,,0.0125584602355957
+grovers_algorithm_m2,1,1,12,Fail,1,1,1,GroversAlgorithmMostFrequentMarked,0.0112485885620117
+grovers_algorithm_m3,1,1,12,Pass,6,0,0,,0.0248782634735107
+grovers_algorithm_m4,1,1,12,Fail,1,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0145261287689208
+grovers_algorithm_m5,1,1,12,Fail,1,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0452673435211181
+grovers_algorithm_m6,1,1,12,Pass,6,0,0,,0.0240523815155029
+grovers_algorithm_m7,1,1,12,Fail,1,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0254912376403808
+grovers_algorithm_m8,1,1,12,Fail,1,1,1,GroversAlgorithmMostFrequentMarked,0.015028953552246
+grovers_algorithm_m9,1,1,12,Fail,1,1,1,GroversAlgorithmMostFrequentMarked,0.0329341888427734
+grovers_algorithm_em0,1,1,12,Pass,1,0,0,,0.0257627964019775
+grovers_algorithm_em1,1,1,12,Pass,1,0,0,,0.0110185146331787
+grovers_algorithm_em2,1,1,12,Pass,1,0,0,,0.0170483589172363
+grovers_algorithm_em3,1,1,12,Pass,1,0,0,,0.0200603008270263
+grovers_algorithm_em4,1,1,12,Pass,6,0,0,,0.033191442489624
+grovers_algorithm_m0,2,1,12,Fail,7,1,1,GroversAlgorithmLowerRegisterMinus,0.0341167449951171
+grovers_algorithm_m1,2,1,12,Pass,7,0,0,,0.0416157245635986
+grovers_algorithm_m2,2,1,12,Fail,6,1,1,GroversAlgorithmLowerRegisterMinus,7.238398313522339
+grovers_algorithm_m3,2,1,12,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0551457405090332
+grovers_algorithm_m4,2,1,12,Fail,6,1,1,GroversAlgorithmMostFrequentMarked,0.0206685066223144
+grovers_algorithm_m5,2,1,12,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0356013774871826
+grovers_algorithm_m6,2,1,12,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0462241172790527
+grovers_algorithm_m7,2,1,12,Fail,2,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0220148563385009
+grovers_algorithm_m8,2,1,12,Fail,2,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0185551643371582
+grovers_algorithm_m9,2,1,12,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.03676438331604
+grovers_algorithm_em0,2,1,12,Pass,2,0,0,,0.0167679786682128
+grovers_algorithm_em1,2,1,12,Pass,2,0,0,,0.0285282135009765
+grovers_algorithm_em2,2,1,12,Pass,6,0,0,,5.989490509033203
+grovers_algorithm_em3,2,1,12,Pass,7,0,0,,0.0461840629577636
+grovers_algorithm_em4,2,1,12,Pass,7,0,0,,0.0369362831115722
+grovers_algorithm_m0,3,1,12,Fail,7,1,1,GroversAlgorithmMostFrequentMarked,1.3459537029266355
+grovers_algorithm_m1,3,1,12,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.058133840560913
+grovers_algorithm_m2,3,1,12,Fail,7,3,3,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0749924182891845
+grovers_algorithm_m3,3,1,12,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0248501300811767
+grovers_algorithm_m4,3,1,12,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.043405532836914
+grovers_algorithm_m5,3,1,12,Fail,7,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.977546453475952
+grovers_algorithm_m6,3,1,12,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.6242103576660156
+grovers_algorithm_m7,3,1,12,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0432331562042236
+grovers_algorithm_m8,3,1,12,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0725769996643066
+grovers_algorithm_m9,3,1,12,Fail,7,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0399951934814453
+grovers_algorithm_em0,3,1,12,Pass,7,0,0,,1.789581537246704
+grovers_algorithm_em1,3,1,12,Pass,7,0,0,,0.0369441509246826
+grovers_algorithm_em2,3,1,12,Pass,7,0,0,,0.0305812358856201
+grovers_algorithm_em3,3,1,12,Pass,7,0,0,,1.878128290176392
+grovers_algorithm_em4,3,1,12,Pass,7,0,0,,3.707761287689209
+grovers_algorithm_m0,1,2,12,Fail,2,1,2,GroversAlgorithmMostFrequentMarked,0.0502128601074218
+grovers_algorithm_m1,1,2,12,Fail,2,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0793688297271728
+grovers_algorithm_m2,1,2,12,Fail,9,1,2,GroversAlgorithmLowerRegisterMinus,0.0432910919189453
+grovers_algorithm_m3,1,2,12,Fail,2,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1445314884185791
+grovers_algorithm_m4,1,2,12,Pass,9,0,0,,0.0709052085876464
+grovers_algorithm_m5,1,2,12,Fail,2,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2073862552642822
+grovers_algorithm_m6,1,2,12,Fail,2,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0347874164581298
+grovers_algorithm_m7,1,2,12,Pass,9,0,0,,0.0287849903106689
+grovers_algorithm_m8,1,2,12,Pass,9,0,0,,0.053666353225708
+grovers_algorithm_m9,1,2,12,Fail,2,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0326135158538818
+grovers_algorithm_em0,1,2,12,Pass,9,0,0,,0.0388524532318115
+grovers_algorithm_em1,1,2,12,Pass,2,0,0,,0.0360736846923828
+grovers_algorithm_em2,1,2,12,Pass,9,0,0,,0.0366616249084472
+grovers_algorithm_em3,1,2,12,Pass,2,0,0,,0.0954279899597168
+grovers_algorithm_em4,1,2,12,Pass,2,0,0,,0.0262989997863769
+grovers_algorithm_m0,2,2,12,Fail,4,1,2,GroversAlgorithmMostFrequentMarked,0.0531959533691406
+grovers_algorithm_m1,2,2,12,Fail,4,1,1,GroversAlgorithmMostFrequentMarked,0.085777997970581
+grovers_algorithm_m2,2,2,12,Fail,11,2,4,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0905554294586181
+grovers_algorithm_m3,2,2,12,Fail,4,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0823917388916015
+grovers_algorithm_m4,2,2,12,Fail,4,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0791220664978027
+grovers_algorithm_m5,2,2,12,Fail,11,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1024191379547119
+grovers_algorithm_m6,2,2,12,Fail,4,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0729620456695556
+grovers_algorithm_m7,2,2,12,Fail,4,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0981867313385009
+grovers_algorithm_m8,2,2,12,Fail,4,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0323636531829834
+grovers_algorithm_m9,2,2,12,Fail,9,1,2,GroversAlgorithmMostFrequentMarked,4.121852397918701
+grovers_algorithm_em0,2,2,12,Pass,9,0,0,,5.338584661483765
+grovers_algorithm_em1,2,2,12,Pass,4,0,0,,0.0759522914886474
+grovers_algorithm_em2,2,2,12,Pass,9,0,0,,0.0578885078430175
+grovers_algorithm_em3,2,2,12,Pass,11,0,0,,0.1191620826721191
+grovers_algorithm_em4,2,2,12,Pass,4,0,0,,0.0873525142669677
+grovers_algorithm_m0,3,2,12,Fail,11,2,4,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,11.82892656326294
+grovers_algorithm_m1,3,2,12,Pass,11,0,0,,3.5050573348999023
+grovers_algorithm_m2,3,2,12,Fail,11,2,4,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,5.620231628417969
+grovers_algorithm_m3,3,2,12,Fail,11,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0957562923431396
+grovers_algorithm_m4,3,2,12,Fail,11,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1287784576416015
+grovers_algorithm_m5,3,2,12,Fail,11,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1113853454589843
+grovers_algorithm_m6,3,2,12,Fail,11,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,4.324180603027344
+grovers_algorithm_m7,3,2,12,Fail,11,2,3,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,3.915268659591675
+grovers_algorithm_m8,3,2,12,Fail,11,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,7.309911251068115
+grovers_algorithm_m9,3,2,12,Fail,11,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.3239789009094238
+grovers_algorithm_em0,3,2,12,Pass,11,0,0,,7.462775707244873
+grovers_algorithm_em1,3,2,12,Pass,11,0,0,,2.579289674758911
+grovers_algorithm_em2,3,2,12,Fail,11,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.92785906791687
+grovers_algorithm_em3,3,2,12,Pass,11,0,0,,1.1910104751586914
+grovers_algorithm_em4,3,2,12,Pass,11,0,0,,10.027583837509155
+grovers_algorithm_m0,1,32,12,Pass,99,0,0,,0.5996322631835938
+grovers_algorithm_m1,1,32,12,Fail,32,1,5,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.615389347076416
+grovers_algorithm_m2,1,32,12,Fail,29,1,18,GroversAlgorithmMostFrequentMarked,0.272507905960083
+grovers_algorithm_m3,1,32,12,Fail,32,1,20,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.5836076736450195
+grovers_algorithm_m4,1,32,12,Fail,32,1,26,GroversAlgorithmMostFrequentMarked,0.3386416435241699
+grovers_algorithm_m5,1,32,12,Pass,96,0,0,,0.7336244583129883
+grovers_algorithm_m6,1,32,12,Pass,99,0,0,,0.6976635456085205
+grovers_algorithm_m7,1,32,12,Fail,32,1,24,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.7217714786529541
+grovers_algorithm_m8,1,32,12,Fail,32,1,27,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.5375494956970215
+grovers_algorithm_m9,1,32,12,Fail,32,1,23,GroversAlgorithmMostFrequentMarked,0.3565206527709961
+grovers_algorithm_em0,1,32,12,Pass,32,0,0,,0.3990247249603271
+grovers_algorithm_em1,1,32,12,Pass,32,0,0,,0.6188302040100098
+grovers_algorithm_em2,1,32,12,Fail,32,1,1,GroversAlgorithmMostFrequentMarked,0.2894692420959472
+grovers_algorithm_em3,1,32,12,Pass,96,0,0,,0.603687047958374
+grovers_algorithm_em4,1,32,12,Pass,32,0,0,,0.2548115253448486
+grovers_algorithm_m0,2,32,12,Fail,62,1,32,GroversAlgorithmMostFrequentMarked,0.9460697174072266
+grovers_algorithm_m1,2,32,12,Fail,62,2,15,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.1221778392791748
+grovers_algorithm_m2,2,32,12,Fail,131,2,56,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.2928965091705322
+grovers_algorithm_m3,2,32,12,Fail,128,1,26,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.17224383354187
+grovers_algorithm_m4,2,32,12,Fail,99,1,24,GroversAlgorithmMostFrequentMarked,51.73650217056274
+grovers_algorithm_m5,2,32,12,Fail,96,1,23,GroversAlgorithmMostFrequentMarked,63.56677508354187
+grovers_algorithm_m6,2,32,12,Fail,131,1,26,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.2249321937561035
+grovers_algorithm_m7,2,32,12,Fail,131,1,24,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.1746795177459717
+grovers_algorithm_m8,2,32,12,Fail,63,2,44,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.0620224475860596
+grovers_algorithm_m9,2,32,12,Fail,99,1,18,GroversAlgorithmMostFrequentMarked,45.67597270011902
+grovers_algorithm_em0,2,32,12,Fail,131,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.2963199615478516
+grovers_algorithm_em1,2,32,12,Pass,128,0,0,,1.430344820022583
+grovers_algorithm_em2,2,32,12,Fail,64,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.24670147895813
+grovers_algorithm_em3,2,32,12,Pass,131,0,0,,1.2874348163604736
+grovers_algorithm_em4,2,32,12,Pass,62,0,0,,1.0477511882781982
+grovers_algorithm_m0,3,32,12,Fail,131,2,33,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,60.494948387146
+grovers_algorithm_m1,3,32,12,Fail,131,2,14,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,60.12597894668579
+grovers_algorithm_m2,3,32,12,Fail,128,3,73,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,51.03000068664551
+grovers_algorithm_m3,3,32,12,Fail,128,2,53,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,51.64997863769531
+grovers_algorithm_m4,3,32,12,Fail,128,2,50,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,43.989460706710815
+grovers_algorithm_m5,3,32,12,Fail,122,2,44,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,46.479535818099976
+grovers_algorithm_m6,3,32,12,Fail,128,2,51,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,44.16695857048035
+grovers_algorithm_m7,3,32,12,Fail,131,2,48,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,35.380141735076904
+grovers_algorithm_m8,3,32,12,Fail,131,2,35,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,55.489861726760864
+grovers_algorithm_m9,3,32,12,Fail,131,2,49,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,42.62901163101196
+grovers_algorithm_em0,3,32,12,Fail,131,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,85.39230251312256
+grovers_algorithm_em1,3,32,12,Fail,128,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,73.83361911773682
+grovers_algorithm_em2,3,32,12,Fail,131,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,55.35801291465759
+grovers_algorithm_em3,3,32,12,Pass,128,0,0,,70.95715045928955
+grovers_algorithm_em4,3,32,12,Fail,128,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,44.36682033538818
+grovers_algorithm_m0,1,4,12,Pass,4,0,0,,0.1187877655029296
+grovers_algorithm_m1,1,4,12,Fail,4,1,1,GroversAlgorithmMostFrequentMarked,0.0488033294677734
+grovers_algorithm_m2,1,4,12,Fail,4,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2061905860900879
+grovers_algorithm_m3,1,4,12,Fail,4,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0642387866973877
+grovers_algorithm_m4,1,4,12,Fail,4,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0898125171661377
+grovers_algorithm_m5,1,4,12,Pass,15,0,0,,0.0779774188995361
+grovers_algorithm_m6,1,4,12,Pass,15,0,0,,0.1340055465698242
+grovers_algorithm_m7,1,4,12,Fail,4,1,3,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0555951595306396
+grovers_algorithm_m8,1,4,12,Pass,15,0,0,,0.088212251663208
+grovers_algorithm_m9,1,4,12,Fail,4,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1507661342620849
+grovers_algorithm_em0,1,4,12,Pass,15,0,0,,0.0823478698730468
+grovers_algorithm_em1,1,4,12,Pass,4,0,0,,0.1975817680358886
+grovers_algorithm_em2,1,4,12,Pass,15,0,0,,0.0891001224517822
+grovers_algorithm_em3,1,4,12,Pass,4,0,0,,0.0749261379241943
+grovers_algorithm_em4,1,4,12,Pass,4,0,0,,0.0317871570587158
+grovers_algorithm_m0,2,4,12,Pass,19,0,0,,0.232051134109497
+grovers_algorithm_m1,2,4,12,Fail,8,2,3,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1567659378051757
+grovers_algorithm_m2,2,4,12,Fail,8,2,5,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.0791563987731933
+grovers_algorithm_m3,2,4,12,Fail,15,1,4,GroversAlgorithmMostFrequentMarked,9.751301527023315
+grovers_algorithm_m4,2,4,12,Fail,15,1,3,GroversAlgorithmMostFrequentMarked,7.162200927734375
+grovers_algorithm_m5,2,4,12,Fail,15,1,2,GroversAlgorithmMostFrequentMarked,3.652906656265259
+grovers_algorithm_m6,2,4,12,Fail,8,2,5,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1304776668548584
+grovers_algorithm_m7,2,4,12,Fail,8,2,7,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1025300025939941
+grovers_algorithm_m8,2,4,12,Pass,19,0,0,,0.1596565246582031
+grovers_algorithm_m9,2,4,12,Fail,19,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1989054679870605
+grovers_algorithm_em0,2,4,12,Pass,15,0,0,,11.828167915344238
+grovers_algorithm_em1,2,4,12,Pass,19,0,0,,0.1547322273254394
+grovers_algorithm_em2,2,4,12,Pass,19,0,0,,0.2953474521636963
+grovers_algorithm_em3,2,4,12,Pass,12,0,0,,7.484966993331909
+grovers_algorithm_em4,2,4,12,Pass,15,0,0,,6.712970733642578
+grovers_algorithm_m0,3,4,12,Fail,19,2,8,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,5.885896682739258
+grovers_algorithm_m1,3,4,12,Fail,19,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,5.451814413070679
+grovers_algorithm_m2,3,4,12,Fail,19,3,10,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,7.699941158294678
+grovers_algorithm_m3,3,4,12,Fail,19,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,15.249481201171877
+grovers_algorithm_m4,3,4,12,Fail,19,2,7,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,11.292109489440918
+grovers_algorithm_m5,3,4,12,Fail,19,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,4.722660064697266
+grovers_algorithm_m6,3,4,12,Fail,19,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,5.251265525817871
+grovers_algorithm_m7,3,4,12,Fail,19,2,7,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,10.62035608291626
+grovers_algorithm_m8,3,4,12,Fail,19,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,5.771760702133179
+grovers_algorithm_m9,3,4,12,Fail,19,2,4,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,9.912957906723022
+grovers_algorithm_em0,3,4,12,Pass,19,0,0,,9.55670428276062
+grovers_algorithm_em1,3,4,12,Pass,19,0,0,,14.992645502090454
+grovers_algorithm_em2,3,4,12,Pass,19,0,0,,1.145792007446289
+grovers_algorithm_em3,3,4,12,Pass,19,0,0,,0.7519268989562988
+grovers_algorithm_em4,3,4,12,Fail,19,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.9557738304138184
+grovers_algorithm_m0,1,64,12,Fail,62,1,64,GroversAlgorithmMostFrequentMarked,0.6939947605133057
+grovers_algorithm_m1,1,64,12,Pass,195,0,0,,1.3254342079162598
+grovers_algorithm_m2,1,64,12,Fail,62,1,49,GroversAlgorithmMostFrequentMarked,0.6146800518035889
+grovers_algorithm_m3,1,64,12,Pass,195,0,0,,1.2947802543640137
+grovers_algorithm_m4,1,64,12,Fail,64,1,50,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.7765381336212158
+grovers_algorithm_m5,1,64,12,Fail,62,1,42,GroversAlgorithmMostFrequentMarked,0.7010126113891602
+grovers_algorithm_m6,1,64,12,Pass,192,0,0,,1.2814247608184814
+grovers_algorithm_m7,1,64,12,Fail,64,1,55,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.3630385398864746
+grovers_algorithm_m8,1,64,12,Fail,62,1,45,GroversAlgorithmMostFrequentMarked,0.698972225189209
+grovers_algorithm_m9,1,64,12,Fail,62,1,37,GroversAlgorithmMostFrequentMarked,0.5120069980621338
+grovers_algorithm_em0,1,64,12,Pass,189,0,0,,1.2560076713562012
+grovers_algorithm_em1,1,64,12,Fail,63,1,4,GroversAlgorithmMostFrequentMarked,0.6479692459106445
+grovers_algorithm_em2,1,64,12,Pass,195,0,0,,1.3330061435699463
+grovers_algorithm_em3,1,64,12,Fail,63,1,1,GroversAlgorithmMostFrequentMarked,0.5535476207733154
+grovers_algorithm_em4,1,64,12,Fail,61,1,1,GroversAlgorithmMostFrequentMarked,0.5554440021514893
+grovers_algorithm_m0,2,64,12,Fail,186,1,64,GroversAlgorithmMostFrequentMarked,75.96601486206055
+grovers_algorithm_m1,2,64,12,Fail,125,2,26,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.9555177688598635
+grovers_algorithm_m2,2,64,12,Fail,249,2,114,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.510405778884888
+grovers_algorithm_m3,2,64,12,Fail,256,1,51,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.608996629714966
+grovers_algorithm_m4,2,64,12,Fail,124,2,105,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.0356674194335938
+grovers_algorithm_m5,2,64,12,Fail,125,2,89,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.7229056358337402
+grovers_algorithm_m6,2,64,12,Fail,256,1,49,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.2789347171783447
+grovers_algorithm_m7,2,64,12,Fail,256,2,50,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.545473575592041
+grovers_algorithm_m8,2,64,12,Fail,247,1,46,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.5944924354553223
+grovers_algorithm_m9,2,64,12,Fail,250,1,51,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.461509704589844
+grovers_algorithm_em0,2,64,12,Fail,249,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.3640055656433105
+grovers_algorithm_em1,2,64,12,Fail,186,1,1,GroversAlgorithmMostFrequentMarked,113.85592985153198
+grovers_algorithm_em2,2,64,12,Fail,256,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,2.666489601135254
+grovers_algorithm_em3,2,64,12,Fail,192,1,1,GroversAlgorithmMostFrequentMarked,124.22896003723145
+grovers_algorithm_em4,2,64,12,Pass,126,0,0,,1.7780654430389404
+grovers_algorithm_m0,3,64,12,Fail,259,3,67,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,101.2896282672882
+grovers_algorithm_m1,3,64,12,Fail,244,2,28,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,114.09647035598756
+grovers_algorithm_m2,3,64,12,Fail,250,3,159,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,145.73793864250183
+grovers_algorithm_m3,3,64,12,Fail,256,2,91,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,110.35144996643066
+grovers_algorithm_m4,3,64,12,Fail,250,2,107,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,121.0984559059143
+grovers_algorithm_m5,3,64,12,Fail,256,2,76,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,131.72897505760193
+grovers_algorithm_m6,3,64,12,Fail,253,2,101,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,151.67793798446655
+grovers_algorithm_m7,3,64,12,Fail,256,3,105,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,73.98293852806091
+grovers_algorithm_m8,3,64,12,Fail,256,2,84,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,116.65053749084473
+grovers_algorithm_m9,3,64,12,Fail,247,2,95,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,129.38685584068298
+grovers_algorithm_em0,3,64,12,Fail,250,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,111.77995085716248
+grovers_algorithm_em1,3,64,12,Fail,250,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,88.47150206565857
+grovers_algorithm_em2,3,64,12,Fail,256,2,6,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,101.15840768814088
+grovers_algorithm_em3,3,64,12,Fail,259,2,7,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,132.23246669769287
+grovers_algorithm_em4,3,64,12,Fail,250,2,2,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,86.66295456886292
+grovers_algorithm_m0,1,8,12,Pass,8,0,0,,0.2336108684539795
+grovers_algorithm_m1,1,8,12,Fail,8,1,2,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1318597793579101
+grovers_algorithm_m2,1,8,12,Fail,27,1,8,GroversAlgorithmLowerRegisterMinus,0.1752059459686279
+grovers_algorithm_m3,1,8,12,Fail,8,1,7,GroversAlgorithmMostFrequentMarked,0.1112613677978515
+grovers_algorithm_m4,1,8,12,Pass,27,0,0,,0.1430361270904541
+grovers_algorithm_m5,1,8,12,Fail,8,1,3,GroversAlgorithmMostFrequentMarked,0.1249573230743408
+grovers_algorithm_m6,1,8,12,Pass,27,0,0,,0.194542646408081
+grovers_algorithm_m7,1,8,12,Fail,8,1,5,GroversAlgorithmMostFrequentMarked,0.1189289093017578
+grovers_algorithm_m8,1,8,12,Pass,27,0,0,,0.1975641250610351
+grovers_algorithm_m9,1,8,12,Fail,8,1,3,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2250924110412597
+grovers_algorithm_em0,1,8,12,Pass,8,0,0,,0.0796890258789062
+grovers_algorithm_em1,1,8,12,Fail,8,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.1856799125671386
+grovers_algorithm_em2,1,8,12,Pass,8,0,0,,0.1888144016265869
+grovers_algorithm_em3,1,8,12,Pass,8,0,0,,0.1700010299682617
+grovers_algorithm_em4,1,8,12,Pass,8,0,0,,0.1517486572265625
+grovers_algorithm_m0,2,8,12,Fail,27,2,9,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,9.593462944030762
+grovers_algorithm_m1,2,8,12,Fail,35,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3003726005554199
+grovers_algorithm_m2,2,8,12,Fail,16,2,11,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.4104986190795898
+grovers_algorithm_m3,2,8,12,Fail,16,2,11,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3010323047637939
+grovers_algorithm_m4,2,8,12,Fail,35,1,7,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,1.4859070777893066
+grovers_algorithm_m5,2,8,12,Fail,35,1,4,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3178131580352783
+grovers_algorithm_m6,2,8,12,Fail,16,2,13,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2258913516998291
+grovers_algorithm_m7,2,8,12,Fail,16,2,14,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3739511966705322
+grovers_algorithm_m8,2,8,12,Fail,16,2,9,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.3293864727020263
+grovers_algorithm_m9,2,8,12,Fail,16,2,11,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2467720508575439
+grovers_algorithm_em0,2,8,12,Pass,27,0,0,,3.3531365394592285
+grovers_algorithm_em1,2,8,12,Pass,16,0,0,,0.1795647144317627
+grovers_algorithm_em2,2,8,12,Pass,35,0,0,,0.3132827281951904
+grovers_algorithm_em3,2,8,12,Fail,27,1,1,GroversAlgorithmMostFrequentMarked,11.999305486679075
+grovers_algorithm_em4,2,8,12,Fail,35,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,0.2859909534454345
+grovers_algorithm_m0,3,8,12,Fail,35,2,16,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked,6.277439594268799
+grovers_algorithm_m1,3,8,12,Fail,35,2,5,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,23.400262355804443
+grovers_algorithm_m2,3,8,12,Fail,35,3,20,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,23.750147342681885
+grovers_algorithm_m3,3,8,12,Fail,32,2,14,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,18.33686470985413
+grovers_algorithm_m4,3,8,12,Fail,35,2,14,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,8.715506315231323
+grovers_algorithm_m5,3,8,12,Fail,35,2,11,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,18.207809686660767
+grovers_algorithm_m6,3,8,12,Fail,35,2,16,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,17.299350023269653
+grovers_algorithm_m7,3,8,12,Fail,35,3,15,GroversAlgorithmLowerRegisterMinus & GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,5.6043689250946045
+grovers_algorithm_m8,3,8,12,Fail,35,2,14,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,23.82046675682068
+grovers_algorithm_m9,3,8,12,Fail,35,2,11,GroversAlgorithmMostFrequentMarked & GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,11.379934072494509
+grovers_algorithm_em0,3,8,12,Fail,35,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,4.134030342102051
+grovers_algorithm_em1,3,8,12,Pass,35,0,0,,9.060040473937988
+grovers_algorithm_em2,3,8,12,Fail,35,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,10.411346435546877
+grovers_algorithm_em3,3,8,12,Pass,35,0,0,,8.082729816436768
+grovers_algorithm_em4,3,8,12,Fail,35,1,1,GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked,7.8448896408081055

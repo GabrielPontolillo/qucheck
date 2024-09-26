@@ -2204,3 +2204,633 @@ quantum_phase_estimation_em1,3,8,800,Pass,132,0,0,,4.254521369934082
 quantum_phase_estimation_em2,3,8,800,Pass,132,0,0,,3.4051263332366943
 quantum_phase_estimation_em3,3,8,800,Pass,129,0,0,,3.094967842102051
 quantum_phase_estimation_em4,3,8,800,Pass,132,0,0,,4.091073989868164
+quantum_phase_estimation_m0,1,16,25,Fail,60,1,16,PhaseCorrectlyEstimatedEnoughQubits,0.799344539642334
+quantum_phase_estimation_m1,1,16,25,Fail,60,1,15,PhaseCorrectlyEstimatedEnoughQubits,0.8179399967193604
+quantum_phase_estimation_m2,1,16,25,Fail,96,1,12,PhaseEstimationSumDifferentEigenvectors,6.595254182815552
+quantum_phase_estimation_m3,1,16,25,Fail,96,1,10,PhaseEstimationSumDifferentEigenvectors,4.194416046142578
+quantum_phase_estimation_m4,1,16,25,Fail,60,1,15,PhaseCorrectlyEstimatedEnoughQubits,0.7423245906829834
+quantum_phase_estimation_m5,1,16,25,Pass,96,0,0,,2.394648313522339
+quantum_phase_estimation_m6,1,16,25,Pass,96,0,0,,2.176429271697998
+quantum_phase_estimation_m7,1,16,25,Fail,60,1,16,PhaseCorrectlyEstimatedEnoughQubits,0.7998933792114258
+quantum_phase_estimation_m8,1,16,25,Fail,60,1,3,PhaseCorrectlyEstimatedEnoughQubits,0.8681495189666748
+quantum_phase_estimation_m9,1,16,25,Fail,60,1,11,PhaseCorrectlyEstimatedEnoughQubits,0.7738466262817383
+quantum_phase_estimation_em0,1,16,25,Pass,96,0,0,,2.355855226516724
+quantum_phase_estimation_em1,1,16,25,Pass,96,0,0,,2.2232627868652344
+quantum_phase_estimation_em2,1,16,25,Fail,96,1,13,PhaseEstimationSumDifferentEigenvectors,7.752920389175415
+quantum_phase_estimation_em3,1,16,25,Fail,96,1,9,PhaseEstimationSumDifferentEigenvectors,4.946122646331787
+quantum_phase_estimation_em4,1,16,25,Fail,96,1,10,PhaseEstimationSumDifferentEigenvectors,4.338001489639282
+quantum_phase_estimation_m0,2,16,25,Fail,192,1,14,PhaseEstimationSumDifferentEigenvectors,7.722018957138061
+quantum_phase_estimation_m1,2,16,25,Fail,156,1,15,PhaseCorrectlyEstimatedEnoughQubits,3.777003049850464
+quantum_phase_estimation_m2,2,16,25,Fail,156,1,3,PhaseCorrectlyEstimatedEnoughQubits,3.6074700355529785
+quantum_phase_estimation_m3,2,16,25,Fail,156,1,13,PhaseEstimationSumDifferentEigenvectors,8.304498672485352
+quantum_phase_estimation_m4,2,16,25,Fail,192,1,15,PhaseEstimationSumDifferentEigenvectors,11.456526041030884
+quantum_phase_estimation_m5,2,16,25,Fail,156,1,16,PhaseCorrectlyEstimatedEnoughQubits,3.825963497161865
+quantum_phase_estimation_m6,2,16,25,Fail,156,1,10,PhaseCorrectlyEstimatedEnoughQubits,3.6444921493530273
+quantum_phase_estimation_m7,2,16,25,Fail,156,1,16,PhaseCorrectlyEstimatedEnoughQubits,3.209998846054077
+quantum_phase_estimation_m8,2,16,25,Fail,153,1,2,PhaseCorrectlyEstimatedEnoughQubits,3.650001287460327
+quantum_phase_estimation_m9,2,16,25,Fail,156,2,25,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,7.720998048782349
+quantum_phase_estimation_em0,2,16,25,Fail,192,1,12,PhaseEstimationSumDifferentEigenvectors,6.949514865875244
+quantum_phase_estimation_em1,2,16,25,Fail,156,1,15,PhaseEstimationSumDifferentEigenvectors,6.8319501876831055
+quantum_phase_estimation_em2,2,16,25,Pass,156,0,0,,2.769730806350708
+quantum_phase_estimation_em3,2,16,25,Fail,156,1,14,PhaseEstimationSumDifferentEigenvectors,7.01726508140564
+quantum_phase_estimation_em4,2,16,25,Fail,156,1,12,PhaseEstimationSumDifferentEigenvectors,4.610586643218994
+quantum_phase_estimation_m0,3,16,25,Fail,252,2,28,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,8.385486841201782
+quantum_phase_estimation_m1,3,16,25,Fail,252,2,28,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,10.524897813796995
+quantum_phase_estimation_m2,3,16,25,Fail,252,2,15,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,7.080085754394531
+quantum_phase_estimation_m3,3,16,25,Fail,252,2,13,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,8.725009441375732
+quantum_phase_estimation_m4,3,16,25,Fail,252,2,29,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,8.408479690551758
+quantum_phase_estimation_m5,3,16,25,Fail,252,2,32,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,11.00918960571289
+quantum_phase_estimation_m6,3,16,25,Fail,252,2,28,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,8.163302659988403
+quantum_phase_estimation_m7,3,16,25,Fail,252,2,29,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,10.415225982666016
+quantum_phase_estimation_m8,3,16,25,Fail,252,2,18,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,9.4299054145813
+quantum_phase_estimation_m9,3,16,25,Fail,252,2,20,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,8.86404299736023
+quantum_phase_estimation_em0,3,16,25,Fail,252,2,12,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,6.984440565109253
+quantum_phase_estimation_em1,3,16,25,Fail,252,1,13,PhaseEstimationSumDifferentEigenvectors,7.891135454177856
+quantum_phase_estimation_em2,3,16,25,Fail,249,1,15,PhaseEstimationSumDifferentEigenvectors,9.673852682113647
+quantum_phase_estimation_em3,3,16,25,Fail,252,1,11,PhaseEstimationSumDifferentEigenvectors,7.034002065658569
+quantum_phase_estimation_em4,3,16,25,Fail,252,1,10,PhaseEstimationSumDifferentEigenvectors,9.818522691726685
+quantum_phase_estimation_m0,1,1,25,Pass,6,0,0,,0.1239702701568603
+quantum_phase_estimation_m1,1,1,25,Fail,6,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.0519831180572509
+quantum_phase_estimation_m2,1,1,25,Pass,6,0,0,,0.1184678077697753
+quantum_phase_estimation_m3,1,1,25,Pass,6,0,0,,0.0776159763336181
+quantum_phase_estimation_m4,1,1,25,Pass,6,0,0,,0.2350788116455078
+quantum_phase_estimation_m5,1,1,25,Pass,6,0,0,,0.1845569610595703
+quantum_phase_estimation_m6,1,1,25,Pass,6,0,0,,0.0647726058959961
+quantum_phase_estimation_m7,1,1,25,Fail,6,1,1,PhaseEstimationSumDifferentEigenvectors,0.089963674545288
+quantum_phase_estimation_m8,1,1,25,Pass,6,0,0,,0.0700078010559082
+quantum_phase_estimation_m9,1,1,25,Pass,6,0,0,,0.1803278923034668
+quantum_phase_estimation_em0,1,1,25,Pass,6,0,0,,0.1251578330993652
+quantum_phase_estimation_em1,1,1,25,Pass,6,0,0,,0.0966379642486572
+quantum_phase_estimation_em2,1,1,25,Fail,6,1,1,PhaseEstimationSumDifferentEigenvectors,0.1133770942687988
+quantum_phase_estimation_em3,1,1,25,Fail,6,1,1,PhaseEstimationSumDifferentEigenvectors,0.3119652271270752
+quantum_phase_estimation_em4,1,1,25,Pass,6,0,0,,0.1856915950775146
+quantum_phase_estimation_m0,2,1,25,Fail,12,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.5376381874084473
+quantum_phase_estimation_m1,2,1,25,Fail,12,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.1065144538879394
+quantum_phase_estimation_m2,2,1,25,Pass,12,0,0,,0.1494808197021484
+quantum_phase_estimation_m3,2,1,25,Fail,12,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.4404921531677246
+quantum_phase_estimation_m4,2,1,25,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,1.118614912033081
+quantum_phase_estimation_m5,2,1,25,Fail,12,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.1594386100769043
+quantum_phase_estimation_m6,2,1,25,Fail,12,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.1849927902221679
+quantum_phase_estimation_m7,2,1,25,Fail,12,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.1022195816040039
+quantum_phase_estimation_m8,2,1,25,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.1747939586639404
+quantum_phase_estimation_m9,2,1,25,Fail,12,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.1090035438537597
+quantum_phase_estimation_em0,2,1,25,Pass,12,0,0,,0.4527533054351806
+quantum_phase_estimation_em1,2,1,25,Pass,12,0,0,,0.2014245986938476
+quantum_phase_estimation_em2,2,1,25,Pass,12,0,0,,0.1330618858337402
+quantum_phase_estimation_em3,2,1,25,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.2575616836547851
+quantum_phase_estimation_em4,2,1,25,Pass,12,0,0,,0.5592119693756104
+quantum_phase_estimation_m0,3,1,25,Fail,18,1,1,PhaseCorrectlyEstimatedEnoughQubits,1.2131617069244385
+quantum_phase_estimation_m1,3,1,25,Fail,18,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.2228872776031494
+quantum_phase_estimation_m2,3,1,25,Fail,18,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.259540319442749
+quantum_phase_estimation_m3,3,1,25,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.2959344387054443
+quantum_phase_estimation_m4,3,1,25,Fail,18,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.3804984092712402
+quantum_phase_estimation_m5,3,1,25,Fail,18,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.6775417327880859
+quantum_phase_estimation_m6,3,1,25,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.2790133953094482
+quantum_phase_estimation_m7,3,1,25,Fail,18,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.2754762172698974
+quantum_phase_estimation_m8,3,1,25,Fail,18,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.3289699554443359
+quantum_phase_estimation_m9,3,1,25,Fail,18,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.3527371883392334
+quantum_phase_estimation_em0,3,1,25,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.3337669372558594
+quantum_phase_estimation_em1,3,1,25,Pass,18,0,0,,0.62851881980896
+quantum_phase_estimation_em2,3,1,25,Pass,18,0,0,,0.2105023860931396
+quantum_phase_estimation_em3,3,1,25,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.2417094707489013
+quantum_phase_estimation_em4,3,1,25,Pass,18,0,0,,0.2711014747619629
+quantum_phase_estimation_m0,1,2,25,Fail,9,1,2,PhaseCorrectlyEstimatedEnoughQubits,0.077183723449707
+quantum_phase_estimation_m1,1,2,25,Fail,12,1,2,PhaseEstimationSumDifferentEigenvectors,0.5590622425079346
+quantum_phase_estimation_m2,1,2,25,Pass,12,0,0,,0.5779829025268555
+quantum_phase_estimation_m3,1,2,25,Pass,12,0,0,,0.4129486083984375
+quantum_phase_estimation_m4,1,2,25,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.1765594482421875
+quantum_phase_estimation_m5,1,2,25,Fail,12,1,2,PhaseEstimationSumDifferentEigenvectors,0.2875895500183105
+quantum_phase_estimation_m6,1,2,25,Fail,12,1,2,PhaseEstimationSumDifferentEigenvectors,0.4978764057159424
+quantum_phase_estimation_m7,1,2,25,Fail,12,1,2,PhaseEstimationSumDifferentEigenvectors,1.034613847732544
+quantum_phase_estimation_m8,1,2,25,Pass,12,0,0,,0.2533485889434814
+quantum_phase_estimation_m9,1,2,25,Fail,12,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.0939526557922363
+quantum_phase_estimation_em0,1,2,25,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.3620226383209228
+quantum_phase_estimation_em1,1,2,25,Pass,12,0,0,,0.1544892787933349
+quantum_phase_estimation_em2,1,2,25,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.1700217723846435
+quantum_phase_estimation_em3,1,2,25,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,1.306945562362671
+quantum_phase_estimation_em4,1,2,25,Pass,12,0,0,,0.6964983940124512
+quantum_phase_estimation_m0,2,2,25,Fail,24,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.5249145030975342
+quantum_phase_estimation_m1,2,2,25,Fail,24,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.4197521209716797
+quantum_phase_estimation_m2,2,2,25,Fail,24,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.4303839206695557
+quantum_phase_estimation_m3,2,2,25,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.2506158351898193
+quantum_phase_estimation_m4,2,2,25,Pass,24,0,0,,0.7547297477722168
+quantum_phase_estimation_m5,2,2,25,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.9850461483001708
+quantum_phase_estimation_m6,2,2,25,Fail,24,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.3313937187194824
+quantum_phase_estimation_m7,2,2,25,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.7270376682281494
+quantum_phase_estimation_m8,2,2,25,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,1.272078275680542
+quantum_phase_estimation_m9,2,2,25,Fail,21,1,2,PhaseCorrectlyEstimatedEnoughQubits,1.034980058670044
+quantum_phase_estimation_em0,2,2,25,Fail,24,1,1,PhaseEstimationSumDifferentEigenvectors,0.9759328365325928
+quantum_phase_estimation_em1,2,2,25,Pass,24,0,0,,0.6299171447753906
+quantum_phase_estimation_em2,2,2,25,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.6495051383972168
+quantum_phase_estimation_em3,2,2,25,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.3545155525207519
+quantum_phase_estimation_em4,2,2,25,Pass,24,0,0,,0.3387844562530517
+quantum_phase_estimation_m0,3,2,25,Fail,36,2,3,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.5088269710540771
+quantum_phase_estimation_m1,3,2,25,Fail,33,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.4683690071105957
+quantum_phase_estimation_m2,3,2,25,Fail,33,1,2,PhaseEstimationSumDifferentEigenvectors,1.1536965370178225
+quantum_phase_estimation_m3,3,2,25,Fail,36,2,3,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.5899827480316162
+quantum_phase_estimation_m4,3,2,25,Fail,36,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.7508330345153809
+quantum_phase_estimation_m5,3,2,25,Fail,33,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.6367535591125488
+quantum_phase_estimation_m6,3,2,25,Fail,33,1,2,PhaseEstimationSumDifferentEigenvectors,1.4773170948028564
+quantum_phase_estimation_m7,3,2,25,Fail,36,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.7214064598083496
+quantum_phase_estimation_m8,3,2,25,Fail,36,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.6868009567260742
+quantum_phase_estimation_m9,3,2,25,Fail,33,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.6627755165100098
+quantum_phase_estimation_em0,3,2,25,Pass,33,0,0,,1.5891575813293457
+quantum_phase_estimation_em1,3,2,25,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,0.5177130699157715
+quantum_phase_estimation_em2,3,2,25,Pass,36,0,0,,2.6341092586517334
+quantum_phase_estimation_em3,3,2,25,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,0.8804547786712646
+quantum_phase_estimation_em4,3,2,25,Fail,36,1,1,PhaseEstimationSumDifferentEigenvectors,1.49102520942688
+quantum_phase_estimation_m0,1,32,25,Fail,192,1,23,PhaseEstimationSumDifferentEigenvectors,8.656536340713501
+quantum_phase_estimation_m1,1,32,25,Fail,192,1,32,PhaseEstimationSumDifferentEigenvectors,11.983007669448853
+quantum_phase_estimation_m2,1,32,25,Fail,192,1,19,PhaseEstimationSumDifferentEigenvectors,11.917441129684448
+quantum_phase_estimation_m3,1,32,25,Pass,192,0,0,,6.44449257850647
+quantum_phase_estimation_m4,1,32,25,Fail,192,1,28,PhaseEstimationSumDifferentEigenvectors,6.497993469238281
+quantum_phase_estimation_m5,1,32,25,Fail,108,1,32,PhaseCorrectlyEstimatedEnoughQubits,1.6745469570159912
+quantum_phase_estimation_m6,1,32,25,Pass,192,0,0,,4.444157361984253
+quantum_phase_estimation_m7,1,32,25,Fail,108,1,32,PhaseCorrectlyEstimatedEnoughQubits,1.6797947883605957
+quantum_phase_estimation_m8,1,32,25,Fail,192,1,24,PhaseEstimationSumDifferentEigenvectors,6.032037258148193
+quantum_phase_estimation_m9,1,32,25,Pass,192,0,0,,5.347637176513672
+quantum_phase_estimation_em0,1,32,25,Pass,108,0,0,,1.5443110466003418
+quantum_phase_estimation_em1,1,32,25,Pass,108,0,0,,1.571516752243042
+quantum_phase_estimation_em2,1,32,25,Fail,192,1,24,PhaseEstimationSumDifferentEigenvectors,11.455978155136108
+quantum_phase_estimation_em3,1,32,25,Pass,192,0,0,,6.239747762680054
+quantum_phase_estimation_em4,1,32,25,Pass,108,0,0,,1.5998213291168213
+quantum_phase_estimation_m0,2,32,25,Fail,300,2,50,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,16.513431072235107
+quantum_phase_estimation_m1,2,32,25,Fail,300,1,32,PhaseCorrectlyEstimatedEnoughQubits,5.90399694442749
+quantum_phase_estimation_m2,2,32,25,Fail,300,2,43,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,15.180491924285889
+quantum_phase_estimation_m3,2,32,25,Fail,300,1,3,PhaseCorrectlyEstimatedEnoughQubits,8.111496448516846
+quantum_phase_estimation_m4,2,32,25,Fail,300,2,57,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,11.39602017402649
+quantum_phase_estimation_m5,2,32,25,Fail,300,2,60,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,13.52646803855896
+quantum_phase_estimation_m6,2,32,25,Fail,384,1,26,PhaseEstimationSumDifferentEigenvectors,18.983985662460327
+quantum_phase_estimation_m7,2,32,25,Fail,300,2,63,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,12.882997751235962
+quantum_phase_estimation_m8,2,32,25,Fail,384,1,29,PhaseEstimationSumDifferentEigenvectors,14.553277730941772
+quantum_phase_estimation_m9,2,32,25,Fail,384,1,29,PhaseEstimationSumDifferentEigenvectors,18.29442071914673
+quantum_phase_estimation_em0,2,32,25,Fail,300,1,26,PhaseEstimationSumDifferentEigenvectors,12.190579175949097
+quantum_phase_estimation_em1,2,32,25,Pass,300,0,0,,6.339972257614136
+quantum_phase_estimation_em2,2,32,25,Fail,300,1,24,PhaseEstimationSumDifferentEigenvectors,10.571090936660768
+quantum_phase_estimation_em3,2,32,25,Pass,300,0,0,,6.711492776870728
+quantum_phase_estimation_em4,2,32,25,Fail,300,1,28,PhaseEstimationSumDifferentEigenvectors,12.083501815795898
+quantum_phase_estimation_m0,3,32,25,Fail,492,2,54,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,15.829231977462769
+quantum_phase_estimation_m1,3,32,25,Fail,492,2,61,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,18.893688201904297
+quantum_phase_estimation_m2,3,32,25,Fail,492,2,33,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,16.30805540084839
+quantum_phase_estimation_m3,3,32,25,Fail,492,2,25,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,19.177945852279663
+quantum_phase_estimation_m4,3,32,25,Fail,492,2,58,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,16.821210622787476
+quantum_phase_estimation_m5,3,32,25,Fail,492,2,61,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,17.35806179046631
+quantum_phase_estimation_m6,3,32,25,Fail,492,2,48,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,15.856958389282228
+quantum_phase_estimation_m7,3,32,25,Fail,492,2,62,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,15.558179140090942
+quantum_phase_estimation_m8,3,32,25,Fail,492,2,34,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,18.83521151542664
+quantum_phase_estimation_m9,3,32,25,Fail,492,2,47,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,17.244608402252197
+quantum_phase_estimation_em0,3,32,25,Fail,492,1,23,PhaseEstimationSumDifferentEigenvectors,24.119823455810547
+quantum_phase_estimation_em1,3,32,25,Fail,492,1,24,PhaseEstimationSumDifferentEigenvectors,18.29647946357727
+quantum_phase_estimation_em2,3,32,25,Fail,492,1,30,PhaseEstimationSumDifferentEigenvectors,18.57323265075684
+quantum_phase_estimation_em3,3,32,25,Fail,492,1,28,PhaseEstimationSumDifferentEigenvectors,15.979989528656006
+quantum_phase_estimation_em4,3,32,25,Fail,492,1,26,PhaseEstimationSumDifferentEigenvectors,16.786526679992676
+quantum_phase_estimation_m0,1,4,25,Fail,21,1,4,PhaseCorrectlyEstimatedEnoughQubits,0.2689614295959472
+quantum_phase_estimation_m1,1,4,25,Fail,21,1,4,PhaseCorrectlyEstimatedEnoughQubits,0.1729898452758789
+quantum_phase_estimation_m2,1,4,25,Fail,24,1,1,PhaseEstimationSumDifferentEigenvectors,1.4364910125732422
+quantum_phase_estimation_m3,1,4,25,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,1.5390894412994385
+quantum_phase_estimation_m4,1,4,25,Fail,24,1,4,PhaseEstimationSumDifferentEigenvectors,1.8039522171020508
+quantum_phase_estimation_m5,1,4,25,Pass,24,0,0,,0.7979958057403564
+quantum_phase_estimation_m6,1,4,25,Fail,24,1,4,PhaseEstimationSumDifferentEigenvectors,2.5619823932647705
+quantum_phase_estimation_m7,1,4,25,Fail,24,1,4,PhaseCorrectlyEstimatedEnoughQubits,0.1561658382415771
+quantum_phase_estimation_m8,1,4,25,Pass,18,0,0,,0.2072808742523193
+quantum_phase_estimation_m9,1,4,25,Fail,24,1,4,PhaseEstimationSumDifferentEigenvectors,0.9820077419281006
+quantum_phase_estimation_em0,1,4,25,Pass,21,0,0,,0.1859300136566162
+quantum_phase_estimation_em1,1,4,25,Pass,18,0,0,,0.208512544631958
+quantum_phase_estimation_em2,1,4,25,Pass,21,0,0,,0.235633373260498
+quantum_phase_estimation_em3,1,4,25,Pass,24,0,0,,0.6408491134643555
+quantum_phase_estimation_em4,1,4,25,Pass,24,0,0,,0.699805736541748
+quantum_phase_estimation_m0,2,4,25,Fail,45,2,7,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.9387001991271972
+quantum_phase_estimation_m1,2,4,25,Fail,45,2,8,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.9135653972625728
+quantum_phase_estimation_m2,2,4,25,Fail,48,1,2,PhaseCorrectlyEstimatedEnoughQubits,0.7753167152404785
+quantum_phase_estimation_m3,2,4,25,Fail,45,1,2,PhaseCorrectlyEstimatedEnoughQubits,0.8255057334899902
+quantum_phase_estimation_m4,2,4,25,Fail,48,1,3,PhaseEstimationSumDifferentEigenvectors,2.6280012130737305
+quantum_phase_estimation_m5,2,4,25,Fail,42,1,4,PhaseCorrectlyEstimatedEnoughQubits,0.6790473461151123
+quantum_phase_estimation_m6,2,4,25,Fail,45,1,3,PhaseCorrectlyEstimatedEnoughQubits,0.6664457321166992
+quantum_phase_estimation_m7,2,4,25,Fail,48,1,4,PhaseEstimationSumDifferentEigenvectors,2.4749674797058105
+quantum_phase_estimation_m8,2,4,25,Fail,48,1,1,PhaseEstimationSumDifferentEigenvectors,0.9519670009613036
+quantum_phase_estimation_m9,2,4,25,Fail,45,1,2,PhaseCorrectlyEstimatedEnoughQubits,0.6185836791992188
+quantum_phase_estimation_em0,2,4,25,Fail,45,1,1,PhaseEstimationSumDifferentEigenvectors,1.9659340381622317
+quantum_phase_estimation_em1,2,4,25,Fail,48,1,3,PhaseEstimationSumDifferentEigenvectors,2.4642372131347656
+quantum_phase_estimation_em2,2,4,25,Fail,45,1,1,PhaseEstimationSumDifferentEigenvectors,1.202000617980957
+quantum_phase_estimation_em3,2,4,25,Pass,45,0,0,,0.8287267684936523
+quantum_phase_estimation_em4,2,4,25,Fail,45,1,3,PhaseEstimationSumDifferentEigenvectors,1.7870397567749023
+quantum_phase_estimation_m0,3,4,25,Fail,66,2,6,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.279358148574829
+quantum_phase_estimation_m1,3,4,25,Fail,69,2,8,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.3361587524414062
+quantum_phase_estimation_m2,3,4,25,Fail,69,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.8028371334075928
+quantum_phase_estimation_m3,3,4,25,Fail,66,1,3,PhaseEstimationSumDifferentEigenvectors,1.6994659900665283
+quantum_phase_estimation_m4,3,4,25,Fail,69,2,7,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.720538377761841
+quantum_phase_estimation_m5,3,4,25,Fail,69,2,8,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.8399527072906492
+quantum_phase_estimation_m6,3,4,25,Fail,69,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.459044933319092
+quantum_phase_estimation_m7,3,4,25,Fail,63,2,8,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.8839683532714844
+quantum_phase_estimation_m8,3,4,25,Fail,66,2,5,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.435499906539917
+quantum_phase_estimation_m9,3,4,25,Fail,69,2,6,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.3522238731384275
+quantum_phase_estimation_em0,3,4,25,Fail,69,1,4,PhaseEstimationSumDifferentEigenvectors,1.8127806186676023
+quantum_phase_estimation_em1,3,4,25,Fail,63,1,4,PhaseEstimationSumDifferentEigenvectors,2.498992681503296
+quantum_phase_estimation_em2,3,4,25,Fail,69,1,3,PhaseEstimationSumDifferentEigenvectors,2.5372297763824463
+quantum_phase_estimation_em3,3,4,25,Fail,69,1,3,PhaseEstimationSumDifferentEigenvectors,2.265746831893921
+quantum_phase_estimation_em4,3,4,25,Fail,69,1,2,PhaseEstimationSumDifferentEigenvectors,2.6203267574310303
+quantum_phase_estimation_m0,1,64,25,Pass,384,0,0,,12.797996759414673
+quantum_phase_estimation_m1,1,64,25,Fail,204,1,62,PhaseCorrectlyEstimatedEnoughQubits,3.3142871856689453
+quantum_phase_estimation_m2,1,64,25,Fail,384,1,51,PhaseEstimationSumDifferentEigenvectors,20.763208866119385
+quantum_phase_estimation_m3,1,64,25,Fail,384,1,51,PhaseEstimationSumDifferentEigenvectors,18.20110559463501
+quantum_phase_estimation_m4,1,64,25,Fail,384,1,52,PhaseEstimationSumDifferentEigenvectors,26.965207815170288
+quantum_phase_estimation_m5,1,64,25,Pass,384,0,0,,11.981088876724243
+quantum_phase_estimation_m6,1,64,25,Pass,384,0,0,,10.583834171295166
+quantum_phase_estimation_m7,1,64,25,Fail,384,1,64,PhaseEstimationSumDifferentEigenvectors,22.0095808506012
+quantum_phase_estimation_m8,1,64,25,Pass,384,0,0,,10.61763596534729
+quantum_phase_estimation_m9,1,64,25,Fail,384,1,54,PhaseEstimationSumDifferentEigenvectors,20.98180103302002
+quantum_phase_estimation_em0,1,64,25,Fail,384,1,51,PhaseEstimationSumDifferentEigenvectors,19.87724995613098
+quantum_phase_estimation_em1,1,64,25,Pass,204,0,0,,3.570302724838257
+quantum_phase_estimation_em2,1,64,25,Pass,204,0,0,,3.175387144088745
+quantum_phase_estimation_em3,1,64,25,Pass,384,0,0,,10.616307973861694
+quantum_phase_estimation_em4,1,64,25,Pass,204,0,0,,3.298262596130371
+quantum_phase_estimation_m0,2,64,25,Fail,768,1,54,PhaseEstimationSumDifferentEigenvectors,30.973073720932007
+quantum_phase_estimation_m1,2,64,25,Fail,588,2,113,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,27.810368299484253
+quantum_phase_estimation_m2,2,64,25,Fail,588,2,87,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,21.82516193389893
+quantum_phase_estimation_m3,2,64,25,Fail,588,2,57,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,27.761334896087646
+quantum_phase_estimation_m4,2,64,25,Fail,588,2,98,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,27.5880229473114
+quantum_phase_estimation_m5,2,64,25,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,33.60622262954712
+quantum_phase_estimation_m6,2,64,25,Fail,588,1,45,PhaseCorrectlyEstimatedEnoughQubits,14.44411826133728
+quantum_phase_estimation_m7,2,64,25,Fail,588,1,62,PhaseCorrectlyEstimatedEnoughQubits,15.38974905014038
+quantum_phase_estimation_m8,2,64,25,Fail,588,1,7,PhaseCorrectlyEstimatedEnoughQubits,15.565328121185305
+quantum_phase_estimation_m9,2,64,25,Fail,588,2,93,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,26.87788677215576
+quantum_phase_estimation_em0,2,64,25,Fail,588,1,52,PhaseEstimationSumDifferentEigenvectors,22.270427227020264
+quantum_phase_estimation_em1,2,64,25,Fail,588,1,51,PhaseEstimationSumDifferentEigenvectors,29.27495765686035
+quantum_phase_estimation_em2,2,64,25,Fail,768,1,57,PhaseEstimationSumDifferentEigenvectors,34.08773422241211
+quantum_phase_estimation_em3,2,64,25,Fail,768,1,55,PhaseEstimationSumDifferentEigenvectors,33.39515829086304
+quantum_phase_estimation_em4,2,64,25,Fail,588,1,54,PhaseEstimationSumDifferentEigenvectors,22.14883089065552
+quantum_phase_estimation_m0,3,64,25,Fail,972,2,108,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,36.601237058639526
+quantum_phase_estimation_m1,3,64,25,Fail,972,2,128,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,34.55947256088257
+quantum_phase_estimation_m2,3,64,25,Fail,972,2,73,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,39.70963478088379
+quantum_phase_estimation_m3,3,64,25,Fail,972,2,54,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,34.16369986534119
+quantum_phase_estimation_m4,3,64,25,Fail,972,2,103,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,34.647254943847656
+quantum_phase_estimation_m5,3,64,25,Fail,972,2,97,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,33.21422028541565
+quantum_phase_estimation_m6,3,64,25,Fail,972,2,97,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,39.661988258361816
+quantum_phase_estimation_m7,3,64,25,Fail,972,2,106,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,34.485002279281616
+quantum_phase_estimation_m8,3,64,25,Fail,972,2,65,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,36.66411828994751
+quantum_phase_estimation_m9,3,64,25,Fail,972,2,95,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,36.3442919254303
+quantum_phase_estimation_em0,3,64,25,Fail,972,1,58,PhaseEstimationSumDifferentEigenvectors,37.17418336868286
+quantum_phase_estimation_em1,3,64,25,Fail,972,1,54,PhaseEstimationSumDifferentEigenvectors,39.93839144706726
+quantum_phase_estimation_em2,3,64,25,Fail,972,1,54,PhaseEstimationSumDifferentEigenvectors,35.44354748725891
+quantum_phase_estimation_em3,3,64,25,Fail,972,1,57,PhaseEstimationSumDifferentEigenvectors,38.5704357624054
+quantum_phase_estimation_em4,3,64,25,Fail,972,1,55,PhaseEstimationSumDifferentEigenvectors,42.53799390792847
+quantum_phase_estimation_m0,1,8,25,Fail,48,1,7,PhaseEstimationSumDifferentEigenvectors,4.774526834487915
+quantum_phase_estimation_m1,1,8,25,Pass,48,0,0,,1.670802116394043
+quantum_phase_estimation_m2,1,8,25,Fail,48,1,5,PhaseEstimationSumDifferentEigenvectors,4.316657781600952
+quantum_phase_estimation_m3,1,8,25,Pass,48,0,0,,2.490788221359253
+quantum_phase_estimation_m4,1,8,25,Fail,33,1,7,PhaseCorrectlyEstimatedEnoughQubits,0.4727871417999267
+quantum_phase_estimation_m5,1,8,25,Pass,48,0,0,,1.2503423690795898
+quantum_phase_estimation_m6,1,8,25,Pass,48,0,0,,0.9620606899261476
+quantum_phase_estimation_m7,1,8,25,Pass,48,0,0,,1.1519410610198977
+quantum_phase_estimation_m8,1,8,25,Fail,36,1,3,PhaseCorrectlyEstimatedEnoughQubits,0.4293546676635742
+quantum_phase_estimation_m9,1,8,25,Pass,48,0,0,,0.7186684608459473
+quantum_phase_estimation_em0,1,8,25,Pass,48,0,0,,1.1456456184387207
+quantum_phase_estimation_em1,1,8,25,Pass,33,0,0,,0.4192614555358886
+quantum_phase_estimation_em2,1,8,25,Pass,33,0,0,,0.4241821765899658
+quantum_phase_estimation_em3,1,8,25,Pass,36,0,0,,0.4484460353851318
+quantum_phase_estimation_em4,1,8,25,Fail,48,1,4,PhaseEstimationSumDifferentEigenvectors,2.50762152671814
+quantum_phase_estimation_m0,2,8,25,Fail,81,2,13,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.9379169940948489
+quantum_phase_estimation_m1,2,8,25,Fail,84,1,7,PhaseCorrectlyEstimatedEnoughQubits,1.4207313060760498
+quantum_phase_estimation_m2,2,8,25,Fail,81,2,13,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.9665796756744385
+quantum_phase_estimation_m3,2,8,25,Fail,81,2,6,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.552443265914917
+quantum_phase_estimation_m4,2,8,25,Fail,96,1,6,PhaseEstimationSumDifferentEigenvectors,6.4569313526153564
+quantum_phase_estimation_m5,2,8,25,Fail,84,2,16,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.9241154193878174
+quantum_phase_estimation_m6,2,8,25,Fail,84,2,14,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.1730847358703613
+quantum_phase_estimation_m7,2,8,25,Fail,84,1,8,PhaseCorrectlyEstimatedEnoughQubits,2.039806604385376
+quantum_phase_estimation_m8,2,8,25,Fail,96,1,6,PhaseEstimationSumDifferentEigenvectors,3.660420417785645
+quantum_phase_estimation_m9,2,8,25,Fail,84,2,13,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.559630870819092
+quantum_phase_estimation_em0,2,8,25,Fail,81,1,6,PhaseEstimationSumDifferentEigenvectors,4.068251609802246
+quantum_phase_estimation_em1,2,8,25,Fail,81,1,7,PhaseEstimationSumDifferentEigenvectors,4.340695142745972
+quantum_phase_estimation_em2,2,8,25,Pass,84,0,0,,1.999361753463745
+quantum_phase_estimation_em3,2,8,25,Fail,84,1,4,PhaseEstimationSumDifferentEigenvectors,1.7239067554473877
+quantum_phase_estimation_em4,2,8,25,Fail,96,1,6,PhaseEstimationSumDifferentEigenvectors,3.60184907913208
+quantum_phase_estimation_m0,3,8,25,Fail,129,2,14,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.5184812545776367
+quantum_phase_estimation_m1,3,8,25,Fail,126,2,16,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,4.182826995849609
+quantum_phase_estimation_m2,3,8,25,Fail,132,2,7,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,6.5009095668792725
+quantum_phase_estimation_m3,3,8,25,Fail,132,2,5,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,4.061898708343506
+quantum_phase_estimation_m4,3,8,25,Fail,132,2,13,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.000742197036743
+quantum_phase_estimation_m5,3,8,25,Fail,129,2,16,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.1820170879364014
+quantum_phase_estimation_m6,3,8,25,Fail,129,2,12,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.475604295730591
+quantum_phase_estimation_m7,3,8,25,Fail,126,2,16,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.3123786449432373
+quantum_phase_estimation_m8,3,8,25,Fail,129,2,6,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.5890278816223145
+quantum_phase_estimation_m9,3,8,25,Fail,129,2,11,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.1175405979156494
+quantum_phase_estimation_em0,3,8,25,Fail,132,1,6,PhaseEstimationSumDifferentEigenvectors,3.1291115283966064
+quantum_phase_estimation_em1,3,8,25,Fail,129,1,3,PhaseEstimationSumDifferentEigenvectors,6.268286228179932
+quantum_phase_estimation_em2,3,8,25,Fail,132,1,5,PhaseEstimationSumDifferentEigenvectors,3.429504632949829
+quantum_phase_estimation_em3,3,8,25,Fail,129,1,5,PhaseEstimationSumDifferentEigenvectors,4.87700629234314
+quantum_phase_estimation_em4,3,8,25,Fail,129,1,4,PhaseEstimationSumDifferentEigenvectors,1.8470616340637207
+quantum_phase_estimation_m0,1,16,12,Fail,96,1,16,PhaseEstimationSumDifferentEigenvectors,3.4405839443206787
+quantum_phase_estimation_m1,1,16,12,Fail,60,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.9223227500915528
+quantum_phase_estimation_m2,1,16,12,Pass,96,0,0,,2.718501567840576
+quantum_phase_estimation_m3,1,16,12,Pass,96,0,0,,2.505822896957397
+quantum_phase_estimation_m4,1,16,12,Fail,96,1,16,PhaseEstimationSumDifferentEigenvectors,5.130906343460083
+quantum_phase_estimation_m5,1,16,12,Fail,96,1,16,PhaseEstimationSumDifferentEigenvectors,4.875799417495728
+quantum_phase_estimation_m6,1,16,12,Fail,96,1,16,PhaseEstimationSumDifferentEigenvectors,5.786304473876953
+quantum_phase_estimation_m7,1,16,12,Fail,60,1,3,PhaseCorrectlyEstimatedEnoughQubits,0.7576613426208496
+quantum_phase_estimation_m8,1,16,12,Pass,96,0,0,,2.807090282440185
+quantum_phase_estimation_m9,1,16,12,Fail,60,1,7,PhaseCorrectlyEstimatedEnoughQubits,0.8005433082580566
+quantum_phase_estimation_em0,1,16,12,Fail,96,1,15,PhaseEstimationSumDifferentEigenvectors,4.404921531677246
+quantum_phase_estimation_em1,1,16,12,Fail,96,1,16,PhaseEstimationSumDifferentEigenvectors,5.134668350219727
+quantum_phase_estimation_em2,1,16,12,Fail,96,1,16,PhaseEstimationSumDifferentEigenvectors,5.150991678237915
+quantum_phase_estimation_em3,1,16,12,Pass,60,0,0,,0.983546257019043
+quantum_phase_estimation_em4,1,16,12,Fail,96,1,16,PhaseEstimationSumDifferentEigenvectors,6.014766216278076
+quantum_phase_estimation_m0,2,16,12,Fail,192,1,16,PhaseEstimationSumDifferentEigenvectors,11.246660709381104
+quantum_phase_estimation_m1,2,16,12,Fail,156,1,16,PhaseEstimationSumDifferentEigenvectors,5.180444478988648
+quantum_phase_estimation_m2,2,16,12,Pass,156,0,0,,3.162416219711304
+quantum_phase_estimation_m3,2,16,12,Fail,192,1,16,PhaseEstimationSumDifferentEigenvectors,10.99696135520935
+quantum_phase_estimation_m4,2,16,12,Fail,156,2,22,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,6.615236043930054
+quantum_phase_estimation_m5,2,16,12,Fail,156,1,16,PhaseEstimationSumDifferentEigenvectors,6.697661399841309
+quantum_phase_estimation_m6,2,16,12,Fail,156,2,20,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,5.405076026916504
+quantum_phase_estimation_m7,2,16,12,Fail,192,1,16,PhaseEstimationSumDifferentEigenvectors,5.636823415756226
+quantum_phase_estimation_m8,2,16,12,Fail,156,1,16,PhaseEstimationSumDifferentEigenvectors,8.655029773712158
+quantum_phase_estimation_m9,2,16,12,Fail,156,2,22,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,5.179640769958496
+quantum_phase_estimation_em0,2,16,12,Fail,192,1,16,PhaseEstimationSumDifferentEigenvectors,7.925561904907227
+quantum_phase_estimation_em1,2,16,12,Pass,156,0,0,,4.000839471817017
+quantum_phase_estimation_em2,2,16,12,Fail,156,1,16,PhaseEstimationSumDifferentEigenvectors,5.9139039516448975
+quantum_phase_estimation_em3,2,16,12,Pass,156,0,0,,3.138998985290528
+quantum_phase_estimation_em4,2,16,12,Pass,156,0,0,,4.366278171539307
+quantum_phase_estimation_m0,3,16,12,Fail,252,2,19,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,8.15937352180481
+quantum_phase_estimation_m1,3,16,12,Fail,252,1,16,PhaseEstimationSumDifferentEigenvectors,8.996791362762451
+quantum_phase_estimation_m2,3,16,12,Fail,252,1,15,PhaseEstimationSumDifferentEigenvectors,9.793277025222778
+quantum_phase_estimation_m3,3,16,12,Fail,252,1,16,PhaseEstimationSumDifferentEigenvectors,11.011927843093872
+quantum_phase_estimation_m4,3,16,12,Fail,252,2,15,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,7.200961112976074
+quantum_phase_estimation_m5,3,16,12,Fail,252,1,16,PhaseEstimationSumDifferentEigenvectors,6.750859022140503
+quantum_phase_estimation_m6,3,16,12,Fail,252,2,21,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,9.143819332122805
+quantum_phase_estimation_m7,3,16,12,Fail,252,1,16,PhaseEstimationSumDifferentEigenvectors,9.035168647766112
+quantum_phase_estimation_m8,3,16,12,Fail,252,1,15,PhaseEstimationSumDifferentEigenvectors,10.403019905090332
+quantum_phase_estimation_m9,3,16,12,Fail,252,2,22,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,8.42216420173645
+quantum_phase_estimation_em0,3,16,12,Fail,252,1,16,PhaseEstimationSumDifferentEigenvectors,8.673035383224487
+quantum_phase_estimation_em1,3,16,12,Fail,252,1,16,PhaseEstimationSumDifferentEigenvectors,11.563549518585203
+quantum_phase_estimation_em2,3,16,12,Fail,249,1,15,PhaseEstimationSumDifferentEigenvectors,8.359931707382202
+quantum_phase_estimation_em3,3,16,12,Fail,252,1,16,PhaseEstimationSumDifferentEigenvectors,10.012385368347168
+quantum_phase_estimation_em4,3,16,12,Fail,252,1,16,PhaseEstimationSumDifferentEigenvectors,7.622533559799194
+quantum_phase_estimation_m0,1,1,12,Pass,6,0,0,,0.0641350746154785
+quantum_phase_estimation_m1,1,1,12,Fail,6,1,1,PhaseEstimationSumDifferentEigenvectors,0.4421663284301758
+quantum_phase_estimation_m2,1,1,12,Fail,6,1,1,PhaseEstimationSumDifferentEigenvectors,0.1334764957427978
+quantum_phase_estimation_m3,1,1,12,Pass,6,0,0,,0.0270733833312988
+quantum_phase_estimation_m4,1,1,12,Pass,6,0,0,,0.1123518943786621
+quantum_phase_estimation_m5,1,1,12,Pass,6,0,0,,0.1424880027770996
+quantum_phase_estimation_m6,1,1,12,Pass,6,0,0,,0.0230412483215332
+quantum_phase_estimation_m7,1,1,12,Fail,6,1,1,PhaseEstimationSumDifferentEigenvectors,0.9748311042785645
+quantum_phase_estimation_m8,1,1,12,Pass,6,0,0,,0.0992684364318847
+quantum_phase_estimation_m9,1,1,12,Pass,6,0,0,,0.1480329036712646
+quantum_phase_estimation_em0,1,1,12,Pass,6,0,0,,0.3432166576385498
+quantum_phase_estimation_em1,1,1,12,Pass,6,0,0,,0.0579700469970703
+quantum_phase_estimation_em2,1,1,12,Pass,6,0,0,,0.0440254211425781
+quantum_phase_estimation_em3,1,1,12,Pass,6,0,0,,0.5129561424255371
+quantum_phase_estimation_em4,1,1,12,Pass,6,0,0,,0.0611655712127685
+quantum_phase_estimation_m0,2,1,12,Fail,12,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.3981497287750244
+quantum_phase_estimation_m1,2,1,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.1626527309417724
+quantum_phase_estimation_m2,2,1,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,1.1283352375030518
+quantum_phase_estimation_m3,2,1,12,Pass,12,0,0,,0.2525627613067627
+quantum_phase_estimation_m4,2,1,12,Fail,12,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.0794658660888671
+quantum_phase_estimation_m5,2,1,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,1.4412133693695068
+quantum_phase_estimation_m6,2,1,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.3789467811584472
+quantum_phase_estimation_m7,2,1,12,Fail,12,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.4673750400543213
+quantum_phase_estimation_m8,2,1,12,Fail,12,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.2139358520507812
+quantum_phase_estimation_m9,2,1,12,Pass,12,0,0,,0.3219373226165771
+quantum_phase_estimation_em0,2,1,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,1.0331480503082275
+quantum_phase_estimation_em1,2,1,12,Pass,12,0,0,,0.2565681934356689
+quantum_phase_estimation_em2,2,1,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.4853553771972656
+quantum_phase_estimation_em3,2,1,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.381624698638916
+quantum_phase_estimation_em4,2,1,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,1.033212423324585
+quantum_phase_estimation_m0,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,1.1173081398010254
+quantum_phase_estimation_m1,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.3135802745819092
+quantum_phase_estimation_m2,3,1,12,Pass,18,0,0,,0.289531946182251
+quantum_phase_estimation_m3,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.3574142456054687
+quantum_phase_estimation_m4,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,1.1627693176269531
+quantum_phase_estimation_m5,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.6337454319000244
+quantum_phase_estimation_m6,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.5854363441467285
+quantum_phase_estimation_m7,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.4148116111755371
+quantum_phase_estimation_m8,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.3924555778503418
+quantum_phase_estimation_m9,3,1,12,Fail,18,2,2,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.2911274433135986
+quantum_phase_estimation_em0,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,1.1531553268432615
+quantum_phase_estimation_em1,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.5860302448272705
+quantum_phase_estimation_em2,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.1277544498443603
+quantum_phase_estimation_em3,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.2421953678131103
+quantum_phase_estimation_em4,3,1,12,Fail,18,1,1,PhaseEstimationSumDifferentEigenvectors,0.6664698123931885
+quantum_phase_estimation_m0,1,2,12,Pass,12,0,0,,0.2236948013305664
+quantum_phase_estimation_m1,1,2,12,Pass,12,0,0,,0.5399885177612305
+quantum_phase_estimation_m2,1,2,12,Pass,12,0,0,,0.349013090133667
+quantum_phase_estimation_m3,1,2,12,Pass,9,0,0,,0.1532502174377441
+quantum_phase_estimation_m4,1,2,12,Fail,12,1,2,PhaseEstimationSumDifferentEigenvectors,0.9264814853668212
+quantum_phase_estimation_m5,1,2,12,Fail,9,1,2,PhaseCorrectlyEstimatedEnoughQubits,0.1825644969940185
+quantum_phase_estimation_m6,1,2,12,Pass,12,0,0,,0.652838945388794
+quantum_phase_estimation_m7,1,2,12,Fail,12,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.1056673526763916
+quantum_phase_estimation_m8,1,2,12,Pass,12,0,0,,0.6296415328979492
+quantum_phase_estimation_m9,1,2,12,Fail,12,1,1,PhaseEstimationSumDifferentEigenvectors,0.757441520690918
+quantum_phase_estimation_em0,1,2,12,Pass,12,0,0,,0.2238476276397705
+quantum_phase_estimation_em1,1,2,12,Pass,9,0,0,,0.1160314083099365
+quantum_phase_estimation_em2,1,2,12,Pass,12,0,0,,0.0659520626068115
+quantum_phase_estimation_em3,1,2,12,Pass,12,0,0,,0.763390302658081
+quantum_phase_estimation_em4,1,2,12,Fail,12,1,2,PhaseEstimationSumDifferentEigenvectors,0.2455005645751953
+quantum_phase_estimation_m0,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.669926643371582
+quantum_phase_estimation_m1,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.3735666275024414
+quantum_phase_estimation_m2,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,1.3062810897827148
+quantum_phase_estimation_m3,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,1.2680516242980957
+quantum_phase_estimation_m4,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.5886197090148926
+quantum_phase_estimation_m5,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.9175102710723876
+quantum_phase_estimation_m6,2,2,12,Fail,24,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.4813432693481443
+quantum_phase_estimation_m7,2,2,12,Pass,24,0,0,,0.273890733718872
+quantum_phase_estimation_m8,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.652756929397583
+quantum_phase_estimation_m9,2,2,12,Fail,24,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.3593802452087402
+quantum_phase_estimation_em0,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.327244758605957
+quantum_phase_estimation_em1,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.6662116050720215
+quantum_phase_estimation_em2,2,2,12,Pass,24,0,0,,0.3301494121551513
+quantum_phase_estimation_em3,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,1.4076218605041504
+quantum_phase_estimation_em4,2,2,12,Fail,24,1,2,PhaseEstimationSumDifferentEigenvectors,0.2260615825653076
+quantum_phase_estimation_m0,3,2,12,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,0.6961920261383057
+quantum_phase_estimation_m1,3,2,12,Fail,33,1,2,PhaseEstimationSumDifferentEigenvectors,0.5239825248718262
+quantum_phase_estimation_m2,3,2,12,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,2.164731740951538
+quantum_phase_estimation_m3,3,2,12,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,1.5019629001617432
+quantum_phase_estimation_m4,3,2,12,Fail,33,2,4,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.8802342414855957
+quantum_phase_estimation_m5,3,2,12,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,1.642500638961792
+quantum_phase_estimation_m6,3,2,12,Fail,36,2,3,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.249443531036377
+quantum_phase_estimation_m7,3,2,12,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,0.9783809185028076
+quantum_phase_estimation_m8,3,2,12,Fail,33,1,2,PhaseEstimationSumDifferentEigenvectors,1.5864925384521484
+quantum_phase_estimation_m9,3,2,12,Fail,36,2,3,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,0.4065446853637695
+quantum_phase_estimation_em0,3,2,12,Fail,36,1,1,PhaseEstimationSumDifferentEigenvectors,1.7537117004394531
+quantum_phase_estimation_em1,3,2,12,Fail,33,1,2,PhaseEstimationSumDifferentEigenvectors,0.6270673274993896
+quantum_phase_estimation_em2,3,2,12,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,0.5308921337127686
+quantum_phase_estimation_em3,3,2,12,Fail,33,1,2,PhaseEstimationSumDifferentEigenvectors,0.9387109279632568
+quantum_phase_estimation_em4,3,2,12,Fail,36,1,2,PhaseEstimationSumDifferentEigenvectors,0.5197365283966064
+quantum_phase_estimation_m0,1,32,12,Pass,192,0,0,,6.529027223587036
+quantum_phase_estimation_m1,1,32,12,Fail,192,1,32,PhaseEstimationSumDifferentEigenvectors,11.607174634933472
+quantum_phase_estimation_m2,1,32,12,Pass,192,0,0,,5.143098592758179
+quantum_phase_estimation_m3,1,32,12,Pass,108,0,0,,1.6692001819610596
+quantum_phase_estimation_m4,1,32,12,Fail,108,1,4,PhaseCorrectlyEstimatedEnoughQubits,1.5875227451324463
+quantum_phase_estimation_m5,1,32,12,Pass,192,0,0,,3.528695583343506
+quantum_phase_estimation_m6,1,32,12,Pass,192,0,0,,4.497877597808838
+quantum_phase_estimation_m7,1,32,12,Fail,108,1,2,PhaseCorrectlyEstimatedEnoughQubits,1.6754939556121826
+quantum_phase_estimation_m8,1,32,12,Fail,192,1,32,PhaseEstimationSumDifferentEigenvectors,11.635273933410645
+quantum_phase_estimation_m9,1,32,12,Fail,192,1,32,PhaseEstimationSumDifferentEigenvectors,8.7891366481781
+quantum_phase_estimation_em0,1,32,12,Pass,108,0,0,,1.9750542640686035
+quantum_phase_estimation_em1,1,32,12,Pass,108,0,0,,1.7266104221343994
+quantum_phase_estimation_em2,1,32,12,Pass,108,0,0,,1.7059195041656494
+quantum_phase_estimation_em3,1,32,12,Fail,192,1,32,PhaseEstimationSumDifferentEigenvectors,10.96726417541504
+quantum_phase_estimation_em4,1,32,12,Pass,108,0,0,,1.8784823417663572
+quantum_phase_estimation_m0,2,32,12,Fail,384,1,32,PhaseEstimationSumDifferentEigenvectors,16.274893522262573
+quantum_phase_estimation_m1,2,32,12,Fail,300,1,5,PhaseCorrectlyEstimatedEnoughQubits,7.668532848358154
+quantum_phase_estimation_m2,2,32,12,Fail,300,1,1,PhaseCorrectlyEstimatedEnoughQubits,7.864672422409058
+quantum_phase_estimation_m3,2,32,12,Fail,300,1,32,PhaseEstimationSumDifferentEigenvectors,14.867432355880736
+quantum_phase_estimation_m4,2,32,12,Fail,300,2,34,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,14.426273584365845
+quantum_phase_estimation_m5,2,32,12,Fail,384,1,32,PhaseEstimationSumDifferentEigenvectors,16.977991580963135
+quantum_phase_estimation_m6,2,32,12,Fail,384,1,32,PhaseEstimationSumDifferentEigenvectors,12.831594705581663
+quantum_phase_estimation_m7,2,32,12,Fail,384,1,32,PhaseEstimationSumDifferentEigenvectors,21.13940691947937
+quantum_phase_estimation_m8,2,32,12,Fail,384,1,31,PhaseEstimationSumDifferentEigenvectors,17.43423581123352
+quantum_phase_estimation_m9,2,32,12,Fail,300,1,8,PhaseCorrectlyEstimatedEnoughQubits,8.669844627380371
+quantum_phase_estimation_em0,2,32,12,Fail,384,1,32,PhaseEstimationSumDifferentEigenvectors,14.622812032699583
+quantum_phase_estimation_em1,2,32,12,Pass,300,0,0,,8.546806335449219
+quantum_phase_estimation_em2,2,32,12,Fail,300,1,31,PhaseEstimationSumDifferentEigenvectors,15.001977682113647
+quantum_phase_estimation_em3,2,32,12,Fail,384,1,32,PhaseEstimationSumDifferentEigenvectors,15.219191789627075
+quantum_phase_estimation_em4,2,32,12,Fail,300,1,31,PhaseEstimationSumDifferentEigenvectors,15.565608024597168
+quantum_phase_estimation_m0,3,32,12,Fail,492,2,34,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,19.576335906982425
+quantum_phase_estimation_m1,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,16.3255033493042
+quantum_phase_estimation_m2,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,19.196470737457275
+quantum_phase_estimation_m3,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,21.69610071182251
+quantum_phase_estimation_m4,3,32,12,Fail,492,2,33,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,23.298015117645264
+quantum_phase_estimation_m5,3,32,12,Fail,492,2,34,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,14.08102822303772
+quantum_phase_estimation_m6,3,32,12,Fail,492,2,40,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,19.72098135948181
+quantum_phase_estimation_m7,3,32,12,Fail,492,2,33,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,20.02681541442871
+quantum_phase_estimation_m8,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,22.883400440216064
+quantum_phase_estimation_m9,3,32,12,Fail,492,2,42,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,19.05696702003479
+quantum_phase_estimation_em0,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,19.66996741294861
+quantum_phase_estimation_em1,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,17.96204447746277
+quantum_phase_estimation_em2,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,18.02783989906311
+quantum_phase_estimation_em3,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,19.097909927368164
+quantum_phase_estimation_em4,3,32,12,Fail,492,1,32,PhaseEstimationSumDifferentEigenvectors,19.42336583137512
+quantum_phase_estimation_m0,1,4,12,Fail,21,1,1,PhaseCorrectlyEstimatedEnoughQubits,0.2401192188262939
+quantum_phase_estimation_m1,1,4,12,Fail,24,1,4,PhaseEstimationSumDifferentEigenvectors,1.7100040912628174
+quantum_phase_estimation_m2,1,4,12,Pass,24,0,0,,0.4284286499023437
+quantum_phase_estimation_m3,1,4,12,Pass,24,0,0,,0.2939794063568115
+quantum_phase_estimation_m4,1,4,12,Pass,24,0,0,,0.580449104309082
+quantum_phase_estimation_m5,1,4,12,Pass,24,0,0,,0.6327009201049805
+quantum_phase_estimation_m6,1,4,12,Fail,24,1,4,PhaseEstimationSumDifferentEigenvectors,1.302067756652832
+quantum_phase_estimation_m7,1,4,12,Pass,24,0,0,,0.2977263927459717
+quantum_phase_estimation_m8,1,4,12,Fail,24,1,4,PhaseEstimationSumDifferentEigenvectors,1.2365334033966064
+quantum_phase_estimation_m9,1,4,12,Pass,24,0,0,,0.2155089378356933
+quantum_phase_estimation_em0,1,4,12,Pass,21,0,0,,0.2711610794067383
+quantum_phase_estimation_em1,1,4,12,Fail,24,1,4,PhaseEstimationSumDifferentEigenvectors,1.5286710262298584
+quantum_phase_estimation_em2,1,4,12,Pass,24,0,0,,1.0957920551300049
+quantum_phase_estimation_em3,1,4,12,Fail,24,1,4,PhaseEstimationSumDifferentEigenvectors,1.3913733959197998
+quantum_phase_estimation_em4,1,4,12,Pass,24,0,0,,0.843012809753418
+quantum_phase_estimation_m0,2,4,12,Fail,42,1,3,PhaseEstimationSumDifferentEigenvectors,2.151925802230835
+quantum_phase_estimation_m1,2,4,12,Fail,42,1,2,PhaseCorrectlyEstimatedEnoughQubits,1.402010202407837
+quantum_phase_estimation_m2,2,4,12,Pass,45,0,0,,0.6826112270355225
+quantum_phase_estimation_m3,2,4,12,Pass,48,0,0,,1.5472688674926758
+quantum_phase_estimation_m4,2,4,12,Fail,42,2,5,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.11029052734375
+quantum_phase_estimation_m5,2,4,12,Fail,48,1,4,PhaseEstimationSumDifferentEigenvectors,2.820842266082764
+quantum_phase_estimation_m6,2,4,12,Fail,48,1,4,PhaseEstimationSumDifferentEigenvectors,2.176947832107544
+quantum_phase_estimation_m7,2,4,12,Fail,42,1,4,PhaseEstimationSumDifferentEigenvectors,0.9681200981140136
+quantum_phase_estimation_m8,2,4,12,Fail,48,1,4,PhaseEstimationSumDifferentEigenvectors,1.379399299621582
+quantum_phase_estimation_m9,2,4,12,Fail,48,1,2,PhaseEstimationSumDifferentEigenvectors,1.203007698059082
+quantum_phase_estimation_em0,2,4,12,Fail,42,1,4,PhaseEstimationSumDifferentEigenvectors,0.8975296020507812
+quantum_phase_estimation_em1,2,4,12,Pass,45,0,0,,0.7519011497497559
+quantum_phase_estimation_em2,2,4,12,Fail,45,1,4,PhaseEstimationSumDifferentEigenvectors,2.770040512084961
+quantum_phase_estimation_em3,2,4,12,Fail,45,1,4,PhaseEstimationSumDifferentEigenvectors,2.1859569549560547
+quantum_phase_estimation_em4,2,4,12,Pass,45,0,0,,0.9557857513427734
+quantum_phase_estimation_m0,3,4,12,Fail,69,2,6,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.452171802520752
+quantum_phase_estimation_m1,3,4,12,Fail,69,2,5,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.614262342453003
+quantum_phase_estimation_m2,3,4,12,Fail,66,1,4,PhaseEstimationSumDifferentEigenvectors,1.6783509254455566
+quantum_phase_estimation_m3,3,4,12,Fail,69,1,4,PhaseEstimationSumDifferentEigenvectors,2.937786340713501
+quantum_phase_estimation_m4,3,4,12,Fail,66,2,6,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.147302389144897
+quantum_phase_estimation_m5,3,4,12,Fail,63,1,4,PhaseEstimationSumDifferentEigenvectors,2.905571222305298
+quantum_phase_estimation_m6,3,4,12,Fail,72,2,6,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,2.2553529739379883
+quantum_phase_estimation_m7,3,4,12,Fail,69,2,5,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,3.042651414871216
+quantum_phase_estimation_m8,3,4,12,Fail,72,1,4,PhaseEstimationSumDifferentEigenvectors,1.9445257186889648
+quantum_phase_estimation_m9,3,4,12,Fail,69,2,6,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,1.390289306640625
+quantum_phase_estimation_em0,3,4,12,Fail,69,1,4,PhaseEstimationSumDifferentEigenvectors,2.1510720252990723
+quantum_phase_estimation_em1,3,4,12,Fail,66,1,4,PhaseEstimationSumDifferentEigenvectors,2.770630359649658
+quantum_phase_estimation_em2,3,4,12,Fail,72,1,4,PhaseEstimationSumDifferentEigenvectors,2.315701961517334
+quantum_phase_estimation_em3,3,4,12,Fail,69,1,4,PhaseEstimationSumDifferentEigenvectors,1.5811457633972168
+quantum_phase_estimation_em4,3,4,12,Fail,66,1,2,PhaseEstimationSumDifferentEigenvectors,2.164489984512329
+quantum_phase_estimation_m0,1,64,12,Fail,204,1,7,PhaseCorrectlyEstimatedEnoughQubits,4.090963363647461
+quantum_phase_estimation_m1,1,64,12,Fail,384,1,64,PhaseEstimationSumDifferentEigenvectors,26.19749879837036
+quantum_phase_estimation_m2,1,64,12,Pass,384,0,0,,10.139972448349
+quantum_phase_estimation_m3,1,64,12,Pass,384,0,0,,11.53249716758728
+quantum_phase_estimation_m4,1,64,12,Fail,384,1,64,PhaseEstimationSumDifferentEigenvectors,22.451520681381226
+quantum_phase_estimation_m5,1,64,12,Pass,384,0,0,,13.274067878723145
+quantum_phase_estimation_m6,1,64,12,Fail,384,1,64,PhaseEstimationSumDifferentEigenvectors,26.814370155334476
+quantum_phase_estimation_m7,1,64,12,Fail,204,1,5,PhaseCorrectlyEstimatedEnoughQubits,4.075037479400635
+quantum_phase_estimation_m8,1,64,12,Pass,384,0,0,,11.109470129013062
+quantum_phase_estimation_m9,1,64,12,Pass,384,0,0,,10.42697525024414
+quantum_phase_estimation_em0,1,64,12,Pass,384,0,0,,13.033979892730711
+quantum_phase_estimation_em1,1,64,12,Fail,384,1,63,PhaseEstimationSumDifferentEigenvectors,21.437496423721317
+quantum_phase_estimation_em2,1,64,12,Pass,204,0,0,,3.9144890308380127
+quantum_phase_estimation_em3,1,64,12,Pass,384,0,0,,9.019505739212036
+quantum_phase_estimation_em4,1,64,12,Pass,384,0,0,,12.190001964569092
+quantum_phase_estimation_m0,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,35.10366439819336
+quantum_phase_estimation_m1,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,34.7820942401886
+quantum_phase_estimation_m2,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,37.2613730430603
+quantum_phase_estimation_m3,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,39.08352470397949
+quantum_phase_estimation_m4,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,33.708080530166626
+quantum_phase_estimation_m5,2,64,12,Fail,588,1,2,PhaseCorrectlyEstimatedEnoughQubits,16.081347465515137
+quantum_phase_estimation_m6,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,31.236010789871216
+quantum_phase_estimation_m7,2,64,12,Fail,588,1,64,PhaseEstimationSumDifferentEigenvectors,29.159460306167603
+quantum_phase_estimation_m8,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,32.78649377822876
+quantum_phase_estimation_m9,2,64,12,Fail,588,2,84,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,24.619977474212646
+quantum_phase_estimation_em0,2,64,12,Pass,588,0,0,,17.947495937347412
+quantum_phase_estimation_em1,2,64,12,Pass,588,0,0,,17.344972848892212
+quantum_phase_estimation_em2,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,36.89153337478638
+quantum_phase_estimation_em3,2,64,12,Pass,588,0,0,,16.535860061645508
+quantum_phase_estimation_em4,2,64,12,Fail,768,1,64,PhaseEstimationSumDifferentEigenvectors,37.42998600006104
+quantum_phase_estimation_m0,3,64,12,Fail,972,2,66,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,39.21614861488342
+quantum_phase_estimation_m1,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,36.28207874298096
+quantum_phase_estimation_m2,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,38.14722180366516
+quantum_phase_estimation_m3,3,64,12,Fail,972,1,63,PhaseEstimationSumDifferentEigenvectors,41.41801929473877
+quantum_phase_estimation_m4,3,64,12,Fail,972,2,71,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,37.63219976425171
+quantum_phase_estimation_m5,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,39.221306800842285
+quantum_phase_estimation_m6,3,64,12,Fail,972,2,84,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,40.92847228050232
+quantum_phase_estimation_m7,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,43.10249471664429
+quantum_phase_estimation_m8,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,39.40732431411743
+quantum_phase_estimation_m9,3,64,12,Fail,972,2,84,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,39.61760377883911
+quantum_phase_estimation_em0,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,39.03501343727112
+quantum_phase_estimation_em1,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,39.58602166175842
+quantum_phase_estimation_em2,3,64,12,Fail,972,1,63,PhaseEstimationSumDifferentEigenvectors,40.61147356033325
+quantum_phase_estimation_em3,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,38.05243539810181
+quantum_phase_estimation_em4,3,64,12,Fail,972,1,64,PhaseEstimationSumDifferentEigenvectors,32.01806926727295
+quantum_phase_estimation_m0,1,8,12,Fail,33,1,3,PhaseCorrectlyEstimatedEnoughQubits,0.3865532875061035
+quantum_phase_estimation_m1,1,8,12,Fail,33,1,2,PhaseCorrectlyEstimatedEnoughQubits,0.4489960670471191
+quantum_phase_estimation_m2,1,8,12,Pass,48,0,0,,1.22658109664917
+quantum_phase_estimation_m3,1,8,12,Pass,36,0,0,,0.394644021987915
+quantum_phase_estimation_m4,1,8,12,Pass,48,0,0,,1.1379146575927734
+quantum_phase_estimation_m5,1,8,12,Pass,48,0,0,,1.284126043319702
+quantum_phase_estimation_m6,1,8,12,Fail,48,1,7,PhaseEstimationSumDifferentEigenvectors,1.24900221824646
+quantum_phase_estimation_m7,1,8,12,Fail,48,1,8,PhaseEstimationSumDifferentEigenvectors,4.190220594406128
+quantum_phase_estimation_m8,1,8,12,Pass,36,0,0,,0.4683380126953125
+quantum_phase_estimation_m9,1,8,12,Pass,48,0,0,,1.8491616249084477
+quantum_phase_estimation_em0,1,8,12,Pass,48,0,0,,1.5290019512176514
+quantum_phase_estimation_em1,1,8,12,Pass,48,0,0,,1.8562321662902832
+quantum_phase_estimation_em2,1,8,12,Pass,36,0,0,,0.4404375553131103
+quantum_phase_estimation_em3,1,8,12,Fail,48,1,8,PhaseEstimationSumDifferentEigenvectors,2.192568302154541
+quantum_phase_estimation_em4,1,8,12,Pass,33,0,0,,0.4068055152893066
+quantum_phase_estimation_m0,2,8,12,Fail,84,1,3,PhaseCorrectlyEstimatedEnoughQubits,1.7917745113372805
+quantum_phase_estimation_m1,2,8,12,Fail,81,1,8,PhaseEstimationSumDifferentEigenvectors,2.4946274757385254
+quantum_phase_estimation_m2,2,8,12,Fail,96,1,8,PhaseEstimationSumDifferentEigenvectors,5.17168116569519
+quantum_phase_estimation_m3,2,8,12,Pass,84,0,0,,2.35513973236084
+quantum_phase_estimation_m4,2,8,12,Fail,96,1,8,PhaseEstimationSumDifferentEigenvectors,4.167383670806885
+quantum_phase_estimation_m5,2,8,12,Fail,96,1,7,PhaseEstimationSumDifferentEigenvectors,7.196508169174194
+quantum_phase_estimation_m6,2,8,12,Fail,96,1,7,PhaseEstimationSumDifferentEigenvectors,1.8370702266693115
+quantum_phase_estimation_m7,2,8,12,Fail,81,1,2,PhaseCorrectlyEstimatedEnoughQubits,1.6051342487335205
+quantum_phase_estimation_m8,2,8,12,Fail,96,1,8,PhaseEstimationSumDifferentEigenvectors,2.881427526473999
+quantum_phase_estimation_m9,2,8,12,Fail,96,1,8,PhaseEstimationSumDifferentEigenvectors,4.672562122344971
+quantum_phase_estimation_em0,2,8,12,Fail,96,1,8,PhaseEstimationSumDifferentEigenvectors,2.5577187538146973
+quantum_phase_estimation_em1,2,8,12,Fail,84,1,8,PhaseEstimationSumDifferentEigenvectors,3.1151890754699707
+quantum_phase_estimation_em2,2,8,12,Fail,84,1,8,PhaseEstimationSumDifferentEigenvectors,3.5498337745666504
+quantum_phase_estimation_em3,2,8,12,Fail,96,1,8,PhaseEstimationSumDifferentEigenvectors,5.591532468795776
+quantum_phase_estimation_em4,2,8,12,Pass,84,0,0,,1.5943830013275146
+quantum_phase_estimation_m0,3,8,12,Fail,132,2,8,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,5.198503732681274
+quantum_phase_estimation_m1,3,8,12,Fail,132,2,10,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,6.177635669708252
+quantum_phase_estimation_m2,3,8,12,Fail,129,1,7,PhaseEstimationSumDifferentEigenvectors,4.005050420761108
+quantum_phase_estimation_m3,3,8,12,Fail,132,1,8,PhaseEstimationSumDifferentEigenvectors,4.047196865081787
+quantum_phase_estimation_m4,3,8,12,Fail,132,2,11,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,5.190906047821045
+quantum_phase_estimation_m5,3,8,12,Fail,132,1,8,PhaseEstimationSumDifferentEigenvectors,6.453046083450317
+quantum_phase_estimation_m6,3,8,12,Fail,132,2,10,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,4.689810037612915
+quantum_phase_estimation_m7,3,8,12,Fail,132,1,8,PhaseEstimationSumDifferentEigenvectors,6.585755348205566
+quantum_phase_estimation_m8,3,8,12,Fail,132,1,8,PhaseEstimationSumDifferentEigenvectors,3.430581331253052
+quantum_phase_estimation_m9,3,8,12,Fail,132,2,12,PhaseCorrectlyEstimatedEnoughQubits & PhaseEstimationSumDifferentEigenvectors,4.133423089981079
+quantum_phase_estimation_em0,3,8,12,Fail,132,1,8,PhaseEstimationSumDifferentEigenvectors,3.776836395263672
+quantum_phase_estimation_em1,3,8,12,Fail,129,1,8,PhaseEstimationSumDifferentEigenvectors,6.228615999221802
+quantum_phase_estimation_em2,3,8,12,Fail,129,1,8,PhaseEstimationSumDifferentEigenvectors,6.028895854949951
+quantum_phase_estimation_em3,3,8,12,Fail,129,1,8,PhaseEstimationSumDifferentEigenvectors,5.128897428512573
+quantum_phase_estimation_em4,3,8,12,Fail,132,1,8,PhaseEstimationSumDifferentEigenvectors,5.05194091796875
