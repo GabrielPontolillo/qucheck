@@ -84,6 +84,7 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
 def test_and_store(algorithm_name, optimisation):
     inputs = [64, 32, 16, 8, 4, 2, 1]
     shots = [3200, 1600, 800, 400, 200, 100, 50, 25, 12]
+
     number_of_properties_list = [3, 2, 1]
     for input_val in inputs:
         for measurements in shots:
