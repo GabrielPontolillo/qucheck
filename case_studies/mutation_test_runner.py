@@ -82,10 +82,14 @@ def run_single_test(algorithm_name, num_inputs, measurements, mutant_type, index
 
 
 def test_and_store(algorithm_name, optimisation):
-    inputs = [64, 32, 16, 8, 4, 2, 1]
-    shots = [3200, 1600, 800, 400, 200, 100, 50, 25, 12]
+    # inputs = [64, 32, 16, 8, 4, 2, 1]
+    # shots = [3200, 1600, 800, 400, 200, 100, 50, 25, 12]
+    #
+    # number_of_properties_list = [3, 2, 1]
+    inputs = [64, 32]
+    shots = [3200, 1600]
 
-    number_of_properties_list = [3, 2, 1]
+    number_of_properties_list = [1]
     for input_val in inputs:
         for measurements in shots:
             for number_of_properties in number_of_properties_list:
@@ -150,13 +154,7 @@ def merge_csv_files(algorithm_name, name_mod=None):
 
 
 # Run the test
-test_and_store("quantum_teleportation", True)
-merge_csv_files("quantum_teleportation", name_mod="___temp___")
-test_and_store("quantum_fourier_transform", True)
-merge_csv_files("quantum_fourier_transform", name_mod="___temp___")
-test_and_store("quantum_phase_estimation", True)
-merge_csv_files("quantum_phase_estimation", name_mod="___temp___")
-test_and_store("deutsch_jozsa", True)
-merge_csv_files("deutsch_jozsa", name_mod="___temp___")
-test_and_store("grovers_algorithm", True)
-merge_csv_files("grovers_algorithm", name_mod="___temp___")
+test_and_store("superdense_coding", True)
+merge_csv_files("superdense_coding", name_mod="correct_bits")
+# test_and_store_qs_mutants("superdense_coding", True)
+# merge_csv_files("superdense_coding", name_mod="correct_bits")
