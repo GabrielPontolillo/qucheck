@@ -9,7 +9,7 @@ def superdense_coding(b1, b2):
 
     qc.x(0)
     qc.y(0)
-    qc.append(Pauli('iZ'), [1])
+    qc.append(Pauli('iZ'), [0])
 
     if b1 == 1:
         qc.z(0)

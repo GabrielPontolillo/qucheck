@@ -9,6 +9,7 @@ def superdense_coding(b1, b2):
 
     if b1 == 1:
         qc.z(0)
+
     if b2 == 1:
         qc.y(0)
         qc.x(0)

@@ -12,7 +12,7 @@ def superdense_coding(b1, b2):
 
     qc.z(0)
     qc.y(0)
-    qc.append(Pauli('-iX'), [1])
+    qc.append(Pauli('-iX'), [0])
 
     if b2 == 1:
         qc.x(0)
