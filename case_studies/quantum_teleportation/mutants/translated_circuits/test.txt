@@ -1,0 +1,11 @@
+Teleportation_Property
+
+(64, 99, 350, 300)
+
+{qAlice : Qubit (0,180)(0,360)}
+{qBob : Qubit (0,0)(0,0)}
+{qMessage : Qubit (0,0)(0,0)}
+
+Teleport (qAlice : Qubit, qBob : Qubit, qMessage : Qubit) : Unit
+
+[AssertTeleported(qAlice)]
