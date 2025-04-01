@@ -4,11 +4,13 @@ from qiskit import QuantumCircuit, transpile
 from qiskit.providers import Backend
 from qucheck.property import Property
 from qucheck.stats.assert_entangled import AssertEntangled
+from qucheck.stats.assert_separable import AssertSeparable
 from qucheck.utils import HashableQuantumCircuit
 from qucheck.stats.assertion import StatisticalAssertion, StandardAssertion, Assertion
 from qucheck.stats.measurements import Measurements
 from qucheck.stats.single_qubit_distributions.assert_equal import AssertEqual
 from qucheck.stats.single_qubit_distributions.assert_different import AssertDifferent
+from qucheck.stats.single_qubit_distributions.assert_probability import AssertProbability
 from qucheck.stats.assert_most_frequent import AssertMostFrequent
 from qucheck.stats.utils.corrections import holm_bonferroni_correction
 from qucheck.stats.circuit_generator import CircuitGenerator
@@ -77,6 +79,34 @@ class StatisticalAnalysisCoordinator:
             self.assertions_for_property[property].append(AssertEntangled(qubits, circ, basis))
         else:
             self.assertions_for_property[property] = [AssertEntangled(qubits, circ, basis)]
+
+    def assert_separable(self, property: Property, qubits: Sequence[int], circuit: QuantumCircuit, basis = ["z"]):
+        # parse qubits so that assert equals always gets sequences of qubits
+        if not isinstance(qubits, Sequence):
+            qubits = (qubits,)
+        # hack to make circuits in assert equals be usable as dictionary keys (by ref)
+        circ = circuit.copy()
+        circ.__class__ = HashableQuantumCircuit
+
+        if property in self.assertions_for_property:
+            self.assertions_for_property[property].append(AssertSeparable(qubits, circ, basis))
+        else:
+            self.assertions_for_property[property] = [AssertSeparable(qubits, circ, basis)]
+
+    def assert_probability(self, property: Property, qubits: Sequence[int], circuit: QuantumCircuit, probabililties: Sequence[float], basis = ["z"]):
+        # parse qubits so that assert equals always gets sequences of qubits
+        if not isinstance(qubits, Sequence):
+            qubits = (qubits,)
+        if not isinstance(probabililties, Sequence):
+            probabililties = (probabililties,)
+        # hack to make circuits in assert equals be usable as dictionary keys (by ref)
+        circ = circuit.copy()
+        circ.__class__ = HashableQuantumCircuit
+
+        if property in self.assertions_for_property:
+            self.assertions_for_property[property].append(AssertProbability(qubits, circ, probabililties, basis))
+        else:
+            self.assertions_for_property[property] = [AssertProbability(qubits, circ, probabililties, basis)]
 
     def assert_most_frequent(self, property: Property, qubits: int | Sequence[int], circuit: QuantumCircuit, states: str | Sequence[str], basis = ["z"]):
         # parse qubits so that assert equals always gets sequences of qubits / bitstrings
