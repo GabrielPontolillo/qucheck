@@ -28,4 +28,4 @@ def quantum_fourier_transform(qubits, swap=True):
 
 def __qmutpy_qgi_func__(circ, qubit):
     circ.h(qubit)
-    circ.id(qubit)
+    circ.h(qubit)

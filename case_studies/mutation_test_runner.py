@@ -85,11 +85,11 @@ def test_and_store(algorithm_name, optimisation):
     # inputs = [64, 32, 16, 8, 4, 2, 1]
     # shots = [3200, 1600, 800, 400, 200, 100, 50, 25, 12]
     #
-    # number_of_properties_list = [3, 2, 1]
-    inputs = [64, 32]
+    number_of_properties_list = [3]
+    inputs = [20, 10]
     shots = [3200, 1600]
 
-    number_of_properties_list = [1]
+    # number_of_properties_list = [1]
     for input_val in inputs:
         for measurements in shots:
             for number_of_properties in number_of_properties_list:
@@ -154,7 +154,10 @@ def merge_csv_files(algorithm_name, name_mod=None):
 
 
 # Run the test
-test_and_store("superdense_coding", True)
-merge_csv_files("superdense_coding", name_mod="correct_bits")
+t1 = time.time()
+test_and_store("quantum_teleportation", True)
+print("Time taken for quantum teleportation with optimization: ")
+print(time.time()-t1)
+merge_csv_files("quantum_teleportation", name_mod="correct_bits")
 # test_and_store_qs_mutants("superdense_coding", True)
 # merge_csv_files("superdense_coding", name_mod="correct_bits")

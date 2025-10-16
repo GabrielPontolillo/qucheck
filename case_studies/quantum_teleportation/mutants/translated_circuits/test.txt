@@ -1,6 +1,6 @@
 Teleportation_Property
 
-(64, 99, 350, 300)
+(100, 99, 90, 140)
 
 {qAlice : Qubit (0,180)(0,360)}
 {qBob : Qubit (0,0)(0,0)}

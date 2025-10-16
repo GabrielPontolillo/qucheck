@@ -3,8 +3,8 @@ from qiskit import QuantumCircuit
 
 def deutsch_jozsa(oracle: QuantumCircuit) -> QuantumCircuit:
     circuit = QuantumCircuit(oracle.num_qubits, oracle.num_qubits)
-    
-    __qmutpy_qgi_func__(circuit, circuit.qubits[-1])  # mutation - equivalent
+
+    # circuit.x(circuit.qubits[-1])
     for qubit in circuit.qubits:
         circuit.h(qubit)
         
@@ -14,8 +14,3 @@ def deutsch_jozsa(oracle: QuantumCircuit) -> QuantumCircuit:
         circuit.h(qubit)
 
     return circuit
-
-
-def __qmutpy_qgi_func__(circ, qubit):
-    circ.x(qubit)
-    circ.id(qubit)

@@ -1,5 +1,7 @@
 DenseCoding_Property
 
+(100, 99, 90, 140)
+
 {b1 : Bool}
 {b2 : Bool}
 

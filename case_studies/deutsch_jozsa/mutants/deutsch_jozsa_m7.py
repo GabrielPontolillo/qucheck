@@ -6,7 +6,7 @@ def deutsch_jozsa(oracle: QuantumCircuit) -> QuantumCircuit:
     
     circuit.x(circuit.qubits[-1])
     for qubit in circuit.qubits:
-        circuit.h(qubit)
+        circuit.t(qubit)  # mutation
         
     circuit.append(oracle, circuit.qubits)
 
