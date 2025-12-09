@@ -22,7 +22,8 @@ You can modify the number of threads used by changing the `MAX_WORKERS` variable
 
 The results will be stored in the `case_studies/mutation_test_results` directory as CSV files.
 
-(3 property, 100 input, 2500 and 4200 shots experiments will also be performed, and will be present in the results)
+(3 property, 100 input, 2500 and 4200 shots experiments will also be performed, and will be present in the results,
+which we use as a basis for comparison in RQ2)
 
 ### RQ2:
 
