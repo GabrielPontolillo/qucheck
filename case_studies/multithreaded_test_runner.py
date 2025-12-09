@@ -19,10 +19,7 @@ import multiprocessing as mp
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 PATH = os.path.abspath("")
-# MAX_WORKERS = max(1, min(os.cpu_count() or 1, 4))  # tune for your RAM
 MAX_WORKERS = os.cpu_count()
-# MAX_WORKERS = 12
-
 
 def import_function(module_str, path, function_name):
     spec = importlib.util.spec_from_file_location(module_str, path)
@@ -134,12 +131,9 @@ def run_single_test(args):
         return row
 
 def test_and_store_parallel(algorithm_name, optimisation):
-    number_of_properties_list = [1]
-    # number_of_properties_list = [3, 2, 1]
-    inputs = [100]
-    # inputs = [64, 32, 16, 8, 4, 2, 1]
-    shots = [4200, 2500]
-    # shots = [3200, 1600, 800, 400, 200, 100, 50, 25, 12]
+    number_of_properties_list = [3, 2, 1]
+    inputs = [64, 32, 16, 8, 4, 2, 1]
+    shots = [3200, 1600, 800, 400, 200, 100, 50, 25, 12]
 
     experiments = []
 
@@ -212,11 +206,11 @@ def merge_csv_files(algorithm_name, name_mod=None):
 
 
 if __name__ == "__main__":
-    # Tune MAX_WORKERS above to fit RAM; start low (e.g., 2)
     ttake = time.time()
     # for i in ["quantum_teleportation", "quantum_fourier_transform", "grovers_algorithm", "deutsch_jozsa", "quantum_phase_estimation"]:
     # for i in ["quantum_teleportation"]:
-    for i in ["superdense_coding"]:
+    # for i in ["superdense_coding"]:
+    for i in ["grovers_algorithm"]:
         t1 = time.time()
         test_and_store_parallel(i, True)
         print("Time taken for " + i + " with optimization: ")

@@ -2,11 +2,11 @@ from qiskit import QuantumCircuit
 
 
 # returns grover's algorithm on the provided oracle
-def grovers_algorithm(grover_oracle: QuantumCircuit, iterations: int):
+def grovers_algorithm(grover_oracle: QuantumCircuit, iterations: int, ancillas: int = 0):
 
-    num_qubits = grover_oracle.num_qubits
+    num_qubits = grover_oracle.num_qubits - ancillas
 
-    grover_qc = QuantumCircuit(num_qubits, num_qubits)
+    grover_qc = QuantumCircuit(grover_oracle.num_qubits, num_qubits)
 
     # initialise lower register to |1>
     grover_qc.x(num_qubits - 1)
@@ -24,7 +24,7 @@ def grovers_algorithm(grover_oracle: QuantumCircuit, iterations: int):
         grover_qc.s(0)
         grover_qc.s(0)
 
-        grover_qc.compose(grover_oracle, range(num_qubits), inplace=True)
+        grover_qc.compose(grover_oracle, range(grover_oracle.num_qubits), inplace=True)
 
         grover_qc.barrier()
 

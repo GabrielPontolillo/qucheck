@@ -12,10 +12,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
+# Modified by Gabriel Pontolillo, 2025
+# Description: Adapted to work with mutation testing, and to work with my implementations
 # ========================================================================
 from qiskit_aer import Aer
 
-import vs_test_path_fixup
 import math
 import unittest
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, transpile

@@ -2,71 +2,37 @@ from qiskit import QuantumCircuit
 
 
 # returns grover's algorithm on the provided oracle
-# def grovers_algorithm(grover_oracle: QuantumCircuit, iterations: int):
-#
-#     num_qubits = grover_oracle.num_qubits
-#
-#     grover_qc = QuantumCircuit(num_qubits, num_qubits)
-#
-#     # initialise lower register to |1>
-#     grover_qc.x(num_qubits - 1)
-#
-#     # initialise superposition to get |++....++>|->
-#     grover_qc.h(range(num_qubits))
-#
-#     grover_qc.barrier()
-#
-#     # apply the oracle and reflection about the mean
-#     for i in range(iterations):
-#         grover_qc.compose(grover_oracle, range(num_qubits), inplace=True)
-#
-#         grover_qc.barrier()
-#
-#         # reflection about the mean
-#         grover_qc.h(range(num_qubits - 1))
-#         grover_qc.x(range(num_qubits - 1))
-#         grover_qc.h(num_qubits - 2)
-#         grover_qc.mcx(list(range(num_qubits - 2)), num_qubits - 2)
-#         grover_qc.h(num_qubits - 2)
-#         grover_qc.x(range(num_qubits - 1))
-#         grover_qc.h(range(num_qubits - 1))
-#
-#         grover_qc.barrier()
-#
-#     return grover_qc
-
-from qiskit import QuantumCircuit
-
 def grovers_algorithm(grover_oracle: QuantumCircuit, iterations: int, ancillas: int = 0):
-    """
-    Grover's algorithm implementation supporting oracles with ancillas.
-    """
 
-    total_qubits = grover_oracle.num_qubits
-    logical_qubits = total_qubits - ancillas
+    # c1 --- num_qubits = grover_oracle.num_qubits
+    num_qubits = grover_oracle.num_qubits - ancillas
 
-    # Allocate *all* qubits (including ancillas) so composition matches
-    grover_qc = QuantumCircuit(total_qubits, logical_qubits)
+    # c2 --- grover_qc = QuantumCircuit(num_qubits, num_qubits)
+    grover_qc = QuantumCircuit(grover_oracle.num_qubits, num_qubits)
 
-    # Initialise last logical qubit (phase flip)
-    grover_qc.x(logical_qubits - 1)
-    grover_qc.h(range(logical_qubits))
+    # initialise lower register to |1>
+    grover_qc.x(num_qubits - 1)
+
+    # initialise superposition to get |++....++>|->
+    grover_qc.h(range(num_qubits))
+
     grover_qc.barrier()
 
-    for _ in range(iterations):
-        # Compose entire oracle (all qubits align)
-        grover_qc.compose(grover_oracle, range(total_qubits), inplace=True)
+    # apply the oracle and reflection about the mean
+    for i in range(iterations):
+        # c3 --- grover_qc.compose(grover_oracle, range(num_qubits), inplace=True)
+        grover_qc.compose(grover_oracle, range(grover_oracle.num_qubits), inplace=True)
 
         grover_qc.barrier()
 
-        # Reflection only acts on logical (data) qubits
-        grover_qc.h(range(logical_qubits - 1))
-        grover_qc.x(range(logical_qubits - 1))
-        grover_qc.h(logical_qubits - 2)
-        grover_qc.mcx(list(range(logical_qubits - 2)), logical_qubits - 2)
-        grover_qc.h(logical_qubits - 2)
-        grover_qc.x(range(logical_qubits - 1))
-        grover_qc.h(range(logical_qubits - 1))
+        # reflection about the mean
+        grover_qc.h(range(num_qubits - 1))
+        grover_qc.x(range(num_qubits - 1))
+        grover_qc.h(num_qubits - 2)
+        grover_qc.mcx(list(range(num_qubits - 2)), num_qubits - 2)
+        grover_qc.h(num_qubits - 2)
+        grover_qc.x(range(num_qubits - 1))
+        grover_qc.h(range(num_qubits - 1))
 
         grover_qc.barrier()
 
