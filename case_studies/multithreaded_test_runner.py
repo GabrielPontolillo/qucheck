@@ -137,10 +137,8 @@ def test_and_store_parallel(algorithm_name, optimisation):
 
     experiments = []
 
-    # experiments.append((3, 100, 4200))
-    # experiments.append((3, 100, 2500))
-    # experiments.append((2, 100, 4200))
-    # experiments.append((2, 100, 2500))
+    experiments.append((3, 100, 4200))
+    experiments.append((3, 100, 2500))
 
     for n in number_of_properties_list:
         for i in inputs:
@@ -207,10 +205,7 @@ def merge_csv_files(algorithm_name, name_mod=None):
 
 if __name__ == "__main__":
     ttake = time.time()
-    # for i in ["quantum_teleportation", "quantum_fourier_transform", "grovers_algorithm", "deutsch_jozsa", "quantum_phase_estimation"]:
-    # for i in ["quantum_teleportation"]:
-    # for i in ["superdense_coding"]:
-    for i in ["grovers_algorithm"]:
+    for i in ["quantum_teleportation", "quantum_fourier_transform", "grovers_algorithm", "deutsch_jozsa", "quantum_phase_estimation"]:
         t1 = time.time()
         test_and_store_parallel(i, True)
         print("Time taken for " + i + " with optimization: ")
