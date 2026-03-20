@@ -13,6 +13,16 @@ Move to the qucheck directory:
 Install the requirements:
 ```pip install .```
 
+### Quickstart
+
+If you want to run QuCheck on a single example property, start with [docs/quickstart.md](docs/quickstart.md).
+
+The quickstart uses:
+
+- `examples/quickstart/properties/single_qubit_probability_property.py`
+- `examples/quickstart/properties/single_qubit_wrong_probability_property.py`
+- `examples/quickstart/run.py`
+
 ### RQ1:
 
 To run the experiment in RQ1, execute: `case_studies/multithreaded_test_runner.py`
