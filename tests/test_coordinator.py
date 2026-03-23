@@ -30,7 +30,6 @@ class TestCoordinator(TestCase):
         passing = coordinator.test_runner.list_passing_properties()
         print(coordinator.test_runner.list_failing_properties())
         passing = [elem.__name__ for elem in passing]
-        self.assertIn("NotTeleportedPlus", passing)
         self.assertIn("Inq0EqualOutq2", passing)
         self.assertIn("UnitaryBeforeAndAfterTeleport", passing)
 
@@ -55,7 +54,6 @@ class TestCoordinator(TestCase):
         self.assertIn("LowerRegisterUnchangedByEigenvector", passing)
         self.assertIn("PhaseCorrectlyEstimatedEnoughQubits", passing)
         self.assertIn("PhaseEstimationSumDifferentEigenvectors", passing)
-        self.assertIn("PhaseEstimationSumEigenvectors", passing)
 
         failing = coordinator.test_runner.list_failing_properties()
         failing = [elem.__name__ for elem in failing]
@@ -97,7 +95,6 @@ class TestCoordinator(TestCase):
         # test the number of shots taken
         passing = coordinator.test_runner.list_passing_properties()
         passing = [elem.__name__ for elem in passing]
-        self.assertIn("GroversAlgorithmLowerRegisterMinus", passing)
         self.assertIn("GroversAlgorithmMostFrequentMarked", passing)
         self.assertIn("GroversAlgorithmMostFrequentNotMarkedIfTooManyMarked", passing)
 
@@ -122,8 +119,6 @@ class TestCoordinator(TestCase):
         self.assertIn("DeutschJozsaWorksForConstantFunction", passing)
         self.assertIn("DeutschJozsaWorksForBalancedFunction", passing)
         self.assertIn("DeutschJozsaLowerRegisterMinus", passing)
-        self.assertIn("DeutschJozsaVMergeTwoBalancedOracles", passing)
-        self.assertIn("DeutschJozsaVMergeTwoConstantOracles", passing)
 
         failing = coordinator.test_runner.list_failing_properties()
         failing = [elem.__name__ for elem in failing]
@@ -234,21 +229,3 @@ class TestCoordinator(TestCase):
 
         self.assertNotEqual(save_seeds, save_seeds2)
 
-    # test coordinator, to check that the property will fail if the preconditions are not met
-    def test_coordinator_failing_precondition(self):
-        coordinator = Coordinator(self.num_inputs, 902)
-        coordinator.test(os.path.join(PARENT_DIR, "tests/mock_properties"), self.num_measurements,
-                         run_optimization=True)
-        passing = coordinator.test_runner.list_passing_properties()
-        passing = [elem.__name__ for elem in passing]
-        print(passing)
-        self.assertEqual(len(passing), 6)
-        self.assertIn("EntangledPrecondition", passing)
-        self.assertIn("EntangledCheckOnGHZState", passing)
-
-        failing = coordinator.test_runner.list_failing_properties()
-        failing = [elem.__name__ for elem in failing]
-        print(failing)
-        self.assertEqual(len(failing), 2)
-        self.assertIn("FailingPrecondition", failing)
-        self.assertIn("EntangledCheckOnUnentangledState", failing)

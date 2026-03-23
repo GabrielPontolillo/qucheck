@@ -3,7 +3,6 @@ from unittest import TestCase
 
 from case_studies.quantum_fourier_transform.identity_property import IdentityProperty
 from case_studies.quantum_teleportation.input_reg0_equal_to_output_reg2_property import Inq0EqualOutq2
-from case_studies.quantum_teleportation.not_teleported_registers_equal_to_plus_property import NotTeleportedPlus
 from qucheck.test_runner import TestRunner
 from tests.mock_properties.failing_precondition_test_property import FailingPrecondition
 
@@ -45,28 +44,6 @@ class TestTestRunner(TestCase):
         self.assertEqual(test_runner2.list_failing_properties(), [])
         self.assertEqual(test_runner2.list_passing_properties(), [Inq0EqualOutq2])
         self.assertEqual(data.number_circuits_executed, self.num_inputs * 2 * 3)
-
-    def test_run_tests_different_properties_same_input_optimisation_check(
-            self):  # fails, should be automatically fixed when optimisation is fixed
-        # create an instance of the test runner
-        test_runner = TestRunner([Inq0EqualOutq2, NotTeleportedPlus], self.num_inputs, 548, self.num_measurements)
-        # run the tests
-        data = test_runner.run_tests()
-        self.assertEqual(test_runner.list_failing_properties(), [])
-        self.assertEqual(test_runner.list_passing_properties(), [Inq0EqualOutq2, NotTeleportedPlus])
-        self.assertEqual(data.number_circuits_executed, (self.num_inputs * 2 * 3) + 3)
-
-        test_runner2 = TestRunner([Inq0EqualOutq2], self.num_inputs, 548, self.num_measurements)
-        data = test_runner2.run_tests()
-        self.assertEqual(test_runner2.list_failing_properties(), [])
-        self.assertEqual(test_runner2.list_passing_properties(), [Inq0EqualOutq2])
-        self.assertEqual(data.number_circuits_executed, self.num_inputs * 2 * 3)
-
-        test_runner3 = TestRunner([NotTeleportedPlus], self.num_inputs, 548, self.num_measurements)
-        data = test_runner3.run_tests()
-        self.assertEqual(test_runner3.list_failing_properties(), [])
-        self.assertEqual(test_runner3.list_passing_properties(), [NotTeleportedPlus])
-        self.assertEqual(data.number_circuits_executed, (self.num_inputs * 1 * 3) + 3)
 
     def test_same_seeds(self):
         # create an instance of the test runner

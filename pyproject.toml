@@ -6,9 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "qucheck"
 version = "0.0.1"
 authors = [
-  { name="Gabriel Pontolillo", email="gabriel.pontolillo@kcl.ac.uk" }, { name="Marek Grzesiuk", email="author@example.com" }
+  { name="Gabriel Pontolillo", email="gabriel.pontolillo@kcl.ac.uk" }, { name="Marek Grzesiuk"}
 ]
-description = "Property based testing package for Qiskit programs."
+description = "Property based testing package for Qiskit programs"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
