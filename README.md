@@ -1,21 +1,35 @@
 # QuCheck
 
-### Installation
-Create a new conda environment with the following command:
-```conda create -n qucheck_env python=3.11```
+Property-based testing for Qiskit programs.
 
-Activate the environment:
-```conda activate qucheck_env```
+## Installation
 
-Move to the qucheck directory:
-```cd path/to/qucheck```
+QuCheck requires Python 3.11 or newer.
 
-Install the requirements:
-```pip install .```
+### Install from PyPI
 
-### Quickstart
+For most users, this is the simplest option:
 
-If you want to run QuCheck on a single example property, start with [docs/quickstart.md](docs/quickstart.md).
+```bash
+conda create -n qucheck_env python=3.11
+conda activate qucheck_env
+pip install qucheck
+```
+
+### Install from the repository
+
+If you want to run the bundled examples, work on the source, or edit the package locally:
+
+```bash
+conda create -n qucheck_env python=3.11
+conda activate qucheck_env
+cd path/to/qucheck
+pip install .
+```
+
+## Quickstart
+
+If you want to run the bundled example properties from this repository, start with [docs/quickstart.md](docs/quickstart.md).
 
 The quickstart uses:
 
@@ -27,7 +41,7 @@ The quickstart uses:
 
 To run the experiment in RQ1, execute: `case_studies/multithreaded_test_runner.py`
 
-This will use all cores available on your machine to execute all case studies under all combinations of numbers or properties, inputs, and shots (can be modified in the `test_and_store_parallel` function). 
+This will use all cores available on your machine to execute all case studies under all combinations of numbers or properties, inputs, and shots (can be modified in the `test_and_store_parallel` function).
 You can modify the number of threads used by changing the `MAX_WORKERS` variable in the script.
 
 The results will be stored in the `case_studies/mutation_test_results` directory as CSV files.
@@ -38,10 +52,10 @@ which we use as a basis for comparison in RQ2)
 ### RQ2:
 
 To run the comparison with the MITRE unit tests, navigate to the `case_studies/MITRE_unit_test_baseline` directory and execute:
-+ `deutsch_jozsa.py`
-+ `grover_tests.py`
-+ `qft_tests.py`
-+ `teleportation.py`
+- `deutsch_jozsa.py`
+- `grover_tests.py`
+- `qft_tests.py`
+- `teleportation.py`
 
 The results will be stored in the `case_studies/mutation_test_results` directory as CSV files.
 
@@ -58,7 +72,7 @@ This can be done by setting the number of properties to 1 in the `test_and_store
 
 ## Credits and Third-Party Code
 
-This repository is licensed under the MIT License (© 2024 Gabriel Pontolillo and Marek Grzesiuk).
+This repository is licensed under the MIT License (c) 2024 Gabriel Pontolillo and Marek Grzesiuk.
 
 Portions of this project include code developed by The MITRE Corporation
 (2019) from the `qsfe/Qiskit` repository, licensed under the Apache License,

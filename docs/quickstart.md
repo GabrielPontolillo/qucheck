@@ -1,35 +1,19 @@
-# Quickstart: run QuCheck on an example property
+# Quickstart: run the bundled QuCheck example
 
-This guide shows the smallest useful way to run QuCheck on example properties.
-It uses two included properties:
+This guide shows the smallest useful way to run QuCheck on the example properties included in this repository.
+
+It assumes you have already installed QuCheck.
+If not, follow the installation instructions in the repository [README](../README.md).
+
+This quickstart uses:
 
 - `examples/quickstart/properties/single_qubit_probability_property.py`
 - `examples/quickstart/properties/single_qubit_wrong_probability_property.py`
+- `examples/quickstart/run.py`
 
-and the runner script in `examples/quickstart/run.py`.
+## 1. Move to the repository root
 
-## 1. Create a Python 3.11 environment
-
-QuCheck requires Python 3.11 or newer.
-Use whichever launcher is available on your machine (`python`, `python3`, or `py -3.11`).
-
-### Windows PowerShell
-
-```powershell
-py -3.11 -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install .
-```
-
-### macOS / Linux
-
-```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install .
-```
+The bundled example runner lives in this repository, so run it from the project root.
 
 ## 2. Run the included example
 
